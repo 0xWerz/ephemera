@@ -6,11 +6,8 @@ use your jetpack, and fly out to its moon.
 
 ![Ephemera](media/1_cover.jpg)
 
-> **Note:** This is an early work in progress, free to play, and not really a game yet. There's no game
-> loop: no goals, story, missions, progression, enemies or win/lose state. Right now it's a walking and flying
-> sandbox, and the focus has been on getting the graphics and environment as good as possible (terrain,
-> lighting, sky, volumetric clouds, a simulated ocean, aurora, views from orbit), plus the feel of the
-> controls, the jetpack and the sound.
+> **Note:** For now, Ephemera is a walking and flying sandbox. The focus is entirely on the world itself: graphics,
+> environment design, lighting, sky and ocean, and how it feels to move through it.
 
 ## Download (Windows)
 
