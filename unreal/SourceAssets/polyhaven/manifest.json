@@ -1,0 +1,3421 @@
+[
+ {
+  "id": "coast_sand_rocks_02",
+  "name": "Coast Sand Rocks 02",
+  "kind": "texture",
+  "label": "forest_floor",
+  "categories": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "aerial",
+   "rock",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "grass",
+   "rock face",
+   "rock",
+   "moss",
+   "rough",
+   "uneven",
+   "weathered",
+   "stones",
+   "cliff",
+   "ground",
+   "seaside",
+   "coastal"
+  ],
+  "download_count": 546365,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/coast_sand_rocks_02",
+  "files": [
+   "textures/forest_floor/coast_sand_rocks_02/coast_sand_rocks_02_diff_4k.jpg",
+   "textures/forest_floor/coast_sand_rocks_02/coast_sand_rocks_02_nor_dx_4k.jpg",
+   "textures/forest_floor/coast_sand_rocks_02/coast_sand_rocks_02_arm_4k.jpg",
+   "textures/forest_floor/coast_sand_rocks_02/coast_sand_rocks_02_disp_4k.png"
+  ],
+  "bytes": 69172071
+ },
+ {
+  "id": "brown_mud_leaves_01",
+  "name": "Brown Mud Leaves 01",
+  "kind": "texture",
+  "label": "forest_floor",
+  "categories": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ],
+  "tags": [
+   "grass",
+   "mud",
+   "moss",
+   "stones",
+   "orange",
+   "forest"
+  ],
+  "download_count": 524449,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/brown_mud_leaves_01",
+  "files": [
+   "textures/forest_floor/brown_mud_leaves_01/brown_mud_leaves_01_diff_4k.jpg",
+   "textures/forest_floor/brown_mud_leaves_01/brown_mud_leaves_01_nor_dx_4k.jpg",
+   "textures/forest_floor/brown_mud_leaves_01/brown_mud_leaves_01_arm_4k.jpg",
+   "textures/forest_floor/brown_mud_leaves_01/brown_mud_leaves_01_disp_4k.png"
+  ],
+  "bytes": 74439915
+ },
+ {
+  "id": "aerial_rocks_02",
+  "name": "Aerial Rocks 02",
+  "kind": "texture",
+  "label": "forest_floor",
+  "categories": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ],
+  "tags": [
+   "rocks",
+   "rough",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "download_count": 400918,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/aerial_rocks_02",
+  "files": [
+   "textures/forest_floor/aerial_rocks_02/aerial_rocks_02_diff_4k.jpg",
+   "textures/forest_floor/aerial_rocks_02/aerial_rocks_02_nor_dx_4k.jpg",
+   "textures/forest_floor/aerial_rocks_02/aerial_rocks_02_arm_4k.jpg",
+   "textures/forest_floor/aerial_rocks_02/aerial_rocks_02_disp_4k.png"
+  ],
+  "bytes": 50178542
+ },
+ {
+  "id": "aerial_grass_rock",
+  "name": "Aerial Grass Rock",
+  "kind": "texture",
+  "label": "forest_floor",
+  "categories": [
+   "terrain",
+   "rock",
+   "outdoor",
+   "natural",
+   "aerial"
+  ],
+  "tags": [
+   "moss",
+   "grass",
+   "cliff",
+   "cave",
+   "rock face"
+  ],
+  "download_count": 365376,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/aerial_grass_rock",
+  "files": [
+   "textures/forest_floor/aerial_grass_rock/aerial_grass_rock_diff_4k.jpg",
+   "textures/forest_floor/aerial_grass_rock/aerial_grass_rock_nor_dx_4k.jpg",
+   "textures/forest_floor/aerial_grass_rock/aerial_grass_rock_arm_4k.jpg",
+   "textures/forest_floor/aerial_grass_rock/aerial_grass_rock_disp_4k.png"
+  ],
+  "bytes": 58015765
+ },
+ {
+  "id": "forrest_ground_01",
+  "name": "Forest Ground 01",
+  "kind": "texture",
+  "label": "forest_floor",
+  "categories": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ],
+  "tags": [
+   "grass",
+   "twigs",
+   "forest",
+   "leaves",
+   "sticks",
+   "foliage",
+   "dead grass",
+   "plant litter",
+   "underbrush",
+   "underbrush",
+   "organic",
+   "dry grass",
+   "dry leaves"
+  ],
+  "download_count": 323313,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/forrest_ground_01",
+  "files": [
+   "textures/forest_floor/forrest_ground_01/forrest_ground_01_diff_4k.jpg",
+   "textures/forest_floor/forrest_ground_01/forrest_ground_01_nor_dx_4k.jpg",
+   "textures/forest_floor/forrest_ground_01/forrest_ground_01_arm_4k.jpg",
+   "textures/forest_floor/forrest_ground_01/forrest_ground_01_disp_4k.png"
+  ],
+  "bytes": 63951302
+ },
+ {
+  "id": "rocky_terrain_02",
+  "name": "Rocky Terrain 02",
+  "kind": "texture",
+  "label": "grass_meadow",
+  "categories": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "aerial"
+  ],
+  "tags": [
+   "rocky",
+   "terrain",
+   "uneven terrain",
+   "grass",
+   "drone",
+   "landscape",
+   "nature",
+   "nature",
+   "boulders",
+   "wilderness",
+   "scenic",
+   "mountain",
+   "landform",
+   "natural landscape"
+  ],
+  "download_count": 277359,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rocky_terrain_02",
+  "files": [
+   "textures/grass_meadow/rocky_terrain_02/rocky_terrain_02_diff_4k.jpg",
+   "textures/grass_meadow/rocky_terrain_02/rocky_terrain_02_nor_dx_4k.jpg",
+   "textures/grass_meadow/rocky_terrain_02/rocky_terrain_02_arm_4k.jpg",
+   "textures/grass_meadow/rocky_terrain_02/rocky_terrain_02_disp_4k.png"
+  ],
+  "bytes": 57468647
+ },
+ {
+  "id": "leafy_grass",
+  "name": "Leafy Grass",
+  "kind": "texture",
+  "label": "grass_meadow",
+  "categories": [
+   "outdoor",
+   "floor"
+  ],
+  "tags": [
+   "grass",
+   "green",
+   "nature",
+   "ground",
+   "foliage",
+   "leaves",
+   "plants",
+   "outdoors",
+   "twigs",
+   "sticks",
+   "trampled"
+  ],
+  "download_count": 94301,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/leafy_grass",
+  "files": [
+   "textures/grass_meadow/leafy_grass/leafy_grass_diff_4k.jpg",
+   "textures/grass_meadow/leafy_grass/leafy_grass_nor_dx_4k.jpg",
+   "textures/grass_meadow/leafy_grass/leafy_grass_arm_4k.jpg",
+   "textures/grass_meadow/leafy_grass/leafy_grass_disp_4k.png"
+  ],
+  "bytes": 83566221
+ },
+ {
+  "id": "rocky_terrain",
+  "name": "Rocky Terrain",
+  "kind": "texture",
+  "label": "grass_meadow",
+  "categories": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "rock",
+   "aerial"
+  ],
+  "tags": [
+   "rock face",
+   "rocky",
+   "solid rock",
+   "nature",
+   "grass",
+   "terrain",
+   "wilderness",
+   "uneven terrain",
+   "mountain",
+   "rugged",
+   "landscape"
+  ],
+  "download_count": 83507,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rocky_terrain",
+  "files": [
+   "textures/grass_meadow/rocky_terrain/rocky_terrain_diff_4k.jpg",
+   "textures/grass_meadow/rocky_terrain/rocky_terrain_nor_dx_4k.jpg",
+   "textures/grass_meadow/rocky_terrain/rocky_terrain_arm_4k.jpg",
+   "textures/grass_meadow/rocky_terrain/rocky_terrain_disp_4k.png"
+  ],
+  "bytes": 57588891
+ },
+ {
+  "id": "wood_table_worn",
+  "name": "Wood Table Worn",
+  "kind": "texture",
+  "label": "mud_dirt",
+  "categories": [
+   "man made",
+   "wood",
+   "dirty",
+   "raw wood"
+  ],
+  "tags": [
+   "rough",
+   "planks",
+   "table",
+   "worn",
+   "old",
+   "damaged",
+   "discolored",
+   "stained",
+   "brown",
+   "dry",
+   "furniture",
+   "grain",
+   "scratched"
+  ],
+  "download_count": 415733,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/wood_table_worn",
+  "files": [
+   "textures/mud_dirt/wood_table_worn/wood_table_worn_diff_4k.jpg",
+   "textures/mud_dirt/wood_table_worn/wood_table_worn_nor_dx_4k.jpg",
+   "textures/mud_dirt/wood_table_worn/wood_table_worn_arm_4k.jpg",
+   "textures/mud_dirt/wood_table_worn/wood_table_worn_disp_4k.png"
+  ],
+  "bytes": 64456110
+ },
+ {
+  "id": "metal_plate",
+  "name": "Metal Plate",
+  "kind": "texture",
+  "label": "mud_dirt",
+  "categories": [
+   "metal",
+   "floor",
+   "man made",
+   "indoor",
+   "outdoor",
+   "dirty"
+  ],
+  "tags": [
+   "bare",
+   "painted",
+   "rusty",
+   "pattern",
+   "iron",
+   "factory",
+   "industrial",
+   "steel"
+  ],
+  "download_count": 307970,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/metal_plate",
+  "files": [
+   "textures/mud_dirt/metal_plate/metal_plate_diff_4k.jpg",
+   "textures/mud_dirt/metal_plate/metal_plate_nor_dx_4k.jpg",
+   "textures/mud_dirt/metal_plate/metal_plate_arm_4k.jpg",
+   "textures/mud_dirt/metal_plate/metal_plate_disp_4k.png"
+  ],
+  "bytes": 49042961
+ },
+ {
+  "id": "weathered_brown_planks",
+  "name": "Weathered Brown Planks",
+  "kind": "texture",
+  "label": "mud_dirt",
+  "categories": [
+   "man made",
+   "wood",
+   "dirty",
+   "wall",
+   "outdoor",
+   "floor"
+  ],
+  "tags": [
+   "wood",
+   "planks",
+   "old",
+   "worn",
+   "brown",
+   "maroon",
+   "painted",
+   "chipped",
+   "damaged",
+   "dirty",
+   "aged",
+   "stained",
+   "discolored"
+  ],
+  "download_count": 299282,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/weathered_brown_planks",
+  "files": [
+   "textures/mud_dirt/weathered_brown_planks/weathered_brown_planks_diff_4k.jpg",
+   "textures/mud_dirt/weathered_brown_planks/weathered_brown_planks_nor_dx_4k.jpg",
+   "textures/mud_dirt/weathered_brown_planks/weathered_brown_planks_arm_4k.jpg",
+   "textures/mud_dirt/weathered_brown_planks/weathered_brown_planks_disp_4k.png"
+  ],
+  "bytes": 46538996
+ },
+ {
+  "id": "forest_ground_04",
+  "name": "Forest Ground 04",
+  "kind": "texture",
+  "label": "gravel_pebbles",
+  "categories": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "ground",
+   "forest",
+   "dry",
+   "brown",
+   "gravel",
+   "rock",
+   "debris",
+   "nature",
+   "dirt"
+  ],
+  "download_count": 167693,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/forest_ground_04",
+  "files": [
+   "textures/gravel_pebbles/forest_ground_04/forest_ground_04_diff_4k.jpg",
+   "textures/gravel_pebbles/forest_ground_04/forest_ground_04_nor_dx_4k.jpg",
+   "textures/gravel_pebbles/forest_ground_04/forest_ground_04_arm_4k.jpg",
+   "textures/gravel_pebbles/forest_ground_04/forest_ground_04_disp_4k.png"
+  ],
+  "bytes": 68997078
+ },
+ {
+  "id": "rocks_ground_02",
+  "name": "Rocks Ground 02",
+  "kind": "texture",
+  "label": "gravel_pebbles",
+  "categories": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "rock"
+  ],
+  "tags": [
+   "rough",
+   "mud",
+   "rock",
+   "stones",
+   "uneven",
+   "rocks",
+   "scattered rocks",
+   "gravel",
+   "dirt",
+   "exposed rock",
+   "earthy",
+   "soil"
+  ],
+  "download_count": 149312,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rocks_ground_02",
+  "files": [
+   "textures/gravel_pebbles/rocks_ground_02/rocks_ground_02_col_4k.jpg",
+   "textures/gravel_pebbles/rocks_ground_02/rocks_ground_02_nor_dx_4k.jpg",
+   "textures/gravel_pebbles/rocks_ground_02/rocks_ground_02_arm_4k.jpg",
+   "textures/gravel_pebbles/rocks_ground_02/rocks_ground_02_height_4k.png"
+  ],
+  "bytes": 63445667
+ },
+ {
+  "id": "ganges_river_pebbles",
+  "name": "Ganges River Pebbles",
+  "kind": "texture",
+  "label": "gravel_pebbles",
+  "categories": [
+   "natural",
+   "rock",
+   "outdoor",
+   "terrain"
+  ],
+  "tags": [
+   "rough",
+   "uneven",
+   "rock",
+   "pebbles",
+   "pebble",
+   "scattered pebbles",
+   "scattered",
+   "river",
+   "pebbly",
+   "rocky",
+   "bumpy"
+  ],
+  "download_count": 123187,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/ganges_river_pebbles",
+  "files": [
+   "textures/gravel_pebbles/ganges_river_pebbles/ganges_river_pebbles_diff_4k.jpg",
+   "textures/gravel_pebbles/ganges_river_pebbles/ganges_river_pebbles_nor_dx_4k.jpg",
+   "textures/gravel_pebbles/ganges_river_pebbles/ganges_river_pebbles_arm_4k.jpg",
+   "textures/gravel_pebbles/ganges_river_pebbles/ganges_river_pebbles_disp_4k.png"
+  ],
+  "bytes": 65269170
+ },
+ {
+  "id": "aerial_beach_01",
+  "name": "Aerial Beach 01",
+  "kind": "texture",
+  "label": "sand",
+  "categories": [
+   "terrain",
+   "sand",
+   "outdoor",
+   "natural",
+   "aerial"
+  ],
+  "tags": [
+   "beach",
+   "wavy",
+   "costal",
+   "ocean",
+   "seaside"
+  ],
+  "download_count": 159802,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/aerial_beach_01",
+  "files": [
+   "textures/sand/aerial_beach_01/aerial_beach_01_diff_4k.jpg",
+   "textures/sand/aerial_beach_01/aerial_beach_01_nor_dx_4k.jpg",
+   "textures/sand/aerial_beach_01/aerial_beach_01_arm_4k.jpg",
+   "textures/sand/aerial_beach_01/aerial_beach_01_disp_4k.png"
+  ],
+  "bytes": 38459686
+ },
+ {
+  "id": "sandstone_cracks",
+  "name": "Sandstone Cracks",
+  "kind": "texture",
+  "label": "sand",
+  "categories": [
+   "wall",
+   "floor",
+   "natural",
+   "man made",
+   "outdoor",
+   "road",
+   "terrain"
+  ],
+  "tags": [
+   "rough",
+   "dirt",
+   "ground",
+   "sandstone",
+   "cracked",
+   "plaster"
+  ],
+  "download_count": 119203,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/sandstone_cracks",
+  "files": [
+   "textures/sand/sandstone_cracks/sandstone_cracks_diff_4k.jpg",
+   "textures/sand/sandstone_cracks/sandstone_cracks_nor_dx_4k.jpg",
+   "textures/sand/sandstone_cracks/sandstone_cracks_arm_4k.jpg",
+   "textures/sand/sandstone_cracks/sandstone_cracks_disp_4k.png"
+  ],
+  "bytes": 56069255
+ },
+ {
+  "id": "aerial_rocks_04",
+  "name": "Aerial Rocks 04",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ],
+  "tags": [
+   "rough",
+   "rocks",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "download_count": 223447,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/aerial_rocks_04",
+  "files": [
+   "textures/rock_cliff/aerial_rocks_04/aerial_rocks_04_diff_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_04/aerial_rocks_04_nor_dx_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_04/aerial_rocks_04_arm_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_04/aerial_rocks_04_disp_4k.png"
+  ],
+  "bytes": 49370259
+ },
+ {
+  "id": "rock_face_03",
+  "name": "Rock Face 03",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "natural",
+   "terrain",
+   "rock",
+   "outdoor",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "rough",
+   "rock",
+   "cliff",
+   "uneven",
+   "weathered",
+   "wall",
+   "cracked",
+   "stone",
+   "rock face",
+   "rugged",
+   "chipped",
+   "eroded",
+   "cracks",
+   "rocks"
+  ],
+  "download_count": 183921,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_face_03",
+  "files": [
+   "textures/rock_cliff/rock_face_03/rock_face_03_diff_4k.jpg",
+   "textures/rock_cliff/rock_face_03/rock_face_03_nor_dx_4k.jpg",
+   "textures/rock_cliff/rock_face_03/rock_face_03_arm_4k.jpg",
+   "textures/rock_cliff/rock_face_03/rock_face_03_disp_4k.png"
+  ],
+  "bytes": 66104720
+ },
+ {
+  "id": "rock_boulder_dry",
+  "name": "Rock Boulder Dry",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "rock",
+   "outdoor",
+   "natural",
+   "terrain"
+  ],
+  "tags": [
+   "weathered",
+   "chipped",
+   "rocks",
+   "boulder",
+   "stone",
+   "flat",
+   "damaged",
+   "eroded",
+   "cracked",
+   "rough",
+   "uneven"
+  ],
+  "download_count": 143114,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_boulder_dry",
+  "files": [
+   "textures/rock_cliff/rock_boulder_dry/rock_boulder_dry_diff_4k.jpg",
+   "textures/rock_cliff/rock_boulder_dry/rock_boulder_dry_nor_dx_4k.jpg",
+   "textures/rock_cliff/rock_boulder_dry/rock_boulder_dry_arm_4k.jpg",
+   "textures/rock_cliff/rock_boulder_dry/rock_boulder_dry_disp_4k.png"
+  ],
+  "bytes": 71303431
+ },
+ {
+  "id": "rock_01",
+  "name": "Rock 01",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ],
+  "tags": [
+   "grey",
+   "smooth",
+   "rock",
+   "stone",
+   "gray",
+   "weathered",
+   "rock face",
+   "solid rock"
+  ],
+  "download_count": 131431,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_01",
+  "files": [
+   "textures/rock_cliff/rock_01/rock_01_diff_4k.jpg",
+   "textures/rock_cliff/rock_01/rock_01_nor_dx_4k.jpg",
+   "textures/rock_cliff/rock_01/rock_01_arm_4k.jpg",
+   "textures/rock_cliff/rock_01/rock_01_disp_4k.png"
+  ],
+  "bytes": 53982900
+ },
+ {
+  "id": "aerial_rocks_01",
+  "name": "Aerial Rocks 01",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ],
+  "tags": [
+   "rocks",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "download_count": 125042,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/aerial_rocks_01",
+  "files": [
+   "textures/rock_cliff/aerial_rocks_01/aerial_rocks_01_diff_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_01/aerial_rocks_01_nor_dx_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_01/aerial_rocks_01_arm_4k.jpg",
+   "textures/rock_cliff/aerial_rocks_01/aerial_rocks_01_disp_4k.png"
+  ],
+  "bytes": 58236560
+ },
+ {
+  "id": "mossy_rock",
+  "name": "Mossy Rock",
+  "kind": "texture",
+  "label": "rock_cliff",
+  "categories": [
+   "rock",
+   "natural",
+   "outdoor",
+   "terrain"
+  ],
+  "tags": [
+   "rough",
+   "moss",
+   "rock face",
+   "cracked",
+   "lichen",
+   "striations",
+   "striated",
+   "mosscovered",
+   "mossy",
+   "uneven",
+   "rock"
+  ],
+  "download_count": 116317,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/mossy_rock",
+  "files": [
+   "textures/rock_cliff/mossy_rock/mossy_rock_diff_4k.jpg",
+   "textures/rock_cliff/mossy_rock/mossy_rock_nor_dx_4k.jpg",
+   "textures/rock_cliff/mossy_rock/mossy_rock_arm_4k.jpg",
+   "textures/rock_cliff/mossy_rock/mossy_rock_disp_4k.png"
+  ],
+  "bytes": 72668294
+ },
+ {
+  "id": "velour_velvet",
+  "name": "Velour Velvet",
+  "kind": "texture",
+  "label": "lunar_grey",
+  "categories": [
+   "fabric",
+   "velvet"
+  ],
+  "tags": [
+   "red",
+   "luxury",
+   "royal",
+   "patchey",
+   "velvet",
+   "velveteen",
+   "microsuede",
+   "napped",
+   "upholstery",
+   "fashion",
+   "soft",
+   "plush"
+  ],
+  "download_count": 57825,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/velour_velvet",
+  "files": [
+   "textures/lunar_grey/velour_velvet/velour_velvet_diff_4k.jpg",
+   "textures/lunar_grey/velour_velvet/velour_velvet_nor_dx_4k.jpg",
+   "textures/lunar_grey/velour_velvet/velour_velvet_arm_4k.jpg",
+   "textures/lunar_grey/velour_velvet/velour_velvet_disp_4k.png"
+  ],
+  "bytes": 62507861
+ },
+ {
+  "id": "burned_ground_01",
+  "name": "Burned Ground 01",
+  "kind": "texture",
+  "label": "lunar_grey",
+  "categories": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ],
+  "tags": [
+   "mud",
+   "burned",
+   "fire",
+   "dirt",
+   "ash",
+   "plant debris",
+   "plant litter",
+   "leaves",
+   "dry leaves",
+   "dry grass",
+   "gravel",
+   "gravelly",
+   "fallen leaves",
+   "organic debris",
+   "loose stones",
+   "charred soil",
+   "scorched earth"
+  ],
+  "download_count": 43348,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/burned_ground_01",
+  "files": [
+   "textures/lunar_grey/burned_ground_01/burned_ground_01_diff_4k.jpg",
+   "textures/lunar_grey/burned_ground_01/burned_ground_01_nor_dx_4k.jpg",
+   "textures/lunar_grey/burned_ground_01/burned_ground_01_arm_4k.jpg",
+   "textures/lunar_grey/burned_ground_01/burned_ground_01_disp_4k.png"
+  ],
+  "bytes": 55239397
+ },
+ {
+  "id": "moon_01",
+  "name": "Moon 01",
+  "kind": "texture",
+  "label": "lunar_grey",
+  "categories": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ],
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "download_count": 19590,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/moon_01",
+  "files": [
+   "textures/lunar_grey/moon_01/moon_01_diff_4k.jpg",
+   "textures/lunar_grey/moon_01/moon_01_nor_dx_4k.jpg",
+   "textures/lunar_grey/moon_01/moon_01_arm_4k.jpg",
+   "textures/lunar_grey/moon_01/moon_01_disp_4k.png"
+  ],
+  "bytes": 59072116
+ },
+ {
+  "id": "snow_02",
+  "name": "Snow 02",
+  "kind": "texture",
+  "label": "snow_ice",
+  "categories": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "snow"
+  ],
+  "tags": [
+   "snow",
+   "uneven",
+   "smooth",
+   "powdery",
+   "frosty",
+   "snowfield",
+   "soft",
+   "wintery"
+  ],
+  "download_count": 231680,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/snow_02",
+  "files": [
+   "textures/snow_ice/snow_02/snow_02_diff_4k.jpg",
+   "textures/snow_ice/snow_02/snow_02_nor_dx_4k.jpg",
+   "textures/snow_ice/snow_02/snow_02_arm_4k.jpg",
+   "textures/snow_ice/snow_02/snow_02_disp_4k.png"
+  ],
+  "bytes": 52047220
+ },
+ {
+  "id": "snow_01",
+  "name": "Snow 01",
+  "kind": "texture",
+  "label": "snow_ice",
+  "categories": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "snow"
+  ],
+  "tags": [
+   "snow",
+   "rough",
+   "uneven",
+   "footprints",
+   "powdery",
+   "trail",
+   "snowfield"
+  ],
+  "download_count": 108967,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/snow_01",
+  "files": [
+   "textures/snow_ice/snow_01/snow_01_diff_4k.jpg",
+   "textures/snow_ice/snow_01/snow_01_nor_dx_4k.jpg",
+   "textures/snow_ice/snow_01/snow_01_arm_4k.jpg",
+   "textures/snow_ice/snow_01/snow_01_disp_4k.png"
+  ],
+  "bytes": 56227036
+ },
+ {
+  "id": "bark_brown_02",
+  "name": "Bark Brown 02",
+  "kind": "texture",
+  "label": "bark",
+  "categories": [
+   "wood",
+   "outdoor",
+   "natural",
+   "bark"
+  ],
+  "tags": [
+   "bark",
+   "tree",
+   "forest",
+   "knots",
+   "wooden knots",
+   "tree trunk"
+  ],
+  "download_count": 231195,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/bark_brown_02",
+  "files": [
+   "textures/bark/bark_brown_02/bark_brown_02_diff_4k.jpg",
+   "textures/bark/bark_brown_02/bark_brown_02_nor_dx_4k.jpg",
+   "textures/bark/bark_brown_02/bark_brown_02_arm_4k.jpg",
+   "textures/bark/bark_brown_02/bark_brown_02_disp_4k.png"
+  ],
+  "bytes": 43354351
+ },
+ {
+  "id": "bark_brown_01",
+  "name": "Bark Brown 01",
+  "kind": "texture",
+  "label": "bark",
+  "categories": [
+   "wood",
+   "outdoor",
+   "natural",
+   "bark"
+  ],
+  "tags": [
+   "bark",
+   "tree",
+   "forest",
+   "knots",
+   "bark grooves",
+   "tree bark",
+   "tree trunk"
+  ],
+  "download_count": 129294,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/bark_brown_01",
+  "files": [
+   "textures/bark/bark_brown_01/bark_brown_01_diff_4k.jpg",
+   "textures/bark/bark_brown_01/bark_brown_01_nor_dx_4k.jpg",
+   "textures/bark/bark_brown_01/bark_brown_01_arm_4k.jpg",
+   "textures/bark/bark_brown_01/bark_brown_01_disp_4k.png"
+  ],
+  "bytes": 54411715
+ },
+ {
+  "id": "bark_willow",
+  "name": "Bark Willow",
+  "kind": "texture",
+  "label": "bark",
+  "categories": [
+   "outdoor",
+   "natural",
+   "bark",
+   "wood"
+  ],
+  "tags": [
+   "willow",
+   "bark",
+   "tree",
+   "forest",
+   "nature",
+   "brown",
+   "uneven",
+   "sallow",
+   "osier",
+   "old",
+   "wood",
+   "woodland"
+  ],
+  "download_count": 120928,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/bark_willow",
+  "files": [
+   "textures/bark/bark_willow/bark_willow_diff_4k.jpg",
+   "textures/bark/bark_willow/bark_willow_nor_dx_4k.jpg",
+   "textures/bark/bark_willow/bark_willow_arm_4k.jpg",
+   "textures/bark/bark_willow/bark_willow_disp_4k.png"
+  ],
+  "bytes": 69716211
+ },
+ {
+  "id": "bark_willow_02",
+  "name": "Bark Willow 02",
+  "kind": "texture",
+  "label": "bark",
+  "categories": [
+   "outdoor",
+   "natural",
+   "wood",
+   "raw wood",
+   "bark"
+  ],
+  "tags": [
+   "rough",
+   "dry",
+   "nature",
+   "tree",
+   "bark",
+   "wood",
+   "forest"
+  ],
+  "download_count": 119721,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/bark_willow_02",
+  "files": [
+   "textures/bark/bark_willow_02/bark_willow_02_diff_4k.jpg",
+   "textures/bark/bark_willow_02/bark_willow_02_nor_dx_4k.jpg",
+   "textures/bark/bark_willow_02/bark_willow_02_arm_4k.jpg",
+   "textures/bark/bark_willow_02/bark_willow_02_disp_4k.png"
+  ],
+  "bytes": 73045167
+ },
+ {
+  "id": "rough_wood",
+  "name": "Rough Wood",
+  "kind": "texture",
+  "label": "wood_weathered",
+  "categories": [
+   "wood",
+   "natural",
+   "outdoor"
+  ],
+  "tags": [
+   "rough",
+   "weathered",
+   "old",
+   "uneven",
+   "aged",
+   "cracked",
+   "natural grain",
+   "natural wood",
+   "natural",
+   "timber"
+  ],
+  "download_count": 222289,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rough_wood",
+  "files": [
+   "textures/wood_weathered/rough_wood/rough_wood_diff_4k.jpg",
+   "textures/wood_weathered/rough_wood/rough_wood_nor_dx_4k.jpg",
+   "textures/wood_weathered/rough_wood/rough_wood_arm_4k.jpg",
+   "textures/wood_weathered/rough_wood/rough_wood_disp_4k.png"
+  ],
+  "bytes": 47670604
+ },
+ {
+  "id": "brown_planks_03",
+  "name": "Brown Planks 03",
+  "kind": "texture",
+  "label": "wood_weathered",
+  "categories": [
+   "wood",
+   "man made",
+   "indoor",
+   "outdoor",
+   "clean",
+   "wall"
+  ],
+  "tags": [
+   "planks",
+   "untreated",
+   "boat",
+   "costal",
+   "dry",
+   "old",
+   "withered"
+  ],
+  "download_count": 157432,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/brown_planks_03",
+  "files": [
+   "textures/wood_weathered/brown_planks_03/brown_planks_03_diff_4k.jpg",
+   "textures/wood_weathered/brown_planks_03/brown_planks_03_nor_dx_4k.jpg",
+   "textures/wood_weathered/brown_planks_03/brown_planks_03_arm_4k.jpg",
+   "textures/wood_weathered/brown_planks_03/brown_planks_03_disp_4k.png"
+  ],
+  "bytes": 48660041
+ },
+ {
+  "id": "synthetic_wood",
+  "name": "Synthetic Wood",
+  "kind": "texture",
+  "label": "wood_weathered",
+  "categories": [
+   "man made",
+   "wall",
+   "wood",
+   "outdoor"
+  ],
+  "tags": [
+   "wall",
+   "planks",
+   "wood",
+   "wooden",
+   "brown",
+   "flat",
+   "square"
+  ],
+  "download_count": 151901,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/synthetic_wood",
+  "files": [
+   "textures/wood_weathered/synthetic_wood/synthetic_wood_diff_4k.jpg",
+   "textures/wood_weathered/synthetic_wood/synthetic_wood_nor_dx_4k.jpg",
+   "textures/wood_weathered/synthetic_wood/synthetic_wood_arm_4k.jpg",
+   "textures/wood_weathered/synthetic_wood/synthetic_wood_disp_4k.png"
+  ],
+  "bytes": 54526950
+ },
+ {
+  "id": "wood_planks_dirt",
+  "name": "Wood Planks Dirt",
+  "kind": "texture",
+  "label": "wood_weathered",
+  "categories": [
+   "wood",
+   "wall",
+   "man made",
+   "outdoor",
+   "indoor",
+   "clean"
+  ],
+  "tags": [
+   "planks",
+   "even",
+   "weathered"
+  ],
+  "download_count": 150946,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/wood_planks_dirt",
+  "files": [
+   "textures/wood_weathered/wood_planks_dirt/wood_planks_dirt_diff_4k.jpg",
+   "textures/wood_weathered/wood_planks_dirt/wood_planks_dirt_nor_dx_4k.jpg",
+   "textures/wood_weathered/wood_planks_dirt/wood_planks_dirt_arm_4k.jpg",
+   "textures/wood_weathered/wood_planks_dirt/wood_planks_dirt_disp_4k.png"
+  ],
+  "bytes": 52459580
+ },
+ {
+  "id": "planks_brown_10",
+  "name": "Planks Brown 10",
+  "kind": "texture",
+  "label": "wood_weathered",
+  "categories": [
+   "wood",
+   "wall",
+   "man made",
+   "outdoor"
+  ],
+  "tags": [
+   "planks",
+   "old",
+   "discolored",
+   "weathered",
+   "rough"
+  ],
+  "download_count": 148934,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/planks_brown_10",
+  "files": [
+   "textures/wood_weathered/planks_brown_10/planks_brown_10_diff_4k.jpg",
+   "textures/wood_weathered/planks_brown_10/planks_brown_10_nor_dx_4k.jpg",
+   "textures/wood_weathered/planks_brown_10/planks_brown_10_arm_4k.jpg",
+   "textures/wood_weathered/planks_brown_10/planks_brown_10_disp_4k.png"
+  ],
+  "bytes": 26918780
+ },
+ {
+  "id": "fabric_pattern_07",
+  "name": "Fabric Pattern 07",
+  "kind": "texture",
+  "label": "woven",
+  "categories": [
+   "fabric",
+   "cotton"
+  ],
+  "tags": [
+   "towel",
+   "plain",
+   "cloth",
+   "checkered",
+   "woven",
+   "textile",
+   "picnic"
+  ],
+  "download_count": 335428,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/fabric_pattern_07",
+  "files": [
+   "textures/woven/fabric_pattern_07/fabric_pattern_07_nor_dx_4k.jpg",
+   "textures/woven/fabric_pattern_07/fabric_pattern_07_arm_4k.jpg"
+  ],
+  "bytes": 8977706
+ },
+ {
+  "id": "book_pattern",
+  "name": "Book Pattern",
+  "kind": "texture",
+  "label": "woven",
+  "categories": [
+   "fabric",
+   "cotton"
+  ],
+  "tags": [
+   "plain",
+   "book",
+   "cover",
+   "textile ",
+   "olive",
+   "olive green",
+   "woven"
+  ],
+  "download_count": 241293,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/book_pattern",
+  "files": [
+   "textures/woven/book_pattern/book_pattern_nor_dx_4k.jpg",
+   "textures/woven/book_pattern/book_pattern_arm_4k.jpg",
+   "textures/woven/book_pattern/book_pattern_disp_4k.png"
+  ],
+  "bytes": 37588073
+ },
+ {
+  "id": "fabric_pattern_05",
+  "name": "Fabric Pattern 05",
+  "kind": "texture",
+  "label": "woven",
+  "categories": [
+   "fabric",
+   "cotton"
+  ],
+  "tags": [
+   "plain",
+   "cloth",
+   "towel",
+   "checker",
+   "checkered",
+   "plaid",
+   "grid pattern",
+   "windowpane plaid",
+   "upholstery",
+   "textile ",
+   "woven",
+   "drape"
+  ],
+  "download_count": 169147,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/fabric_pattern_05",
+  "files": [
+   "textures/woven/fabric_pattern_05/fabric_pattern_05_nor_dx_4k.jpg",
+   "textures/woven/fabric_pattern_05/fabric_pattern_05_arm_4k.jpg"
+  ],
+  "bytes": 11037401
+ },
+ {
+  "id": "leather_red_02",
+  "name": "Leather Red 02",
+  "kind": "texture",
+  "label": "fabric_rope",
+  "categories": [
+   "fabric",
+   "leather"
+  ],
+  "tags": [
+   "leather",
+   "even",
+   "smooth",
+   "new",
+   "creased",
+   "wrinkled",
+   "semi-gloss",
+   "upholstery",
+   "textile ",
+   "animal-hide"
+  ],
+  "download_count": 253579,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/leather_red_02",
+  "files": [
+   "textures/fabric_rope/leather_red_02/leather_red_02_nor_dx_4k.jpg",
+   "textures/fabric_rope/leather_red_02/leather_red_02_arm_4k.jpg",
+   "textures/fabric_rope/leather_red_02/leather_red_02_disp_4k.png"
+  ],
+  "bytes": 57484955
+ },
+ {
+  "id": "brown_leather",
+  "name": "Brown Leather",
+  "kind": "texture",
+  "label": "fabric_rope",
+  "categories": [
+   "fabric",
+   "leather"
+  ],
+  "tags": [
+   "leather",
+   "brown",
+   "chair",
+   "seat",
+   "upholstery",
+   "vintage",
+   "matte",
+   "wrinkled",
+   "textile ",
+   "creased"
+  ],
+  "download_count": 210739,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/brown_leather",
+  "files": [
+   "textures/fabric_rope/brown_leather/brown_leather_albedo_4k.jpg",
+   "textures/fabric_rope/brown_leather/brown_leather_nor_dx_4k.jpg",
+   "textures/fabric_rope/brown_leather/brown_leather_arm_4k.jpg",
+   "textures/fabric_rope/brown_leather/brown_leather_disp_4k.png"
+  ],
+  "bytes": 56027187
+ },
+ {
+  "id": "leather_white",
+  "name": "Leather White",
+  "kind": "texture",
+  "label": "fabric_rope",
+  "categories": [
+   "fabric",
+   "leather"
+  ],
+  "tags": [
+   "leather",
+   "white",
+   "smooth",
+   "new",
+   "even",
+   "textile ",
+   "upholstery",
+   "fashion",
+   "animal-hide"
+  ],
+  "download_count": 204332,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/leather_white",
+  "files": [
+   "textures/fabric_rope/leather_white/leather_white_diff_4k.jpg",
+   "textures/fabric_rope/leather_white/leather_white_nor_dx_4k.jpg",
+   "textures/fabric_rope/leather_white/leather_white_arm_4k.jpg",
+   "textures/fabric_rope/leather_white/leather_white_disp_4k.png"
+  ],
+  "bytes": 72362590
+ },
+ {
+  "id": "leather_red_03",
+  "name": "Leather Red 03",
+  "kind": "texture",
+  "label": "fabric_rope",
+  "categories": [
+   "fabric",
+   "leather"
+  ],
+  "tags": [
+   "leather",
+   "red",
+   "even",
+   "smooth",
+   "new",
+   "lustrous",
+   "textile ",
+   "upholstery"
+  ],
+  "download_count": 130729,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/leather_red_03",
+  "files": [
+   "textures/fabric_rope/leather_red_03/leather_red_03_nor_dx_4k.jpg",
+   "textures/fabric_rope/leather_red_03/leather_red_03_arm_4k.jpg",
+   "textures/fabric_rope/leather_red_03/leather_red_03_disp_4k.png"
+  ],
+  "bytes": 49456213
+ },
+ {
+  "id": "green_metal_rust",
+  "name": "Green Metal Rust",
+  "kind": "texture",
+  "label": "metal_worn",
+  "categories": [
+   "metal",
+   "outdoor",
+   "indoor",
+   "man made",
+   "dirty"
+  ],
+  "tags": [
+   "painted",
+   "ship",
+   "tank",
+   "industrial",
+   "canister"
+  ],
+  "download_count": 293446,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/green_metal_rust",
+  "files": [
+   "textures/metal_worn/green_metal_rust/green_metal_rust_diff_4k.jpg",
+   "textures/metal_worn/green_metal_rust/green_metal_rust_nor_dx_4k.jpg",
+   "textures/metal_worn/green_metal_rust/green_metal_rust_arm_4k.jpg",
+   "textures/metal_worn/green_metal_rust/green_metal_rust_disp_4k.png"
+  ],
+  "bytes": 39047563
+ },
+ {
+  "id": "rust_coarse_01",
+  "name": "Rust Coarse 01",
+  "kind": "texture",
+  "label": "metal_worn",
+  "categories": [
+   "metal",
+   "outdoor",
+   "man made",
+   "dirty",
+   "wall"
+  ],
+  "tags": [
+   "coarse",
+   "rusty",
+   "rust",
+   "red",
+   "stained",
+   "grunge",
+   "old",
+   "weathered",
+   "iron",
+   "metal",
+   "steel",
+   "rough"
+  ],
+  "download_count": 231762,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rust_coarse_01",
+  "files": [
+   "textures/metal_worn/rust_coarse_01/rust_coarse_01_diff_4k.jpg",
+   "textures/metal_worn/rust_coarse_01/rust_coarse_01_nor_dx_4k.jpg",
+   "textures/metal_worn/rust_coarse_01/rust_coarse_01_arm_4k.jpg",
+   "textures/metal_worn/rust_coarse_01/rust_coarse_01_disp_4k.png"
+  ],
+  "bytes": 79425133
+ },
+ {
+  "id": "rusty_metal_02",
+  "name": "Rusty Metal 02",
+  "kind": "texture",
+  "label": "metal_worn",
+  "categories": [
+   "metal",
+   "man made",
+   "dirty",
+   "wall",
+   "indoor",
+   "outdoor"
+  ],
+  "tags": [
+   "rust",
+   "old",
+   "weathered",
+   "painted"
+  ],
+  "download_count": 211807,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rusty_metal_02",
+  "files": [
+   "textures/metal_worn/rusty_metal_02/rusty_metal_02_diff_4k.jpg",
+   "textures/metal_worn/rusty_metal_02/rusty_metal_02_nor_dx_4k.jpg",
+   "textures/metal_worn/rusty_metal_02/rusty_metal_02_arm_4k.jpg",
+   "textures/metal_worn/rusty_metal_02/rusty_metal_02_disp_4k.png"
+  ],
+  "bytes": 43551454
+ },
+ {
+  "id": "rustic_stone_wall_02",
+  "name": "Rustic Stone Wall 02",
+  "kind": "texture",
+  "label": "metal_worn",
+  "categories": [
+   "man made",
+   "outdoor",
+   "wall",
+   "rock"
+  ],
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "wall",
+   "rock",
+   "old",
+   "worn",
+   "chipped",
+   "damaged",
+   "cracked",
+   "rocks",
+   "cracks",
+   "stone",
+   "rustic architecture",
+   "rugged",
+   "exterior",
+   "stonework",
+   "crumbling",
+   "timeworn",
+   "rustic"
+  ],
+  "download_count": 131719,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rustic_stone_wall_02",
+  "files": [
+   "textures/metal_worn/rustic_stone_wall_02/rustic_stone_wall_02_diff_4k.jpg",
+   "textures/metal_worn/rustic_stone_wall_02/rustic_stone_wall_02_nor_dx_4k.jpg",
+   "textures/metal_worn/rustic_stone_wall_02/rustic_stone_wall_02_arm_4k.jpg",
+   "textures/metal_worn/rustic_stone_wall_02/rustic_stone_wall_02_disp_4k.png"
+  ],
+  "bytes": 60413572
+ },
+ {
+  "id": "rusty_metal_04",
+  "name": "Rusty Metal 04",
+  "kind": "texture",
+  "label": "metal_worn",
+  "categories": [
+   "man made",
+   "metal"
+  ],
+  "tags": [
+   "metal sheet",
+   "metal",
+   "rusted",
+   "rusty",
+   "rust",
+   "steel",
+   "oxidized",
+   "corrosion",
+   "oxidized metal",
+   "corroded",
+   "iron",
+   "metallic",
+   "steel sheeting",
+   "corroded metal sheet"
+  ],
+  "download_count": 122504,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rusty_metal_04",
+  "files": [
+   "textures/metal_worn/rusty_metal_04/rusty_metal_04_diff_4k.jpg",
+   "textures/metal_worn/rusty_metal_04/rusty_metal_04_nor_dx_4k.jpg",
+   "textures/metal_worn/rusty_metal_04/rusty_metal_04_arm_4k.jpg",
+   "textures/metal_worn/rusty_metal_04/rusty_metal_04_disp_4k.png"
+  ],
+  "bytes": 60164981
+ },
+ {
+  "id": "rock_moss_set_02",
+  "name": "Rock Moss Set 02",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "rocks",
+   "nature",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "rocks",
+   "outdoor",
+   "stones",
+   "pebbles",
+   "rock",
+   "dirt"
+  ],
+  "download_count": 98667,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_moss_set_02",
+  "files": [
+   "models/rocks/rock_moss_set_02/rock_moss_set_02_2k.gltf",
+   "models/rocks/rock_moss_set_02/textures/rock_moss_set_02_diff_2k.jpg",
+   "models/rocks/rock_moss_set_02/rock_moss_set_02.bin",
+   "models/rocks/rock_moss_set_02/textures/rock_moss_set_02_nor_gl_2k.jpg",
+   "models/rocks/rock_moss_set_02/textures/rock_moss_set_02_rough_2k.jpg"
+  ],
+  "bytes": 3581402
+ },
+ {
+  "id": "rock_moss_set_01",
+  "name": "Rock Moss Set 01",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "rocks",
+   "nature",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "rocks",
+   "outdoor",
+   "stones",
+   "pebbles",
+   "rock",
+   "dirt"
+  ],
+  "download_count": 84844,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_moss_set_01",
+  "files": [
+   "models/rocks/rock_moss_set_01/rock_moss_set_01_2k.gltf",
+   "models/rocks/rock_moss_set_01/rock_moss_set_01.bin",
+   "models/rocks/rock_moss_set_01/textures/rock_moss_set_01_diff_2k.jpg",
+   "models/rocks/rock_moss_set_01/textures/rock_moss_set_01_nor_gl_2k.jpg",
+   "models/rocks/rock_moss_set_01/textures/rock_moss_set_01_rough_2k.jpg"
+  ],
+  "bytes": 3260566
+ },
+ {
+  "id": "boulder_01",
+  "name": "Boulder 01",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "rocks",
+   "nature",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "rocks",
+   "boulder",
+   "lichen",
+   "landscape",
+   "rock",
+   "geology",
+   "formation",
+   "weathered",
+   "rock face",
+   "cliff"
+  ],
+  "download_count": 45684,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/boulder_01",
+  "files": [
+   "models/rocks/boulder_01/boulder_01_2k.gltf",
+   "models/rocks/boulder_01/textures/boulder_01_nor_gl_2k.jpg",
+   "models/rocks/boulder_01/textures/boulder_01_diff_2k.jpg",
+   "models/rocks/boulder_01/boulder_01.bin",
+   "models/rocks/boulder_01/textures/boulder_01_arm_2k.jpg"
+  ],
+  "bytes": 13536339
+ },
+ {
+  "id": "namaqualand_boulder_02",
+  "name": "Namaqualand Boulder 02",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "tags": [
+   "karoo",
+   "desert",
+   "south africa",
+   "boulders",
+   "rocks",
+   "geological",
+   "rock",
+   "landscaping"
+  ],
+  "download_count": 42660,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/namaqualand_boulder_02",
+  "files": [
+   "models/rocks/namaqualand_boulder_02/namaqualand_boulder_02_2k.gltf",
+   "models/rocks/namaqualand_boulder_02/namaqualand_boulder_02.bin",
+   "models/rocks/namaqualand_boulder_02/textures/namaqualand_boulder_02_diff_2k.jpg",
+   "models/rocks/namaqualand_boulder_02/textures/namaqualand_boulder_02_arm_2k.jpg",
+   "models/rocks/namaqualand_boulder_02/textures/namaqualand_boulder_02_nor_gl_2k.jpg"
+  ],
+  "bytes": 13002615
+ },
+ {
+  "id": "Rockingchair_01",
+  "name": "Rockingchair 01",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "furniture",
+   "seating"
+  ],
+  "tags": [
+   "chair",
+   "vintage",
+   "prop",
+   "wood",
+   "furniture",
+   "rocking chair",
+   "rocking",
+   "decorative",
+   "curved legs",
+   "traditional",
+   "solid wood",
+   "armrest",
+   "slatted backrest",
+   "antique style"
+  ],
+  "download_count": 31323,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/Rockingchair_01",
+  "files": [
+   "models/rocks/Rockingchair_01/Rockingchair_01_2k.gltf",
+   "models/rocks/Rockingchair_01/textures/Rockingchair_01_diff_2k.jpg",
+   "models/rocks/Rockingchair_01/textures/Rockingchair_01_arm_2k.jpg",
+   "models/rocks/Rockingchair_01/textures/Rockingchair_01_nor_gl_2k.jpg",
+   "models/rocks/Rockingchair_01/Rockingchair_01.bin"
+  ],
+  "bytes": 1810230
+ },
+ {
+  "id": "coastal_cliff_04",
+  "name": "Coastal Cliff 04",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "cliff",
+   "landscape",
+   "seaside",
+   "formation",
+   "geology",
+   "shoreline",
+   "coastal",
+   "rock",
+   "weathered",
+   "rock face",
+   "coastal formations",
+   "shore"
+  ],
+  "download_count": 26144,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/coastal_cliff_04",
+  "files": [
+   "models/rocks/coastal_cliff_04/coastal_cliff_04_2k.gltf",
+   "models/rocks/coastal_cliff_04/textures/coastal_cliff_04_diff_2k.jpg",
+   "models/rocks/coastal_cliff_04/coastal_cliff_04.bin",
+   "models/rocks/coastal_cliff_04/textures/coastal_cliff_04_nor_gl_2k.jpg",
+   "models/rocks/coastal_cliff_04/textures/coastal_cliff_04_arm_2k.jpg"
+  ],
+  "bytes": 54095351
+ },
+ {
+  "id": "coast_land_rocks_04",
+  "name": "Coast Land Rocks 04",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "landscape",
+   "rocks",
+   "shore",
+   "coastal",
+   "geology",
+   "shoreline",
+   "rock",
+   "stones",
+   "pebbles",
+   "weathered",
+   "beach",
+   "sand",
+   "rock face",
+   "seaside",
+   "cove"
+  ],
+  "download_count": 24713,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/coast_land_rocks_04",
+  "files": [
+   "models/rocks/coast_land_rocks_04/coast_land_rocks_04_2k.gltf",
+   "models/rocks/coast_land_rocks_04/textures/coast_land_rocks_04_nor_gl_2k.jpg",
+   "models/rocks/coast_land_rocks_04/coast_land_rocks_04.bin",
+   "models/rocks/coast_land_rocks_04/textures/coast_land_rocks_04_diff_2k.jpg",
+   "models/rocks/coast_land_rocks_04/textures/coast_land_rocks_04_arm_2k.jpg"
+  ],
+  "bytes": 41401939
+ },
+ {
+  "id": "sand_rocks_small_01",
+  "name": "Sand Rocks Small 01",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "sand",
+   "rocks",
+   "seaside",
+   "shore",
+   "stones",
+   "pebbles",
+   "shoreline",
+   "coastal",
+   "beach",
+   "landscape",
+   "geology",
+   "rock"
+  ],
+  "download_count": 22237,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/sand_rocks_small_01",
+  "files": [
+   "models/rocks/sand_rocks_small_01/sand_rocks_small_01_2k.gltf",
+   "models/rocks/sand_rocks_small_01/sand_rocks_small_01.bin",
+   "models/rocks/sand_rocks_small_01/textures/sand_rocks_small_01_diff_2k.jpg",
+   "models/rocks/sand_rocks_small_01/textures/sand_rocks_small_01_nor_gl_2k.jpg",
+   "models/rocks/sand_rocks_small_01/textures/sand_rocks_small_01_arm_2k.jpg"
+  ],
+  "bytes": 30956212
+ },
+ {
+  "id": "namaqualand_boulder_03",
+  "name": "Namaqualand Boulder 03",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: namaqualand"
+  ],
+  "tags": [
+   "karoo",
+   "south africa",
+   "desert",
+   "boulder",
+   "rock",
+   "rough",
+   "brown",
+   "geological",
+   "landscaping",
+   "stone"
+  ],
+  "download_count": 21882,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/namaqualand_boulder_03",
+  "files": [
+   "models/rocks/namaqualand_boulder_03/namaqualand_boulder_03_2k.gltf",
+   "models/rocks/namaqualand_boulder_03/textures/namaqualand_boulder_03_arm_2k.jpg",
+   "models/rocks/namaqualand_boulder_03/namaqualand_boulder_03.bin",
+   "models/rocks/namaqualand_boulder_03/textures/namaqualand_boulder_03_nor_gl_2k.jpg",
+   "models/rocks/namaqualand_boulder_03/textures/namaqualand_boulder_03_diff_2k.jpg"
+  ],
+  "bytes": 10155787
+ },
+ {
+  "id": "coast_rocks_05",
+  "name": "Coast Rocks 05",
+  "kind": "model",
+  "label": "rocks",
+  "categories": [
+   "nature",
+   "rocks",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "rocks",
+   "coastal",
+   "maritime",
+   "ocean",
+   "stone",
+   "reef",
+   "formation",
+   "landscape",
+   "seaside",
+   "shore",
+   "geology",
+   "pebbles",
+   "seaweed",
+   "weathered"
+  ],
+  "download_count": 20660,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/coast_rocks_05",
+  "files": [
+   "models/rocks/coast_rocks_05/coast_rocks_05_2k.gltf",
+   "models/rocks/coast_rocks_05/textures/coast_rocks_05_nor_gl_2k.jpg",
+   "models/rocks/coast_rocks_05/textures/coast_rocks_05_diff_2k.jpg",
+   "models/rocks/coast_rocks_05/coast_rocks_05.bin",
+   "models/rocks/coast_rocks_05/textures/coast_rocks_05_arm_2k.jpg"
+  ],
+  "bytes": 33576450
+ },
+ {
+  "id": "grass_medium_01",
+  "name": "Grass Medium 01",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "grass",
+   "nature",
+   "ground cover",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "plant",
+   "grass",
+   "nature",
+   "green",
+   "shrub",
+   "outdoor",
+   "field",
+   "meadow",
+   "natural",
+   "foliage",
+   "small",
+   "botany"
+  ],
+  "download_count": 243173,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/grass_medium_01",
+  "files": [
+   "models/trees/grass_medium_01/grass_medium_01_2k.gltf",
+   "models/trees/grass_medium_01/textures/grass_medium_01_nor_gl_2k.jpg",
+   "models/trees/grass_medium_01/textures/grass_medium_01_diff_2k.jpg",
+   "models/trees/grass_medium_01/textures/grass_medium_01_arm_2k.jpg",
+   "models/trees/grass_medium_01/grass_medium_01.bin"
+  ],
+  "bytes": 7987018
+ },
+ {
+  "id": "tree_small_02",
+  "name": "Tree Small 02",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "tree",
+   "natural",
+   "nature",
+   "plant",
+   "outdoor",
+   "green",
+   "botany",
+   "leaf",
+   "leaves",
+   "forest",
+   "jungle",
+   "foliage",
+   "geometry nodes",
+   "trunk",
+   "bark",
+   "medium",
+   "garden",
+   "branches",
+   "burkea africana",
+   "wild syringa",
+   "small"
+  ],
+  "download_count": 160188,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/tree_small_02",
+  "files": [
+   "models/trees/tree_small_02/tree_small_02_2k.gltf",
+   "models/trees/tree_small_02/textures/tree_small_02_branch_nor_gl_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_branch_diff_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_branch_arm_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_leaves_nor_gl_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_leaves_diff_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_leaves_arm_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_nor_gl_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_diff_2k.jpg",
+   "models/trees/tree_small_02/textures/tree_small_02_arm_2k.jpg",
+   "models/trees/tree_small_02/tree_small_02.bin"
+  ],
+  "bytes": 115328490
+ },
+ {
+  "id": "jacaranda_tree",
+  "name": "Jacaranda Tree",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "tree",
+   "natural",
+   "nature",
+   "green",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "forest",
+   "jungle",
+   "foliage",
+   "geometry nodes",
+   "bark",
+   "trunk",
+   "jacaranda"
+  ],
+  "download_count": 145901,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/jacaranda_tree",
+  "files": [
+   "models/trees/jacaranda_tree/jacaranda_tree_2k.gltf",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_branches_nor_gl_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_branches_diff_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_branches_arm_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_trunk_nor_gl_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_trunk_diff_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_trunk_arm_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_leaves_nor_gl_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_leaves_diff_2k.jpg",
+   "models/trees/jacaranda_tree/textures/jacaranda_tree_leaves_arm_2k.jpg",
+   "models/trees/jacaranda_tree/jacaranda_tree.bin"
+  ],
+  "bytes": 229608704
+ },
+ {
+  "id": "island_tree_02",
+  "name": "Island Tree 02",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "nature",
+   "plants",
+   "trees"
+  ],
+  "tags": [
+   "tree",
+   "natural",
+   "nature",
+   "green",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "forest",
+   "bush",
+   "jungle",
+   "foliage",
+   "small",
+   "geometry nodes",
+   "trunk",
+   "bark",
+   "island",
+   "coastal"
+  ],
+  "download_count": 89761,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/island_tree_02",
+  "files": [
+   "models/trees/island_tree_02/island_tree_02_2k.gltf",
+   "models/trees/island_tree_02/textures/island_tree_02_nor_gl_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_diff_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_arm_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_leaves_nor_gl_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_leaves_diff_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_leaves_arm_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_branches_nor_gl_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_branches_diff_2k.jpg",
+   "models/trees/island_tree_02/textures/island_tree_02_branches_arm_2k.jpg",
+   "models/trees/island_tree_02/island_tree_02.bin"
+  ],
+  "bytes": 59188881
+ },
+ {
+  "id": "fern_02",
+  "name": "Fern 02",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "plants",
+   "nature",
+   "collection: smugglers_cove",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "plant",
+   "fern",
+   "foliage",
+   "jungle",
+   "shrub",
+   "bush",
+   "leaf",
+   "leaves",
+   "green",
+   "nature",
+   "forest",
+   "outdoor"
+  ],
+  "download_count": 80592,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/fern_02",
+  "files": [
+   "models/trees/fern_02/fern_02_2k.gltf",
+   "models/trees/fern_02/textures/fern_02_diff_2k.jpg",
+   "models/trees/fern_02/textures/fern_02_arm_2k.jpg",
+   "models/trees/fern_02/fern_02.bin",
+   "models/trees/fern_02/textures/fern_02_nor_gl_2k.jpg"
+  ],
+  "bytes": 3393249
+ },
+ {
+  "id": "fir_tree_01",
+  "name": "Fir Tree 01",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "fir",
+   "tree",
+   "geometry nodes",
+   "woodland",
+   "needles",
+   "branches",
+   "environment",
+   "coniferous",
+   "plants",
+   "forest",
+   "tall",
+   "trunk",
+   "bark",
+   "foliage",
+   "twig"
+  ],
+  "download_count": 72631,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/fir_tree_01",
+  "files": [
+   "models/trees/fir_tree_01/fir_tree_01_2k.gltf",
+   "models/trees/fir_tree_01/textures/fir_tree_01_bark_nor_gl_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_bark_diff_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_bark_arm_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_a_nor_gl_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_a_diff_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_a_arm_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_twig_nor_gl_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_twig_diff_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_twig_arm_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_b_nor_gl_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_b_diff_2k.jpg",
+   "models/trees/fir_tree_01/textures/fir_tree_01_trunk_b_arm_2k.jpg",
+   "models/trees/fir_tree_01/fir_tree_01.bin"
+  ],
+  "bytes": 510242724
+ },
+ {
+  "id": "island_tree_01",
+  "name": "Island Tree 01",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "tree",
+   "natural",
+   "nature",
+   "green",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "forest",
+   "bush",
+   "jungle",
+   "foliage",
+   "island",
+   "coastal",
+   "geometry nodes",
+   "trunk",
+   "bark"
+  ],
+  "download_count": 71888,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/island_tree_01",
+  "files": [
+   "models/trees/island_tree_01/island_tree_01_2k.gltf",
+   "models/trees/island_tree_01/textures/island_tree_01_nor_gl_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_diff_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_arm_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_leaves_nor_gl_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_leaves_diff_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_leaves_arm_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_branches_nor_gl_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_branches_diff_2k.jpg",
+   "models/trees/island_tree_01/textures/island_tree_01_branches_arm_2k.jpg",
+   "models/trees/island_tree_01/island_tree_01.bin"
+  ],
+  "bytes": 79783969
+ },
+ {
+  "id": "fir_sapling_medium",
+  "name": "Fir Sapling Medium",
+  "kind": "model",
+  "label": "trees",
+  "categories": [
+   "plants",
+   "nature",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "fir",
+   "sapling",
+   "medium",
+   "needles",
+   "woodland",
+   "branches",
+   "environment",
+   "coniferous",
+   "tree",
+   "plants",
+   "foliage",
+   "geometry nodes"
+  ],
+  "download_count": 50730,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/fir_sapling_medium",
+  "files": [
+   "models/trees/fir_sapling_medium/fir_sapling_medium_2k.gltf",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_branches_nor_gl_2k.jpg",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_branches_diff_2k.jpg",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_branches_arm_2k.jpg",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_twigs_nor_gl_2k.jpg",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_twigs_diff_2k.jpg",
+   "models/trees/fir_sapling_medium/textures/fir_sapling_medium_twigs_arm_2k.jpg",
+   "models/trees/fir_sapling_medium/fir_sapling_medium.bin"
+  ],
+  "bytes": 87511667
+ },
+ {
+  "id": "Camera_01",
+  "name": "Camera 01",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "props",
+   "electronics"
+  ],
+  "tags": [
+   "vintage",
+   "camera",
+   "antique",
+   "ornate",
+   "photography",
+   "photography",
+   "retro",
+   "lens",
+   "classic",
+   "classic",
+   "analog"
+  ],
+  "download_count": 113957,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/Camera_01",
+  "files": [
+   "models/stumps_logs/Camera_01/Camera_01_2k.gltf",
+   "models/stumps_logs/Camera_01/textures/Camera_01_body_nor_gl_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_lens_body_diff_2k.jpg",
+   "models/stumps_logs/Camera_01/Camera_01.bin",
+   "models/stumps_logs/Camera_01/textures/Camera_01_lens_body_nor_gl_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_strap_nor_gl_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_strap_arm_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_lens_body_arm_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_strap_diff_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_body_diff_2k.jpg",
+   "models/stumps_logs/Camera_01/textures/Camera_01_body_arm_2k.jpg"
+  ],
+  "bytes": 6187969
+ },
+ {
+  "id": "dry_branches_medium_01",
+  "name": "Dry Branches Medium 01",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "props",
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "branches",
+   "dead",
+   "dry",
+   "plants",
+   "nature",
+   "natural",
+   "plant",
+   "outdoor",
+   "foliage",
+   "forest",
+   "jungle",
+   "shrub",
+   "medium",
+   "stick",
+   "twig",
+   "botany",
+   "wood"
+  ],
+  "download_count": 49241,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/dry_branches_medium_01",
+  "files": [
+   "models/stumps_logs/dry_branches_medium_01/dry_branches_medium_01_2k.gltf",
+   "models/stumps_logs/dry_branches_medium_01/textures/dry_branches_medium_01_nor_gl_2k.jpg",
+   "models/stumps_logs/dry_branches_medium_01/textures/dry_branches_medium_01_arm_2k.jpg",
+   "models/stumps_logs/dry_branches_medium_01/textures/dry_branches_medium_01_diff_2k.jpg",
+   "models/stumps_logs/dry_branches_medium_01/dry_branches_medium_01.bin"
+  ],
+  "bytes": 10805523
+ },
+ {
+  "id": "dead_tree_trunk_02",
+  "name": "Dead Tree Trunk 02",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "trunk",
+   "log",
+   "tree trunk",
+   "dead",
+   "decayed",
+   "dry",
+   "rough texture",
+   "forest floor",
+   "stump",
+   "bark",
+   "woodland",
+   "debris",
+   "environment",
+   "ground cover"
+  ],
+  "download_count": 39864,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/dead_tree_trunk_02",
+  "files": [
+   "models/stumps_logs/dead_tree_trunk_02/dead_tree_trunk_02_2k.gltf",
+   "models/stumps_logs/dead_tree_trunk_02/textures/dead_tree_trunk_02_nor_gl_2k.jpg",
+   "models/stumps_logs/dead_tree_trunk_02/textures/dead_tree_trunk_02_diff_2k.jpg",
+   "models/stumps_logs/dead_tree_trunk_02/textures/dead_tree_trunk_02_arm_2k.jpg",
+   "models/stumps_logs/dead_tree_trunk_02/dead_tree_trunk_02.bin"
+  ],
+  "bytes": 13351323
+ },
+ {
+  "id": "pine_tree_01",
+  "name": "Pine Tree 01",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "pine",
+   "tree",
+   "needles",
+   "branches",
+   "woodland",
+   "coniferous",
+   "plants",
+   "geometry nodes",
+   "foliage",
+   "natural",
+   "trunk",
+   "bark",
+   "environment",
+   "vegetation",
+   "evergreen",
+   "forest"
+  ],
+  "download_count": 39654,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/pine_tree_01",
+  "files": [
+   "models/stumps_logs/pine_tree_01/pine_tree_01_2k.gltf",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_bark_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_bark_diff_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_bark_arm_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_a_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_a_diff_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_a_arm_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_twig_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_twig_diff_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_twig_arm_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_b_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_b_diff_2k.jpg",
+   "models/stumps_logs/pine_tree_01/textures/pine_tree_01_trunk_b_arm_2k.jpg",
+   "models/stumps_logs/pine_tree_01/pine_tree_01.bin"
+  ],
+  "bytes": 982149009
+ },
+ {
+  "id": "cassette_player",
+  "name": "Cassette Player",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "props",
+   "electronics"
+  ],
+  "tags": [
+   "walkman",
+   "vintage",
+   "device",
+   "audio",
+   "retro",
+   "music",
+   "gadget",
+   "nostalgia",
+   "portable",
+   "cassette tape",
+   "analog",
+   "old school",
+   "classic"
+  ],
+  "download_count": 30205,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/cassette_player",
+  "files": [
+   "models/stumps_logs/cassette_player/cassette_player_2k.gltf",
+   "models/stumps_logs/cassette_player/textures/cassette_player_body_arm_2k.jpg",
+   "models/stumps_logs/cassette_player/textures/cassette_player_tape_arm_2k.jpg",
+   "models/stumps_logs/cassette_player/textures/cassette_player_body_nor_gl_2k.jpg",
+   "models/stumps_logs/cassette_player/cassette_player.bin",
+   "models/stumps_logs/cassette_player/textures/cassette_player_tape_orangeblue_diff_2k.jpg",
+   "models/stumps_logs/cassette_player/textures/cassette_player_body_diff_2k.jpg",
+   "models/stumps_logs/cassette_player/textures/cassette_player_tape_nor_gl_2k.jpg"
+  ],
+  "bytes": 2596341
+ },
+ {
+  "id": "pine_sapling_medium",
+  "name": "Pine Sapling Medium",
+  "kind": "model",
+  "label": "stumps_logs",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "woodland",
+   "needles",
+   "pine",
+   "tree",
+   "sapling",
+   "branches",
+   "environment",
+   "coniferous",
+   "plants",
+   "trunk",
+   "bark",
+   "geometry nodes",
+   "foliage",
+   "natural",
+   "evergreen",
+   "twig",
+   "forest",
+   "vegetation",
+   "forest floor"
+  ],
+  "download_count": 22146,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/pine_sapling_medium",
+  "files": [
+   "models/stumps_logs/pine_sapling_medium/pine_sapling_medium_2k.gltf",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_bark_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_bark_diff_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_bark_arm_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_twig_nor_gl_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_twig_diff_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/textures/pine_sapling_medium_twig_arm_2k.jpg",
+   "models/stumps_logs/pine_sapling_medium/pine_sapling_medium.bin"
+  ],
+  "bytes": 278584917
+ },
+ {
+  "id": "grass_bermuda_01",
+  "name": "Grass Bermuda 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "grass",
+   "nature",
+   "ground cover",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "plant",
+   "grass",
+   "nature",
+   "shrub",
+   "field",
+   "foliage",
+   "natural",
+   "outdoor",
+   "botany",
+   "small",
+   "green",
+   "bermuda"
+  ],
+  "download_count": 103813,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/grass_bermuda_01",
+  "files": [
+   "models/plants/grass_bermuda_01/grass_bermuda_01_2k.gltf",
+   "models/plants/grass_bermuda_01/textures/grass_bermuda_01_nor_gl_2k.jpg",
+   "models/plants/grass_bermuda_01/textures/grass_bermuda_01_diff_2k.jpg",
+   "models/plants/grass_bermuda_01/textures/grass_bermuda_01_arm_2k.jpg",
+   "models/plants/grass_bermuda_01/grass_bermuda_01.bin"
+  ],
+  "bytes": 4772987
+ },
+ {
+  "id": "celandine_01",
+  "name": "Celandine 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "ground cover",
+   "flowers"
+  ],
+  "tags": [
+   "field",
+   "nature",
+   "green",
+   "shrub",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "meadow",
+   "floral",
+   "flower",
+   "small",
+   "natural",
+   "celandine"
+  ],
+  "download_count": 78996,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/celandine_01",
+  "files": [
+   "models/plants/celandine_01/celandine_01_2k.gltf",
+   "models/plants/celandine_01/textures/celandine_01_nor_gl_2k.jpg",
+   "models/plants/celandine_01/textures/celandine_01_diff_2k.jpg",
+   "models/plants/celandine_01/textures/celandine_01_arm_2k.jpg",
+   "models/plants/celandine_01/celandine_01.bin"
+  ],
+  "bytes": 4149353
+ },
+ {
+  "id": "dandelion_01",
+  "name": "Dandelion 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "plants",
+   "flowers",
+   "nature",
+   "ground cover"
+  ],
+  "tags": [
+   "plant",
+   "nature",
+   "green",
+   "shrub",
+   "outdoor",
+   "leaf",
+   "bush",
+   "botany",
+   "field",
+   "flower",
+   "meadow",
+   "foliage",
+   "small",
+   "floral"
+  ],
+  "download_count": 61994,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/dandelion_01",
+  "files": [
+   "models/plants/dandelion_01/dandelion_01_2k.gltf",
+   "models/plants/dandelion_01/dandelion_01.bin",
+   "models/plants/dandelion_01/textures/dandelion_01_arm_2k.jpg",
+   "models/plants/dandelion_01/textures/dandelion_01_nor_gl_2k.jpg",
+   "models/plants/dandelion_01/textures/dandelion_01_diff_2k.jpg"
+  ],
+  "bytes": 6335863
+ },
+ {
+  "id": "grass_medium_02",
+  "name": "Grass Medium 02",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "ground cover",
+   "grass",
+   "plants",
+   "collection: verdant_trail"
+  ],
+  "tags": [
+   "grass",
+   "field",
+   "meadow",
+   "shrub",
+   "small",
+   "green",
+   "nature",
+   "plant",
+   "foliage",
+   "natural",
+   "geometry nodes",
+   "ground cover",
+   "vegetation",
+   "undergrowth",
+   "ground",
+   "lawn",
+   "environment",
+   "pasture"
+  ],
+  "download_count": 48469,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/grass_medium_02",
+  "files": [
+   "models/plants/grass_medium_02/grass_medium_02_2k.gltf",
+   "models/plants/grass_medium_02/textures/grass_medium_02_nor_gl_2k.jpg",
+   "models/plants/grass_medium_02/textures/grass_medium_02_diff_2k.jpg",
+   "models/plants/grass_medium_02/textures/grass_medium_02_arm_2k.jpg",
+   "models/plants/grass_medium_02/grass_medium_02.bin"
+  ],
+  "bytes": 1789378
+ },
+ {
+  "id": "anthurium_botany_01",
+  "name": "Anthurium Botany 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "plants",
+   "nature",
+   "collection: the_shed",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "nature",
+   "bush",
+   "leaf",
+   "shrub",
+   "leaves",
+   "forest",
+   "plant",
+   "green",
+   "jungle",
+   "outdoor",
+   "botany"
+  ],
+  "download_count": 42359,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/anthurium_botany_01",
+  "files": [
+   "models/plants/anthurium_botany_01/anthurium_botany_01_2k.gltf",
+   "models/plants/anthurium_botany_01/textures/anthurium_botany_01_nor_gl_2k.jpg",
+   "models/plants/anthurium_botany_01/anthurium_botany_01.bin",
+   "models/plants/anthurium_botany_01/textures/anthurium_botany_01_diff_2k.jpg",
+   "models/plants/anthurium_botany_01/textures/anthurium_botany_01_arm_2k.jpg"
+  ],
+  "bytes": 7054480
+ },
+ {
+  "id": "moss_01",
+  "name": "Moss 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: pine_forest"
+  ],
+  "tags": [
+   "moss",
+   "ground cover",
+   "forest",
+   "woodland",
+   "foliage",
+   "nature",
+   "plant",
+   "natural",
+   "botany",
+   "small",
+   "geometry nodes",
+   "outdoor",
+   "undergrowth",
+   "vegetation",
+   "shrubs"
+  ],
+  "download_count": 39151,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/moss_01",
+  "files": [
+   "models/plants/moss_01/moss_01_2k.gltf",
+   "models/plants/moss_01/textures/moss_01_nor_gl_2k.jpg",
+   "models/plants/moss_01/textures/moss_01_diff_2k.jpg",
+   "models/plants/moss_01/textures/moss_01_arm_2k.jpg",
+   "models/plants/moss_01/moss_01.bin"
+  ],
+  "bytes": 3265970
+ },
+ {
+  "id": "nettle_plant",
+  "name": "Nettle Plant",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: the_shed"
+  ],
+  "tags": [
+   "nettle",
+   "plant",
+   "green",
+   "nature",
+   "shrub",
+   "outdoor",
+   "leaf",
+   "bush",
+   "botany",
+   "leaves",
+   "forest",
+   "jungle",
+   "foliage",
+   "field",
+   "meadow",
+   "natural",
+   "floral"
+  ],
+  "download_count": 33016,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/nettle_plant",
+  "files": [
+   "models/plants/nettle_plant/nettle_plant_2k.gltf",
+   "models/plants/nettle_plant/textures/nettle_plant_nor_gl_2k.jpg",
+   "models/plants/nettle_plant/nettle_plant.bin",
+   "models/plants/nettle_plant/textures/nettle_plant_diff_2k.jpg",
+   "models/plants/nettle_plant/textures/nettle_plant_arm_2k.jpg"
+  ],
+  "bytes": 6087825
+ },
+ {
+  "id": "searsia_lucida",
+  "name": "Searsia Lucida",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "trees",
+   "collection: namaqualand"
+  ],
+  "tags": [
+   "karoo",
+   "bush",
+   "shrub",
+   "dry",
+   "stick",
+   "botany",
+   "south africa"
+  ],
+  "download_count": 32451,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/searsia_lucida",
+  "files": [
+   "models/plants/searsia_lucida/searsia_lucida_2k.gltf",
+   "models/plants/searsia_lucida/textures/searsia_lucida_diff_2k.jpg",
+   "models/plants/searsia_lucida/textures/searsia_lucida_nor_gl_2k.jpg",
+   "models/plants/searsia_lucida/searsia_lucida.bin",
+   "models/plants/searsia_lucida/textures/searsia_lucida_arm_2k.jpg"
+  ],
+  "bytes": 24769783
+ },
+ {
+  "id": "modular_wooden_pier",
+  "name": "Modular Wooden Pier",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "structures",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "old",
+   "wooden",
+   "wood",
+   "pier",
+   "ship",
+   "maritime",
+   "sea",
+   "water",
+   "ocean",
+   "worn",
+   "structure",
+   "scaffolding",
+   "dock",
+   "jetty",
+   "landing",
+   "wharf",
+   "mossy",
+   "modular"
+  ],
+  "download_count": 28010,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/modular_wooden_pier",
+  "files": [
+   "models/plants/modular_wooden_pier/modular_wooden_pier_2k.gltf",
+   "models/plants/modular_wooden_pier/modular_wooden_pier.bin",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_planks_arm_2k.jpg",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_planks_nor_gl_2k.jpg",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_planks_diff_2k.jpg",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_poles_arm_2k.jpg",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_poles_nor_gl_2k.jpg",
+   "models/plants/modular_wooden_pier/textures/modular_wooden_pier_poles_diff_2k.jpg"
+  ],
+  "bytes": 23058504
+ },
+ {
+  "id": "weed_plant_02",
+  "name": "Weed Plant 02",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "ground cover",
+   "collection: the_shed"
+  ],
+  "tags": [
+   "nature",
+   "natural",
+   "bush",
+   "shrub",
+   "green",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "forest",
+   "jungle",
+   "foliage",
+   "small",
+   "field",
+   "meadow"
+  ],
+  "download_count": 25281,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/weed_plant_02",
+  "files": [
+   "models/plants/weed_plant_02/weed_plant_02_2k.gltf",
+   "models/plants/weed_plant_02/textures/weed_plant_02_nor_gl_2k.jpg",
+   "models/plants/weed_plant_02/textures/weed_plant_02_arm_2k.jpg",
+   "models/plants/weed_plant_02/textures/weed_plant_02_diff_2k.jpg",
+   "models/plants/weed_plant_02/weed_plant_02.bin"
+  ],
+  "bytes": 6517751
+ },
+ {
+  "id": "calathea_orbifolia_01",
+  "name": "Calathea Orbifolia 01",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "plants",
+   "nature",
+   "ground cover",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "nature",
+   "bush",
+   "leaf",
+   "shrub",
+   "green",
+   "leaves",
+   "forest",
+   "plant",
+   "jungle",
+   "outdoor",
+   "botany",
+   "decorative"
+  ],
+  "download_count": 24381,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/calathea_orbifolia_01",
+  "files": [
+   "models/plants/calathea_orbifolia_01/calathea_orbifolia_01_2k.gltf",
+   "models/plants/calathea_orbifolia_01/textures/calathea_orbifolia_01_diff_2k.jpg",
+   "models/plants/calathea_orbifolia_01/textures/calathea_orbifolia_01_arm_2k.jpg",
+   "models/plants/calathea_orbifolia_01/textures/calathea_orbifolia_01_nor_gl_2k.jpg",
+   "models/plants/calathea_orbifolia_01/calathea_orbifolia_01.bin"
+  ],
+  "bytes": 5747629
+ },
+ {
+  "id": "island_tree_03",
+  "name": "Island Tree 03",
+  "kind": "model",
+  "label": "plants",
+  "categories": [
+   "nature",
+   "plants",
+   "trees"
+  ],
+  "tags": [
+   "tree",
+   "natural",
+   "nature",
+   "green",
+   "plant",
+   "outdoor",
+   "leaf",
+   "botany",
+   "leaves",
+   "forest",
+   "bush",
+   "jungle",
+   "foliage",
+   "small",
+   "geometry nodes",
+   "trunk",
+   "bark",
+   "island",
+   "coastal"
+  ],
+  "download_count": 23882,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/island_tree_03",
+  "files": [
+   "models/plants/island_tree_03/island_tree_03_2k.gltf",
+   "models/plants/island_tree_03/textures/island_tree_03_nor_gl_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_diff_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_arm_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_leaves_nor_gl_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_leaves_diff_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_leaves_arm_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_branches_nor_gl_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_branches_diff_2k.jpg",
+   "models/plants/island_tree_03/textures/island_tree_03_branches_arm_2k.jpg",
+   "models/plants/island_tree_03/island_tree_03.bin"
+  ],
+  "bytes": 97598257
+ },
+ {
+  "id": "Lantern_01",
+  "name": "Lantern 01",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "props",
+   "lighting"
+  ],
+  "tags": [
+   "prop",
+   "metal",
+   "glass",
+   "lantern",
+   "antique",
+   "vintage",
+   "hurricane",
+   "lamp",
+   "bronze",
+   "oldfashioned",
+   "brass",
+   "copper"
+  ],
+  "download_count": 65766,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/Lantern_01",
+  "files": [
+   "models/camp_props/Lantern_01/Lantern_01_2k.gltf",
+   "models/camp_props/Lantern_01/textures/Lantern_01_brass_diff_2k.jpg",
+   "models/camp_props/Lantern_01/textures/Lantern_01_brass_nor_gl_2k.jpg",
+   "models/camp_props/Lantern_01/textures/Lantern_01_brass_arm_2k.jpg",
+   "models/camp_props/Lantern_01/Lantern_01.bin"
+  ],
+  "bytes": 3043330
+ },
+ {
+  "id": "wooden_table_02",
+  "name": "Wooden Table 02",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "furniture",
+   "table"
+  ],
+  "tags": [
+   "wooden",
+   "worn",
+   "village",
+   "rural",
+   "natural",
+   "simple"
+  ],
+  "download_count": 62035,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/wooden_table_02",
+  "files": [
+   "models/camp_props/wooden_table_02/wooden_table_02_2k.gltf",
+   "models/camp_props/wooden_table_02/wooden_table_02.bin",
+   "models/camp_props/wooden_table_02/textures/wooden_table_02_nor_gl_2k.jpg",
+   "models/camp_props/wooden_table_02/textures/wooden_table_02_diff_2k.jpg",
+   "models/camp_props/wooden_table_02/textures/wooden_table_02_arm_2k.jpg"
+  ],
+  "bytes": 1947931
+ },
+ {
+  "id": "Barrel_01",
+  "name": "Barrel_01",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "industrial",
+   "containers"
+  ],
+  "tags": [
+   "barrel",
+   "oil",
+   "explosive",
+   "radioactive",
+   "metal",
+   "red barrel",
+   "oil barrel",
+   "drums",
+   "fuel barrel",
+   "explosive barrel",
+   "industrial"
+  ],
+  "download_count": 59980,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/Barrel_01",
+  "files": [
+   "models/camp_props/Barrel_01/Barrel_01_2k.gltf",
+   "models/camp_props/Barrel_01/Barrel_01.bin",
+   "models/camp_props/Barrel_01/textures/Barrel_01_explosive_arm_2k.jpg",
+   "models/camp_props/Barrel_01/textures/Barrel_01_explosive_diff_2k.jpg",
+   "models/camp_props/Barrel_01/textures/Barrel_01_explosive_nor_gl_2k.jpg"
+  ],
+  "bytes": 2387211
+ },
+ {
+  "id": "ship_pinnace",
+  "name": "Ship Pinnace",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "ships",
+   "rigged",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "old",
+   "wooden",
+   "wood",
+   "colonial",
+   "maritime",
+   "ship",
+   "boat",
+   "ocean",
+   "sea",
+   "pirates",
+   "commercial",
+   "sail"
+  ],
+  "download_count": 57116,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/ship_pinnace",
+  "files": [
+   "models/camp_props/ship_pinnace/ship_pinnace_2k.gltf",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_hull_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_details_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_details_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_interior_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_hull_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_aft_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/ship_pinnace.bin",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_interior_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_aft_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_details_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_deck_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_deck_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_deck_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_aft_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_rigging_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_sails_diff_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_sails_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_rigging_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_sails_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_hull_nor_gl_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_interior_arm_2k.jpg",
+   "models/camp_props/ship_pinnace/textures/ship_pinnace_rigging_arm_2k.jpg"
+  ],
+  "bytes": 61172506
+ },
+ {
+  "id": "round_wooden_table_01",
+  "name": "Round Wooden Table 01",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "furniture",
+   "table"
+  ],
+  "tags": [
+   "vintage",
+   "wooden",
+   "wood",
+   "polish",
+   "circle",
+   "dark",
+   "old"
+  ],
+  "download_count": 45329,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/round_wooden_table_01",
+  "files": [
+   "models/camp_props/round_wooden_table_01/round_wooden_table_01_2k.gltf",
+   "models/camp_props/round_wooden_table_01/textures/round_wooden_table_01_nor_gl_2k.jpg",
+   "models/camp_props/round_wooden_table_01/textures/round_wooden_table_01_arm_2k.jpg",
+   "models/camp_props/round_wooden_table_01/textures/round_wooden_table_01_diff_2k.jpg",
+   "models/camp_props/round_wooden_table_01/round_wooden_table_01.bin"
+  ],
+  "bytes": 1318211
+ },
+ {
+  "id": "treasure_chest",
+  "name": "Treasure Chest",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "props",
+   "containers",
+   "decorative",
+   "collection: smugglers_cove"
+  ],
+  "tags": [
+   "old",
+   "wooden",
+   "chest",
+   "treasure",
+   "pirates",
+   "gold",
+   "crate",
+   "maritime",
+   "colonial",
+   "worn",
+   "antique",
+   "wood",
+   "prop",
+   "container",
+   "metal",
+   "box",
+   "ornate"
+  ],
+  "download_count": 41538,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/treasure_chest",
+  "files": [
+   "models/camp_props/treasure_chest/treasure_chest_2k.gltf",
+   "models/camp_props/treasure_chest/textures/treasure_chest_arm_2k.jpg",
+   "models/camp_props/treasure_chest/textures/treasure_chest_diff_2k.jpg",
+   "models/camp_props/treasure_chest/treasure_chest.bin",
+   "models/camp_props/treasure_chest/textures/treasure_chest_nor_gl_2k.jpg"
+  ],
+  "bytes": 13009715
+ },
+ {
+  "id": "WoodenTable_01",
+  "name": "Wooden Table 01",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "furniture"
+  ],
+  "tags": [
+   "vintage",
+   "wood",
+   "prop",
+   "table",
+   "school",
+   "desk",
+   "old",
+   "worn"
+  ],
+  "download_count": 34273,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/WoodenTable_01",
+  "files": [
+   "models/camp_props/WoodenTable_01/WoodenTable_01_2k.gltf",
+   "models/camp_props/WoodenTable_01/WoodenTable_01.bin",
+   "models/camp_props/WoodenTable_01/textures/WoodenTable_01_diff_2k.jpg",
+   "models/camp_props/WoodenTable_01/textures/WoodenTable_01_nor_gl_2k.jpg",
+   "models/camp_props/WoodenTable_01/textures/WoodenTable_01_arm_2k.jpg"
+  ],
+  "bytes": 1824295
+ },
+ {
+  "id": "wooden_picnic_table",
+  "name": "Wooden Picnic Table",
+  "kind": "model",
+  "label": "camp_props",
+  "categories": [
+   "furniture",
+   "seating",
+   "table"
+  ],
+  "tags": [
+   "vintage",
+   "old",
+   "worn",
+   "park",
+   "bench",
+   "outdoor",
+   "weathered",
+   "countryside",
+   "outdoor seating"
+  ],
+  "download_count": 30449,
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/wooden_picnic_table",
+  "files": [
+   "models/camp_props/wooden_picnic_table/wooden_picnic_table_2k.gltf",
+   "models/camp_props/wooden_picnic_table/wooden_picnic_table.bin",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_bottom_diff_2k.jpg",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_top_arm_2k.jpg",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_bottom_nor_gl_2k.jpg",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_top_nor_gl_2k.jpg",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_bottom_arm_2k.jpg",
+   "models/camp_props/wooden_picnic_table/textures/wooden_picnic_table_top_diff_2k.jpg"
+  ],
+  "bytes": 17643421
+ },
+ {
+  "id": "dark_rock",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/dark_rock",
+  "files": [
+   "textures/iceland/dark_rock/dark_rock_diff_4k.jpg",
+   "textures/iceland/dark_rock/dark_rock_nor_dx_4k.jpg",
+   "textures/iceland/dark_rock/dark_rock_arm_4k.jpg",
+   "textures/iceland/dark_rock/dark_rock_disp_4k.png"
+  ],
+  "bytes": 52623550
+ },
+ {
+  "id": "dark_rock_02",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/dark_rock_02",
+  "files": [
+   "textures/iceland/dark_rock_02/dark_rock_02_diff_4k.jpg",
+   "textures/iceland/dark_rock_02/dark_rock_02_nor_dx_4k.jpg",
+   "textures/iceland/dark_rock_02/dark_rock_02_arm_4k.jpg",
+   "textures/iceland/dark_rock_02/dark_rock_02_disp_4k.png"
+  ],
+  "bytes": 52315747
+ },
+ {
+  "id": "rock_pitted_mossy",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/rock_pitted_mossy",
+  "files": [
+   "textures/iceland/rock_pitted_mossy/rock_pitted_mossy_diff_4k.jpg",
+   "textures/iceland/rock_pitted_mossy/rock_pitted_mossy_nor_dx_4k.jpg",
+   "textures/iceland/rock_pitted_mossy/rock_pitted_mossy_arm_4k.jpg",
+   "textures/iceland/rock_pitted_mossy/rock_pitted_mossy_disp_4k.png"
+  ],
+  "bytes": 73738196
+ },
+ {
+  "id": "lichen_rock",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/lichen_rock",
+  "files": [
+   "textures/iceland/lichen_rock/lichen_rock_diff_4k.jpg",
+   "textures/iceland/lichen_rock/lichen_rock_nor_dx_4k.jpg",
+   "textures/iceland/lichen_rock/lichen_rock_arm_4k.jpg",
+   "textures/iceland/lichen_rock/lichen_rock_disp_4k.png"
+  ],
+  "bytes": 72454338
+ },
+ {
+  "id": "damp_sand",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/damp_sand",
+  "files": [
+   "textures/iceland/damp_sand/damp_sand_diff_4k.jpg",
+   "textures/iceland/damp_sand/damp_sand_nor_dx_4k.jpg",
+   "textures/iceland/damp_sand/damp_sand_arm_4k.jpg",
+   "textures/iceland/damp_sand/damp_sand_disp_4k.png"
+  ],
+  "bytes": 85048747
+ },
+ {
+  "id": "snow_field_aerial",
+  "kind": "texture",
+  "label": "iceland",
+  "license": "CC0 1.0, polyhaven.com",
+  "page": "https://polyhaven.com/a/snow_field_aerial",
+  "files": [
+   "textures/iceland/snow_field_aerial/snow_field_aerial_col_4k.jpg",
+   "textures/iceland/snow_field_aerial/snow_field_aerial_nor_dx_4k.jpg",
+   "textures/iceland/snow_field_aerial/snow_field_aerial_arm_4k.jpg",
+   "textures/iceland/snow_field_aerial/snow_field_aerial_height_4k.png"
+  ],
+  "bytes": 49537721
+ }
+]

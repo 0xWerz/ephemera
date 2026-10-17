@@ -1,0 +1,7324 @@
+{
+"breath_calm_01": {
+"recordings": [
+"HMNBrth_Human, Adult, Male, Breathe, Mouth, Slow,_UberDuo_INHL.wav"
+],
+"rms": -27.2,
+"peak": -9.68,
+"seconds": 3.014
+},
+"breath_calm_02": {
+"recordings": [
+"HMNBrth_Human, Adult, Male, Breathe, Mouth, Slow,_UberDuo_INHL.wav"
+],
+"rms": -24.57,
+"peak": -5.3,
+"seconds": 3.681
+},
+"breath_calm_03": {
+"recordings": [
+"HMNBrth_Human, Adult, Male, Breathe, Mouth, Slow,_UberDuo_INHL.wav"
+],
+"rms": -23.21,
+"peak": -7.7,
+"seconds": 4.4
+},
+"breath_heavy_01": {
+"recordings": [
+"Male 1 - Breathing - Gasping - Ehrlund M1.wav"
+],
+"rms": -24.88,
+"peak": -3.89,
+"seconds": 0.863
+},
+"breath_heavy_02": {
+"recordings": [
+"Male 1 - Breathing - Gasping - Ehrlund M1.wav"
+],
+"rms": -23.11,
+"peak": -4.51,
+"seconds": 0.822
+},
+"breath_heavy_03": {
+"recordings": [
+"Male 1 - Breathing - Gasping - Ehrlund M1.wav"
+],
+"rms": -21.63,
+"peak": -5.98,
+"seconds": 1.674
+},
+"breath_recovery_01": {
+"recordings": [
+"HUMAN BREATH Male_Deep Opened Mouth Breath with S Formed Lips Long Exhale_F.wav"
+],
+"rms": -26.64,
+"peak": -6.38,
+"seconds": 5.272
+},
+"breath_recovery_02": {
+"recordings": [
+"HUMAN BREATH Male_Deep Opened Mouth Breath with S Formed Lips Long Exhale_F.wav"
+],
+"rms": -24.16,
+"peak": -6.5,
+"seconds": 4.628
+},
+"breath_recovery_03": {
+"recordings": [
+"HUMAN BREATH Male_Deep Opened Mouth Breath with S Formed Lips Long Exhale_F.wav"
+],
+"rms": -23.07,
+"peak": -6.91,
+"seconds": 4.42
+},
+"breath_working_01": {
+"recordings": [
+"HUMAN BREATH Male_Deep Mouth Inhale and Powerful Strong Exhale with Acceleration_A.wav"
+],
+"rms": -27.13,
+"peak": -10.23,
+"seconds": 1.025
+},
+"breath_working_02": {
+"recordings": [
+"HUMAN BREATH Male_Deep Mouth Inhale and Powerful Strong Exhale with Acceleration_A.wav"
+],
+"rms": -24.35,
+"peak": -3.4,
+"seconds": 1.128
+},
+"breath_working_03": {
+"recordings": [
+"HUMAN BREATH Male_Deep Mouth Inhale and Powerful Strong Exhale with Acceleration_A.wav"
+],
+"rms": -23.01,
+"peak": -4.25,
+"seconds": 1.095
+},
+"bubbles_01": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -26.04,
+"peak": -5.16,
+"seconds": 1.34
+},
+"bubbles_02": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -26.34,
+"peak": -1.5,
+"seconds": 1.22
+},
+"bubbles_03": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -26.61,
+"peak": -6.4,
+"seconds": 1.24
+},
+"bubbles_04": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -26.61,
+"peak": -11.37,
+"seconds": 0.8
+},
+"bubbles_05": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -26.61,
+"peak": -12.54,
+"seconds": 1.14
+},
+"bubbles_06": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -22.58,
+"peak": -8.75,
+"seconds": 2.876
+},
+"bubbles_07": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -22.6,
+"peak": -6.5,
+"seconds": 3.459
+},
+"bubbles_08": {
+"recordings": [
+"24 Bubbles_regulator_submerged 4_stereo_AKG.wav",
+"UWM008.wav",
+"Underwater_Bubbles_Deep_Fienup_016.wav",
+"Underwater_Bubbles_Fienup_026.wav",
+"water_bubble_19.wav"
+],
+"rms": -22.61,
+"peak": -2.64,
+"seconds": 0.879
+},
+"cloth_hard_01": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -28.96,
+"peak": -13.56,
+"seconds": 0.42
+},
+"cloth_hard_02": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -33.93,
+"peak": -14.63,
+"seconds": 0.48
+},
+"cloth_hard_03": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -34.21,
+"peak": -16.17,
+"seconds": 0.52
+},
+"cloth_hard_04": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -33.51,
+"peak": -13.31,
+"seconds": 0.48
+},
+"cloth_hard_05": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -31.38,
+"peak": -7.29,
+"seconds": 0.701
+},
+"cloth_hard_06": {
+"recordings": [
+"LeatherArmor_Rustle_03.wav",
+"HERO - CK - ARMOR Leather Walk.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"Blanket-Lift_06.wav"
+],
+"rms": -31.86,
+"peak": -10.2,
+"seconds": 0.674
+},
+"cloth_light_01": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -31.34,
+"peak": -17.25,
+"seconds": 0.296
+},
+"cloth_light_02": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -31.82,
+"peak": -11.03,
+"seconds": 0.34
+},
+"cloth_light_03": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -30.73,
+"peak": -15.79,
+"seconds": 0.48
+},
+"cloth_light_04": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -33.88,
+"peak": -6.27,
+"seconds": 0.511
+},
+"cloth_light_05": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -28.71,
+"peak": -7.65,
+"seconds": 0.189
+},
+"cloth_light_06": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -29.73,
+"peak": -10.23,
+"seconds": 0.607
+},
+"cloth_light_07": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -29.35,
+"peak": -9.43,
+"seconds": 0.319
+},
+"cloth_light_08": {
+"recordings": [
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_ClothMovement29_InMotionAudio_FoleyT-Shirt.wav",
+"FOLYClth_SinglePats04_InMotionAudio_FoleyT-Shirt.wav",
+"CLOTHING_MATERIAL_MOVEMENT_08.wav",
+"shake_clothing_001.wav",
+"Scrape_Cloth_10.wav",
+"CLOTHFlp_Action Inventory Open Flip Cloth Canvas Bag Slide Light 02_ESM_FG2.wav"
+],
+"rms": -28.87,
+"peak": -6.9,
+"seconds": 0.516
+},
+"cloth_medium_01": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -31.72,
+"peak": -14.47,
+"seconds": 0.6
+},
+"cloth_medium_02": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -33.08,
+"peak": -6.31,
+"seconds": 0.4
+},
+"cloth_medium_03": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -32.62,
+"peak": -13.87,
+"seconds": 0.6
+},
+"cloth_medium_04": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -29.88,
+"peak": -13.11,
+"seconds": 0.357
+},
+"cloth_medium_05": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -32.52,
+"peak": -10.86,
+"seconds": 0.674
+},
+"cloth_medium_06": {
+"recordings": [
+"Blanket-Lift_06.wav",
+"person_removing_jacket_001.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav",
+"FOLYClth_ClothMovement24_InMotionAudio_FoleyT-Shirt.wav"
+],
+"rms": -27.51,
+"peak": -14.97,
+"seconds": 0.34
+},
+"debris_grit_01": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -31.12,
+"peak": -1.5,
+"seconds": 0.18
+},
+"debris_grit_02": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -29.29,
+"peak": -1.5,
+"seconds": 0.18
+},
+"debris_grit_03": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -25.79,
+"peak": -4.62,
+"seconds": 0.2
+},
+"debris_grit_04": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -29.96,
+"peak": -1.77,
+"seconds": 0.24
+},
+"debris_grit_05": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -30.28,
+"peak": -6.89,
+"seconds": 0.3
+},
+"debris_grit_06": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -28.67,
+"peak": -8.32,
+"seconds": 0.32
+},
+"debris_grit_07": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -36.56,
+"peak": -1.5,
+"seconds": 0.358
+},
+"debris_grit_08": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -33.71,
+"peak": -3.2,
+"seconds": 0.348
+},
+"debris_grit_09": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -26.66,
+"peak": -4.08,
+"seconds": 0.352
+},
+"debris_grit_10": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -33.67,
+"peak": -8.8,
+"seconds": 0.365
+},
+"debris_grit_11": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -36.55,
+"peak": -6.55,
+"seconds": 0.458
+},
+"debris_grit_12": {
+"recordings": [
+"Tatak_ROCKS_Single Rock Impact on Stones.wav",
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Small Crushed Rock - DROP - Thick - Stereo.wav",
+"Tatak_ROCKS_Pebbles Dust Tumbling Rolling Debris.wav",
+"Scree Rock_RBD 06.wav",
+"Crumbling Rock Slide_RBDII 07.wav"
+],
+"rms": -29.46,
+"peak": -2.65,
+"seconds": 0.458
+},
+"debris_snow_01": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -29.21,
+"peak": -5.43,
+"seconds": 0.089
+},
+"debris_snow_02": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -29.59,
+"peak": -9.3,
+"seconds": 0.12
+},
+"debris_snow_03": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -25.96,
+"peak": -4.83,
+"seconds": 0.14
+},
+"debris_snow_04": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -27.42,
+"peak": -6.88,
+"seconds": 0.15
+},
+"debris_snow_05": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -29.43,
+"peak": -11.58,
+"seconds": 0.18
+},
+"debris_snow_06": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -30.22,
+"peak": -14.29,
+"seconds": 0.3
+},
+"debris_snow_07": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -28.57,
+"peak": -7.67,
+"seconds": 0.34
+},
+"debris_snow_08": {
+"recordings": [
+"ICEBrk_FROZEN FARMLAND Footstep on frozen field_Eneas Mentzel_ _39.wav",
+"Ice,Creak,Sheet,Crunch,Step,Snow,Various10.wav",
+"Ice,Impact,Throw,Snowball,Step,Snow,Stalactite,Various12.M.wav",
+"Ice Footsteps Hard Packed.wav",
+"Snow Footstep Light Slow.wav",
+"Snow Slide Medium .wav"
+],
+"rms": -29.05,
+"peak": -5.46,
+"seconds": 0.508
+},
+"drip_01": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -30.43,
+"peak": -8.66,
+"seconds": 0.308
+},
+"drip_02": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -27.4,
+"peak": -2.43,
+"seconds": 0.308
+},
+"drip_03": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -32.98,
+"peak": -6.21,
+"seconds": 0.301
+},
+"drip_04": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -30.85,
+"peak": -5.88,
+"seconds": 0.308
+},
+"drip_05": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -29.98,
+"peak": -4.87,
+"seconds": 0.308
+},
+"drip_06": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -32.7,
+"peak": -10.84,
+"seconds": 0.308
+},
+"drip_07": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -31.07,
+"peak": -9.14,
+"seconds": 0.308
+},
+"drip_08": {
+"recordings": [
+"Bluezone_BC0256_water_splash_drop_006.wav",
+"cave_drips_05_30_loop.wav",
+"Water_Drain_Sewer_Fienup_005.wav",
+"WATRDrip_SingleDrip03_InMotionAudio_CaveDesign.wav"
+],
+"rms": -30.4,
+"peak": -5.65,
+"seconds": 0.308
+},
+"gear_tick_01": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -29.18,
+"peak": -9.53,
+"seconds": 0.079
+},
+"gear_tick_02": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -29.49,
+"peak": -6.79,
+"seconds": 0.098
+},
+"gear_tick_03": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -29.55,
+"peak": -8.79,
+"seconds": 0.097
+},
+"gear_tick_04": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -29.2,
+"peak": -9.52,
+"seconds": 0.098
+},
+"gear_tick_05": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -28.12,
+"peak": -6.0,
+"seconds": 0.098
+},
+"gear_tick_06": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -26.0,
+"peak": -3.84,
+"seconds": 0.095
+},
+"gear_tick_07": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -24.94,
+"peak": -3.01,
+"seconds": 0.097
+},
+"gear_tick_08": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -26.08,
+"peak": -2.58,
+"seconds": 0.098
+},
+"gear_tick_09": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -26.11,
+"peak": -3.74,
+"seconds": 0.098
+},
+"gear_tick_10": {
+"recordings": [
+"SBvfe1_Jiggling Belt Buckle 004.wav",
+"EQUISprt_Climbing Gear, Carabiner, Screwing Lock 01_344 Audio_Climbing Gear Foley Vol 1.wav",
+"foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08.wav"
+],
+"rms": -25.81,
+"peak": -7.25,
+"seconds": 0.098
+},
+"land_grit_hard_01": {
+"recordings": [],
+"rms": -33.72,
+"peak": -14.92,
+"seconds": 0.501
+},
+"land_grit_hard_02": {
+"recordings": [],
+"rms": -34.99,
+"peak": -14.85,
+"seconds": 0.498
+},
+"land_grit_hard_03": {
+"recordings": [],
+"rms": -33.0,
+"peak": -14.08,
+"seconds": 0.499
+},
+"land_grit_hard_04": {
+"recordings": [],
+"rms": -34.88,
+"peak": -16.87,
+"seconds": 0.631
+},
+"land_grit_hard_05": {
+"recordings": [],
+"rms": -34.36,
+"peak": -14.97,
+"seconds": 0.617
+},
+"land_grit_hard_06": {
+"recordings": [],
+"rms": -35.1,
+"peak": -14.89,
+"seconds": 0.498
+},
+"land_grit_medium_01": {
+"recordings": [],
+"rms": -33.66,
+"peak": -13.26,
+"seconds": 0.583
+},
+"land_grit_medium_02": {
+"recordings": [],
+"rms": -35.07,
+"peak": -14.66,
+"seconds": 0.472
+},
+"land_grit_medium_03": {
+"recordings": [],
+"rms": -33.94,
+"peak": -13.6,
+"seconds": 0.554
+},
+"land_grit_medium_04": {
+"recordings": [],
+"rms": -33.14,
+"peak": -11.36,
+"seconds": 0.586
+},
+"land_grit_medium_05": {
+"recordings": [],
+"rms": -33.78,
+"peak": -15.17,
+"seconds": 0.456
+},
+"land_grit_medium_06": {
+"recordings": [],
+"rms": -34.87,
+"peak": -13.16,
+"seconds": 0.585
+},
+"land_grit_soft_01": {
+"recordings": [],
+"rms": -30.92,
+"peak": -9.44,
+"seconds": 0.272
+},
+"land_grit_soft_02": {
+"recordings": [],
+"rms": -34.09,
+"peak": -6.44,
+"seconds": 0.483
+},
+"land_grit_soft_03": {
+"recordings": [],
+"rms": -35.53,
+"peak": -16.32,
+"seconds": 0.626
+},
+"land_grit_soft_04": {
+"recordings": [],
+"rms": -32.28,
+"peak": -11.44,
+"seconds": 0.454
+},
+"land_grit_soft_05": {
+"recordings": [],
+"rms": -32.85,
+"peak": -6.72,
+"seconds": 0.39
+},
+"land_grit_soft_06": {
+"recordings": [],
+"rms": -32.14,
+"peak": -6.44,
+"seconds": 0.297
+},
+"land_snow_hard_01": {
+"recordings": [],
+"rms": -32.24,
+"peak": -14.84,
+"seconds": 0.472
+},
+"land_snow_hard_02": {
+"recordings": [],
+"rms": -33.12,
+"peak": -15.88,
+"seconds": 0.502
+},
+"land_snow_hard_03": {
+"recordings": [],
+"rms": -31.29,
+"peak": -14.61,
+"seconds": 0.472
+},
+"land_snow_hard_04": {
+"recordings": [],
+"rms": -31.47,
+"peak": -11.62,
+"seconds": 0.498
+},
+"land_snow_hard_05": {
+"recordings": [],
+"rms": -32.37,
+"peak": -13.17,
+"seconds": 0.472
+},
+"land_snow_hard_06": {
+"recordings": [],
+"rms": -32.32,
+"peak": -15.39,
+"seconds": 0.506
+},
+"land_snow_medium_01": {
+"recordings": [],
+"rms": -32.5,
+"peak": -13.2,
+"seconds": 0.462
+},
+"land_snow_medium_02": {
+"recordings": [],
+"rms": -33.54,
+"peak": -14.33,
+"seconds": 0.466
+},
+"land_snow_medium_03": {
+"recordings": [],
+"rms": -30.56,
+"peak": -11.8,
+"seconds": 0.553
+},
+"land_snow_medium_04": {
+"recordings": [],
+"rms": -31.03,
+"peak": -13.04,
+"seconds": 0.492
+},
+"land_snow_medium_05": {
+"recordings": [],
+"rms": -32.28,
+"peak": -11.39,
+"seconds": 0.553
+},
+"land_snow_medium_06": {
+"recordings": [],
+"rms": -32.36,
+"peak": -12.16,
+"seconds": 0.461
+},
+"land_snow_soft_01": {
+"recordings": [],
+"rms": -30.74,
+"peak": -6.42,
+"seconds": 0.337
+},
+"land_snow_soft_02": {
+"recordings": [],
+"rms": -33.53,
+"peak": -14.02,
+"seconds": 0.329
+},
+"land_snow_soft_03": {
+"recordings": [],
+"rms": -31.09,
+"peak": -14.88,
+"seconds": 0.283
+},
+"land_snow_soft_04": {
+"recordings": [],
+"rms": -31.96,
+"peak": -6.93,
+"seconds": 0.54
+},
+"land_snow_soft_05": {
+"recordings": [],
+"rms": -30.87,
+"peak": -10.85,
+"seconds": 0.755
+},
+"land_snow_soft_06": {
+"recordings": [],
+"rms": -31.01,
+"peak": -12.88,
+"seconds": 0.375
+},
+"land_soft_hard_01": {
+"recordings": [],
+"rms": -32.6,
+"peak": -14.33,
+"seconds": 0.472
+},
+"land_soft_hard_02": {
+"recordings": [],
+"rms": -35.4,
+"peak": -14.84,
+"seconds": 0.511
+},
+"land_soft_hard_03": {
+"recordings": [],
+"rms": -32.9,
+"peak": -14.62,
+"seconds": 0.499
+},
+"land_soft_hard_04": {
+"recordings": [],
+"rms": -34.11,
+"peak": -15.14,
+"seconds": 0.498
+},
+"land_soft_hard_05": {
+"recordings": [],
+"rms": -32.37,
+"peak": -12.79,
+"seconds": 0.467
+},
+"land_soft_hard_06": {
+"recordings": [],
+"rms": -35.32,
+"peak": -17.03,
+"seconds": 0.527
+},
+"land_soft_medium_01": {
+"recordings": [],
+"rms": -34.13,
+"peak": -13.08,
+"seconds": 0.467
+},
+"land_soft_medium_02": {
+"recordings": [],
+"rms": -33.71,
+"peak": -10.04,
+"seconds": 0.592
+},
+"land_soft_medium_03": {
+"recordings": [],
+"rms": -32.64,
+"peak": -11.89,
+"seconds": 0.562
+},
+"land_soft_medium_04": {
+"recordings": [],
+"rms": -33.23,
+"peak": -9.51,
+"seconds": 0.562
+},
+"land_soft_medium_05": {
+"recordings": [],
+"rms": -33.76,
+"peak": -12.87,
+"seconds": 0.467
+},
+"land_soft_medium_06": {
+"recordings": [],
+"rms": -32.7,
+"peak": -11.63,
+"seconds": 0.467
+},
+"land_soft_soft_01": {
+"recordings": [],
+"rms": -34.54,
+"peak": -7.49,
+"seconds": 0.486
+},
+"land_soft_soft_02": {
+"recordings": [],
+"rms": -30.09,
+"peak": -13.46,
+"seconds": 0.283
+},
+"land_soft_soft_03": {
+"recordings": [],
+"rms": -31.29,
+"peak": -10.18,
+"seconds": 0.34
+},
+"land_soft_soft_04": {
+"recordings": [],
+"rms": -33.93,
+"peak": -8.32,
+"seconds": 0.448
+},
+"land_soft_soft_05": {
+"recordings": [],
+"rms": -34.67,
+"peak": -16.0,
+"seconds": 0.571
+},
+"land_soft_soft_06": {
+"recordings": [],
+"rms": -32.25,
+"peak": -10.02,
+"seconds": 0.34
+},
+"land_water_hard_01": {
+"recordings": [],
+"rms": -36.03,
+"peak": -17.01,
+"seconds": 0.88
+},
+"land_water_hard_02": {
+"recordings": [],
+"rms": -32.08,
+"peak": -17.03,
+"seconds": 0.912
+},
+"land_water_hard_03": {
+"recordings": [],
+"rms": -35.97,
+"peak": -16.88,
+"seconds": 0.875
+},
+"land_water_hard_04": {
+"recordings": [],
+"rms": -34.02,
+"peak": -18.28,
+"seconds": 0.948
+},
+"land_water_hard_05": {
+"recordings": [],
+"rms": -33.91,
+"peak": -15.93,
+"seconds": 0.888
+},
+"land_water_hard_06": {
+"recordings": [],
+"rms": -33.07,
+"peak": -17.35,
+"seconds": 0.915
+},
+"land_water_medium_01": {
+"recordings": [],
+"rms": -34.38,
+"peak": -17.1,
+"seconds": 0.845
+},
+"land_water_medium_02": {
+"recordings": [],
+"rms": -31.81,
+"peak": -17.21,
+"seconds": 0.912
+},
+"land_water_medium_03": {
+"recordings": [],
+"rms": -33.91,
+"peak": -15.52,
+"seconds": 0.919
+},
+"land_water_medium_04": {
+"recordings": [],
+"rms": -31.23,
+"peak": -15.11,
+"seconds": 0.942
+},
+"land_water_medium_05": {
+"recordings": [],
+"rms": -31.53,
+"peak": -16.43,
+"seconds": 0.933
+},
+"land_water_medium_06": {
+"recordings": [],
+"rms": -34.43,
+"peak": -18.4,
+"seconds": 0.933
+},
+"land_water_soft_01": {
+"recordings": [],
+"rms": -29.34,
+"peak": -8.56,
+"seconds": 0.155
+},
+"land_water_soft_02": {
+"recordings": [],
+"rms": -32.15,
+"peak": -4.89,
+"seconds": 0.297
+},
+"land_water_soft_03": {
+"recordings": [],
+"rms": -31.93,
+"peak": -1.5,
+"seconds": 0.375
+},
+"land_water_soft_04": {
+"recordings": [],
+"rms": -34.0,
+"peak": -4.89,
+"seconds": 0.483
+},
+"land_water_soft_05": {
+"recordings": [],
+"rms": -34.48,
+"peak": -8.41,
+"seconds": 0.488
+},
+"land_water_soft_06": {
+"recordings": [],
+"rms": -36.1,
+"peak": -1.53,
+"seconds": 0.583
+},
+"loop_brush_hard": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -25.52,
+"peak": -1.5,
+"seconds": 14.0
+},
+"loop_brush_soft": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -25.25,
+"peak": -1.5,
+"seconds": 14.0
+},
+"loop_cloth_jog": {
+"recordings": [
+"HERO - CK - ARMOR Leather Walk.wav"
+],
+"rms": -25.0,
+"peak": -1.55,
+"seconds": 10.0
+},
+"loop_cloth_walk": {
+"recordings": [
+"HERO - CK - ARMOR Leather Walk.wav"
+],
+"rms": -25.0,
+"peak": -2.21,
+"seconds": 10.0
+},
+"loop_gear_bounce": {
+"recordings": [
+"PR LEATHER BACKPACK_JOG_416.L.wav"
+],
+"rms": -25.0,
+"peak": -1.69,
+"seconds": 10.0
+},
+"loop_scree": {
+"recordings": [
+"Scree Rock_RBD 06.wav"
+],
+"rms": -25.93,
+"peak": -1.5,
+"seconds": 7.0
+},
+"loop_underwater": {
+"recordings": [
+"UWM027.wav"
+],
+"rms": -25.0,
+"peak": -3.96,
+"seconds": 40.0
+},
+"loop_wade": {
+"recordings": [
+"Water,Inlet,Wash,Bubbling,Between,Rocks,Liquid,Bubbles,Loop_01.wav"
+],
+"rms": -25.0,
+"peak": -5.74,
+"seconds": 20.0
+},
+"pebble_01": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -30.96,
+"peak": -2.7,
+"seconds": 0.239
+},
+"pebble_02": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -28.67,
+"peak": -1.87,
+"seconds": 0.245
+},
+"pebble_03": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -37.97,
+"peak": -4.84,
+"seconds": 0.587
+},
+"pebble_04": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -36.28,
+"peak": -5.29,
+"seconds": 0.76
+},
+"pebble_05": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -35.72,
+"peak": -3.15,
+"seconds": 0.768
+},
+"pebble_06": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -33.27,
+"peak": -2.63,
+"seconds": 0.784
+},
+"pebble_07": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -34.47,
+"peak": -8.12,
+"seconds": 0.803
+},
+"pebble_08": {
+"recordings": [
+"Rock Hit and Bounce Dirt_RBDII 06.wav",
+"Hit Rock into Gravel_RBDII 06.wav",
+"SBvfe2_Medium Rock Dropping 011.wav",
+"Tatak_ROCKS_Single Rock Impact on Stones.wav"
+],
+"rms": -32.15,
+"peak": -1.87,
+"seconds": 0.906
+},
+"roll_grit_creep_01": {
+"source_step": "ash:0:010",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 274,
+"rms": -35.92,
+"peak": -5.55,
+"seconds": 0.293
+},
+"roll_grit_creep_02": {
+"source_step": "gravel:0:010",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 237,
+"rms": -35.8,
+"peak": -4.4,
+"seconds": 0.249
+},
+"roll_grit_creep_03": {
+"source_step": "gravel:0:034",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 192,
+"rms": -36.36,
+"peak": -4.22,
+"seconds": 0.413
+},
+"roll_grit_creep_04": {
+"source_step": "basalt:5:000",
+"recording": "FS Concrete Soldier Crouch N05.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 90,
+"rms": -35.31,
+"peak": -13.43,
+"seconds": 0.702
+},
+"roll_grit_creep_05": {
+"source_step": "basalt:0:055",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 47,
+"rms": -36.81,
+"peak": -13.61,
+"seconds": 0.454
+},
+"roll_grit_creep_06": {
+"source_step": "basalt:0:022",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 65,
+"rms": -42.26,
+"peak": -15.96,
+"seconds": 0.406
+},
+"roll_grit_jog_01": {
+"source_step": "ash:0:035",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 251,
+"rms": -43.76,
+"peak": -17.19,
+"seconds": 0.345
+},
+"roll_grit_jog_02": {
+"source_step": "gravel:0:008",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 226,
+"rms": -46.95,
+"peak": -15.49,
+"seconds": 0.324
+},
+"roll_grit_jog_03": {
+"source_step": "basalt:0:009",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 65,
+"rms": -48.69,
+"peak": -25.35,
+"seconds": 0.407
+},
+"roll_grit_jog_04": {
+"source_step": "basalt:2:000",
+"recording": "FS Ground Civilian Walk N03.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 88,
+"rms": -40.92,
+"peak": -21.92,
+"seconds": 0.605
+},
+"roll_grit_jog_05": {
+"source_step": "basalt:0:004",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 67,
+"rms": -47.61,
+"peak": -25.51,
+"seconds": 0.409
+},
+"roll_grit_jog_06": {
+"source_step": "basalt:0:036",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 54,
+"rms": -47.73,
+"peak": -21.33,
+"seconds": 0.428
+},
+"roll_grit_jog_07": {
+"source_step": "basalt:1:008",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 45,
+"rms": -37.96,
+"peak": -16.36,
+"seconds": 0.253
+},
+"roll_grit_jog_08": {
+"source_step": "basalt:1:031",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 91,
+"rms": -51.59,
+"peak": -30.83,
+"seconds": 0.176
+},
+"roll_grit_run_01": {
+"source_step": "ash:0:001",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 197,
+"rms": -43.27,
+"peak": -13.12,
+"seconds": 0.411
+},
+"roll_grit_run_02": {
+"source_step": "gravel:0:011",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 102,
+"rms": -37.7,
+"peak": -11.17,
+"seconds": 0.453
+},
+"roll_grit_run_03": {
+"source_step": "gravel:1:009",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 78,
+"rms": -31.95,
+"peak": -10.34,
+"seconds": 0.42
+},
+"roll_grit_run_04": {
+"source_step": "basalt:1:072",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 49,
+"rms": -46.84,
+"peak": -25.75,
+"seconds": 0.254
+},
+"roll_grit_run_05": {
+"source_step": "basalt:1:010",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 75,
+"rms": -48.86,
+"peak": -17.58,
+"seconds": 0.23
+},
+"roll_grit_run_06": {
+"source_step": "basalt:1:004",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 73,
+"rms": -50.0,
+"peak": -23.27,
+"seconds": 0.226
+},
+"roll_grit_sprint_01": {
+"source_step": "ash:0:009",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "sprint",
+"toe_ms": 240,
+"rms": -50.06,
+"peak": -23.0,
+"seconds": 0.44
+},
+"roll_grit_sprint_02": {
+"source_step": "basalt:1:064",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 47,
+"rms": -39.03,
+"peak": -17.8,
+"seconds": 0.268
+},
+"roll_grit_sprint_03": {
+"source_step": "basalt:1:054",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 65,
+"rms": -47.43,
+"peak": -27.7,
+"seconds": 0.221
+},
+"roll_grit_sprint_04": {
+"source_step": "basalt:1:058",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 55,
+"rms": -49.2,
+"peak": -28.46,
+"seconds": 0.253
+},
+"roll_grit_walk_01": {
+"source_step": "ash:0:024",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 175,
+"rms": -36.73,
+"peak": -9.69,
+"seconds": 0.457
+},
+"roll_grit_walk_02": {
+"source_step": "gravel:1:018",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 92,
+"rms": -32.43,
+"peak": -12.28,
+"seconds": 0.393
+},
+"roll_grit_walk_03": {
+"source_step": "gravel:1:019",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 94,
+"rms": -34.31,
+"peak": -8.6,
+"seconds": 0.445
+},
+"roll_grit_walk_04": {
+"source_step": "basalt:0:008",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 65,
+"rms": -44.42,
+"peak": -19.11,
+"seconds": 0.403
+},
+"roll_grit_walk_05": {
+"source_step": "basalt:0:052",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 75,
+"rms": -40.48,
+"peak": -15.27,
+"seconds": 0.409
+},
+"roll_grit_walk_06": {
+"source_step": "basalt:0:025",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 58,
+"rms": -41.84,
+"peak": -20.35,
+"seconds": 0.43
+},
+"roll_grit_walk_07": {
+"source_step": "basalt:0:002",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 75,
+"rms": -40.66,
+"peak": -15.64,
+"seconds": 0.416
+},
+"roll_grit_walk_08": {
+"source_step": "basalt:0:034",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 77,
+"rms": -50.45,
+"peak": -25.55,
+"seconds": 0.392
+},
+"roll_snow_creep_01": {
+"source_step": "snow:0:030",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 83,
+"rms": -40.38,
+"peak": -20.11,
+"seconds": 0.427
+},
+"roll_snow_creep_02": {
+"source_step": "snow:0:006",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 278,
+"rms": -36.26,
+"peak": -17.71,
+"seconds": 0.425
+},
+"roll_snow_creep_03": {
+"source_step": "snow:0:005",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 301,
+"rms": -38.54,
+"peak": -19.83,
+"seconds": 0.402
+},
+"roll_snow_creep_04": {
+"source_step": "snow:4:000",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 235,
+"rms": -50.84,
+"peak": -20.64,
+"seconds": 0.468
+},
+"roll_snow_creep_05": {
+"source_step": "snow:0:025",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 314,
+"rms": -36.12,
+"peak": -14.67,
+"seconds": 0.389
+},
+"roll_snow_creep_06": {
+"source_step": "snow:4:005",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 171,
+"rms": -33.87,
+"peak": -11.16,
+"seconds": 0.532
+},
+"roll_snow_jog_01": {
+"source_step": "snow:0:020",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 288,
+"rms": -33.46,
+"peak": -12.08,
+"seconds": 0.415
+},
+"roll_snow_jog_02": {
+"source_step": "snow:1:018",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 230,
+"rms": -50.88,
+"peak": -30.37,
+"seconds": 0.26
+},
+"roll_snow_jog_03": {
+"source_step": "snow:0:028",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 305,
+"rms": -45.57,
+"peak": -24.27,
+"seconds": 0.364
+},
+"roll_snow_jog_04": {
+"source_step": "snow:2:005",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 79,
+"rms": -30.74,
+"peak": -8.96,
+"seconds": 0.624
+},
+"roll_snow_jog_05": {
+"source_step": "snow:1:004",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 186,
+"rms": -47.02,
+"peak": -27.02,
+"seconds": 0.286
+},
+"roll_snow_jog_06": {
+"source_step": "snow:1:010",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 57,
+"rms": -43.42,
+"peak": -20.39,
+"seconds": 0.394
+},
+"roll_snow_jog_07": {
+"source_step": "snow:1:002",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 52,
+"rms": -41.78,
+"peak": -16.98,
+"seconds": 0.426
+},
+"roll_snow_jog_08": {
+"source_step": "snow:1:009",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 62,
+"rms": -47.38,
+"peak": -22.26,
+"seconds": 0.404
+},
+"roll_snow_run_01": {
+"source_step": "snow:3:007",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 234,
+"rms": -37.33,
+"peak": -21.93,
+"seconds": 0.122
+},
+"roll_snow_run_02": {
+"source_step": "snow:3:018",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 214,
+"rms": -33.83,
+"peak": -14.58,
+"seconds": 0.121
+},
+"roll_snow_run_03": {
+"source_step": "snow:3:031",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 102,
+"rms": -32.86,
+"peak": -13.57,
+"seconds": 0.152
+},
+"roll_snow_run_04": {
+"source_step": "snow:3:014",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 145,
+"rms": -35.02,
+"peak": -12.78,
+"seconds": 0.211
+},
+"roll_snow_run_05": {
+"source_step": "snow:3:010",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 150,
+"rms": -30.8,
+"peak": -11.2,
+"seconds": 0.114
+},
+"roll_snow_run_06": {
+"source_step": "snow:3:021",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 281,
+"rms": -39.39,
+"peak": -24.12,
+"seconds": 0.098
+},
+"roll_snow_sprint_01": {
+"source_step": "snow:3:028",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 197,
+"rms": -37.49,
+"peak": -12.89,
+"seconds": 0.224
+},
+"roll_snow_sprint_02": {
+"source_step": "snow:3:036",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 201,
+"rms": -34.12,
+"peak": -12.06,
+"seconds": 0.256
+},
+"roll_snow_sprint_03": {
+"source_step": "snow:3:013",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "sprint",
+"toe_ms": 243,
+"rms": -43.62,
+"peak": -24.64,
+"seconds": 0.101
+},
+"roll_snow_sprint_04": {
+"source_step": "snow:12:000",
+"recording": "footstep_ice_crunchy_run_02.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 79,
+"rms": -32.44,
+"peak": -2.56,
+"seconds": 0.335
+},
+"roll_snow_walk_01": {
+"source_step": "snow:0:024",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 236,
+"rms": -35.8,
+"peak": -17.12,
+"seconds": 0.46
+},
+"roll_snow_walk_02": {
+"source_step": "snow:0:013",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 299,
+"rms": -42.2,
+"peak": -19.77,
+"seconds": 0.404
+},
+"roll_snow_walk_03": {
+"source_step": "snow:0:010",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 130,
+"rms": -30.82,
+"peak": -14.13,
+"seconds": 0.573
+},
+"roll_snow_walk_04": {
+"source_step": "snow:0:014",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 118,
+"rms": -29.84,
+"peak": -10.61,
+"seconds": 0.585
+},
+"roll_snow_walk_05": {
+"source_step": "snow:0:029",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 183,
+"rms": -33.12,
+"peak": -6.16,
+"seconds": 0.52
+},
+"roll_snow_walk_06": {
+"source_step": "snow:2:004",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 148,
+"rms": -31.05,
+"peak": -7.1,
+"seconds": 0.506
+},
+"roll_snow_walk_07": {
+"source_step": "snow:0:027",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 269,
+"rms": -43.01,
+"peak": -22.66,
+"seconds": 0.434
+},
+"roll_snow_walk_08": {
+"source_step": "snow:5:001",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 157,
+"rms": -49.44,
+"peak": -24.7,
+"seconds": 0.546
+},
+"roll_soft_creep_01": {
+"source_step": "sedge:0:023",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 78,
+"rms": -47.0,
+"peak": -26.19,
+"seconds": 0.527
+},
+"roll_soft_creep_02": {
+"source_step": "sedge:0:007",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 169,
+"rms": -48.83,
+"peak": -25.93,
+"seconds": 0.475
+},
+"roll_soft_creep_03": {
+"source_step": "sedge:0:026",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 138,
+"rms": -48.15,
+"peak": -20.96,
+"seconds": 0.507
+},
+"roll_soft_creep_04": {
+"source_step": "sedge:0:006",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"toe_ms": 112,
+"rms": -40.91,
+"peak": -16.87,
+"seconds": 0.532
+},
+"roll_soft_creep_05": {
+"source_step": "moss:0:043",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"toe_ms": 178,
+"rms": -50.73,
+"peak": -27.92,
+"seconds": 0.47
+},
+"roll_soft_jog_01": {
+"source_step": "sedge:0:005",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 165,
+"rms": -49.83,
+"peak": -26.78,
+"seconds": 0.48
+},
+"roll_soft_jog_02": {
+"source_step": "moss:0:016",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 68,
+"rms": -43.25,
+"peak": -25.3,
+"seconds": 0.579
+},
+"roll_soft_jog_03": {
+"source_step": "sedge:1:066",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 62,
+"rms": -39.82,
+"peak": -21.81,
+"seconds": 0.243
+},
+"roll_soft_jog_04": {
+"source_step": "moss:1:001",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 67,
+"rms": -38.05,
+"peak": -19.86,
+"seconds": 0.233
+},
+"roll_soft_jog_05": {
+"source_step": "moss:1:031",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 67,
+"rms": -39.14,
+"peak": -21.23,
+"seconds": 0.233
+},
+"roll_soft_jog_06": {
+"source_step": "moss:1:047",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 58,
+"rms": -40.31,
+"peak": -22.49,
+"seconds": 0.248
+},
+"roll_soft_jog_07": {
+"source_step": "sedge:1:044",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"toe_ms": 94,
+"rms": -44.31,
+"peak": -26.12,
+"seconds": 0.241
+},
+"roll_soft_jog_08": {
+"source_step": "moss:1:015",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"toe_ms": 66,
+"rms": -38.93,
+"peak": -18.58,
+"seconds": 0.238
+},
+"roll_soft_run_01": {
+"source_step": "moss:2:002",
+"recording": "mud 1 loop.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 319,
+"rms": -37.85,
+"peak": -22.29,
+"seconds": 0.384
+},
+"roll_soft_run_02": {
+"source_step": "sedge:1:030",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 123,
+"rms": -44.02,
+"peak": -22.35,
+"seconds": 0.193
+},
+"roll_soft_run_03": {
+"source_step": "moss:1:002",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 51,
+"rms": -35.4,
+"peak": -19.23,
+"seconds": 0.238
+},
+"roll_soft_run_04": {
+"source_step": "sedge:1:060",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"toe_ms": 50,
+"rms": -39.06,
+"peak": -19.49,
+"seconds": 0.247
+},
+"roll_soft_run_05": {
+"source_step": "moss:1:033",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 67,
+"rms": -34.5,
+"peak": -17.31,
+"seconds": 0.235
+},
+"roll_soft_run_06": {
+"source_step": "moss:1:065",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"toe_ms": 72,
+"rms": -36.43,
+"peak": -19.28,
+"seconds": 0.243
+},
+"roll_soft_sprint_01": {
+"source_step": "moss:1:034",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"toe_ms": 151,
+"rms": -48.46,
+"peak": -29.87,
+"seconds": 0.157
+},
+"roll_soft_sprint_02": {
+"source_step": "moss:1:073",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"toe_ms": 74,
+"rms": -37.89,
+"peak": -20.57,
+"seconds": 0.26
+},
+"roll_soft_sprint_03": {
+"source_step": "sedge:1:007",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"toe_ms": 123,
+"rms": -46.81,
+"peak": -28.55,
+"seconds": 0.205
+},
+"roll_soft_sprint_04": {
+"source_step": "moss:1:005",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"toe_ms": 72,
+"rms": -37.14,
+"peak": -19.7,
+"seconds": 0.244
+},
+"roll_soft_walk_01": {
+"source_step": "sedge:0:013",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 152,
+"rms": -49.29,
+"peak": -27.27,
+"seconds": 0.494
+},
+"roll_soft_walk_02": {
+"source_step": "sedge:0:021",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 158,
+"rms": -51.09,
+"peak": -28.57,
+"seconds": 0.467
+},
+"roll_soft_walk_03": {
+"source_step": "moss:0:014",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 146,
+"rms": -46.87,
+"peak": -20.69,
+"seconds": 0.498
+},
+"roll_soft_walk_04": {
+"source_step": "sedge:0:019",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 162,
+"rms": -47.77,
+"peak": -28.28,
+"seconds": 0.448
+},
+"roll_soft_walk_05": {
+"source_step": "moss:0:031",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 151,
+"rms": -50.14,
+"peak": -29.32,
+"seconds": 0.457
+},
+"roll_soft_walk_06": {
+"source_step": "moss:0:035",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 138,
+"rms": -45.76,
+"peak": -17.86,
+"seconds": 0.496
+},
+"roll_soft_walk_07": {
+"source_step": "sedge:1:058",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "walk",
+"toe_ms": 65,
+"rms": -34.98,
+"peak": -16.46,
+"seconds": 0.26
+},
+"roll_soft_walk_08": {
+"source_step": "moss:1:029",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "walk",
+"toe_ms": 60,
+"rms": -36.1,
+"peak": -20.36,
+"seconds": 0.263
+},
+"settle_grit_01": {
+"recordings": [],
+"rms": -33.98,
+"peak": -9.37,
+"seconds": 0.495
+},
+"settle_grit_02": {
+"recordings": [],
+"rms": -32.11,
+"peak": -5.67,
+"seconds": 0.627
+},
+"settle_grit_03": {
+"recordings": [],
+"rms": -31.59,
+"peak": -3.69,
+"seconds": 0.536
+},
+"settle_grit_04": {
+"recordings": [],
+"rms": -32.66,
+"peak": -13.4,
+"seconds": 0.531
+},
+"settle_grit_05": {
+"recordings": [],
+"rms": -34.91,
+"peak": -10.71,
+"seconds": 0.5
+},
+"settle_grit_06": {
+"recordings": [],
+"rms": -31.98,
+"peak": -3.74,
+"seconds": 0.5
+},
+"settle_snow_01": {
+"recordings": [],
+"rms": -29.04,
+"peak": -12.03,
+"seconds": 0.5
+},
+"settle_snow_02": {
+"recordings": [],
+"rms": -33.12,
+"peak": -11.11,
+"seconds": 0.536
+},
+"settle_snow_03": {
+"recordings": [],
+"rms": -27.64,
+"peak": -12.82,
+"seconds": 0.316
+},
+"settle_snow_04": {
+"recordings": [],
+"rms": -33.11,
+"peak": -9.53,
+"seconds": 0.5
+},
+"settle_snow_05": {
+"recordings": [],
+"rms": -29.14,
+"peak": -12.37,
+"seconds": 0.536
+},
+"settle_snow_06": {
+"recordings": [],
+"rms": -30.12,
+"peak": -10.58,
+"seconds": 0.66
+},
+"settle_soft_01": {
+"recordings": [],
+"rms": -32.09,
+"peak": -8.88,
+"seconds": 0.627
+},
+"settle_soft_02": {
+"recordings": [],
+"rms": -30.8,
+"peak": -15.09,
+"seconds": 0.209
+},
+"settle_soft_03": {
+"recordings": [],
+"rms": -31.82,
+"peak": -13.13,
+"seconds": 0.339
+},
+"settle_soft_04": {
+"recordings": [],
+"rms": -33.09,
+"peak": -13.97,
+"seconds": 0.316
+},
+"settle_soft_05": {
+"recordings": [],
+"rms": -34.19,
+"peak": -11.22,
+"seconds": 0.659
+},
+"settle_soft_06": {
+"recordings": [],
+"rms": -31.41,
+"peak": -8.88,
+"seconds": 0.536
+},
+"skid_grit_01": {
+"recordings": [],
+"rms": -32.83,
+"peak": -5.28,
+"seconds": 0.939
+},
+"skid_grit_02": {
+"recordings": [],
+"rms": -32.06,
+"peak": -3.51,
+"seconds": 0.9
+},
+"skid_grit_03": {
+"recordings": [],
+"rms": -28.61,
+"peak": -6.9,
+"seconds": 0.78
+},
+"skid_grit_04": {
+"recordings": [],
+"rms": -31.99,
+"peak": -4.28,
+"seconds": 0.86
+},
+"skid_grit_05": {
+"recordings": [],
+"rms": -34.41,
+"peak": -3.8,
+"seconds": 0.64
+},
+"skid_grit_06": {
+"recordings": [],
+"rms": -28.92,
+"peak": -6.95,
+"seconds": 0.58
+},
+"skid_snow_01": {
+"recordings": [],
+"rms": -29.9,
+"peak": -10.56,
+"seconds": 0.6
+},
+"skid_snow_02": {
+"recordings": [],
+"rms": -30.86,
+"peak": -6.87,
+"seconds": 0.58
+},
+"skid_snow_03": {
+"recordings": [],
+"rms": -30.03,
+"peak": -10.68,
+"seconds": 0.6
+},
+"skid_snow_04": {
+"recordings": [],
+"rms": -31.1,
+"peak": -6.87,
+"seconds": 0.58
+},
+"skid_snow_05": {
+"recordings": [],
+"rms": -29.87,
+"peak": -10.56,
+"seconds": 0.6
+},
+"skid_snow_06": {
+"recordings": [],
+"rms": -31.12,
+"peak": -6.87,
+"seconds": 0.58
+},
+"skid_soft_01": {
+"recordings": [],
+"rms": -30.94,
+"peak": -10.24,
+"seconds": 0.94
+},
+"skid_soft_02": {
+"recordings": [],
+"rms": -30.22,
+"peak": -12.63,
+"seconds": 0.58
+},
+"skid_soft_03": {
+"recordings": [],
+"rms": -31.21,
+"peak": -13.18,
+"seconds": 0.76
+},
+"skid_soft_04": {
+"recordings": [],
+"rms": -29.48,
+"peak": -1.66,
+"seconds": 0.82
+},
+"skid_soft_05": {
+"recordings": [],
+"rms": -31.83,
+"peak": -12.58,
+"seconds": 0.74
+},
+"skid_soft_06": {
+"recordings": [],
+"rms": -30.5,
+"peak": -5.18,
+"seconds": 0.88
+},
+"splash_01": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -35.46,
+"peak": -9.62,
+"seconds": 0.796
+},
+"splash_02": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -36.61,
+"peak": -10.02,
+"seconds": 1.807
+},
+"splash_03": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -31.51,
+"peak": -14.91,
+"seconds": 1.208
+},
+"splash_04": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -31.96,
+"peak": -12.99,
+"seconds": 1.208
+},
+"splash_05": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -36.2,
+"peak": -8.47,
+"seconds": 1.807
+},
+"splash_06": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -29.01,
+"peak": -8.47,
+"seconds": 1.808
+},
+"splash_07": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -30.35,
+"peak": -16.33,
+"seconds": 0.376
+},
+"splash_08": {
+"recordings": [
+"Bluezone_BC0256_water_splash_small_008.wav",
+"LIQUID HIT Lake, Branch, Splash, Lake, Seaweed in Water, Small, CU 04.wav",
+"Bluezone_BC0256_water_splash_008.wav",
+"Splash_Dive_Fienup_002.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav",
+"Water_Splash_SeaLion_Fienup_001.wav"
+],
+"rms": -31.01,
+"peak": -16.1,
+"seconds": 1.603
+},
+"squelch_01": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -33.58,
+"peak": -13.93,
+"seconds": 0.296
+},
+"squelch_02": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -32.97,
+"peak": -10.72,
+"seconds": 0.322
+},
+"squelch_03": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -32.24,
+"peak": -15.94,
+"seconds": 0.464
+},
+"squelch_04": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -30.84,
+"peak": -10.1,
+"seconds": 0.508
+},
+"squelch_05": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -30.5,
+"peak": -12.6,
+"seconds": 0.529
+},
+"squelch_06": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -37.26,
+"peak": -14.53,
+"seconds": 0.595
+},
+"squelch_07": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -32.41,
+"peak": -10.79,
+"seconds": 0.661
+},
+"squelch_08": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"Bluezone_BC0261_mountain_dweller_creature_orc_footstep_mud_texture_003.wav",
+"Bluezone_BC0272_creature_texture_mud_006.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"mud 1 loop.wav"
+],
+"rms": -29.24,
+"peak": -13.44,
+"seconds": 0.707
+},
+"start_grit_01": {
+"recordings": [],
+"rms": -31.84,
+"peak": -10.57,
+"seconds": 0.442
+},
+"start_grit_02": {
+"recordings": [],
+"rms": -33.05,
+"peak": -9.1,
+"seconds": 0.448
+},
+"start_grit_03": {
+"recordings": [],
+"rms": -31.84,
+"peak": -10.57,
+"seconds": 0.442
+},
+"start_grit_04": {
+"recordings": [],
+"rms": -32.37,
+"peak": -7.62,
+"seconds": 0.419
+},
+"start_grit_05": {
+"recordings": [],
+"rms": -32.1,
+"peak": -9.31,
+"seconds": 0.34
+},
+"start_grit_06": {
+"recordings": [],
+"rms": -29.74,
+"peak": -8.05,
+"seconds": 0.511
+},
+"start_snow_01": {
+"recordings": [],
+"rms": -31.96,
+"peak": -16.18,
+"seconds": 0.465
+},
+"start_snow_02": {
+"recordings": [],
+"rms": -30.4,
+"peak": -12.97,
+"seconds": 0.623
+},
+"start_snow_03": {
+"recordings": [],
+"rms": -29.73,
+"peak": -12.87,
+"seconds": 0.572
+},
+"start_snow_04": {
+"recordings": [],
+"rms": -31.98,
+"peak": -5.26,
+"seconds": 0.509
+},
+"start_snow_05": {
+"recordings": [],
+"rms": -31.68,
+"peak": -9.45,
+"seconds": 0.444
+},
+"start_snow_06": {
+"recordings": [],
+"rms": -32.34,
+"peak": -7.9,
+"seconds": 0.486
+},
+"start_soft_01": {
+"recordings": [],
+"rms": -31.63,
+"peak": -9.53,
+"seconds": 0.533
+},
+"start_soft_02": {
+"recordings": [],
+"rms": -32.9,
+"peak": -7.99,
+"seconds": 0.487
+},
+"start_soft_03": {
+"recordings": [],
+"rms": -33.52,
+"peak": -17.36,
+"seconds": 0.486
+},
+"start_soft_04": {
+"recordings": [],
+"rms": -34.01,
+"peak": -6.3,
+"seconds": 0.534
+},
+"start_soft_05": {
+"recordings": [],
+"rms": -30.51,
+"peak": -7.75,
+"seconds": 0.289
+},
+"start_soft_06": {
+"recordings": [],
+"rms": -33.73,
+"peak": -11.02,
+"seconds": 0.534
+},
+"step_ash_creep_l_01": {
+"source_step": "ash:0:010",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 13.11,
+"step_rms": -26.66,
+"toe_ms": 274,
+"centroid_hz": 496,
+"rms": -30.46,
+"peak": -14.35,
+"seconds": 0.281
+},
+"step_ash_creep_l_02": {
+"source_step": "ash:0:000",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 13.11,
+"step_rms": -25.37,
+"toe_ms": 243,
+"centroid_hz": 517,
+"rms": -29.53,
+"peak": -11.03,
+"seconds": 0.25
+},
+"step_ash_creep_r_01": {
+"source_step": "ash:0:021",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 13.02,
+"step_rms": -22.97,
+"toe_ms": 247,
+"centroid_hz": 317,
+"rms": -26.65,
+"peak": -12.05,
+"seconds": 0.254
+},
+"step_ash_jog_l_01": {
+"source_step": "ash:0:036",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -26.46,
+"toe_ms": null,
+"centroid_hz": 545,
+"rms": -34.7,
+"peak": -13.02,
+"seconds": 0.71
+},
+"step_ash_jog_l_02": {
+"source_step": "ash:0:026",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -25.9,
+"toe_ms": null,
+"centroid_hz": 360,
+"rms": -35.64,
+"peak": -15.66,
+"seconds": 0.71
+},
+"step_ash_jog_l_03": {
+"source_step": "ash:0:016",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -24.47,
+"toe_ms": null,
+"centroid_hz": 184,
+"rms": -33.51,
+"peak": -13.5,
+"seconds": 0.579
+},
+"step_ash_jog_l_04": {
+"source_step": "ash:0:044",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -24.37,
+"toe_ms": null,
+"centroid_hz": 253,
+"rms": -33.43,
+"peak": -15.63,
+"seconds": 0.547
+},
+"step_ash_jog_r_01": {
+"source_step": "ash:0:037",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -24.8,
+"toe_ms": null,
+"centroid_hz": 314,
+"rms": -33.24,
+"peak": -14.09,
+"seconds": 0.62
+},
+"step_ash_jog_r_02": {
+"source_step": "ash:0:035",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -24.53,
+"toe_ms": null,
+"centroid_hz": 238,
+"rms": -32.91,
+"peak": -13.42,
+"seconds": 0.603
+},
+"step_ash_jog_r_03": {
+"source_step": "ash:0:019",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 7.6,
+"step_rms": -24.48,
+"toe_ms": null,
+"centroid_hz": 197,
+"rms": -33.75,
+"peak": -13.0,
+"seconds": 0.666
+},
+"step_ash_run_l_01": {
+"source_step": "ash:0:032",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -25.15,
+"toe_ms": null,
+"centroid_hz": 240,
+"rms": -34.56,
+"peak": -14.45,
+"seconds": 0.655
+},
+"step_ash_run_l_02": {
+"source_step": "ash:0:018",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -24.99,
+"toe_ms": 187,
+"centroid_hz": 270,
+"rms": -29.02,
+"peak": -12.53,
+"seconds": 0.194
+},
+"step_ash_run_l_03": {
+"source_step": "ash:0:022",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -24.74,
+"toe_ms": null,
+"centroid_hz": 295,
+"rms": -34.52,
+"peak": -14.94,
+"seconds": 0.71
+},
+"step_ash_run_l_04": {
+"source_step": "ash:0:038",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -24.66,
+"toe_ms": 152,
+"centroid_hz": 297,
+"rms": -28.19,
+"peak": -14.78,
+"seconds": 0.159
+},
+"step_ash_run_r_01": {
+"source_step": "ash:0:029",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -25.26,
+"toe_ms": null,
+"centroid_hz": 214,
+"rms": -33.95,
+"peak": -14.43,
+"seconds": 0.636
+},
+"step_ash_run_r_02": {
+"source_step": "ash:0:001",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 6.75,
+"step_rms": -25.2,
+"toe_ms": 197,
+"centroid_hz": 302,
+"rms": -28.94,
+"peak": -11.34,
+"seconds": 0.204
+},
+"step_ash_sprint_l_01": {
+"source_step": "ash:0:006",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 6.02,
+"step_rms": -24.89,
+"toe_ms": null,
+"centroid_hz": 448,
+"rms": -34.84,
+"peak": -14.23,
+"seconds": 0.664
+},
+"step_ash_sprint_l_02": {
+"source_step": "ash:0:028",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 6.02,
+"step_rms": -24.54,
+"toe_ms": null,
+"centroid_hz": 454,
+"rms": -33.86,
+"peak": -14.26,
+"seconds": 0.698
+},
+"step_ash_sprint_r_01": {
+"source_step": "ash:0:007",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 6.02,
+"step_rms": -25.3,
+"toe_ms": null,
+"centroid_hz": 228,
+"rms": -33.97,
+"peak": -14.47,
+"seconds": 0.629
+},
+"step_ash_sprint_r_02": {
+"source_step": "ash:0:009",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 6.02,
+"step_rms": -25.27,
+"toe_ms": null,
+"centroid_hz": 343,
+"rms": -34.55,
+"peak": -13.73,
+"seconds": 0.687
+},
+"step_ash_walk_l_01": {
+"source_step": "ash:0:024",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 9.72,
+"step_rms": -26.27,
+"toe_ms": 175,
+"centroid_hz": 308,
+"rms": -29.08,
+"peak": -16.28,
+"seconds": 0.182
+},
+"step_ash_walk_l_02": {
+"source_step": "ash:0:030",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 9.72,
+"step_rms": -25.63,
+"toe_ms": 83,
+"centroid_hz": 446,
+"rms": -27.33,
+"peak": -13.01,
+"seconds": 0.09
+},
+"step_ash_walk_r_01": {
+"source_step": "ash:0:017",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 9.72,
+"step_rms": -25.18,
+"toe_ms": 261,
+"centroid_hz": 195,
+"rms": -29.29,
+"peak": -10.03,
+"seconds": 0.268
+},
+"step_ash_walk_r_02": {
+"source_step": "ash:0:023",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 9.72,
+"step_rms": -24.03,
+"toe_ms": null,
+"centroid_hz": 519,
+"rms": -31.81,
+"peak": -9.48,
+"seconds": 0.587
+},
+"step_ash_walk_r_03": {
+"source_step": "ash:0:005",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 9.72,
+"step_rms": -23.9,
+"toe_ms": null,
+"centroid_hz": 402,
+"rms": -32.24,
+"peak": -11.37,
+"seconds": 0.71
+},
+"step_basalt_creep_l_01": {
+"source_step": "basalt:4:000",
+"recording": "FS Concrete Soldier Crouch N02.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 5.33,
+"step_rms": -23.26,
+"toe_ms": 121,
+"centroid_hz": 722,
+"rms": -25.4,
+"peak": -10.5,
+"seconds": 0.127
+},
+"step_basalt_creep_l_02": {
+"source_step": "basalt:0:016",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 5.33,
+"step_rms": -24.54,
+"toe_ms": 68,
+"centroid_hz": 353,
+"rms": -25.93,
+"peak": -9.59,
+"seconds": 0.071
+},
+"step_basalt_creep_l_03": {
+"source_step": "basalt:0:022",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 5.33,
+"step_rms": -24.0,
+"toe_ms": 65,
+"centroid_hz": 477,
+"rms": -25.16,
+"peak": -7.89,
+"seconds": 0.067
+},
+"step_basalt_creep_r_01": {
+"source_step": "basalt:0:011",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 5.7,
+"step_rms": -27.06,
+"toe_ms": 62,
+"centroid_hz": 298,
+"rms": -27.6,
+"peak": -10.29,
+"seconds": 0.064
+},
+"step_basalt_creep_r_02": {
+"source_step": "basalt:0:035",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 5.33,
+"step_rms": -26.09,
+"toe_ms": null,
+"centroid_hz": 252,
+"rms": -34.55,
+"peak": -8.95,
+"seconds": 0.495
+},
+"step_basalt_creep_r_03": {
+"source_step": "basalt:0:055",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 5.33,
+"step_rms": -25.05,
+"toe_ms": 47,
+"centroid_hz": 365,
+"rms": -24.55,
+"peak": -7.64,
+"seconds": 0.05
+},
+"step_basalt_jog_l_01": {
+"source_step": "basalt:0:058",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 3.28,
+"step_rms": -23.28,
+"toe_ms": 63,
+"centroid_hz": 353,
+"rms": -24.45,
+"peak": -8.01,
+"seconds": 0.066
+},
+"step_basalt_jog_l_02": {
+"source_step": "basalt:0:054",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 3.28,
+"step_rms": -23.17,
+"toe_ms": 58,
+"centroid_hz": 427,
+"rms": -23.92,
+"peak": -7.03,
+"seconds": 0.06
+},
+"step_basalt_jog_l_03": {
+"source_step": "basalt:0:038",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 3.27,
+"step_rms": -23.09,
+"toe_ms": 53,
+"centroid_hz": 354,
+"rms": -23.53,
+"peak": -7.01,
+"seconds": 0.056
+},
+"step_basalt_jog_l_04": {
+"source_step": "basalt:0:046",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 1.29,
+"step_rms": -23.09,
+"toe_ms": 60,
+"centroid_hz": 346,
+"rms": -24.01,
+"peak": -7.77,
+"seconds": 0.062
+},
+"step_basalt_jog_l_05": {
+"source_step": "basalt:1:008",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.63,
+"step_rms": -27.09,
+"toe_ms": 45,
+"centroid_hz": 1045,
+"rms": -26.84,
+"peak": -10.42,
+"seconds": 0.047
+},
+"step_basalt_jog_l_06": {
+"source_step": "basalt:1:062",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.56,
+"step_rms": -27.09,
+"toe_ms": 61,
+"centroid_hz": 548,
+"rms": -28.02,
+"peak": -9.13,
+"seconds": 0.063
+},
+"step_basalt_jog_l_07": {
+"source_step": "basalt:1:040",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 5.92,
+"step_rms": -27.09,
+"toe_ms": null,
+"centroid_hz": 740,
+"rms": -34.18,
+"peak": -6.98,
+"seconds": 0.307
+},
+"step_basalt_jog_r_01": {
+"source_step": "basalt:0:043",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 3.28,
+"step_rms": -24.48,
+"toe_ms": null,
+"centroid_hz": 362,
+"rms": -33.48,
+"peak": -7.69,
+"seconds": 0.478
+},
+"step_basalt_jog_r_02": {
+"source_step": "basalt:0:009",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 3.28,
+"step_rms": -24.13,
+"toe_ms": 65,
+"centroid_hz": 340,
+"rms": -24.81,
+"peak": -7.47,
+"seconds": 0.067
+},
+"step_basalt_jog_r_03": {
+"source_step": "basalt:0:001",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 2.22,
+"step_rms": -23.09,
+"toe_ms": null,
+"centroid_hz": 263,
+"rms": -32.23,
+"peak": -5.77,
+"seconds": 0.479
+},
+"step_basalt_jog_r_04": {
+"source_step": "basalt:3:000",
+"recording": "FS Ground Civilian Walk N05.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -8.74,
+"step_rms": -23.09,
+"toe_ms": 191,
+"centroid_hz": 320,
+"rms": -27.97,
+"peak": -12.8,
+"seconds": 0.198
+},
+"step_basalt_jog_r_05": {
+"source_step": "basalt:1:015",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 5.45,
+"step_rms": -27.09,
+"toe_ms": null,
+"centroid_hz": 367,
+"rms": -33.79,
+"peak": -11.58,
+"seconds": 0.266
+},
+"step_basalt_jog_r_06": {
+"source_step": "basalt:1:003",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 4.0,
+"step_rms": -27.09,
+"toe_ms": null,
+"centroid_hz": 664,
+"rms": -34.1,
+"peak": -8.71,
+"seconds": 0.286
+},
+"step_basalt_jog_r_07": {
+"source_step": "basalt:1:029",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 3.55,
+"step_rms": -27.09,
+"toe_ms": null,
+"centroid_hz": 536,
+"rms": -33.41,
+"peak": -8.72,
+"seconds": 0.243
+},
+"step_basalt_run_l_01": {
+"source_step": "basalt:1:052",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.74,
+"step_rms": -27.03,
+"toe_ms": 50,
+"centroid_hz": 447,
+"rms": -27.23,
+"peak": -4.96,
+"seconds": 0.052
+},
+"step_basalt_run_l_02": {
+"source_step": "basalt:1:072",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.51,
+"step_rms": -27.03,
+"toe_ms": 49,
+"centroid_hz": 954,
+"rms": -27.33,
+"peak": -4.93,
+"seconds": 0.054
+},
+"step_basalt_run_l_03": {
+"source_step": "basalt:1:006",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -26.96,
+"toe_ms": 48,
+"centroid_hz": 918,
+"rms": -27.09,
+"peak": -8.26,
+"seconds": 0.052
+},
+"step_basalt_run_l_04": {
+"source_step": "basalt:1:030",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -25.59,
+"toe_ms": null,
+"centroid_hz": 872,
+"rms": -33.52,
+"peak": -4.72,
+"seconds": 0.321
+},
+"step_basalt_run_l_05": {
+"source_step": "basalt:1:048",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -25.41,
+"toe_ms": null,
+"centroid_hz": 591,
+"rms": -33.08,
+"peak": -9.03,
+"seconds": 0.306
+},
+"step_basalt_run_l_06": {
+"source_step": "basalt:1:036",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -24.96,
+"toe_ms": null,
+"centroid_hz": 981,
+"rms": -32.69,
+"peak": -4.02,
+"seconds": 0.31
+},
+"step_basalt_run_r_01": {
+"source_step": "basalt:1:025",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -25.3,
+"toe_ms": 164,
+"centroid_hz": 862,
+"rms": -29.93,
+"peak": -7.26,
+"seconds": 0.165
+},
+"step_basalt_run_r_02": {
+"source_step": "basalt:1:057",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -24.44,
+"toe_ms": 50,
+"centroid_hz": 795,
+"rms": -24.05,
+"peak": -9.23,
+"seconds": 0.051
+},
+"step_basalt_run_r_03": {
+"source_step": "basalt:1:007",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -24.07,
+"toe_ms": null,
+"centroid_hz": 711,
+"rms": -30.82,
+"peak": -6.15,
+"seconds": 0.269
+},
+"step_basalt_run_r_04": {
+"source_step": "basalt:1:001",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -23.11,
+"toe_ms": 91,
+"centroid_hz": 968,
+"rms": -25.2,
+"peak": -4.52,
+"seconds": 0.092
+},
+"step_basalt_run_r_05": {
+"source_step": "basalt:1:067",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.25,
+"step_rms": -23.06,
+"toe_ms": null,
+"centroid_hz": 793,
+"rms": -30.0,
+"peak": -5.77,
+"seconds": 0.28
+},
+"step_basalt_run_r_06": {
+"source_step": "basalt:1:065",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 4.89,
+"step_rms": -23.03,
+"toe_ms": null,
+"centroid_hz": 873,
+"rms": -30.2,
+"peak": -4.8,
+"seconds": 0.294
+},
+"step_basalt_sprint_l_01": {
+"source_step": "basalt:1:056",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 3.22,
+"step_rms": -26.92,
+"toe_ms": null,
+"centroid_hz": 641,
+"rms": -34.52,
+"peak": -9.12,
+"seconds": 0.295
+},
+"step_basalt_sprint_l_02": {
+"source_step": "basalt:1:046",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -26.72,
+"toe_ms": null,
+"centroid_hz": 1118,
+"rms": -34.68,
+"peak": -7.84,
+"seconds": 0.319
+},
+"step_basalt_sprint_l_03": {
+"source_step": "basalt:1:054",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -25.86,
+"toe_ms": null,
+"centroid_hz": 583,
+"rms": -33.25,
+"peak": -6.87,
+"seconds": 0.288
+},
+"step_basalt_sprint_l_04": {
+"source_step": "basalt:1:058",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -24.78,
+"toe_ms": null,
+"centroid_hz": 774,
+"rms": -32.58,
+"peak": -4.66,
+"seconds": 0.31
+},
+"step_basalt_sprint_r_01": {
+"source_step": "basalt:1:005",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -25.36,
+"toe_ms": null,
+"centroid_hz": 1096,
+"rms": -32.44,
+"peak": -7.94,
+"seconds": 0.288
+},
+"step_basalt_sprint_r_02": {
+"source_step": "basalt:1:055",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -24.32,
+"toe_ms": null,
+"centroid_hz": 440,
+"rms": -31.27,
+"peak": -5.84,
+"seconds": 0.283
+},
+"step_basalt_sprint_r_03": {
+"source_step": "basalt:1:023",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 2.45,
+"step_rms": -23.13,
+"toe_ms": null,
+"centroid_hz": 1047,
+"rms": -29.76,
+"peak": -6.18,
+"seconds": 0.26
+},
+"step_basalt_sprint_r_04": {
+"source_step": "basalt:1:045",
+"recording": "015_Foley_Footsteps_Asphalt_Boot_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 1.04,
+"step_rms": -22.92,
+"toe_ms": null,
+"centroid_hz": 407,
+"rms": -29.51,
+"peak": -7.04,
+"seconds": 0.257
+},
+"step_basalt_walk_l_01": {
+"source_step": "basalt:0:032",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -25.63,
+"toe_ms": 69,
+"centroid_hz": 360,
+"rms": -27.08,
+"peak": -9.83,
+"seconds": 0.07
+},
+"step_basalt_walk_l_02": {
+"source_step": "basalt:0:052",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -25.25,
+"toe_ms": 75,
+"centroid_hz": 411,
+"rms": -27.08,
+"peak": -9.02,
+"seconds": 0.077
+},
+"step_basalt_walk_l_03": {
+"source_step": "basalt:0:012",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -24.7,
+"toe_ms": 74,
+"centroid_hz": 393,
+"rms": -26.5,
+"peak": -8.72,
+"seconds": 0.076
+},
+"step_basalt_walk_l_04": {
+"source_step": "basalt:0:024",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -23.27,
+"toe_ms": 86,
+"centroid_hz": 366,
+"rms": -25.68,
+"peak": -7.02,
+"seconds": 0.088
+},
+"step_basalt_walk_l_05": {
+"source_step": "basalt:0:034",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -23.14,
+"toe_ms": 77,
+"centroid_hz": 349,
+"rms": -25.11,
+"peak": -7.55,
+"seconds": 0.079
+},
+"step_basalt_walk_r_01": {
+"source_step": "basalt:0:047",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -26.71,
+"toe_ms": null,
+"centroid_hz": 323,
+"rms": -35.4,
+"peak": -9.25,
+"seconds": 0.48
+},
+"step_basalt_walk_r_02": {
+"source_step": "basalt:0:049",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -26.12,
+"toe_ms": null,
+"centroid_hz": 362,
+"rms": -35.15,
+"peak": -9.04,
+"seconds": 0.481
+},
+"step_basalt_walk_r_03": {
+"source_step": "basalt:0:051",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -26.01,
+"toe_ms": 56,
+"centroid_hz": 335,
+"rms": -26.18,
+"peak": -8.56,
+"seconds": 0.06
+},
+"step_basalt_walk_r_04": {
+"source_step": "basalt:0:017",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -24.88,
+"toe_ms": null,
+"centroid_hz": 327,
+"rms": -33.75,
+"peak": -8.15,
+"seconds": 0.463
+},
+"step_basalt_walk_r_05": {
+"source_step": "basalt:0:033",
+"recording": "BOOT_CONC CLEAN_WALK.R.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 3.61,
+"step_rms": -24.28,
+"toe_ms": 56,
+"centroid_hz": 307,
+"rms": -24.46,
+"peak": -7.14,
+"seconds": 0.059
+},
+"step_gravel_creep_l_01": {
+"source_step": "gravel:0:010",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 13.57,
+"step_rms": -25.77,
+"toe_ms": 237,
+"centroid_hz": 1049,
+"rms": -29.36,
+"peak": -12.39,
+"seconds": 0.244
+},
+"step_gravel_creep_l_02": {
+"source_step": "gravel:0:000",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 12.89,
+"step_rms": -25.54,
+"toe_ms": 233,
+"centroid_hz": 1264,
+"rms": -29.62,
+"peak": -11.3,
+"seconds": 0.24
+},
+"step_gravel_creep_l_03": {
+"source_step": "gravel:0:034",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 12.89,
+"step_rms": -25.36,
+"toe_ms": 192,
+"centroid_hz": 2465,
+"rms": -28.19,
+"peak": -5.29,
+"seconds": 0.199
+},
+"step_gravel_creep_r_01": {
+"source_step": "gravel:0:039",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 14.73,
+"step_rms": -25.77,
+"toe_ms": 199,
+"centroid_hz": 1591,
+"rms": -28.14,
+"peak": -10.65,
+"seconds": 0.206
+},
+"step_gravel_creep_r_02": {
+"source_step": "gravel:0:013",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 13.68,
+"step_rms": -25.77,
+"toe_ms": 279,
+"centroid_hz": 1446,
+"rms": -27.43,
+"peak": -1.59,
+"seconds": 0.286
+},
+"step_gravel_creep_r_03": {
+"source_step": "gravel:1:017",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 2.22,
+"step_rms": -21.77,
+"toe_ms": 85,
+"centroid_hz": 324,
+"rms": -23.8,
+"peak": -2.26,
+"seconds": 0.092
+},
+"step_gravel_jog_l_01": {
+"source_step": "gravel:0:036",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 6.85,
+"step_rms": -27.46,
+"toe_ms": 246,
+"centroid_hz": 935,
+"rms": -31.97,
+"peak": -11.41,
+"seconds": 0.253
+},
+"step_gravel_jog_l_02": {
+"source_step": "gravel:1:010",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -2.41,
+"step_rms": -23.46,
+"toe_ms": null,
+"centroid_hz": 531,
+"rms": -33.3,
+"peak": -4.1,
+"seconds": 0.555
+},
+"step_gravel_jog_l_03": {
+"source_step": "gravel:1:006",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -2.92,
+"step_rms": -23.46,
+"toe_ms": null,
+"centroid_hz": 1002,
+"rms": -32.36,
+"peak": -4.88,
+"seconds": 0.547
+},
+"step_gravel_jog_l_04": {
+"source_step": "gravel:0:002",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 6.36,
+"step_rms": -27.46,
+"toe_ms": 165,
+"centroid_hz": 1003,
+"rms": -33.14,
+"peak": -14.77,
+"seconds": 0.172
+},
+"step_gravel_jog_l_05": {
+"source_step": "gravel:1:000",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -3.38,
+"step_rms": -23.46,
+"toe_ms": null,
+"centroid_hz": 553,
+"rms": -32.15,
+"peak": -5.82,
+"seconds": 0.558
+},
+"step_gravel_jog_l_06": {
+"source_step": "gravel:0:008",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 6.34,
+"step_rms": -27.46,
+"toe_ms": 226,
+"centroid_hz": 1163,
+"rms": -32.26,
+"peak": -5.93,
+"seconds": 0.233
+},
+"step_gravel_jog_l_07": {
+"source_step": "gravel:1:020",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -3.87,
+"step_rms": -23.46,
+"toe_ms": 106,
+"centroid_hz": 940,
+"rms": -28.45,
+"peak": -11.65,
+"seconds": 0.113
+},
+"step_gravel_jog_r_01": {
+"source_step": "gravel:1:007",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -2.21,
+"step_rms": -23.46,
+"toe_ms": null,
+"centroid_hz": 286,
+"rms": -31.06,
+"peak": -10.4,
+"seconds": 0.481
+},
+"step_gravel_jog_r_02": {
+"source_step": "gravel:0:033",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 6.58,
+"step_rms": -27.46,
+"toe_ms": null,
+"centroid_hz": 1211,
+"rms": -34.64,
+"peak": -11.43,
+"seconds": 0.542
+},
+"step_gravel_jog_r_03": {
+"source_step": "gravel:1:013",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -2.78,
+"step_rms": -23.46,
+"toe_ms": 93,
+"centroid_hz": 469,
+"rms": -26.19,
+"peak": -8.82,
+"seconds": 0.099
+},
+"step_gravel_jog_r_04": {
+"source_step": "gravel:0:023",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 6.46,
+"step_rms": -27.46,
+"toe_ms": null,
+"centroid_hz": 1126,
+"rms": -34.22,
+"peak": -6.14,
+"seconds": 0.509
+},
+"step_gravel_jog_r_05": {
+"source_step": "gravel:1:005",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -3.3,
+"step_rms": -23.46,
+"toe_ms": null,
+"centroid_hz": 297,
+"rms": -31.95,
+"peak": -10.38,
+"seconds": 0.513
+},
+"step_gravel_jog_r_06": {
+"source_step": "gravel:1:015",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -3.46,
+"step_rms": -23.46,
+"toe_ms": 82,
+"centroid_hz": 346,
+"rms": -25.38,
+"peak": -8.21,
+"seconds": 0.089
+},
+"step_gravel_run_l_01": {
+"source_step": "gravel:0:012",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 4.81,
+"step_rms": -27.18,
+"toe_ms": 181,
+"centroid_hz": 1734,
+"rms": -32.28,
+"peak": -13.74,
+"seconds": 0.188
+},
+"step_gravel_run_l_02": {
+"source_step": "gravel:0:004",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 3.77,
+"step_rms": -27.18,
+"toe_ms": null,
+"centroid_hz": 1097,
+"rms": -35.09,
+"peak": -14.33,
+"seconds": 0.508
+},
+"step_gravel_run_l_03": {
+"source_step": "gravel:1:008",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": -4.16,
+"step_rms": -23.18,
+"toe_ms": null,
+"centroid_hz": 911,
+"rms": -32.36,
+"peak": -7.52,
+"seconds": 0.565
+},
+"step_gravel_run_l_04": {
+"source_step": "gravel:0:040",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 2.9,
+"step_rms": -27.18,
+"toe_ms": null,
+"centroid_hz": 1428,
+"rms": -36.53,
+"peak": -11.23,
+"seconds": 0.604
+},
+"step_gravel_run_l_05": {
+"source_step": "gravel:1:016",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": -4.25,
+"step_rms": -23.18,
+"toe_ms": null,
+"centroid_hz": 395,
+"rms": -33.13,
+"peak": -6.98,
+"seconds": 0.548
+},
+"step_gravel_run_l_06": {
+"source_step": "gravel:1:012",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": -4.27,
+"step_rms": -23.18,
+"toe_ms": null,
+"centroid_hz": 421,
+"rms": -32.21,
+"peak": -7.51,
+"seconds": 0.508
+},
+"step_gravel_run_r_01": {
+"source_step": "gravel:0:011",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 6.56,
+"step_rms": -27.18,
+"toe_ms": 102,
+"centroid_hz": 1501,
+"rms": -29.4,
+"peak": -5.18,
+"seconds": 0.109
+},
+"step_gravel_run_r_02": {
+"source_step": "gravel:1:011",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": -3.56,
+"step_rms": -23.18,
+"toe_ms": null,
+"centroid_hz": 294,
+"rms": -31.3,
+"peak": -9.52,
+"seconds": 0.514
+},
+"step_gravel_run_r_03": {
+"source_step": "gravel:0:043",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.01,
+"step_rms": -27.18,
+"toe_ms": 96,
+"centroid_hz": 950,
+"rms": -28.9,
+"peak": -8.27,
+"seconds": 0.103
+},
+"step_gravel_run_r_04": {
+"source_step": "gravel:1:021",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": -3.67,
+"step_rms": -23.18,
+"toe_ms": null,
+"centroid_hz": 676,
+"rms": -32.27,
+"peak": -5.52,
+"seconds": 0.515
+},
+"step_gravel_run_r_05": {
+"source_step": "gravel:1:009",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": -3.68,
+"step_rms": -23.18,
+"toe_ms": 78,
+"centroid_hz": 657,
+"rms": -27.07,
+"peak": -7.1,
+"seconds": 0.085
+},
+"step_gravel_sprint_l_01": {
+"source_step": "gravel:1:014",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": -4.62,
+"step_rms": -23.5,
+"toe_ms": null,
+"centroid_hz": 542,
+"rms": -33.43,
+"peak": -9.96,
+"seconds": 0.551
+},
+"step_gravel_sprint_l_02": {
+"source_step": "gravel:1:022",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": -4.64,
+"step_rms": -23.5,
+"toe_ms": null,
+"centroid_hz": 682,
+"rms": -31.13,
+"peak": -9.87,
+"seconds": 0.5
+},
+"step_gravel_sprint_l_03": {
+"source_step": "gravel:1:004",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": -5.33,
+"step_rms": -23.5,
+"toe_ms": null,
+"centroid_hz": 1274,
+"rms": -31.99,
+"peak": -8.86,
+"seconds": 0.606
+},
+"step_gravel_sprint_l_04": {
+"source_step": "gravel:2:000",
+"recording": "PM_SDNG_Single_Step_Footstep_19.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 5.64,
+"step_rms": -27.5,
+"toe_ms": null,
+"centroid_hz": 949,
+"rms": -36.0,
+"peak": -13.26,
+"seconds": 0.871
+},
+"step_gravel_sprint_r_01": {
+"source_step": "gravel:0:025",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 3.96,
+"step_rms": -27.5,
+"toe_ms": null,
+"centroid_hz": 1781,
+"rms": -34.96,
+"peak": -14.72,
+"seconds": 0.667
+},
+"step_gravel_sprint_r_02": {
+"source_step": "gravel:1:001",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": -4.29,
+"step_rms": -23.5,
+"toe_ms": null,
+"centroid_hz": 281,
+"rms": -32.29,
+"peak": -10.32,
+"seconds": 0.49
+},
+"step_gravel_sprint_r_03": {
+"source_step": "gravel:1:003",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": -5.24,
+"step_rms": -23.5,
+"toe_ms": null,
+"centroid_hz": 430,
+"rms": -32.4,
+"peak": -12.05,
+"seconds": 0.507
+},
+"step_gravel_sprint_r_04": {
+"source_step": "gravel:3:000",
+"recording": "PM_SDNG_Single_Step_Footstep_46.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 5.84,
+"step_rms": -27.5,
+"toe_ms": null,
+"centroid_hz": 1495,
+"rms": -34.73,
+"peak": -9.53,
+"seconds": 0.9
+},
+"step_gravel_walk_l_01": {
+"source_step": "gravel:1:002",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -0.86,
+"step_rms": -23.22,
+"toe_ms": null,
+"centroid_hz": 836,
+"rms": -32.44,
+"peak": -3.57,
+"seconds": 0.571
+},
+"step_gravel_walk_l_02": {
+"source_step": "gravel:1:018",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -0.99,
+"step_rms": -23.22,
+"toe_ms": 92,
+"centroid_hz": 624,
+"rms": -26.47,
+"peak": -6.89,
+"seconds": 0.099
+},
+"step_gravel_walk_l_03": {
+"source_step": "gravel:1:024",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -1.27,
+"step_rms": -23.22,
+"toe_ms": 102,
+"centroid_hz": 1248,
+"rms": -26.39,
+"peak": -4.63,
+"seconds": 0.109
+},
+"step_gravel_walk_l_04": {
+"source_step": "gravel:0:030",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 7.75,
+"step_rms": -27.22,
+"toe_ms": 186,
+"centroid_hz": 994,
+"rms": -30.22,
+"peak": -12.05,
+"seconds": 0.193
+},
+"step_gravel_walk_l_05": {
+"source_step": "gravel:0:014",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 7.37,
+"step_rms": -27.22,
+"toe_ms": null,
+"centroid_hz": 3209,
+"rms": -34.89,
+"peak": -10.0,
+"seconds": 0.561
+},
+"step_gravel_walk_r_01": {
+"source_step": "gravel:0:003",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 10.1,
+"step_rms": -27.22,
+"toe_ms": 201,
+"centroid_hz": 1956,
+"rms": -29.84,
+"peak": -8.59,
+"seconds": 0.208
+},
+"step_gravel_walk_r_02": {
+"source_step": "gravel:0:031",
+"recording": "PM_SDNG_Stereo_Walk_Seamless_Loop_1.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 8.49,
+"step_rms": -27.22,
+"toe_ms": 197,
+"centroid_hz": 2456,
+"rms": -30.61,
+"peak": -9.48,
+"seconds": 0.204
+},
+"step_gravel_walk_r_03": {
+"source_step": "gravel:1:023",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -1.36,
+"step_rms": -23.22,
+"toe_ms": null,
+"centroid_hz": 689,
+"rms": -31.63,
+"peak": -2.99,
+"seconds": 0.51
+},
+"step_gravel_walk_r_04": {
+"source_step": "gravel:1:019",
+"recording": "S23_SFX_Footsteps_Gravel_Loafers_Loops_Walk_Normal.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -1.9,
+"step_rms": -23.22,
+"toe_ms": 94,
+"centroid_hz": 1088,
+"rms": -27.93,
+"peak": -7.04,
+"seconds": 0.099
+},
+"step_moss_creep_l_01": {
+"source_step": "moss:0:012",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 3.24,
+"step_rms": -26.72,
+"toe_ms": 161,
+"centroid_hz": 268,
+"rms": -30.98,
+"peak": -13.86,
+"seconds": 0.168
+},
+"step_moss_creep_l_02": {
+"source_step": "moss:0:040",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 3.24,
+"step_rms": -25.63,
+"toe_ms": 193,
+"centroid_hz": 279,
+"rms": -30.94,
+"peak": -12.88,
+"seconds": 0.2
+},
+"step_moss_creep_l_03": {
+"source_step": "moss:0:008",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 3.24,
+"step_rms": -25.06,
+"toe_ms": null,
+"centroid_hz": 275,
+"rms": -34.67,
+"peak": -10.93,
+"seconds": 0.659
+},
+"step_moss_creep_r_01": {
+"source_step": "moss:0:001",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 3.43,
+"step_rms": -26.86,
+"toe_ms": 183,
+"centroid_hz": 295,
+"rms": -31.52,
+"peak": -12.83,
+"seconds": 0.19
+},
+"step_moss_creep_r_02": {
+"source_step": "moss:0:043",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 2.92,
+"step_rms": -22.86,
+"toe_ms": 178,
+"centroid_hz": 334,
+"rms": -27.76,
+"peak": -8.33,
+"seconds": 0.185
+},
+"step_moss_creep_r_03": {
+"source_step": "moss:0:003",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 2.55,
+"step_rms": -22.86,
+"toe_ms": 195,
+"centroid_hz": 250,
+"rms": -27.72,
+"peak": -9.21,
+"seconds": 0.202
+},
+"step_moss_jog_l_01": {
+"source_step": "moss:0:038",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 1.55,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 279,
+"rms": -33.61,
+"peak": -9.92,
+"seconds": 0.64
+},
+"step_moss_jog_l_02": {
+"source_step": "moss:0:004",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 1.4,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 325,
+"rms": -33.55,
+"peak": -6.4,
+"seconds": 0.668
+},
+"step_moss_jog_l_03": {
+"source_step": "moss:0:002",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 1.32,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 237,
+"rms": -33.26,
+"peak": -10.86,
+"seconds": 0.643
+},
+"step_moss_jog_l_04": {
+"source_step": "moss:0:016",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 0.7,
+"step_rms": -23.0,
+"toe_ms": 68,
+"centroid_hz": 327,
+"rms": -24.66,
+"peak": -10.66,
+"seconds": 0.075
+},
+"step_moss_jog_l_05": {
+"source_step": "moss:0:036",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 0.28,
+"step_rms": -23.0,
+"toe_ms": 170,
+"centroid_hz": 317,
+"rms": -28.27,
+"peak": -10.77,
+"seconds": 0.176
+},
+"step_moss_jog_l_06": {
+"source_step": "moss:0:024",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 0.05,
+"step_rms": -23.0,
+"toe_ms": 46,
+"centroid_hz": 295,
+"rms": -23.25,
+"peak": -9.75,
+"seconds": 0.053
+},
+"step_moss_jog_l_07": {
+"source_step": "moss:2:000",
+"recording": "mud 1 loop.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -6.04,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 1659,
+"rms": -30.28,
+"peak": -8.29,
+"seconds": 0.359
+},
+"step_moss_jog_r_01": {
+"source_step": "moss:1:001",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.82,
+"step_rms": -27.0,
+"toe_ms": 67,
+"centroid_hz": 875,
+"rms": -27.94,
+"peak": -9.27,
+"seconds": 0.074
+},
+"step_moss_jog_r_02": {
+"source_step": "moss:1:061",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.27,
+"step_rms": -27.0,
+"toe_ms": 219,
+"centroid_hz": 846,
+"rms": -31.74,
+"peak": -10.45,
+"seconds": 0.225
+},
+"step_moss_jog_r_03": {
+"source_step": "moss:1:059",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.14,
+"step_rms": -27.0,
+"toe_ms": 58,
+"centroid_hz": 550,
+"rms": -27.5,
+"peak": -11.81,
+"seconds": 0.065
+},
+"step_moss_jog_r_04": {
+"source_step": "moss:1:031",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.1,
+"step_rms": -27.0,
+"toe_ms": 67,
+"centroid_hz": 847,
+"rms": -27.96,
+"peak": -9.66,
+"seconds": 0.074
+},
+"step_moss_jog_r_05": {
+"source_step": "moss:1:047",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 11.99,
+"step_rms": -27.0,
+"toe_ms": 58,
+"centroid_hz": 823,
+"rms": -27.51,
+"peak": -12.05,
+"seconds": 0.065
+},
+"step_moss_jog_r_06": {
+"source_step": "moss:1:027",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 11.74,
+"step_rms": -27.0,
+"toe_ms": 44,
+"centroid_hz": 908,
+"rms": -26.61,
+"peak": -11.58,
+"seconds": 0.051
+},
+"step_moss_jog_r_07": {
+"source_step": "moss:1:015",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 11.44,
+"step_rms": -27.0,
+"toe_ms": 66,
+"centroid_hz": 801,
+"rms": -27.83,
+"peak": -14.63,
+"seconds": 0.073
+},
+"step_moss_run_l_01": {
+"source_step": "moss:2:002",
+"recording": "mud 1 loop.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 0.63,
+"step_rms": -22.29,
+"toe_ms": null,
+"centroid_hz": 1674,
+"rms": -29.38,
+"peak": -8.25,
+"seconds": 0.71
+},
+"step_moss_run_l_02": {
+"source_step": "moss:1:052",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 14.61,
+"step_rms": -26.29,
+"toe_ms": 53,
+"centroid_hz": 870,
+"rms": -26.92,
+"peak": -13.83,
+"seconds": 0.06
+},
+"step_moss_run_l_03": {
+"source_step": "moss:1:022",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.93,
+"step_rms": -26.29,
+"toe_ms": 54,
+"centroid_hz": 891,
+"rms": -26.96,
+"peak": -13.78,
+"seconds": 0.061
+},
+"step_moss_run_l_04": {
+"source_step": "moss:1:062",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.75,
+"toe_ms": 51,
+"centroid_hz": 446,
+"rms": -26.32,
+"peak": -12.05,
+"seconds": 0.058
+},
+"step_moss_run_l_05": {
+"source_step": "moss:1:032",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.74,
+"toe_ms": 161,
+"centroid_hz": 717,
+"rms": -28.99,
+"peak": -11.93,
+"seconds": 0.168
+},
+"step_moss_run_l_06": {
+"source_step": "moss:1:002",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.72,
+"toe_ms": 51,
+"centroid_hz": 501,
+"rms": -26.27,
+"peak": -12.39,
+"seconds": 0.058
+},
+"step_moss_run_r_01": {
+"source_step": "moss:1:063",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.32,
+"toe_ms": 66,
+"centroid_hz": 351,
+"rms": -25.97,
+"peak": -13.35,
+"seconds": 0.073
+},
+"step_moss_run_r_02": {
+"source_step": "moss:1:049",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.31,
+"toe_ms": 65,
+"centroid_hz": 615,
+"rms": -26.12,
+"peak": -12.19,
+"seconds": 0.072
+},
+"step_moss_run_r_03": {
+"source_step": "moss:1:033",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -25.05,
+"toe_ms": 67,
+"centroid_hz": 342,
+"rms": -25.74,
+"peak": -12.33,
+"seconds": 0.073
+},
+"step_moss_run_r_04": {
+"source_step": "moss:1:043",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -24.97,
+"toe_ms": 173,
+"centroid_hz": 569,
+"rms": -28.71,
+"peak": -8.89,
+"seconds": 0.18
+},
+"step_moss_run_r_05": {
+"source_step": "moss:1:023",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -23.67,
+"toe_ms": 98,
+"centroid_hz": 443,
+"rms": -25.61,
+"peak": -13.06,
+"seconds": 0.105
+},
+"step_moss_run_r_06": {
+"source_step": "moss:1:065",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 12.55,
+"step_rms": -23.59,
+"toe_ms": 72,
+"centroid_hz": 644,
+"rms": -24.87,
+"peak": -9.94,
+"seconds": 0.079
+},
+"step_moss_sprint_l_01": {
+"source_step": "moss:1:034",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -26.32,
+"toe_ms": null,
+"centroid_hz": 763,
+"rms": -32.96,
+"peak": -12.03,
+"seconds": 0.314
+},
+"step_moss_sprint_l_02": {
+"source_step": "moss:1:064",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -26.32,
+"toe_ms": null,
+"centroid_hz": 732,
+"rms": -33.08,
+"peak": -11.21,
+"seconds": 0.314
+},
+"step_moss_sprint_l_03": {
+"source_step": "moss:1:020",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -25.73,
+"toe_ms": null,
+"centroid_hz": 376,
+"rms": -32.5,
+"peak": -15.6,
+"seconds": 0.307
+},
+"step_moss_sprint_l_04": {
+"source_step": "moss:1:050",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -25.5,
+"toe_ms": null,
+"centroid_hz": 367,
+"rms": -32.42,
+"peak": -15.35,
+"seconds": 0.303
+},
+"step_moss_sprint_r_01": {
+"source_step": "moss:1:035",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -24.24,
+"toe_ms": null,
+"centroid_hz": 655,
+"rms": -30.77,
+"peak": -9.78,
+"seconds": 0.321
+},
+"step_moss_sprint_r_02": {
+"source_step": "moss:1:053",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -24.09,
+"toe_ms": null,
+"centroid_hz": 461,
+"rms": -30.73,
+"peak": -10.72,
+"seconds": 0.315
+},
+"step_moss_sprint_r_03": {
+"source_step": "moss:1:051",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -24.05,
+"toe_ms": null,
+"centroid_hz": 763,
+"rms": -30.83,
+"peak": -10.55,
+"seconds": 0.307
+},
+"step_moss_sprint_r_04": {
+"source_step": "moss:1:005",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.62,
+"step_rms": -23.76,
+"toe_ms": null,
+"centroid_hz": 710,
+"rms": -30.32,
+"peak": -9.35,
+"seconds": 0.322
+},
+"step_moss_walk_l_01": {
+"source_step": "moss:0:042",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.97,
+"step_rms": -24.33,
+"toe_ms": 128,
+"centroid_hz": 324,
+"rms": -27.92,
+"peak": -12.26,
+"seconds": 0.135
+},
+"step_moss_walk_l_02": {
+"source_step": "moss:0:032",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.97,
+"step_rms": -23.94,
+"toe_ms": null,
+"centroid_hz": 305,
+"rms": -34.36,
+"peak": -8.16,
+"seconds": 0.682
+},
+"step_moss_walk_l_03": {
+"source_step": "moss:0:034",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 3.97,
+"step_rms": -23.86,
+"toe_ms": null,
+"centroid_hz": 306,
+"rms": -34.69,
+"peak": -9.1,
+"seconds": 0.68
+},
+"step_moss_walk_l_04": {
+"source_step": "moss:0:020",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 2.12,
+"step_rms": -23.7,
+"toe_ms": null,
+"centroid_hz": 313,
+"rms": -33.92,
+"peak": -8.21,
+"seconds": 0.685
+},
+"step_moss_walk_l_05": {
+"source_step": "moss:0:014",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 1.86,
+"step_rms": -23.7,
+"toe_ms": 146,
+"centroid_hz": 294,
+"rms": -28.14,
+"peak": -8.06,
+"seconds": 0.151
+},
+"step_moss_walk_r_01": {
+"source_step": "moss:0:037",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 1.25,
+"step_rms": -23.7,
+"toe_ms": 119,
+"centroid_hz": 320,
+"rms": -26.93,
+"peak": -8.44,
+"seconds": 0.126
+},
+"step_moss_walk_r_02": {
+"source_step": "moss:0:035",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 0.06,
+"step_rms": -23.7,
+"toe_ms": 138,
+"centroid_hz": 323,
+"rms": -27.47,
+"peak": -10.27,
+"seconds": 0.145
+},
+"step_moss_walk_r_03": {
+"source_step": "moss:2:001",
+"recording": "mud 1 loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 4.66,
+"step_rms": -27.7,
+"toe_ms": 187,
+"centroid_hz": 1637,
+"rms": -29.02,
+"peak": -13.93,
+"seconds": 0.194
+},
+"step_moss_walk_r_04": {
+"source_step": "moss:1:029",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 12.51,
+"step_rms": -27.7,
+"toe_ms": 60,
+"centroid_hz": 576,
+"rms": -28.25,
+"peak": -14.1,
+"seconds": 0.067
+},
+"step_moss_walk_r_05": {
+"source_step": "moss:1:057",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 12.28,
+"step_rms": -27.7,
+"toe_ms": null,
+"centroid_hz": 892,
+"rms": -34.13,
+"peak": -13.91,
+"seconds": 0.311
+},
+"step_sedge_creep_l_01": {
+"source_step": "sedge:0:026",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 2.7,
+"step_rms": -25.0,
+"toe_ms": 138,
+"centroid_hz": 490,
+"rms": -29.2,
+"peak": -12.58,
+"seconds": 0.145
+},
+"step_sedge_creep_l_02": {
+"source_step": "sedge:0:018",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 2.7,
+"step_rms": -23.14,
+"toe_ms": null,
+"centroid_hz": 376,
+"rms": -33.65,
+"peak": -9.78,
+"seconds": 0.687
+},
+"step_sedge_creep_l_03": {
+"source_step": "sedge:0:044",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 2.31,
+"step_rms": -23.03,
+"toe_ms": 166,
+"centroid_hz": 749,
+"rms": -28.07,
+"peak": -10.71,
+"seconds": 0.173
+},
+"step_sedge_creep_r_01": {
+"source_step": "sedge:0:009",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 3.25,
+"step_rms": -27.03,
+"toe_ms": 142,
+"centroid_hz": 374,
+"rms": -30.59,
+"peak": -13.02,
+"seconds": 0.148
+},
+"step_sedge_creep_r_02": {
+"source_step": "sedge:0:023",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 2.7,
+"step_rms": -26.37,
+"toe_ms": 78,
+"centroid_hz": 550,
+"rms": -28.07,
+"peak": -14.85,
+"seconds": 0.085
+},
+"step_sedge_creep_r_03": {
+"source_step": "sedge:0:007",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 2.7,
+"step_rms": -25.43,
+"toe_ms": 169,
+"centroid_hz": 655,
+"rms": -29.58,
+"peak": -10.65,
+"seconds": 0.176
+},
+"step_sedge_jog_l_01": {
+"source_step": "sedge:1:066",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 14.47,
+"step_rms": -26.43,
+"toe_ms": 62,
+"centroid_hz": 1850,
+"rms": -27.62,
+"peak": -12.35,
+"seconds": 0.069
+},
+"step_sedge_jog_l_02": {
+"source_step": "sedge:1:046",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 14.27,
+"step_rms": -26.43,
+"toe_ms": 214,
+"centroid_hz": 1350,
+"rms": -31.32,
+"peak": -11.72,
+"seconds": 0.22
+},
+"step_sedge_jog_l_03": {
+"source_step": "sedge:1:006",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 13.22,
+"step_rms": -26.43,
+"toe_ms": null,
+"centroid_hz": 2039,
+"rms": -33.6,
+"peak": -10.95,
+"seconds": 0.331
+},
+"step_sedge_jog_l_04": {
+"source_step": "sedge:1:048",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 13.18,
+"step_rms": -26.43,
+"toe_ms": null,
+"centroid_hz": 1842,
+"rms": -33.93,
+"peak": -13.65,
+"seconds": 0.327
+},
+"step_sedge_jog_l_05": {
+"source_step": "sedge:1:018",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 13.13,
+"step_rms": -26.43,
+"toe_ms": null,
+"centroid_hz": 1800,
+"rms": -33.94,
+"peak": -11.42,
+"seconds": 0.322
+},
+"step_sedge_jog_l_06": {
+"source_step": "sedge:1:054",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 12.72,
+"step_rms": -26.43,
+"toe_ms": 47,
+"centroid_hz": 2156,
+"rms": -26.74,
+"peak": -10.38,
+"seconds": 0.054
+},
+"step_sedge_jog_l_07": {
+"source_step": "sedge:1:044",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 12.62,
+"step_rms": -26.43,
+"toe_ms": 94,
+"centroid_hz": 2022,
+"rms": -29.02,
+"peak": -9.41,
+"seconds": 0.101
+},
+"step_sedge_jog_r_01": {
+"source_step": "sedge:0:015",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 1.9,
+"step_rms": -22.43,
+"toe_ms": null,
+"centroid_hz": 505,
+"rms": -32.53,
+"peak": -7.35,
+"seconds": 0.649
+},
+"step_sedge_jog_r_02": {
+"source_step": "sedge:0:005",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 0.87,
+"step_rms": -22.43,
+"toe_ms": 165,
+"centroid_hz": 377,
+"rms": -26.89,
+"peak": -8.56,
+"seconds": 0.172
+},
+"step_sedge_jog_r_03": {
+"source_step": "sedge:0:027",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 0.41,
+"step_rms": -22.43,
+"toe_ms": 101,
+"centroid_hz": 447,
+"rms": -24.99,
+"peak": -8.54,
+"seconds": 0.108
+},
+"step_sedge_jog_r_04": {
+"source_step": "sedge:0:033",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 0.19,
+"step_rms": -22.43,
+"toe_ms": null,
+"centroid_hz": 638,
+"rms": -32.73,
+"peak": -9.56,
+"seconds": 0.622
+},
+"step_sedge_jog_r_05": {
+"source_step": "sedge:0:025",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -1.25,
+"step_rms": -22.43,
+"toe_ms": 44,
+"centroid_hz": 372,
+"rms": -22.01,
+"peak": -6.94,
+"seconds": 0.051
+},
+"step_sedge_jog_r_06": {
+"source_step": "sedge:1:057",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.77,
+"step_rms": -26.43,
+"toe_ms": null,
+"centroid_hz": 1237,
+"rms": -32.85,
+"peak": -11.51,
+"seconds": 0.31
+},
+"step_sedge_jog_r_07": {
+"source_step": "sedge:1:027",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 12.68,
+"step_rms": -26.43,
+"toe_ms": null,
+"centroid_hz": 1257,
+"rms": -32.77,
+"peak": -10.47,
+"seconds": 0.305
+},
+"step_sedge_run_l_01": {
+"source_step": "sedge:1:030",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.49,
+"toe_ms": 123,
+"centroid_hz": 1963,
+"rms": -28.63,
+"peak": -12.82,
+"seconds": 0.13
+},
+"step_sedge_run_l_02": {
+"source_step": "sedge:1:014",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.48,
+"toe_ms": 111,
+"centroid_hz": 1917,
+"rms": -28.58,
+"peak": -8.83,
+"seconds": 0.118
+},
+"step_sedge_run_l_03": {
+"source_step": "sedge:1:000",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.36,
+"toe_ms": 47,
+"centroid_hz": 1721,
+"rms": -25.71,
+"peak": -10.37,
+"seconds": 0.054
+},
+"step_sedge_run_l_04": {
+"source_step": "sedge:1:036",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.28,
+"toe_ms": null,
+"centroid_hz": 2025,
+"rms": -32.62,
+"peak": -9.49,
+"seconds": 0.334
+},
+"step_sedge_run_l_05": {
+"source_step": "sedge:1:060",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.07,
+"toe_ms": 50,
+"centroid_hz": 1702,
+"rms": -25.51,
+"peak": -9.36,
+"seconds": 0.056
+},
+"step_sedge_run_l_06": {
+"source_step": "sedge:1:008",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -24.6,
+"toe_ms": 55,
+"centroid_hz": 2100,
+"rms": -25.38,
+"peak": -10.0,
+"seconds": 0.062
+},
+"step_sedge_run_r_01": {
+"source_step": "sedge:1:069",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.64,
+"toe_ms": null,
+"centroid_hz": 1424,
+"rms": -31.82,
+"peak": -12.12,
+"seconds": 0.298
+},
+"step_sedge_run_r_02": {
+"source_step": "sedge:1:071",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -25.5,
+"toe_ms": null,
+"centroid_hz": 1267,
+"rms": -31.85,
+"peak": -10.29,
+"seconds": 0.309
+},
+"step_sedge_run_r_03": {
+"source_step": "sedge:1:055",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -24.76,
+"toe_ms": null,
+"centroid_hz": 1571,
+"rms": -31.32,
+"peak": -9.88,
+"seconds": 0.312
+},
+"step_sedge_run_r_04": {
+"source_step": "sedge:1:039",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -24.44,
+"toe_ms": null,
+"centroid_hz": 1527,
+"rms": -30.8,
+"peak": -9.12,
+"seconds": 0.297
+},
+"step_sedge_run_r_05": {
+"source_step": "sedge:1:011",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -24.32,
+"toe_ms": 124,
+"centroid_hz": 1427,
+"rms": -27.23,
+"peak": -9.27,
+"seconds": 0.131
+},
+"step_sedge_run_r_06": {
+"source_step": "sedge:1:009",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 13.45,
+"step_rms": -24.05,
+"toe_ms": null,
+"centroid_hz": 1714,
+"rms": -30.4,
+"peak": -10.03,
+"seconds": 0.295
+},
+"step_sedge_sprint_l_01": {
+"source_step": "sedge:1:070",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -25.44,
+"toe_ms": null,
+"centroid_hz": 1762,
+"rms": -33.07,
+"peak": -7.92,
+"seconds": 0.331
+},
+"step_sedge_sprint_l_02": {
+"source_step": "sedge:1:026",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -25.33,
+"toe_ms": null,
+"centroid_hz": 2017,
+"rms": -32.82,
+"peak": -7.09,
+"seconds": 0.33
+},
+"step_sedge_sprint_l_03": {
+"source_step": "sedge:1:056",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -25.04,
+"toe_ms": null,
+"centroid_hz": 1723,
+"rms": -32.7,
+"peak": -8.17,
+"seconds": 0.329
+},
+"step_sedge_sprint_l_04": {
+"source_step": "sedge:1:010",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -24.66,
+"toe_ms": null,
+"centroid_hz": 2038,
+"rms": -32.05,
+"peak": -6.77,
+"seconds": 0.331
+},
+"step_sedge_sprint_r_01": {
+"source_step": "sedge:1:041",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -25.44,
+"toe_ms": null,
+"centroid_hz": 1449,
+"rms": -32.23,
+"peak": -11.24,
+"seconds": 0.306
+},
+"step_sedge_sprint_r_02": {
+"source_step": "sedge:1:007",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -24.84,
+"toe_ms": null,
+"centroid_hz": 1626,
+"rms": -32.07,
+"peak": -8.69,
+"seconds": 0.334
+},
+"step_sedge_sprint_r_03": {
+"source_step": "sedge:1:037",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -24.75,
+"toe_ms": null,
+"centroid_hz": 1582,
+"rms": -32.04,
+"peak": -9.62,
+"seconds": 0.34
+},
+"step_sedge_sprint_r_04": {
+"source_step": "sedge:1:067",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 11.05,
+"step_rms": -24.5,
+"toe_ms": null,
+"centroid_hz": 1557,
+"rms": -31.64,
+"peak": -8.88,
+"seconds": 0.322
+},
+"step_sedge_walk_l_01": {
+"source_step": "sedge:0:028",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 0.99,
+"step_rms": -24.05,
+"toe_ms": 85,
+"centroid_hz": 491,
+"rms": -26.55,
+"peak": -10.67,
+"seconds": 0.092
+},
+"step_sedge_walk_l_02": {
+"source_step": "sedge:0:022",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 0.31,
+"step_rms": -24.05,
+"toe_ms": 185,
+"centroid_hz": 432,
+"rms": -29.17,
+"peak": -11.23,
+"seconds": 0.192
+},
+"step_sedge_walk_l_03": {
+"source_step": "sedge:0:030",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -0.14,
+"step_rms": -24.05,
+"toe_ms": 155,
+"centroid_hz": 519,
+"rms": -28.73,
+"peak": -9.34,
+"seconds": 0.162
+},
+"step_sedge_walk_l_04": {
+"source_step": "sedge:1:058",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 13.5,
+"step_rms": -28.05,
+"toe_ms": 65,
+"centroid_hz": 1252,
+"rms": -29.3,
+"peak": -16.76,
+"seconds": 0.072
+},
+"step_sedge_walk_l_05": {
+"source_step": "sedge:1:028",
+"recording": "169_Foley_Footsteps_Grass_Sneaker_Walk_Fast_Run_Jog_Close.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 13.43,
+"step_rms": -28.05,
+"toe_ms": 141,
+"centroid_hz": 1300,
+"rms": -29.48,
+"peak": -15.98,
+"seconds": 0.148
+},
+"step_sedge_walk_r_01": {
+"source_step": "sedge:0:013",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 2.49,
+"step_rms": -25.56,
+"toe_ms": 152,
+"centroid_hz": 416,
+"rms": -29.52,
+"peak": -12.3,
+"seconds": 0.159
+},
+"step_sedge_walk_r_02": {
+"source_step": "sedge:0:021",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 2.49,
+"step_rms": -24.06,
+"toe_ms": 158,
+"centroid_hz": 650,
+"rms": -28.46,
+"peak": -10.34,
+"seconds": 0.165
+},
+"step_sedge_walk_r_03": {
+"source_step": "sedge:0:043",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 1.47,
+"step_rms": -24.05,
+"toe_ms": 178,
+"centroid_hz": 373,
+"rms": -28.97,
+"peak": -9.29,
+"seconds": 0.185
+},
+"step_sedge_walk_r_04": {
+"source_step": "sedge:0:019",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 0.46,
+"step_rms": -24.05,
+"toe_ms": 162,
+"centroid_hz": 543,
+"rms": -28.68,
+"peak": -10.19,
+"seconds": 0.169
+},
+"step_sedge_walk_r_05": {
+"source_step": "sedge:0:029",
+"recording": "1806 - Footsteps - Sneakers on Carpet - 90 fpm - Loop.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 0.38,
+"step_rms": -24.05,
+"toe_ms": 126,
+"centroid_hz": 432,
+"rms": -27.52,
+"peak": -9.23,
+"seconds": 0.133
+},
+"step_snow_creep_l_01": {
+"source_step": "snow:0:030",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 24.14,
+"step_rms": -27.85,
+"toe_ms": 83,
+"centroid_hz": 971,
+"rms": -30.04,
+"peak": -14.36,
+"seconds": 0.09
+},
+"step_snow_creep_l_02": {
+"source_step": "snow:5:002",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": -1.56,
+"step_rms": -23.85,
+"toe_ms": 187,
+"centroid_hz": 1410,
+"rms": -28.67,
+"peak": -8.55,
+"seconds": 0.194
+},
+"step_snow_creep_l_03": {
+"source_step": "snow:0:026",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 1.9,
+"step_rms": -23.85,
+"toe_ms": 271,
+"centroid_hz": 1382,
+"rms": -26.6,
+"peak": -8.8,
+"seconds": 0.275
+},
+"step_snow_creep_r_01": {
+"source_step": "snow:4:009",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 5.67,
+"step_rms": -26.76,
+"toe_ms": null,
+"centroid_hz": 2009,
+"rms": -29.15,
+"peak": -9.36,
+"seconds": 0.66
+},
+"step_snow_creep_r_02": {
+"source_step": "snow:0:005",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 4.58,
+"step_rms": -23.85,
+"toe_ms": 301,
+"centroid_hz": 2275,
+"rms": -26.07,
+"peak": -11.55,
+"seconds": 0.308
+},
+"step_snow_creep_r_03": {
+"source_step": "snow:4:005",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 4.4,
+"step_rms": -23.85,
+"toe_ms": 171,
+"centroid_hz": 3232,
+"rms": -28.96,
+"peak": -11.27,
+"seconds": 0.17
+},
+"step_snow_jog_l_01": {
+"source_step": "snow:4:004",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 0.7,
+"step_rms": -25.36,
+"toe_ms": null,
+"centroid_hz": 3141,
+"rms": -31.41,
+"peak": -8.21,
+"seconds": 0.682
+},
+"step_snow_jog_l_02": {
+"source_step": "snow:1:018",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 1.35,
+"step_rms": -27.13,
+"toe_ms": 230,
+"centroid_hz": 1298,
+"rms": -33.64,
+"peak": -14.33,
+"seconds": 0.237
+},
+"step_snow_jog_l_03": {
+"source_step": "snow:2:018",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 10.72,
+"step_rms": -27.13,
+"toe_ms": null,
+"centroid_hz": 1349,
+"rms": -34.33,
+"peak": -9.41,
+"seconds": 0.71
+},
+"step_snow_jog_l_04": {
+"source_step": "snow:1:004",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -1.21,
+"step_rms": -23.13,
+"toe_ms": 186,
+"centroid_hz": 1356,
+"rms": -28.73,
+"peak": -7.58,
+"seconds": 0.19
+},
+"step_snow_jog_l_05": {
+"source_step": "snow:2:002",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.11,
+"step_rms": -27.13,
+"toe_ms": null,
+"centroid_hz": 834,
+"rms": -32.72,
+"peak": -12.15,
+"seconds": 0.485
+},
+"step_snow_jog_l_06": {
+"source_step": "snow:2:012",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 7.48,
+"step_rms": -27.13,
+"toe_ms": null,
+"centroid_hz": 824,
+"rms": -32.11,
+"peak": -10.89,
+"seconds": 0.522
+},
+"step_snow_jog_l_07": {
+"source_step": "snow:8:000",
+"recording": "Bluezone_BC0264_snow_footsteps_walk_deep_008.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": -2.46,
+"step_rms": -23.13,
+"toe_ms": null,
+"centroid_hz": 1318,
+"rms": -23.03,
+"peak": -5.72,
+"seconds": 0.902
+},
+"step_snow_jog_r_01": {
+"source_step": "snow:0:023",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -4.76,
+"step_rms": -23.13,
+"toe_ms": 193,
+"centroid_hz": 935,
+"rms": -27.59,
+"peak": -11.54,
+"seconds": 0.2
+},
+"step_snow_jog_r_02": {
+"source_step": "snow:5:007",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -12.9,
+"step_rms": -23.13,
+"toe_ms": null,
+"centroid_hz": 1568,
+"rms": -33.44,
+"peak": -12.42,
+"seconds": 0.674
+},
+"step_snow_jog_r_03": {
+"source_step": "snow:2:003",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 9.74,
+"step_rms": -27.13,
+"toe_ms": null,
+"centroid_hz": 914,
+"rms": -29.27,
+"peak": -5.67,
+"seconds": 0.71
+},
+"step_snow_jog_r_04": {
+"source_step": "snow:1:013",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -2.33,
+"step_rms": -23.13,
+"toe_ms": null,
+"centroid_hz": 1075,
+"rms": -30.49,
+"peak": -8.09,
+"seconds": 0.494
+},
+"step_snow_jog_r_05": {
+"source_step": "snow:1:007",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -4.36,
+"step_rms": -23.13,
+"toe_ms": 103,
+"centroid_hz": 1532,
+"rms": -25.65,
+"peak": -6.23,
+"seconds": 0.104
+},
+"step_snow_jog_r_06": {
+"source_step": "snow:2:011",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 5.56,
+"step_rms": -27.13,
+"toe_ms": null,
+"centroid_hz": 902,
+"rms": -32.5,
+"peak": -11.66,
+"seconds": 0.662
+},
+"step_snow_jog_r_07": {
+"source_step": "snow:1:005",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": -5.06,
+"step_rms": -23.13,
+"toe_ms": null,
+"centroid_hz": 2199,
+"rms": -32.19,
+"peak": -8.02,
+"seconds": 0.501
+},
+"step_snow_run_l_01": {
+"source_step": "snow:1:022",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": -3.94,
+"step_rms": -22.25,
+"toe_ms": null,
+"centroid_hz": 1238,
+"rms": -31.27,
+"peak": -8.06,
+"seconds": 0.443
+},
+"step_snow_run_l_02": {
+"source_step": "snow:1:008",
+"recording": "S23_SFX_Footsteps_Snow_Singles_Sequence.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": -4.24,
+"step_rms": -22.25,
+"toe_ms": null,
+"centroid_hz": 1487,
+"rms": -31.73,
+"peak": -5.91,
+"seconds": 0.463
+},
+"step_snow_run_l_03": {
+"source_step": "snow:3:026",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 8.03,
+"step_rms": -26.25,
+"toe_ms": 136,
+"centroid_hz": 1582,
+"rms": -31.81,
+"peak": -14.13,
+"seconds": 0.143
+},
+"step_snow_run_l_04": {
+"source_step": "snow:3:038",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 7.23,
+"step_rms": -26.25,
+"toe_ms": null,
+"centroid_hz": 670,
+"rms": -34.05,
+"peak": -14.0,
+"seconds": 0.337
+},
+"step_snow_run_l_05": {
+"source_step": "snow:3:014",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 6.13,
+"step_rms": -26.25,
+"toe_ms": 145,
+"centroid_hz": 803,
+"rms": -28.7,
+"peak": -14.83,
+"seconds": 0.152
+},
+"step_snow_run_l_06": {
+"source_step": "snow:10:000",
+"recording": "Footsteps_Icy_Normal_Single_Fienup_006_SIS2.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 3.75,
+"step_rms": -23.2,
+"toe_ms": 197,
+"centroid_hz": 1557,
+"rms": -29.24,
+"peak": -10.67,
+"seconds": 0.203
+},
+"step_snow_run_r_01": {
+"source_step": "snow:2:013",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.6,
+"step_rms": -26.25,
+"toe_ms": null,
+"centroid_hz": 954,
+"rms": -32.47,
+"peak": -6.89,
+"seconds": 0.569
+},
+"step_snow_run_r_02": {
+"source_step": "snow:7:000",
+"recording": "Bluezone_BC0264_snow_footsteps_walk_013.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": -10.05,
+"step_rms": -22.25,
+"toe_ms": null,
+"centroid_hz": 1007,
+"rms": -30.6,
+"peak": -9.72,
+"seconds": 0.903
+},
+"step_snow_run_r_03": {
+"source_step": "snow:3:031",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 6.59,
+"step_rms": -26.25,
+"toe_ms": 102,
+"centroid_hz": 745,
+"rms": -28.54,
+"peak": -15.87,
+"seconds": 0.109
+},
+"step_snow_run_r_04": {
+"source_step": "snow:3:001",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 6.26,
+"step_rms": -26.25,
+"toe_ms": null,
+"centroid_hz": 780,
+"rms": -30.85,
+"peak": -13.35,
+"seconds": 0.396
+},
+"step_snow_run_r_05": {
+"source_step": "snow:3:025",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.52,
+"step_rms": -26.25,
+"toe_ms": null,
+"centroid_hz": 1441,
+"rms": -30.79,
+"peak": -9.02,
+"seconds": 0.361
+},
+"step_snow_run_r_06": {
+"source_step": "snow:3:021",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 5.18,
+"step_rms": -26.25,
+"toe_ms": 199,
+"centroid_hz": 665,
+"rms": -29.55,
+"peak": -13.84,
+"seconds": 0.206
+},
+"step_snow_sprint_l_01": {
+"source_step": "snow:3:028",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 5.26,
+"step_rms": -26.26,
+"toe_ms": null,
+"centroid_hz": 680,
+"rms": -31.25,
+"peak": -11.76,
+"seconds": 0.428
+},
+"step_snow_sprint_l_02": {
+"source_step": "snow:3:024",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 3.59,
+"step_rms": -26.26,
+"toe_ms": null,
+"centroid_hz": 925,
+"rms": -29.71,
+"peak": -12.17,
+"seconds": 0.22
+},
+"step_snow_sprint_l_03": {
+"source_step": "snow:3:006",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 2.84,
+"step_rms": -26.26,
+"toe_ms": null,
+"centroid_hz": 821,
+"rms": -32.08,
+"peak": -9.9,
+"seconds": 0.387
+},
+"step_snow_sprint_l_04": {
+"source_step": "snow:12:000",
+"recording": "footstep_ice_crunchy_run_02.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": -1.55,
+"step_rms": -22.26,
+"toe_ms": null,
+"centroid_hz": 1888,
+"rms": -28.06,
+"peak": -2.94,
+"seconds": 0.421
+},
+"step_snow_sprint_r_01": {
+"source_step": "snow:3:035",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 3.8,
+"step_rms": -26.26,
+"toe_ms": null,
+"centroid_hz": 887,
+"rms": -32.43,
+"peak": -11.33,
+"seconds": 0.248
+},
+"step_snow_sprint_r_02": {
+"source_step": "snow:3:015",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 2.61,
+"step_rms": -25.83,
+"toe_ms": null,
+"centroid_hz": 791,
+"rms": -32.39,
+"peak": -12.09,
+"seconds": 0.333
+},
+"step_snow_sprint_r_03": {
+"source_step": "snow:3:039",
+"recording": "footstep_multiple_snow_boot_run_01_var03.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 2.61,
+"step_rms": -24.6,
+"toe_ms": null,
+"centroid_hz": 490,
+"rms": -32.54,
+"peak": -7.93,
+"seconds": 0.372
+},
+"step_snow_sprint_r_04": {
+"source_step": "snow:11:000",
+"recording": "footstep_ice_crunchy_run_01.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": -4.19,
+"step_rms": -22.26,
+"toe_ms": null,
+"centroid_hz": 3505,
+"rms": -28.59,
+"peak": -4.61,
+"seconds": 0.331
+},
+"step_snow_walk_l_01": {
+"source_step": "snow:0:024",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -1.31,
+"step_rms": -26.91,
+"toe_ms": 236,
+"centroid_hz": 1758,
+"rms": -30.98,
+"peak": -15.67,
+"seconds": 0.241
+},
+"step_snow_walk_l_02": {
+"source_step": "snow:0:010",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -1.31,
+"step_rms": -25.79,
+"toe_ms": 130,
+"centroid_hz": 858,
+"rms": -30.89,
+"peak": -12.62,
+"seconds": 0.137
+},
+"step_snow_walk_l_03": {
+"source_step": "snow:0:018",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -1.31,
+"step_rms": -25.74,
+"toe_ms": 224,
+"centroid_hz": 1305,
+"rms": -28.36,
+"peak": -13.54,
+"seconds": 0.23
+},
+"step_snow_walk_l_04": {
+"source_step": "snow:5:000",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": -4.93,
+"step_rms": -22.96,
+"toe_ms": null,
+"centroid_hz": 943,
+"rms": -30.83,
+"peak": -5.74,
+"seconds": 0.688
+},
+"step_snow_walk_l_05": {
+"source_step": "snow:2:016",
+"recording": "snow_foley_walking_on_snow_02.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 12.05,
+"step_rms": -26.96,
+"toe_ms": null,
+"centroid_hz": 993,
+"rms": -32.14,
+"peak": -10.71,
+"seconds": 0.614
+},
+"step_snow_walk_r_01": {
+"source_step": "snow:0:013",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -1.31,
+"step_rms": -25.8,
+"toe_ms": 299,
+"centroid_hz": 2308,
+"rms": -29.1,
+"peak": -13.03,
+"seconds": 0.306
+},
+"step_snow_walk_r_02": {
+"source_step": "snow:5:005",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -4.32,
+"step_rms": -22.96,
+"toe_ms": 291,
+"centroid_hz": 2838,
+"rms": -25.66,
+"peak": -8.25,
+"seconds": 0.274
+},
+"step_snow_walk_r_03": {
+"source_step": "snow:4:007",
+"recording": "Snow Footstep Light Slow.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -0.81,
+"step_rms": -26.96,
+"toe_ms": 224,
+"centroid_hz": 2272,
+"rms": -31.73,
+"peak": -13.46,
+"seconds": 0.224
+},
+"step_snow_walk_r_04": {
+"source_step": "snow:0:003",
+"recording": "0002_Footsteps_Walking_Crusty_Snow_Male_Shoes_Normal_Pace.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -3.75,
+"step_rms": -22.96,
+"toe_ms": 172,
+"centroid_hz": 1005,
+"rms": -25.14,
+"peak": -9.44,
+"seconds": 0.179
+},
+"step_snow_walk_r_05": {
+"source_step": "snow:5:001",
+"recording": "Ice Footsteps Hard Packed.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": -6.47,
+"step_rms": -22.96,
+"toe_ms": 157,
+"centroid_hz": 1412,
+"rms": -26.24,
+"peak": -10.37,
+"seconds": 0.161
+},
+"step_water_creep_l_01": {
+"source_step": "water:0:006",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 33.03,
+"step_rms": -26.0,
+"toe_ms": 153,
+"centroid_hz": 1496,
+"rms": -29.95,
+"peak": -12.48,
+"seconds": 0.16
+},
+"step_water_creep_l_02": {
+"source_step": "water:0:008",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "creep",
+"gain_db": 28.98,
+"step_rms": -26.0,
+"toe_ms": 247,
+"centroid_hz": 2156,
+"rms": -31.94,
+"peak": -8.29,
+"seconds": 0.254
+},
+"step_water_creep_r_01": {
+"source_step": "water:3:000",
+"recording": "LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 7.57,
+"step_rms": -22.0,
+"toe_ms": null,
+"centroid_hz": 1814,
+"rms": -32.88,
+"peak": -7.05,
+"seconds": 0.905
+},
+"step_water_creep_r_02": {
+"source_step": "water:0:021",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "creep",
+"gain_db": 24.78,
+"step_rms": -26.0,
+"toe_ms": 253,
+"centroid_hz": 3189,
+"rms": -32.02,
+"peak": -6.15,
+"seconds": 0.26
+},
+"step_water_jog_l_01": {
+"source_step": "water:0:010",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.76,
+"step_rms": -26.95,
+"toe_ms": 160,
+"centroid_hz": 4910,
+"rms": -31.97,
+"peak": -8.82,
+"seconds": 0.167
+},
+"step_water_jog_l_02": {
+"source_step": "water:0:012",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.71,
+"step_rms": -24.8,
+"toe_ms": 177,
+"centroid_hz": 4853,
+"rms": -30.3,
+"peak": -5.65,
+"seconds": 0.182
+},
+"step_water_jog_l_03": {
+"source_step": "water:0:022",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.71,
+"step_rms": -23.29,
+"toe_ms": 213,
+"centroid_hz": 2561,
+"rms": -29.0,
+"peak": -2.63,
+"seconds": 0.22
+},
+"step_water_jog_l_04": {
+"source_step": "water:0:000",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "jog",
+"gain_db": 9.71,
+"step_rms": -23.04,
+"toe_ms": 202,
+"centroid_hz": 3515,
+"rms": -29.71,
+"peak": -1.5,
+"seconds": 0.209
+},
+"step_water_jog_r_01": {
+"source_step": "water:0:011",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 10.6,
+"step_rms": -26.95,
+"toe_ms": 60,
+"centroid_hz": 5028,
+"rms": -29.96,
+"peak": -10.22,
+"seconds": 0.067
+},
+"step_water_jog_r_02": {
+"source_step": "water:0:015",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 9.95,
+"step_rms": -26.95,
+"toe_ms": 99,
+"centroid_hz": 5480,
+"rms": -28.53,
+"peak": -8.48,
+"seconds": 0.106
+},
+"step_water_jog_r_03": {
+"source_step": "water:0:009",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 9.71,
+"step_rms": -25.08,
+"toe_ms": 140,
+"centroid_hz": 7096,
+"rms": -28.77,
+"peak": -1.5,
+"seconds": 0.147
+},
+"step_water_jog_r_04": {
+"source_step": "water:0:019",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "jog",
+"gain_db": 8.11,
+"step_rms": -22.95,
+"toe_ms": 136,
+"centroid_hz": 1639,
+"rms": -26.6,
+"peak": -6.59,
+"seconds": 0.143
+},
+"step_water_run_l_01": {
+"source_step": "water:0:014",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -25.21,
+"toe_ms": 151,
+"centroid_hz": 5468,
+"rms": -29.83,
+"peak": -8.58,
+"seconds": 0.158
+},
+"step_water_run_l_02": {
+"source_step": "water:0:002",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -24.58,
+"toe_ms": 133,
+"centroid_hz": 3916,
+"rms": -29.03,
+"peak": -4.91,
+"seconds": 0.14
+},
+"step_water_run_l_03": {
+"source_step": "water:0:020",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -24.11,
+"toe_ms": 188,
+"centroid_hz": 2351,
+"rms": -27.53,
+"peak": -7.63,
+"seconds": 0.195
+},
+"step_water_run_r_01": {
+"source_step": "water:0:001",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -26.36,
+"toe_ms": null,
+"centroid_hz": 5340,
+"rms": -37.62,
+"peak": -1.5,
+"seconds": 0.709
+},
+"step_water_run_r_02": {
+"source_step": "water:0:003",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -25.28,
+"toe_ms": null,
+"centroid_hz": 4272,
+"rms": -29.69,
+"peak": -6.65,
+"seconds": 0.173
+},
+"step_water_run_r_03": {
+"source_step": "water:0:007",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "run",
+"gain_db": 4.65,
+"step_rms": -24.47,
+"toe_ms": 156,
+"centroid_hz": 1764,
+"rms": -28.82,
+"peak": -1.5,
+"seconds": 0.16
+},
+"step_water_sprint_l_01": {
+"source_step": "water:0:018",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": 1.09,
+"step_rms": -27.0,
+"toe_ms": null,
+"centroid_hz": 1196,
+"rms": -36.64,
+"peak": -3.83,
+"seconds": 0.91
+},
+"step_water_sprint_l_02": {
+"source_step": "water:2:000",
+"recording": "mud_splat_heavy_03.wav",
+"foot": "l",
+"tier": "sprint",
+"gain_db": -11.45,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 1875,
+"rms": -32.72,
+"peak": -11.68,
+"seconds": 0.899
+},
+"step_water_sprint_r_01": {
+"source_step": "water:0:005",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": 0.58,
+"step_rms": -27.0,
+"toe_ms": null,
+"centroid_hz": 3225,
+"rms": -39.01,
+"peak": -6.76,
+"seconds": 0.909
+},
+"step_water_sprint_r_02": {
+"source_step": "water:1:000",
+"recording": "Bluezone_BC0256_water_splash_small_008.wav",
+"foot": "r",
+"tier": "sprint",
+"gain_db": -16.24,
+"step_rms": -23.0,
+"toe_ms": null,
+"centroid_hz": 593,
+"rms": -33.15,
+"peak": -15.88,
+"seconds": 0.9
+},
+"step_water_walk_l_01": {
+"source_step": "water:0:016",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 21.2,
+"step_rms": -25.05,
+"toe_ms": 275,
+"centroid_hz": 4544,
+"rms": -32.18,
+"peak": -4.08,
+"seconds": 0.282
+},
+"step_water_walk_l_02": {
+"source_step": "water:0:004",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "l",
+"tier": "walk",
+"gain_db": 17.4,
+"step_rms": -22.32,
+"toe_ms": 105,
+"centroid_hz": 3884,
+"rms": -25.73,
+"peak": -3.7,
+"seconds": 0.112
+},
+"step_water_walk_r_01": {
+"source_step": "water:0:017",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 22.03,
+"step_rms": -26.32,
+"toe_ms": 130,
+"centroid_hz": 1486,
+"rms": -29.96,
+"peak": -4.16,
+"seconds": 0.137
+},
+"step_water_walk_r_02": {
+"source_step": "water:0:013",
+"recording": "0014_Footsteps_water_puddle_single_splashes.wav",
+"foot": "r",
+"tier": "walk",
+"gain_db": 21.46,
+"step_rms": -26.32,
+"toe_ms": 283,
+"centroid_hz": 2437,
+"rms": -30.47,
+"peak": -6.87,
+"seconds": 0.29
+},
+"swish_grass_01": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -30.31,
+"peak": -6.94,
+"seconds": 0.34
+},
+"swish_grass_02": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -31.31,
+"peak": -11.78,
+"seconds": 0.38
+},
+"swish_grass_03": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -32.31,
+"peak": -10.96,
+"seconds": 0.46
+},
+"swish_grass_04": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -31.13,
+"peak": -7.07,
+"seconds": 0.5
+},
+"swish_grass_05": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -31.07,
+"peak": -11.92,
+"seconds": 0.38
+},
+"swish_grass_06": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -29.75,
+"peak": -11.62,
+"seconds": 0.42
+},
+"swish_grass_07": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -28.59,
+"peak": -3.18,
+"seconds": 0.32
+},
+"swish_grass_08": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -29.02,
+"peak": -8.52,
+"seconds": 0.42
+},
+"swish_grass_09": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -28.6,
+"peak": -7.67,
+"seconds": 0.52
+},
+"swish_grass_10": {
+"recordings": [
+"RUSTLE Studio performed green leaves twigs brush moves.LR.wav"
+],
+"rms": -27.9,
+"peak": -5.32,
+"seconds": 0.42
+},
+"takeoff_01": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -32.48,
+"peak": -14.29,
+"seconds": 0.281
+},
+"takeoff_02": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -31.43,
+"peak": -11.38,
+"seconds": 0.794
+},
+"takeoff_03": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -32.13,
+"peak": -9.88,
+"seconds": 0.794
+},
+"takeoff_04": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -31.48,
+"peak": -14.74,
+"seconds": 0.377
+},
+"takeoff_05": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -35.74,
+"peak": -8.67,
+"seconds": 0.62
+},
+"takeoff_06": {
+"recordings": [
+"Whoosh,Organic,Fabric,Glove,Airy,Breathy,Punchy.wav",
+"Whoosh_Cloth_Leather_Fight_174.wav"
+],
+"rms": -32.27,
+"peak": -9.63,
+"seconds": 0.42
+},
+"turn_grit_01": {
+"recordings": [],
+"rms": -31.09,
+"peak": -6.44,
+"seconds": 0.6
+},
+"turn_grit_02": {
+"recordings": [],
+"rms": -30.49,
+"peak": -5.21,
+"seconds": 0.48
+},
+"turn_grit_03": {
+"recordings": [],
+"rms": -30.33,
+"peak": -5.4,
+"seconds": 0.475
+},
+"turn_grit_04": {
+"recordings": [],
+"rms": -31.13,
+"peak": -4.68,
+"seconds": 0.445
+},
+"turn_grit_05": {
+"recordings": [],
+"rms": -31.86,
+"peak": -3.02,
+"seconds": 0.513
+},
+"turn_grit_06": {
+"recordings": [],
+"rms": -28.98,
+"peak": -7.39,
+"seconds": 0.433
+},
+"turn_snow_01": {
+"recordings": [],
+"rms": -30.34,
+"peak": -5.64,
+"seconds": 0.574
+},
+"turn_snow_02": {
+"recordings": [],
+"rms": -32.4,
+"peak": -13.43,
+"seconds": 0.48
+},
+"turn_snow_03": {
+"recordings": [],
+"rms": -29.63,
+"peak": -9.88,
+"seconds": 0.603
+},
+"turn_snow_04": {
+"recordings": [],
+"rms": -31.46,
+"peak": -7.98,
+"seconds": 0.615
+},
+"turn_snow_05": {
+"recordings": [],
+"rms": -29.64,
+"peak": -5.74,
+"seconds": 0.488
+},
+"turn_snow_06": {
+"recordings": [],
+"rms": -32.44,
+"peak": -14.07,
+"seconds": 0.603
+},
+"turn_soft_01": {
+"recordings": [],
+"rms": -32.5,
+"peak": -13.51,
+"seconds": 0.674
+},
+"turn_soft_02": {
+"recordings": [],
+"rms": -29.64,
+"peak": -11.26,
+"seconds": 0.52
+},
+"turn_soft_03": {
+"recordings": [],
+"rms": -31.86,
+"peak": -7.76,
+"seconds": 0.528
+},
+"turn_soft_04": {
+"recordings": [],
+"rms": -29.56,
+"peak": -9.3,
+"seconds": 0.516
+},
+"turn_soft_05": {
+"recordings": [],
+"rms": -30.36,
+"peak": -11.64,
+"seconds": 0.674
+},
+"turn_soft_06": {
+"recordings": [],
+"rms": -29.15,
+"peak": -10.29,
+"seconds": 0.6
+},
+"wade_ankle_01": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -32.53,
+"peak": -8.1,
+"seconds": 0.523
+},
+"wade_ankle_02": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -36.72,
+"peak": -7.54,
+"seconds": 0.708
+},
+"wade_ankle_03": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -34.19,
+"peak": -8.14,
+"seconds": 0.708
+},
+"wade_ankle_04": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -37.85,
+"peak": -8.3,
+"seconds": 0.708
+},
+"wade_ankle_05": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -35.55,
+"peak": -7.76,
+"seconds": 0.708
+},
+"wade_ankle_06": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -34.65,
+"peak": -1.5,
+"seconds": 0.708
+},
+"wade_ankle_07": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -33.56,
+"peak": -9.59,
+"seconds": 1.093
+},
+"wade_ankle_08": {
+"recordings": [
+"0014_Footsteps_water_puddle_single_splashes.wav",
+"Bluezone_BC0256_water_splash_small_008.wav",
+"Bluezone_BC0256_water_splash_drop_006.wav"
+],
+"rms": -32.29,
+"peak": -14.58,
+"seconds": 0.68
+},
+"wade_knee_01": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -33.75,
+"peak": -16.27,
+"seconds": 0.82
+},
+"wade_knee_02": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -29.63,
+"peak": -10.58,
+"seconds": 0.94
+},
+"wade_knee_03": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -28.81,
+"peak": -13.19,
+"seconds": 0.74
+},
+"wade_knee_04": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -27.17,
+"peak": -10.64,
+"seconds": 1.12
+},
+"wade_knee_05": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -28.85,
+"peak": -12.32,
+"seconds": 0.74
+},
+"wade_knee_06": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -28.78,
+"peak": -13.77,
+"seconds": 1.18
+},
+"wade_knee_07": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -34.5,
+"peak": -7.41,
+"seconds": 1.105
+},
+"wade_knee_08": {
+"recordings": [
+"Water_Splash_SeaLion_Fienup_001.wav",
+"Water,Splashes,Bath Tub,Roomy,Dunk,Slow,Hard,x3.wav",
+"Glacial Lake - Large Size Rock Splashes - 5 Meters. Water,Splash,Large,Rock,Impact,Various_06.wav"
+],
+"rms": -36.33,
+"peak": -13.58,
+"seconds": 1.108
+},
+"wade_shin_01": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -36.34,
+"peak": -3.91,
+"seconds": 0.562
+},
+"wade_shin_02": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -31.38,
+"peak": -8.62,
+"seconds": 0.178
+},
+"wade_shin_03": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -36.94,
+"peak": -3.56,
+"seconds": 0.708
+},
+"wade_shin_04": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -37.44,
+"peak": -6.73,
+"seconds": 0.708
+},
+"wade_shin_05": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -32.37,
+"peak": -11.42,
+"seconds": 0.954
+},
+"wade_shin_06": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -29.44,
+"peak": -6.36,
+"seconds": 0.808
+},
+"wade_shin_07": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -29.15,
+"peak": -7.17,
+"seconds": 0.713
+},
+"wade_shin_08": {
+"recordings": [
+"mud_splat_heavy_03.wav",
+"LIQMvmt_Liquid Movement Plop Slosh Single 07_HZBIT_Microbes_MKH60.Wav",
+"EFX EXT GROUP Marching Puddle Mud 01.wav"
+],
+"rms": -34.76,
+"peak": -10.29,
+"seconds": 0.708
+}
+}

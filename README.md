@@ -83,6 +83,25 @@ All in-game, rendered in real time in Unreal Engine 5.8.
 <tr><td><img src="media/gallery/surface/33_moss_heath_2k.jpg" width="100%"></td><td><img src="media/gallery/surface/34_night.jpg" width="100%"></td></tr>
 </table>
 
+## Source code
+
+The full source is here, under the MIT licence (see `LICENSE`), so anyone can learn from it, improve it and
+build on it.
+
+- `unreal/Source/`: the game's C++ (Unreal Engine 5.8): the solar system, gravity and reference frames, the
+  player and jetpack, sky, sea, sound and UI.
+- `unreal/Tools/`: the Python and shell tools that build the game's content from scratch: terrain
+  generation, materials and shaders (`build_slice.py`), wave and sound bakes, packaging and the installer.
+- `unreal/Config/`, `unreal/Ephemera.uproject`: the Unreal project.
+- `docs/unreal/DIRECTION.md`: the design and technical decisions, and why. `docs/research/`: the research
+  notes behind them.
+
+Not included: the imported assets (`Content/`, several GB), which the tools rebuild. Textures come from
+Poly Haven (CC0, re-downloaded by `unreal/Tools/fetch_polyhaven.py`). The sound recordings come from the
+Sonniss GDC Game Audio Bundles, which are free to download but may not be redistributed as files, so they
+aren't here: `unreal/SourceAssets/audio/CREDITS.md` lists which ones are used. See `unreal/README.md` for
+building it.
+
 ## Credits
 
 - Textures and surfaces: [Poly Haven](https://polyhaven.com) (CC0).
