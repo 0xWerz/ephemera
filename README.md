@@ -6,7 +6,11 @@ use your jetpack, and fly out to its moon.
 
 ![Ephemera](media/1_cover.jpg)
 
-**Early work in progress.** Free to play.
+> **Note:** This is an early work in progress, free to play, and not really a game yet. There's no game
+> loop: no goals, story, missions, progression, enemies or win/lose state. Right now it's a walking and flying
+> sandbox, and the focus has been on getting the graphics and environment as good as possible (terrain,
+> lighting, sky, volumetric clouds, a simulated ocean, aurora, views from orbit), plus the feel of the
+> controls, the jetpack and the sound.
 
 ## Download (Windows)
 
