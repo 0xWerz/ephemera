@@ -38,7 +38,10 @@ RTX 3060.
 
 ## Screenshots
 
+![Dawnhollow and its moon](media/2_planet_and_moon.jpg)
+![Dawnhollow from orbit](media/3_planet_from_orbit.jpg)
 ![The bay](media/4_bay.jpg)
+![Green hills](media/5_green_hills.jpg)
 ![Cliffs](media/6_cliffs.jpg)
 ![The moon](media/7_moon.jpg)
 
