@@ -79,6 +79,8 @@ All in-game, rendered in real time in Unreal Engine 5.8.
 <tr><td><img src="media/gallery/surface/25_planet.jpg" width="100%"></td><td><img src="media/gallery/surface/26_hollow_top.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/27_meadow_day.jpg" width="100%"></td><td><img src="media/gallery/surface/28_sea.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/29_meadow_night.jpg" width="100%"></td><td><img src="media/gallery/surface/30_lamp_at_night.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/31_dusk.jpg" width="100%"></td><td><img src="media/gallery/surface/32_green_hills_2k.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/33_moss_heath_2k.jpg" width="100%"></td><td><img src="media/gallery/surface/34_night.jpg" width="100%"></td></tr>
 </table>
 
 ## Credits
