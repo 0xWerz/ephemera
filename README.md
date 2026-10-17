@@ -38,12 +38,48 @@ RTX 3060.
 
 ## Screenshots
 
+All in-game, rendered in real time in Unreal Engine 5.8.
+
 ![Dawnhollow and its moon](media/2_planet_and_moon.jpg)
-![Dawnhollow from orbit](media/3_planet_from_orbit.jpg)
 ![The bay](media/4_bay.jpg)
-![Green hills](media/5_green_hills.jpg)
 ![Cliffs](media/6_cliffs.jpg)
 ![The moon](media/7_moon.jpg)
+
+### Space
+
+<table>
+<tr><td><img src="media/gallery/space/01_eclipse_ring.jpg" width="100%"></td><td><img src="media/gallery/space/02_limb_sunrise.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/03_hush_and_dawnhollow.jpg" width="100%"></td><td><img src="media/gallery/space/04_crescent_over_hush.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/05_planet_rise.jpg" width="100%"></td><td><img src="media/gallery/space/06_hush_terminator.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/07_hush_whole.jpg" width="100%"></td><td><img src="media/gallery/space/08_coast.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/09_terminator.jpg" width="100%"></td><td><img src="media/gallery/space/10_dawnhollow.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/11_moon_limb.jpg" width="100%"></td><td><img src="media/gallery/space/12_terminator_clouds.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/13_coast_clouds.jpg" width="100%"></td><td><img src="media/gallery/space/14_dawnhollow_clouds.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/15_horizon_clouds.jpg" width="100%"></td><td><img src="media/gallery/space/16_eclipse_ring_clouds.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/17_from_hush.jpg" width="100%"></td><td><img src="media/gallery/space/18_hush_close.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/19_limb_sunrise.jpg" width="100%"></td><td><img src="media/gallery/space/20_low_orbit.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/space/21_planet_day.jpg" width="100%"></td><td><img src="media/gallery/space/22_planet_terminator.jpg" width="100%"></td></tr>
+</table>
+
+### On the surface
+
+<table>
+<tr><td><img src="media/gallery/surface/01_bay.jpg" width="100%"></td><td><img src="media/gallery/surface/02_bay_overcast.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/03_fjord_wall.jpg" width="100%"></td><td><img src="media/gallery/surface/04_green_hills.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/05_hollow_rim.jpg" width="100%"></td><td><img src="media/gallery/surface/06_moss_heath.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/07_rift.jpg" width="100%"></td><td><img src="media/gallery/surface/08_tables_ground.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/09_tables_overcast.jpg" width="100%"></td><td><img src="media/gallery/surface/10_tables_plain.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/11_tables_plain_low.jpg" width="100%"></td><td><img src="media/gallery/surface/12_tables_wide.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/13_hollow_dawn.jpg" width="100%"></td><td><img src="media/gallery/surface/14_hollow_morning.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/15_hollow_from_rim.jpg" width="100%"></td><td><img src="media/gallery/surface/16_hollow_aerial.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/17_table_cliffs.jpg" width="100%"></td><td><img src="media/gallery/surface/18_table_cliffs_wide.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/19_fjords_aerial.jpg" width="100%"></td><td><img src="media/gallery/surface/20_from_summit.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/21_ice_edge.jpg" width="100%"></td><td><img src="media/gallery/surface/22_rift_aerial.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/23_strand_aerial.jpg" width="100%"></td><td><img src="media/gallery/surface/24_moss_and_volcano.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/25_planet.jpg" width="100%"></td><td><img src="media/gallery/surface/26_hollow_top.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/27_meadow_day.jpg" width="100%"></td><td><img src="media/gallery/surface/28_sea.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/29_meadow_night.jpg" width="100%"></td><td><img src="media/gallery/surface/30_lamp_at_night.jpg" width="100%"></td></tr>
+</table>
 
 ## Credits
 
