@@ -134,16 +134,21 @@ void AEphemeraBody::Rebuild()
 	}
 	if (Definition->AuroraMaterial)
 	{
-		// Three shells, one above another: the curtains' height, from green at the foot to violet
-		// at the top. Each shell tells the material which it is (0, 0.5, 1) through primitive data.
+		// One sphere bounding the curtains: the material marches through the air inside it (M_Aurora). The
+		// engine's sphere is faceted, so it is made a little larger than the curtains' top to hold them whole.
 		UStaticMesh* Sphere = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Sphere.Sphere"));
-		for (int32 Shell = 0; Sphere && Shell < 3; ++Shell)
+		if (Sphere)
 		{
+			const double TopM = Definition->AuroraAltitudeM + Definition->AuroraHeightM;
+			const double ContainerM = (Definition->RadiusM + TopM) * 1.04;
 			UStaticMeshComponent* Glow = AddGenerated<UStaticMeshComponent>(this, Root, TEXT("Aurora"));
 			Glow->SetStaticMesh(Sphere);
 			Glow->SetMaterial(0, Definition->AuroraMaterial);
-			Glow->SetRelativeScale3D(FVector((Definition->RadiusM + Definition->AuroraAltitudeM + Shell * 170.0) * 100.0 / 50.0));
-			Glow->SetCustomPrimitiveDataFloat(0, Shell * 0.5f);
+			Glow->SetRelativeScale3D(FVector(ContainerM * 100.0 / 50.0));
+			Glow->SetCustomPrimitiveDataFloat(0, float(ContainerM));
+			Glow->SetCustomPrimitiveDataFloat(1, float(Definition->RadiusM));
+			Glow->SetCustomPrimitiveDataFloat(2, Definition->AuroraAltitudeM);
+			Glow->SetCustomPrimitiveDataFloat(3, float(TopM));
 			Glow->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 			Glow->SetCastShadow(false);
 			Glow->bAffectDistanceFieldLighting = false;

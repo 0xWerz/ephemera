@@ -8,6 +8,7 @@ public class EphemeraEditorTarget : TargetRules
         Type = TargetType.Editor;
         DefaultBuildSettings = BuildSettingsVersion.V7;
         IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_8;
+        ExtraModuleNames.Add("EphemeraShaders");
         ExtraModuleNames.Add("Ephemera");
         ExtraModuleNames.Add("EphemeraEditor");
     }

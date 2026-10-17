@@ -330,6 +330,17 @@ TSharedRef<SWidget> SEphemeraHud::BuildMenu()
 		]
 		+ SVerticalBox::Slot().AutoHeight().Padding(Gap)
 		[
+			// NVIDIA's DLSS rebuilds the picture instead of TSR: more detail kept at a distance and in motion at the
+			// same share of pixels. Only offered where the card and the plugin have it; off until chosen.
+			SNew(SBox).Visibility(UEphemeraUserSettings::DLSSAvailable() ? EVisibility::Visible : EVisibility::Collapsed)
+			[
+				Row(LOCTEXT("Upscaler", "Upscaler"), Choice({LOCTEXT("UpscalerTSR", "TSR (Unreal)"), LOCTEXT("UpscalerDLSS", "DLSS (NVIDIA)")},
+					[S] { return S->bDLSS ? 1 : 0; },
+					[S, Rendering](const int32 Index) { S->bDLSS = Index == 1; Rendering(); }))
+			]
+		]
+		+ SVerticalBox::Slot().AutoHeight().Padding(Gap)
+		[
 			Row(LOCTEXT("Rock", "Rock detail as geometry (very slow)"), SNew(SHorizontalBox)
 				+ SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center)
 				[

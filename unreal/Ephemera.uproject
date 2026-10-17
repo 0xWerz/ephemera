@@ -5,6 +5,11 @@
   "Description": "Ephemera: a native Unreal migration of the Aubade system.",
   "Modules": [
     {
+      "Name": "EphemeraShaders",
+      "Type": "Runtime",
+      "LoadingPhase": "PostConfigInit"
+    },
+    {
       "Name": "Ephemera",
       "Type": "Runtime",
       "LoadingPhase": "Default"
@@ -59,6 +64,14 @@
     {
       "Name": "PixelStreaming2",
       "Enabled": true,
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "DLSS",
+      "Enabled": true,
+      "Optional": true,
       "PlatformAllowList": [
         "Win64"
       ]

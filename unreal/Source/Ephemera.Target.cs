@@ -8,6 +8,7 @@ public class EphemeraTarget : TargetRules
         Type = TargetType.Game;
         DefaultBuildSettings = BuildSettingsVersion.V7;
         IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_8;
+        ExtraModuleNames.Add("EphemeraShaders");
         ExtraModuleNames.Add("Ephemera");
     }
 }

@@ -167,6 +167,10 @@ def main():
     parser.add_argument("--fly", help="shot (player view): start in free flight, as body,metres over it (e.g. aubade,20000).")
     parser.add_argument("--sound", action="store_true", help="shot: run the sound for real (every sound plays and is logged) with the output held at "
                         "silence, instead of with no sound device at all.")
+    parser.add_argument("--record", help="shot with --drive: save every frame of the scripted run in this folder (f_00000.png ...) and quit when it ends.")
+    parser.add_argument("--record-from", type=float, default=0.0, help="shot --record: seconds into the script to start saving frames.")
+    parser.add_argument("--scale", type=float, help="shot: render resolution in percent for this run (the game's -EphemeraScale).")
+    parser.add_argument("--fps", type=float, help="shot: step the game exactly 1/fps seconds a frame however long one takes to draw (for --record).")
     parser.add_argument("--drive", help="shot (player view): hold keys down by a script once loading is over, as keys:seconds,... with keys "
                         "any of w a s d shift space ctrl fly joined by + (e.g. w:2,w+shift:2,space:0.1,:1). The log says what the body did.")
     parser.add_argument("--engine", help="UE installation root containing Engine/. Must be inside this workspace.")
@@ -336,10 +340,20 @@ def main():
             extra.append("-EphemeraFlyUp")
         if args.drive:
             extra.append(f"-EphemeraDrive={args.drive}")
+        if args.record:
+            extra += [f"-EphemeraRecord={Path(args.record).resolve()}", f"-EphemeraRecordFrom={args.record_from}"]
+        if args.fps:
+            extra += ["-benchmark", f"-fps={args.fps}"]
+        if args.scale:
+            extra.append(f"-EphemeraScale={args.scale}")
         run([editor, project_file, "/Game/Ephemera/Maps/System", *common[1:], "-game", "-Windowed",
              f"-ResX={args.size.split('x')[0]}", f"-ResY={args.size.split('x')[1]}", "-EphemeraMute" if args.sound else "-NoSound", "-Unattended", *extra,
              f"-AbsLog={PROJECT}/Saved/Shot.log"], env, hide=sys.platform in ("darwin", "win32"))
         report_broken_materials()
+        if args.record:
+            frames = sorted(Path(args.record).resolve().glob("f_*.png"))
+            print(f"Recorded {len(frames)} frames in {Path(args.record).resolve()}")
+            return
         if not out.exists():
             raise SystemExit(f"No screenshot was written. See {PROJECT}/Saved/Shot.log")
         print("Screenshot:", out)

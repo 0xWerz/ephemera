@@ -133,6 +133,14 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	/**
+	 * A solar system has no floor: the engine's own guard against falling out of a level (KillZ, about 10 km
+	 * under the origin, and the world's bounds) would destroy the player as soon as they flew that far from
+	 * whatever body the frame is centred on, leaving the camera staring and every key dead, the menu's too.
+	 * (Reported 17 October 2026: free flight from the star, then away from it.) Neither ever applies here.
+	 */
+	virtual void FellOutOfWorld(const class UDamageType& DamageType) override {}
+	virtual void OutsideWorldBounds() override {}
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 private:
@@ -294,6 +302,12 @@ private:
 	float DriveClock = 0.f;
 	float DriveSaid = 0.f;
 	float DriveHighest = 0.f;
+	/** -EphemeraRecord=<folder>: every frame of the scripted run saved there as f_00000.png..., from
+	 * -EphemeraRecordFrom=<seconds> into the script; the game quits when the script ends. With -benchmark
+	 * -fps=30 the game steps exactly 1/30 s a frame however long one takes to draw: a smooth film. */
+	FString RecordDir;
+	float RecordFrom = 0.f;
+	int32 RecordFrame = 0;
 	bool bFreeFlight = false;
 	float FreeFlightScale = 1.f;                    // mouse wheel
 	void ToggleFps();

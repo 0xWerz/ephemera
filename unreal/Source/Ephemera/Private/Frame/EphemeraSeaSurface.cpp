@@ -6,6 +6,7 @@
 #include "Engine/World.h"
 #include "Frame/EphemeraBody.h"
 #include "Frame/EphemeraBodyDefinition.h"
+#include "Frame/EphemeraOceanSim.h"
 #include "Kismet/GameplayStatics.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Misc/CommandLine.h"
@@ -102,6 +103,8 @@ void UEphemeraSeaSurfaceComponent::Configure(const UEphemeraBodyDefinition* Defi
 {
 	FarSea = InFarSea;
 	NearSea = nullptr;
+	Ocean = nullptr;
+	Bands.Reset();
 	Face = INDEX_NONE;
 	bDrawn = false;
 	SetVisibility(false);
@@ -128,6 +131,12 @@ void UEphemeraSeaSurfaceComponent::Configure(const UEphemeraBodyDefinition* Defi
 		NearSea->SetScalarParameterValue(*FString::Printf(TEXT("Band%dGain"), Band), Definition->SeaBands[Band].Gain);
 	}
 	SetMaterial(0, NearSea);
+	// The waves, for both seas and for the game's own sums.
+	Bands = Definition->SeaBands;
+	Ocean = NewObject<UEphemeraOceanSim>(this);
+	Ocean->Build(Bands, Definition->SurfaceGravity);
+	Ocean->Bind(NearSea);
+	Ocean->Bind(FarSea);
 	if (FarSea)
 	{
 		FarSea->SetVectorParameterValue(TEXT("SeaHole"), FLinearColor(0.f, 0.f, 0.f, 0.f));
@@ -185,6 +194,12 @@ void UEphemeraSeaSurfaceComponent::Place(const FVector& Direction)
 void UEphemeraSeaSurfaceComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	// The waves move on whether or not the grid is drawn: the far sea shows them too. The materials' clock
+	// (View.GameTime) is the world's.
+	if (Ocean && GetWorld())
+	{
+		Ocean->Simulate(GetWorld()->GetTimeSeconds(), DeltaTime);
+	}
 	const AActor* Body = GetOwner();
 	const APlayerCameraManager* Camera = UGameplayStatics::GetPlayerCameraManager(this, 0);
 	if (!NearSea || !Body || !Camera || RadiusM <= 0.0)
@@ -281,7 +296,7 @@ FVector UEphemeraSeaSurfaceComponent::MoveM(const UEphemeraBodyDefinition& Defin
 	const FVector W = A / FMath::Max(A.Size(), 1e-12);
 	const FVector Point = Up * RadiusM;
 	FVector Sum = FVector::ZeroVector;
-	for (const FEphemeraSeaBand& Band : Definition.SeaBands)
+	for (const FEphemeraSeaBand& Band : Bands)
 	{
 		// Over shallow water a wave slows and steepens (Green's law, height ~ depth^-1/4, felt from half
 		// a wavelength down), then breaks and is gone; and the grid draws a band only where it is fine

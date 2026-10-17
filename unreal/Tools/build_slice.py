@@ -1048,7 +1048,7 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
     """
     colours = colours or {}
     path = f"{ROOT}/Materials/{name}"
-    stamp = stamp_of("planet-v17", PLANET_CODE, layers, far_layers, tiling_m, rock_start, snow_line_m, colours, wetness,
+    stamp = stamp_of("planet-v18", PLANET_CODE, layers, far_layers, tiling_m, rock_start, snow_line_m, colours, wetness,
                      mid_tiling_m, far_tiling_m, far_relief, micro_relief, DISPLACE_CODE)
     kept = unchanged(path, stamp)
     if kept:
@@ -1133,7 +1133,9 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
         ("FieldC", colour("FieldColour", colours.get("field", (0.064, 0.070, 0.055))), ""),
         ("SandC", colour("SandColour", colours.get("sand", (0.033, 0.033, 0.036))), ""),
         ("RockC", colour("RockColour", colours.get("rock", (0.046, 0.046, 0.052))), ""),
-        ("SnowC", colour("SnowColour", colours.get("snow", (0.80, 0.83, 0.87))), ""),
+        # An ice cap is old snow and firn, not fresh powder: about 0.65-0.75 (fresh snow, 0.8-0.9, clipped to flat
+        # white from orbit and showed none of the cap's tone).
+        ("SnowC", colour("SnowColour", colours.get("snow", (0.66, 0.70, 0.76))), ""),
     ]
     sampler_types = {"d": unreal.MaterialSamplerType.SAMPLERTYPE_COLOR, "n": unreal.MaterialSamplerType.SAMPLERTYPE_NORMAL,
                      "arm": unreal.MaterialSamplerType.SAMPLERTYPE_MASKS}
@@ -1368,8 +1370,8 @@ def make_moon_material(name, dust, rock, highland, mare, tiling_m=5.0, mid_tilin
 OCEAN_CODE = r"""
 // A cold northern sea. P: planet-local position (cm). Dist: to the camera (cm).
 // DepthMap: the world's baked sea depth (a cube texture read by direction; one byte holding
-// sqrt(depth / 64 m)). Chop, Swell: repeating wave maps made from a wind-sea spectrum
-// (Tools/terrain/water.py): slope in red and green, slope squared in blue, height in alpha.
+// sqrt(depth / 64 m)). Casc0Slope..Casc3Slope: the simulated sea's cascades (UEphemeraOceanSim). Chop,
+// Swell: still wave maps (Tools/terrain/water.py), used only for where gusts and foam lace fall.
 // Returns the normal; also gives Base, Rough and Cover.
 //
 // Near the camera this is real water: the engine's single-layer water, clear in the shallows,
@@ -1381,47 +1383,40 @@ float3 pm = P * 0.01;
 float3 up = normalize(P);
 struct FSea
 {
-    float3 pm, dpx, dpy, w;
-    float time, Loop, LoopMetres;
-    // One reading of a moving wave map (SwellAnim, ChopAnim: Tools/terrain/water.py), laid over the
-    // sphere along the three axes. metres: size of one repeat. dir: the way its wind blows. Its third
-    // coordinate is time: the map's waves each run at their own speed and the sum keeps changing, as
-    // water does (it used to be one picture slid along, and every crest went the same way at the same
-    // speed). It is played at a rate that grows as the square root of its size, which keeps each
-    // wave's speed true at every size it is laid at. Gives the slope as a vector in xyz, and in w how
-    // much squared slope the texture's filtering has averaged away at this distance.
-    float4 Waves(Texture3D T, SamplerState S, float metres, float strength, float2 dir)
+    float3 pm, dpx, dpy, w, up, chart;
+    float time;
+    // One cascade of the simulated sea (UEphemeraOceanSim, Shaders/EphemeraOcean.usf): its slopes, laid on
+    // the planet along the three charts (SEA_CHARTS, as the near sea's grid is raised and as the game sums
+    // the water), blended with weights whose squares add to one (unrelated seas mixed so are as rough as
+    // either). Read with the texture's own mips and anisotropic filtering: a texel's mip holds the mean slope
+    // and the mean squared slope beneath it, and their difference is the waves this pixel cannot show,
+    // returned as variance for the roughness (LEAN mapping; Bruneton et al. 2010). Foam is averaged.
+    // blur: how many pixels a wave must span to be drawn as a wave (Bruneton et al. 2010: two); finer ones
+    // become roughness. Without it the ripples a pixel half-resolves glitter pixel by pixel, a grain no sea has.
+    void Cascade(Texture2D T, SamplerState S, float patch, float gain, float blur, inout float4 sum, inout float foam)
     {
-        float k = 1.0 / metres;
-        float2 side = float2(-dir.y, dir.x);
-        float2 drift = float2(0.0, 0.0);
-        float when = frac(time / (Loop * sqrt(metres / LoopMetres)) + metres * 0.0137);
-        float4 sum = 0;
-        [branch] if (w.x > 0.02)
+        float3 c = pow(abs(up), 8.0);
+        c /= max(sqrt(dot(c, c)), 1e-12);
+        float k = 1.0 / patch;
+        float kg = k * blur;
+        [branch] if (c.x > 0.02)
         {
-            float2 uv = float2(dot(pm.zy, dir), dot(pm.zy, side)) * k - drift;
-            float4 t = T.SampleGrad(S, float3(uv, when), float3(float2(dot(dpx.zy, dir), dot(dpx.zy, side)) * k, 0.0), float3(float2(dot(dpy.zy, dir), dot(dpy.zy, side)) * k, 0.0));
-            float2 sl = (t.rg * 2.0 - 1.0) * strength;
-            float2 pl = dir * sl.x + side * sl.y;
-            sum += float4(0.0, pl.y, pl.x, max(t.b * strength * strength - dot(sl, sl), 0.0)) * w.x;
+            float4 t = T.SampleGrad(S, float2(dot(chart, $XU), dot(chart, $XV)) * k + $XS, float2(dot(dpx, $XU), dot(dpx, $XV)) * kg, float2(dot(dpy, $XU), dot(dpy, $XV)) * kg);
+            sum += float4(($XU * t.x + $XV * t.y) * (gain * c.x), max(t.z - dot(t.xy, t.xy), 0.0) * gain * gain * c.x * c.x);
+            foam += t.w * c.x * c.x;
         }
-        [branch] if (w.y > 0.02)
+        [branch] if (c.y > 0.02)
         {
-            float2 uv = float2(dot(pm.xz, dir), dot(pm.xz, side)) * k - drift;
-            float4 t = T.SampleGrad(S, float3(uv, when), float3(float2(dot(dpx.xz, dir), dot(dpx.xz, side)) * k, 0.0), float3(float2(dot(dpy.xz, dir), dot(dpy.xz, side)) * k, 0.0));
-            float2 sl = (t.rg * 2.0 - 1.0) * strength;
-            float2 pl = dir * sl.x + side * sl.y;
-            sum += float4(pl.x, 0.0, pl.y, max(t.b * strength * strength - dot(sl, sl), 0.0)) * w.y;
+            float4 t = T.SampleGrad(S, float2(dot(chart, $YU), dot(chart, $YV)) * k + $YS, float2(dot(dpx, $YU), dot(dpx, $YV)) * kg, float2(dot(dpy, $YU), dot(dpy, $YV)) * kg);
+            sum += float4(($YU * t.x + $YV * t.y) * (gain * c.y), max(t.z - dot(t.xy, t.xy), 0.0) * gain * gain * c.y * c.y);
+            foam += t.w * c.y * c.y;
         }
-        [branch] if (w.z > 0.02)
+        [branch] if (c.z > 0.02)
         {
-            float2 uv = float2(dot(pm.xy, dir), dot(pm.xy, side)) * k - drift;
-            float4 t = T.SampleGrad(S, float3(uv, when), float3(float2(dot(dpx.xy, dir), dot(dpx.xy, side)) * k, 0.0), float3(float2(dot(dpy.xy, dir), dot(dpy.xy, side)) * k, 0.0));
-            float2 sl = (t.rg * 2.0 - 1.0) * strength;
-            float2 pl = dir * sl.x + side * sl.y;
-            sum += float4(pl.x, pl.y, 0.0, max(t.b * strength * strength - dot(sl, sl), 0.0)) * w.z;
+            float4 t = T.SampleGrad(S, float2(dot(chart, $ZU), dot(chart, $ZV)) * k + $ZS, float2(dot(dpx, $ZU), dot(dpx, $ZV)) * kg, float2(dot(dpy, $ZU), dot(dpy, $ZV)) * kg);
+            sum += float4(($ZU * t.x + $ZV * t.y) * (gain * c.z), max(t.z - dot(t.xy, t.xy), 0.0) * gain * gain * c.z * c.z);
+            foam += t.w * c.z * c.z;
         }
-        return sum;
     }
     // The map's height channel alone, very large: used for where the wind is ruffling the water.
     float Patches(Texture2D T, SamplerState S, float metres, float speed)
@@ -1433,7 +1428,8 @@ struct FSea
     }
 };
 FSea Sea;
-Sea.pm = pm; Sea.dpx = ddx(pm); Sea.dpy = ddy(pm); Sea.time = Time; Sea.Loop = WaveLoop; Sea.LoopMetres = WaveLoopMetres;
+// The charts are read where the water rests at the datum, as the near sea's grid is raised and the game sums it.
+Sea.pm = pm; Sea.dpx = ddx(pm); Sea.dpy = ddy(pm); Sea.time = Time; Sea.up = up; Sea.chart = up * SeaRadiusM;
 Sea.w = pow(abs(up), 4.0);
 Sea.w /= (Sea.w.x + Sea.w.y + Sea.w.z);
 
@@ -1446,22 +1442,24 @@ float enc = TextureCubeSample(DepthMap, DepthMapSampler, up).r;
 float depth = max(enc * enc * 72.0 - 8.0 + tide, 0.0);
 float dM = Dist * 0.01;
 
-// Waves of five sizes, each drifting its own way. Together their slopes come to what is measured
-// at sea in a light breeze (Cox and Munk 1954: mean square slope = 0.003 + 0.00512 * wind in m/s,
-// 0.021 at 3.5 m/s). Gusts ruffle the short ones in drifting patches; sheltered shallows are calmer.
+// The waves (UEphemeraOceanSim): four cascades of one simulated sea, from a long swell to ripples a hand
+// long. Gusts ruffle the short ones in drifting patches, so no stretch of sea looks like the next; sheltered
+// shallows are calmer.
 float gust = lerp(0.62, 1.28, smoothstep(0.30, 0.70, Sea.Patches(Swell, SwellSampler, 380.0, 0.5)));
-float breeze = sqrt(max(0.003 + 0.00512 * Wind, 0.0) / 0.021) * lerp(0.45, 1.0, smoothstep(0.3, 9.0, depth));
-float4 wv = Sea.Waves(SwellAnim, SwellAnimSampler, 97.0, 0.20 * breeze, normalize(float2(1.0, 0.25)))
-          + Sea.Waves(SwellAnim, SwellAnimSampler, 31.0, 0.24 * breeze, normalize(float2(0.55, -0.85)))
-          + Sea.Waves(ChopAnim, ChopAnimSampler, 11.0, 0.32 * breeze * gust, normalize(float2(0.9, 0.45)))
-          + Sea.Waves(ChopAnim, ChopAnimSampler, 3.7, 0.28 * breeze * gust, normalize(float2(0.3, 0.95)));
-[branch] if (dM < 60.0)
-    wv += Sea.Waves(ChopAnim, ChopAnimSampler, 1.3, 0.24 * breeze * gust * (1.0 - dM / 60.0), normalize(float2(-0.6, 0.8)));
+float calm = lerp(0.45, 1.0, smoothstep(0.3, 9.0, depth));
+float4 wv = 0.0;
+float seaFoam = 0.0;
+Sea.Cascade(Casc0Slope, Casc0SlopeSampler, $P0, Band0Gain * calm, 1.0, wv, seaFoam);
+Sea.Cascade(Casc1Slope, Casc1SlopeSampler, $P1, Band1Gain * calm, 1.5, wv, seaFoam);
+Sea.Cascade(Casc2Slope, Casc2SlopeSampler, $P2, Band2Gain * calm * gust, 2.0, wv, seaFoam);
+Sea.Cascade(Casc3Slope, Casc3SlopeSampler, $P3, Band3Gain * calm * gust, 2.5, wv, seaFoam);
 float3 slope3 = wv.xyz - up * dot(wv.xyz, up);
 // What the eye cannot resolve of the waves still spreads the light they reflect: the slope lost to
 // distance becomes roughness (GGX alpha squared = mean square slope), so the glitter under the sun
-// is as wide from orbit as it is at the shore.
-Rough = pow(0.0004 + wv.w, 0.25);
+// is as wide from orbit as it is at the shore. (0.002: ripples shorter than the finest cascade.)
+Rough = pow(0.0004 + wv.w + 0.002 * calm * calm, 0.25);
+// Whitecaps where the waves fold over (none in this sea's light breeze, WhitecapGain 0; a storm raises it).
+float whitecap = saturate((seaFoam - 0.45) * 1.8) * 0.7 * WhitecapGain;
 
 // The painted sea, for far away. Over the shelf the water is paler and greener (light comes back
 // from sediment in it); it darkens to the open sea's near-black as the bottom falls away.
@@ -1492,6 +1490,7 @@ foam = lerp(foam * 0.45, eaten, 1.0 - smoothstep(60.0, 600.0, dM)) * 0.75;
 // From far away the surf is a faint pale edge, not a white line: at full strength it is brighter
 // than anything else on the planet and shows straight through thin cloud.
 foam *= lerp(1.0, 0.45, smoothstep(2000.0, 9000.0, dM));
+foam = max(foam, whitecap * lerp(0.55, 1.0, lace));
 float painted = smoothstep(FarStart, FarEnd, dM);
 // The sea does not end in a line on the sand: its last hand's depth is so thin that it is the wet sand under
 // it with a shine on top, and it becomes the beach by degrees.
@@ -1520,15 +1519,13 @@ def make_ocean_material(depth_map, variant="sea"):
     name = {"sea": "M_Ocean", "far": "M_OceanFar", "near": "M_OceanNear"}[variant]
     path = f"{ROOT}/Materials/{name}"
     waves = water_maps()
-    code = OCEAN_CODE
+    sea = sea_bands()
+    code = near_ocean_code(sea) if variant == "near" else ocean_code()
     if variant == "sea":
-        stamp = stamp_of("ocean-v21", OCEAN_CODE, depth_map.get_path_name(), waves)
+        stamp = stamp_of("ocean-v23", code, depth_map.get_path_name(), waves, SEA_CASCADES, SEA_GAINS)
     else:
-        sea = sea_bands()
-        if variant == "near":
-            code = near_ocean_code(sea)
-        stamp = stamp_of(f"ocean-{variant}-v5", code, sea_grid_code(sea) if variant == "near" else SEA_HOLE_CODE,
-                         depth_map.get_path_name(), waves, sea["textures"], SEA_GAINS)
+        stamp = stamp_of(f"ocean-{variant}-v6", code, sea_grid_code(sea) if variant == "near" else SEA_HOLE_CODE,
+                         depth_map.get_path_name(), waves, SEA_CASCADES, SEA_GAINS)
     kept = unchanged(path, stamp)
     if kept:
         return kept
@@ -1540,6 +1537,11 @@ def make_ocean_material(depth_map, variant="sea"):
     if not material:
         raise RuntimeError(f"{name}: the material could not be created")
     material.set_editor_property("tangent_space_normal", False)
+    # Its waves move within the texture, not with the surface: told so, the temporal upscaler does not smear them.
+    try:
+        material.set_editor_property("has_pixel_animation", True)
+    except Exception as error:
+        log(f"{name}: has_pixel_animation not set ({error})")
     if variant == "far":
         # Single layer water may be masked (it may not be translucent): the hole is cut, not blended.
         material.set_editor_property("blend_mode", unreal.BlendMode.BLEND_MASKED)
@@ -1571,6 +1573,16 @@ def make_ocean_material(depth_map, variant="sea"):
     depth_node = expr(unreal.MaterialExpressionTextureObject)
     depth_node.set_editor_property("texture", depth_map)
     depth_node.set_editor_property("sampler_type", unreal.MaterialSamplerType.SAMPLERTYPE_LINEAR_GRAYSCALE)
+    def cascade_texture(parameter):
+        # Made by the game (UEphemeraOceanSim) and handed over at run time; a still wave map until then.
+        node = expr(unreal.MaterialExpressionTextureObjectParameter)
+        node.set_editor_property("parameter_name", parameter)
+        node.set_editor_property("texture", waves["swell"])
+        node.set_editor_property("sampler_type", unreal.MaterialSamplerType.SAMPLERTYPE_LINEAR_COLOR)
+        # The shared sampler with the world's filtering (trilinear, anisotropic): takes none of the material's own.
+        node.set_editor_property("sampler_source", unreal.SamplerSourceMode.SSM_WRAP_WORLD_GROUP_SETTINGS)
+        return node
+
     wave_nodes = {}
     for key, texture in waves.items():
         node = expr(unreal.MaterialExpressionTextureObject)
@@ -1583,8 +1595,8 @@ def make_ocean_material(depth_map, variant="sea"):
     sources = [
         ("P", local_pos), ("Dist", distance), ("Time", expr(unreal.MaterialExpressionTime)),
         ("DepthMap", depth_node), ("Chop", wave_nodes["chop"]), ("Swell", wave_nodes["swell"]),
-        ("ChopAnim", wave_nodes["chop_anim"]), ("SwellAnim", wave_nodes["swell_anim"]),
-        ("WaveLoop", scalar("WaveLoop", WAVE_LOOP_S)), ("WaveLoopMetres", scalar("WaveLoopMetres", WAVE_LOOP_METRES)),
+        # The sea's datum radius (m): the charts are read on it, as the grid is raised and the game sums the water.
+        ("SeaRadiusM", scalar("SeaRadiusM", 5000.0)),
         # Beyond FarEnd metres the sea is the painted one; nearer than FarStart it is all real water.
         ("FarStart", scalar("FarStart", 1500.0)), ("FarEnd", scalar("FarEnd", 7000.0)),
         ("MoonDir", colour("MoonDir", (1.0, 0.0, 0.0))), ("TideAmplitude", scalar("TideAmplitude", 0.0)),
@@ -1598,6 +1610,9 @@ def make_ocean_material(depth_map, variant="sea"):
         # The bed at the water's edge: wet black sand.
         ("Bed", colour("Bed", (0.012, 0.012, 0.013))),
     ]
+    for index, gain in enumerate(SEA_GAINS):
+        sources.append((f"Band{index}Gain", scalar(f"Band{index}Gain", gain)))
+        sources.append((f"Casc{index}Slope", cascade_texture(f"Casc{index}Slope")))
     pins = {}
     if variant == "near":
         # The near sea's own inputs. Its vertices are placed by a second Custom node in the vertex shader
@@ -1617,20 +1632,17 @@ def make_ocean_material(depth_map, variant="sea"):
         grid["SeaFace"].set_editor_property("default_value", unreal.LinearColor(1.0, 0.0, 0.0, 5000.0))
         grid["SeaU"].set_editor_property("default_value", unreal.LinearColor(0.0, 1.0, 0.0, 0.0))
         grid["SeaHole"].set_editor_property("default_value", unreal.LinearColor(0.0, 0.0, 0.0, 0.0))
-        for index, gain in enumerate(SEA_GAINS[:len(sea["bands"])]):
-            grid[f"Band{index}Gain"] = scalar(f"Band{index}Gain", gain)
-        for index in range(len(sea["bands"])):
-            for part in ("move", "slope"):
-                node = expr(unreal.MaterialExpressionTextureObject)
-                node.set_editor_property("texture", sea["textures"][f"band{index}_{part}"])
-                node.set_editor_property("sampler_type", unreal.MaterialSamplerType.SAMPLERTYPE_LINEAR_COLOR)
-                grid[f"Band{index}{part.title()}"] = node
+        for index, cascade in enumerate(sea["bands"]):
+            if cascade["max_spacing_m"] > 0.0:
+                grid[f"Casc{index}Move"] = cascade_texture(f"Casc{index}Move")
         flat = expr(unreal.MaterialExpressionPreSkinnedPosition, -900, 900)
         ring = expr(unreal.MaterialExpressionTextureCoordinate, -900, 1000)
         ring.set_editor_property("coordinate_index", 1)
         vertex_sources = [("Flat", flat), ("Ring", ring), ("Time", by_name["Time"]), ("DepthMap", by_name["DepthMap"]),
                           ("MoonDir", by_name["MoonDir"]), ("TideAmplitude", by_name["TideAmplitude"])]
-        vertex_sources += [(key, node) for key, node in grid.items() if not key.endswith("Slope")]
+        vertex_sources += [(f"Band{index}Gain", by_name[f"Band{index}Gain"]) for index, cascade in enumerate(sea["bands"])
+                           if cascade["max_spacing_m"] > 0.0]
+        vertex_sources += list(grid.items())
         place = expr(unreal.MaterialExpressionCustom, -300, 900)
         place_inputs = []
         for input_name, _ in vertex_sources:
@@ -1789,8 +1801,29 @@ def water_maps():
 # The grid (UEphemeraPlanetBuilder::BuildSeaGrid): six rings of 128 x 128 cells from 0.5 m to 16 m, out to
 # a kilometre each way. A standing player's horizon is 110 m off, inside the third ring.
 SEA_GRID = {"rings": 6, "half_cells": 64, "spacing_m": 0.5}
-# Each band's strength as drawn, as baked = 1 (the game is given the same numbers through the body).
-SEA_GAINS = (1.0, 1.0)
+# The sea's waves: four cascades of one simulated sea (UEphemeraOceanSim, which draws their amplitudes from
+# the spectrum each time the game starts; Shaders/EphemeraOcean.usf moves them on every frame). Patch sizes
+# share no factor (Dupuy and Bruneton 2012), and each cascade holds no wave longer than a sixth of the next
+# smaller patch, so no repeat shows. peak_m: the length of its main waves (shallow water steepens waves
+# shorter than twice the depth); break_depth_m: where they have broken (height / 0.78); max_spacing_m: the
+# coarsest grid spacing that still raises the mesh by it (about six vertices to its shortest waves; 0: it
+# only shades). The game's own sums use the same numbers through the body (dress_sea).
+SEA_CASCADES = (
+    {"name": "swell", "patch_m": 613.0, "chop": 0.35, "peak_m": 99.0, "break_depth_m": 1.5, "max_spacing_m": 16.0},
+    {"name": "wind", "patch_m": 127.0, "chop": 0.9, "peak_m": 11.0, "break_depth_m": 0.58, "max_spacing_m": 2.0},
+    {"name": "chop", "patch_m": 29.3, "chop": 0.8, "peak_m": 3.0, "break_depth_m": 0.22, "max_spacing_m": 0.0},
+    {"name": "ripple", "patch_m": 6.9, "chop": 0.5, "peak_m": 0.6, "break_depth_m": 0.06, "max_spacing_m": 0.0},
+)
+# Each cascade's strength as drawn (1 = as simulated); the game is given the same numbers through the body.
+SEA_GAINS = (1.0, 1.0, 1.0, 1.0)
+
+
+def ocean_code():
+    """OCEAN_CODE with the charts and the cascades' sizes filled in."""
+    import string
+    values = _chart_values()
+    values.update({f"P{index}": _hlsl(cascade["patch_m"]) for index, cascade in enumerate(SEA_CASCADES)})
+    return string.Template(OCEAN_CODE).substitute(values)
 
 
 def _sea_chart(u, v, turn, shift):
@@ -1809,71 +1842,43 @@ SEA_CHARTS = (
 )
 
 SEA_BANDS_CODE = r"""
-// The near sea's waves (Tools/terrain/ocean_fft.py): bands of one sea, each a patch of water that repeats
-// in space and loops in time, read where a point of the sea rests before the waves move it. Its texels hold
-// sideways move, height and the moved surface's slope (metres, half floats), its third coordinate is time:
-// the view's shared sampler blends texels and moments alike, and wraps both. Laid on the planet along three
-// charts (planes through its centre, each turned its own way, so the swell does not run one way all round
-// the world), blended where they meet with weights whose squares add to one: two unrelated seas mixed so
-// are as high as either, where plain weights would halve the waves along every seam.
+// The near sea's waves (UEphemeraOceanSim): cascades of one sea, each a patch of water that repeats in space,
+// simulated for this moment, read where a point of the sea rests before the waves move it. Its texels hold
+// sideways move and height (metres, half floats). Laid on the planet along three charts (planes through its
+// centre, each turned its own way, so the swell does not run one way all round the world), blended where
+// they meet with weights whose squares add to one: two unrelated seas mixed so are as high as either, where
+// plain weights would halve the waves along every seam.
 struct FSeaBands
 {
     float3 pm, up, w;
-    float time;
-    float4 Read(Texture3D T, float3 eu, float3 ev, float2 shift, float patch, float texels, float when)
+    float4 Read(Texture2D T, float3 eu, float3 ev, float2 shift, float patch)
     {
-        float2 uv = float2(dot(pm, eu), dot(pm, ev)) / patch + shift + 0.5 / texels;
-        return T.SampleLevel(View.MaterialTextureBilinearWrapedSampler, float3(uv, when), 0.0);
+        float2 uv = float2(dot(pm, eu), dot(pm, ev)) / patch + shift;
+        return T.SampleLevel(View.MaterialTextureBilinearWrapedSampler, uv, 0.0);
     }
     float3 Along(float3 e)
     {
         return e - up * dot(e, up);
     }
-    // How far one band moves the water resting here: metres, planet space.
-    float3 Move(Texture3D T, float patch, float texels, float loop, float frames)
+    // How far one cascade moves the water resting here: metres, planet space.
+    float3 Move(Texture2D T, float patch)
     {
-        float when = frac(time / loop) + 0.5 / frames;
         float3 sum = 0.0;
         [branch] if (w.x > 0.02)
         {
-            float4 d = Read(T, $XU, $XV, $XS, patch, texels, when);
+            float4 d = Read(T, $XU, $XV, $XS, patch);
             sum += (up * d.z + Along($XU) * d.x + Along($XV) * d.y) * w.x;
         }
         [branch] if (w.y > 0.02)
         {
-            float4 d = Read(T, $YU, $YV, $YS, patch, texels, when);
+            float4 d = Read(T, $YU, $YV, $YS, patch);
             sum += (up * d.z + Along($YU) * d.x + Along($YV) * d.y) * w.y;
         }
         [branch] if (w.z > 0.02)
         {
-            float4 d = Read(T, $ZU, $ZV, $ZS, patch, texels, when);
+            float4 d = Read(T, $ZU, $ZV, $ZS, patch);
             sum += (up * d.z + Along($ZU) * d.x + Along($ZV) * d.y) * w.z;
         }
-        return sum;
-    }
-    // One band's slope (xyz: a vector along the charts' axes, planet space; the caller takes off its part
-    // along up) and its foam (w).
-    float4 Slope(Texture3D T, float patch, float texels, float loop, float frames)
-    {
-        float when = frac(time / loop) + 0.5 / frames;
-        float4 sum = 0.0;
-        [branch] if (w.x > 0.02)
-        {
-            float4 s = Read(T, $XU, $XV, $XS, patch, texels, when);
-            sum += float4($XU * s.x + $XV * s.y, s.z) * w.x;
-        }
-        [branch] if (w.y > 0.02)
-        {
-            float4 s = Read(T, $YU, $YV, $YS, patch, texels, when);
-            sum += float4($YU * s.x + $YV * s.y, s.z) * w.y;
-        }
-        [branch] if (w.z > 0.02)
-        {
-            float4 s = Read(T, $ZU, $ZV, $ZS, patch, texels, when);
-            sum += float4($ZU * s.x + $ZV * s.y, s.z) * w.z;
-        }
-        // Foam is not a wave: where charts meet it is averaged, not added.
-        sum.w /= max(w.x + w.y + w.z, 0.001);
         return sum;
     }
     // Over shallow water a wave slows and steepens (Green's law: height ~ depth^-1/4, felt from half a
@@ -1886,7 +1891,6 @@ struct FSeaBands
 FSeaBands Bands;
 Bands.pm = up * SeaFace.w;
 Bands.up = up;
-Bands.time = Time;
 float3 seaChart = pow(abs(up), 8.0);
 Bands.w = seaChart / max(sqrt(dot(seaChart, seaChart)), 1e-12);
 """
@@ -1942,31 +1946,6 @@ Rest = up * (R + tide) * 100.0;
 return Rest + move * 100.0 - Flat;
 """
 
-SEA_NEAR_PIXELS = r"""
-// The near sea's own waves, the ones its mesh is raised by (SEA_GRID_CODE): their slopes and foam. Each band
-// fades out where a pixel spans too much of its shortest wave to show it (its textures have no mips: the
-// slope it can no longer show becomes roughness, as the painted waves' does below), and all of them fade
-// toward the grid's rim, where the far sea's painted swell comes back, so the near and far seas meet as one.
-$BANDS
-float seaHole = max(SeaHole.w, 1.0);
-float seaAlong = max(dot(up, SeaFace.xyz), 0.0001);
-float2 seaArc = SeaFace.w * float2(atan2(dot(up, SeaU.xyz), seaAlong), atan2(dot(up, SeaV.xyz), seaAlong));
-float seaNear = 1.0 - smoothstep(0.62 * seaHole, 0.96 * seaHole, max(abs(seaArc.x - SeaU.w), abs(seaArc.y - SeaV.w)));
-seaNear *= step(0.0, dot(up, SeaFace.xyz));
-float seaPixel = max(length(Sea.dpx), length(Sea.dpy));
-float4 seaSlope = 0.0;
-float seaLost = 0.0;
-[branch] if (seaNear > 0.0)
-{
-$SLOPES
-}
-// The painted swell (the two longest moving maps below) is the far sea's stand-in for these waves.
-float swellKeep = 1.0 - seaNear;
-// Whitecaps only where the waves really crowd and break: in the light breeze this sea has, a few in a
-// hundred square metres (all of the foam the bake marks, drawn white, was a snowfall seen from the air).
-float whitecap = saturate((seaSlope.w - 0.45) * 1.8) * 0.7 * WhitecapGain;      // none in this sea's light breeze (WhitecapGain 0); a storm would raise it
-"""
-
 SEA_HOLE_CODE = r"""
 // The far sea's hole (UEphemeraSeaSurfaceComponent): 0 where the near sea's grid is the water, within
 // SeaHole.w metres of arc of the camera along both axes of the grid's lattice face (SeaFace, SeaU, SeaV, as
@@ -1983,33 +1962,9 @@ _SEA = {}
 
 
 def sea_bands():
-    """The near sea's baked waves (Tools/terrain/ocean_fft.py): {"bands": each band's numbers from the
-    bake's sea_waves.json, "textures": {"band0_move", "band0_slope", ...: volume textures}}."""
-    if _SEA:
-        return _SEA
-    import json
-    spec_file = BAKES.parent / "water" / "sea_waves.json"
-    if not spec_file.exists():
-        raise RuntimeError(f"{spec_file} is missing: run Tools/terrain/run.sh ocean_fft.py {spec_file.parent}")
-    spec = json.loads(spec_file.read_text())
-    textures = {}
-    for index, band in enumerate(spec["bands"]):
-        for part in ("move", "slope"):
-            raw = spec_file.parent / band[part]
-            name = f"T_Sea_{band['name'].title()}{part.title()}"
-            path = f"{ROOT}/Textures/Water/{name}"
-            stamp = stamp_of("sea-volume-v1", hashlib.sha1(raw.read_bytes()).hexdigest(), band["texels"], band["frames"])
-            texture = unchanged(path, stamp)
-            if not texture:
-                texture = unreal.EphemeraCloudBuilder.import_wave_volume_half(f"{ROOT}/Textures/Water", name, str(raw), band["texels"], band["frames"])
-                if not texture:
-                    raise RuntimeError(f"{name} could not be made from {raw}")
-                ASSETS.set_metadata_tag(texture, "EphemeraStamp", stamp)
-                ASSETS.save_loaded_asset(texture)
-                log(f"sea volume {name}: rebuilt")
-            textures[f"band{index}_{part}"] = texture
-    _SEA.update({"bands": spec["bands"], "textures": textures})
-    return _SEA
+    """The near sea's waves: {"bands": SEA_CASCADES}. Their textures are made by the game (UEphemeraOceanSim)
+    and handed to the materials at run time (CascNMove, CascNSlope parameters)."""
+    return {"bands": SEA_CASCADES}
 
 
 def _hlsl(number):
@@ -2018,18 +1973,18 @@ def _hlsl(number):
     return text if "." in text or "e" in text else text + ".0"
 
 
-def _sea_bands_code():
-    import string
+def _chart_values():
     values = {}
     for label, (u, v, shift) in zip("XYZ", SEA_CHARTS):
         values[f"{label}U"] = "float3(%s)" % ", ".join(_hlsl(c) for c in u)
         values[f"{label}V"] = "float3(%s)" % ", ".join(_hlsl(c) for c in v)
         values[f"{label}S"] = "float2(%s)" % ", ".join(_hlsl(c) for c in shift)
-    return string.Template(SEA_BANDS_CODE).substitute(values)
+    return values
 
 
-def _band_args(band):
-    return f"{_hlsl(band['patch_m'])}, {_hlsl(band['texels'])}, {_hlsl(band['loop_s'])}, {_hlsl(band['frames'])}"
+def _sea_bands_code():
+    import string
+    return string.Template(SEA_BANDS_CODE).substitute(_chart_values())
 
 
 def sea_grid_code(sea):
@@ -2038,45 +1993,20 @@ def sea_grid_code(sea):
     moves = []
     for index, band in enumerate(sea["bands"]):
         limit = band["max_spacing_m"]
+        if limit <= 0.0:
+            continue        # this cascade only shades
         moves.append(f"    float gain{index} = Band{index}Gain * Bands.Shore(depth, {_hlsl(band['peak_m'])}, {_hlsl(band['break_depth_m'])})"
                      f" * (1.0 - smoothstep({_hlsl(limit)}, {_hlsl(2.0 * limit)}, spacingNow)) * nearness;\n"
                      f"    [branch] if (gain{index} > 0.0)\n"
-                     f"        move += Bands.Move(Band{index}Move, {_band_args(band)}) * gain{index};")
+                     f"        move += Bands.Move(Casc{index}Move, {_hlsl(band['patch_m'])}) * gain{index};")
     cells = SEA_GRID["half_cells"]
     return string.Template(SEA_GRID_CODE).substitute(BANDS=_sea_bands_code(), MOVES="\n".join(moves),
                                                      MORPH_FROM=_hlsl(0.75 * cells), MORPH_TO=_hlsl(cells - 4.0))
 
 
 def near_ocean_code(sea):
-    """OCEAN_CODE for the near sea: the same water, with the baked waves' slopes and foam added where the
-    grid draws them, and the painted swell taken out there (they are its stand-in far off). Made by editing
-    a copy, so the sphere's own material (M_Ocean, the sea as it was) is the very same text as before."""
-    import string
-    slopes = []
-    for index, band in enumerate(sea["bands"]):
-        shortest = band["shortest_m"]
-        slopes.append(f"    float seaGain{index} = Band{index}Gain * Bands.Shore(depth, {_hlsl(band['peak_m'])}, {_hlsl(band['break_depth_m'])}) * seaNear;\n"
-                      f"    float seaKeep{index} = 1.0 - smoothstep({_hlsl(0.5 * shortest)}, {_hlsl(2.0 * shortest)}, seaPixel);\n"
-                      f"    [branch] if (seaGain{index} * seaKeep{index} > 0.0)\n"
-                      f"        seaSlope += Bands.Slope(Band{index}Slope, {_band_args(band)}) * (seaGain{index} * seaKeep{index});\n"
-                      f"    seaLost += {_hlsl(band['mss'])} * seaGain{index} * seaGain{index} * (1.0 - seaKeep{index});")
-    pixels = string.Template(SEA_NEAR_PIXELS).substitute(BANDS=_sea_bands_code(), SLOPES="\n".join(slopes))
-    edits = (
-        ("float dM = Dist * 0.01;\n", "float dM = Dist * 0.01;\n" + pixels),
-        ("0.20 * breeze,", "0.20 * breeze * swellKeep,"),
-        ("0.24 * breeze,", "0.24 * breeze * swellKeep,"),
-        ("float3 slope3 = wv.xyz - up * dot(wv.xyz, up);", "float3 slope3 = wv.xyz + seaSlope.xyz;\nslope3 -= up * dot(slope3, up);"),
-        ("Rough = pow(0.0004 + wv.w, 0.25);", "Rough = pow(0.0004 + wv.w + seaLost, 0.25);"),
-        # Whitecaps where the waves crowd, eaten into lace like the surf.
-        ("float painted = smoothstep(FarStart, FarEnd, dM);",
-         "foam = max(foam, whitecap * lerp(0.55, 1.0, lace));\nfloat painted = smoothstep(FarStart, FarEnd, dM);"),
-    )
-    code = OCEAN_CODE
-    for old, new in edits:
-        if code.count(old) != 1:
-            raise RuntimeError(f"near_ocean_code: OCEAN_CODE no longer has exactly one {old!r}")
-        code = code.replace(old, new)
-    return code
+    """OCEAN_CODE for the near sea: the same water (it reads the same cascades, where the grid's water rests)."""
+    return ocean_code()
 
 
 def sea_grid_mesh():
@@ -2097,7 +2027,7 @@ def sea_grid_mesh():
 
 def dress_sea(body, depth_map):
     """Gives a world with a sea its near sea: the grid and its material, the far sea's material with the
-    hole, and the waves themselves for the game's own sums (UEphemeraSeaSurfaceComponent)."""
+    hole, and the cascades' numbers (UEphemeraSeaSurfaceComponent, UEphemeraOceanSim)."""
     sea = sea_bands()
     body.set_editor_property("sea_grid_mesh", sea_grid_mesh())
     body.set_editor_property("sea_grid_material", make_ocean_material(depth_map, "near"))
@@ -2108,9 +2038,10 @@ def dress_sea(body, depth_map):
     bands = []
     for index, band in enumerate(sea["bands"]):
         entry = unreal.EphemeraSeaBand()
-        set_all(entry, {"patch_m": band["patch_m"], "loop_s": band["loop_s"], "choppiness": band["chop"], "gain": SEA_GAINS[index],
+        # Waves: filled by the game from the simulation (UEphemeraOceanSim::Build).
+        set_all(entry, {"patch_m": band["patch_m"], "choppiness": band["chop"], "gain": SEA_GAINS[index],
                         "peak_m": band["peak_m"], "break_depth_m": band["break_depth_m"], "max_spacing_m": band["max_spacing_m"],
-                        "waves": band["waves"]})
+                        "waves": []})
         bands.append(entry)
     body.set_editor_property("sea_bands", bands)
     charts = []
@@ -2409,7 +2340,7 @@ def cloud_textures():
 def make_cloud_material():
     weather_texture, shape_texture, detail_texture = cloud_textures()
     path = f"{ROOT}/Materials/M_Clouds"
-    stamp = stamp_of("clouds-v23", CLOUD_CODE, CLOUD_COVER_CODE, CLOUD_LIT_CODE, 2e-5)
+    stamp = stamp_of("clouds-v27", CLOUD_CODE, CLOUD_COVER_CODE, CLOUD_LIT_CODE, 2e-5)
     kept = unchanged(path, stamp)
     if kept:
         return kept
@@ -3592,29 +3523,142 @@ def cover_rules(meshes, per_m2, **values):
 
 
 AURORA_CODE = r"""
-// Aurora on a thin shell high in the air. P: planet-local position. Nw: the shell's outward normal
-// in world space. L: direction to the sun. Shell: which of the stacked shells this is (0 lowest .. 1).
-// Light stands in an oval round each magnetic pole (set a little off the spin axis), only where it
-// is night, in curtains that ripple slowly round the oval and are streaked with fine rays.
-float3 d = normalize(P);
-float3 pole = normalize(float3(0.18, -0.12, 1.0));
-float lat = abs(dot(d, pole));
-float oval = exp(-pow((lat - 0.86 - 0.012 * Shell) / 0.034, 2.0));
-float3 e = normalize(cross(pole, float3(1.0, 0.0, 0.0)));
-float3 f = cross(pole, e);
-float lon = atan2(dot(d, f), dot(d, e));
-float ripple = 0.5 + 0.5 * sin(lon * 21.0 + sin(lon * 6.0 + Time * 0.05) * 2.6 + Time * 0.03);
-float rays = 0.55 + 0.45 * sin(lon * 170.0 + Time * 0.4 + Shell * 2.0 + sin(lon * 31.0) * 3.0);
-float night = smoothstep(0.02, 0.28, -dot(normalize(Nw), normalize(L)));
-float3 colour = lerp(float3(0.10, 1.00, 0.38), float3(0.50, 0.18, 0.95), Shell);
-return colour * oval * ripple * ripple * rays * night * Strength * lerp(1.0, 0.4, Shell);
+// The aurora: curtains of light marched through, not painted on a shell (Lawlor and Genetti, "Interactive
+// Volume Rendering Aurora on the GPU", 2011; docs/research/aurora.md). Real aurora is thin folded sheets of
+// light standing along an oval round the magnetic pole, never spokes from it: the sheets are where the
+// electrons come down, so each is a curve on the ground drawn upward along the field. The light of a sheet
+// is the 557.7 nm oxygen green from a sharp foot to a long fading top, with the 630 nm red, broad and dim,
+// above it; the magenta lower fringe is rare and faint. Seen edge-on a sheet gathers a long path of light,
+// which is why from orbit aurora are bright thin lines near the limb and faint ribbons looking straight down.
+//
+// Inputs (metres, the planet's own frame, its centre at the origin): Ro the camera; Rd the view ray through
+// this pixel; Frag how far along it this pixel of the bounding sphere lies; Sun the direction to the star;
+// Planet, Base, Top: radius of the ground and the curtains' foot and top heights; Depth: scene depth (cm)
+// along the view axis and CamFwd: the ray's cosine to that axis. Strength: on-screen brightness.
+float3 rd = normalize(Rd);
+float3 sun = normalize(Sun);
+float rTop = Planet + Top;
+float b = dot(Ro, rd);
+float c0 = dot(Ro, Ro);
+// Only the bounding sphere's near face draws when the camera is outside it (its far face would add the
+// same light again).
+if (c0 > Container * Container && Frag > -b) return 0;
+float discT = b * b - (c0 - rTop * rTop);
+if (discT <= 0.0) return 0;
+float sq = sqrt(discT);
+float t0 = max(-b - sq, 0.0);
+float t1 = -b + sq;
+// Stop at the ground (the planet's sphere) and at whatever stands in front (terrain, the moon).
+float discP = b * b - (c0 - Planet * Planet);
+if (discP > 0.0 && -b - sqrt(discP) > 0.0) t1 = min(t1, -b - sqrt(discP));
+t1 = min(t1, Depth * 0.01 / max(CamFwd, 0.05));
+if (t1 <= t0) return 0;
+
+// The magnetic frame: the dipole axis a little off the spin axis; longitude counted from local midnight.
+float3 m = normalize(float3(0.18, -0.12, 1.0));
+float3 e = normalize(cross(m, float3(1.0, 0.0, 0.0)));
+float3 f = cross(m, e);
+float midnight = atan2(dot(-sun, f), dot(-sun, e));
+
+// Smooth value noise (no sines: sums of sines are what make evenly spaced stripes).
+#define HASH2(HPOS) frac(sin(dot(HPOS, float2(127.1, 311.7))) * 43758.5453)
+#define VNOISE(NPOS, NOUT) { float2 ip = floor(NPOS); float2 fp = frac(NPOS); float2 fw = fp * fp * (3.0 - 2.0 * fp); \
+    NOUT = lerp(lerp(HASH2(ip), HASH2(ip + float2(1, 0)), fw.x), lerp(HASH2(ip + float2(0, 1)), HASH2(ip + float2(1, 1)), fw.x), fw.y) * 2.0 - 1.0; }
+
+float H = Top - Base;
+// A sheet's own thickness and the pixel's footprint at a distance: a sheet is never drawn thinner than a
+// pixel (its light spread wider keeps the same total), which is what keeps it from shimmering.
+float sigPhys = 3.0;
+float pixAngle = 2.0 * View.ClipToView[1][1] * View.ViewSizeAndInvSize.w;
+// Start each pixel's march at a different point (interleaved gradient noise, changing every frame); the
+// temporal upscaler averages the steps into a smooth result.
+float2 sp = Parameters.SvPosition.xy + 5.588238 * float(View.StateFrameIndexMod8);
+float jitter = frac(52.9829189 * frac(dot(sp, float2(0.06711056, 0.00583715))));
+
+// 557.7 nm lies outside every display's colours; this is how it photographs: an emerald green, a little
+// toward blue, which turns paler where it is bright (the tone curve).
+float3 green = float3(0.30, 1.0, 0.45);
+float3 red = float3(1.0, 0.10, 0.22);            // 630.0 nm, as it photographs: crimson
+float3 pink = float3(1.0, 0.18, 0.55);           // N2 first-positive red bands of the rare lower border
+float3 light = 0;
+float s = t0;
+float stepLast = 0.0;
+[loop] for (int i = 0; i < 128; ++i)
+{
+    if (s >= t1) break;
+    float3 p = Ro + rd * s;
+    float r = length(p);
+    float h = r - Planet;
+    float3 n = p / r;
+    float th = acos(clamp(dot(n, m), -1.0, 1.0));
+    float ph = atan2(dot(n, f), dot(n, e));
+    float2 ring = float2(cos(ph), sin(ph));
+    float arcR = Planet * sin(th);
+    // The oval: about 19 degrees from the pole, wider on the night side.
+    float oval = radians(19.0) + radians(4.0) * cos(ph - midnight);
+    // Three arcs, each folded by noise of a few sizes along it (spirals, folds), drifting slowly round.
+    float dMin = 1e9;
+    float arcNear = 0;
+    float rays = 0;
+    float gap = 0;
+    [unroll] for (int k = 0; k < 3; ++k)
+    {
+        float kf = float(k);
+        float2 q = ring * (3.0 + kf * 1.7) + float2(Time * 0.004 * (1.0 + kf * 0.3), kf * 13.1);
+        float n1, n2, n3;
+        VNOISE(q, n1);
+        VNOISE(q * 3.1 + float2(kf * 7.3, Time * 0.011), n2);
+        VNOISE(q * 9.7 + float2(Time * 0.02, kf * 3.9), n3);
+        float curve = oval + radians(-1.4 + 1.6 * kf) + radians(1.2) * n1 + radians(0.35) * n2 + radians(0.09) * n3;
+        float d = abs(th - curve) * Planet;
+        if (d < dMin)
+        {
+            dMin = d;
+            arcNear = kf;
+        }
+    }
+    // Rays: fine vertical streaks, set by the place along the arc only, so they stand up the sheet.
+    float2 qr = ring * (arcR / 9.0) + float2(arcNear * 31.0, Time * 0.05);
+    float nr1, nr2;
+    VNOISE(qr, nr1);
+    VNOISE(qr * 0.37 + float2(5.1, Time * 0.02), nr2);
+    rays = pow(saturate(1.0 - abs(nr1)), 3.0) * 0.75 + 0.25 + 0.3 * nr2;
+    // Breaks along the arc: no curtain runs all the way round lit.
+    float2 qg = ring * 2.2 + float2(arcNear * 4.3, Time * 0.003);
+    float ng;
+    VNOISE(qg, ng);
+    gap = smoothstep(-0.35, 0.25, ng);
+
+    float footprint = s * pixAngle;
+    float sig = max(sigPhys, 0.7 * footprint);
+    float sheet = (sigPhys / sig) * exp(-0.5 * (dMin / sig) * (dMin / sig));
+    float sigRed = sig * 6.0;
+    float sheetRed = (sigPhys / sigRed) * exp(-0.5 * (dMin / sigRed) * (dMin / sigRed));
+
+    // The light up the sheet: a sharp foot, a long fading top whose height varies from ray to ray; red above.
+    float hz = h - Base;
+    float topHere = H * (0.45 + 0.35 * rays);
+    float g = smoothstep(0.0, 0.04 * H, hz) * exp(-max(hz - 0.06 * H, 0.0) / (0.18 * H)) * (1.0 - smoothstep(topHere * 0.8, topHere, hz));
+    float rr = exp(-pow((hz - 0.55 * H) / (0.25 * H), 2.0)) * 0.22;
+    float bottom = saturate(1.0 - hz / (0.03 * H)) * step(0.0, hz) * 0.08;
+    // Only where it is night: in daylight the sky outshines it.
+    float night = smoothstep(0.12, -0.18, dot(n, sun));
+    float lit = gap * night;
+    float3 here = (sheet * rays * (g * green + bottom * pink) + sheetRed * (0.6 + 0.4 * rays) * rr * red) * lit;
+    // March by the distance to the nearest sheet (sphere tracing), never further than its own width.
+    float stepLen = clamp(0.6 * (dMin - 2.5 * sig), 0.8 * sig, max(H * 0.15, 0.8 * sig));
+    if (i == 0) stepLen *= jitter + 0.05;
+    light += here * stepLen;
+    s += stepLen;
+}
+return light * Strength;
 """
 
 
 def make_aurora_material():
     name = "M_Aurora"
     path = f"{ROOT}/Materials/{name}"
-    stamp = stamp_of("aurora-v1", AURORA_CODE)
+    stamp = stamp_of("aurora-v3", AURORA_CODE)
     kept = unchanged(path, stamp)
     if kept:
         return kept
@@ -3630,23 +3674,68 @@ def make_aurora_material():
     def expr(cls, x=-900, y=0):
         return EDIT.create_material_expression(material, cls, x, y)
 
+    def primitive(parameter, index, value):
+        node = expr(unreal.MaterialExpressionScalarParameter)
+        node.set_editor_property("parameter_name", parameter)
+        node.set_editor_property("default_value", value)
+        node.set_editor_property("use_custom_primitive_data", True)
+        node.set_editor_property("primitive_data_index", index)
+        return node
+
+    def to_local(vector_node):
+        node = expr(unreal.MaterialExpressionTransform)
+        node.set_editor_property("transform_source_type", unreal.MaterialVectorCoordTransformSource.TRANSFORMSOURCE_WORLD)
+        node.set_editor_property("transform_type", unreal.MaterialVectorCoordTransform.TRANSFORM_LOCAL)
+        connect(vector_node, "", node, "")
+        return node
+
+    # The bounding sphere is the engine's 50 cm sphere scaled to Container metres (EphemeraBody.cpp), so one
+    # unit of its local space is Container / 50 metres, and its local axes are the planet's own.
+    container = primitive("Container", 0, 4000.0)
+    planet = primitive("Planet", 1, 5000.0)
+    base = primitive("Base", 2, 800.0)
+    top = primitive("Top", 3, 3200.0)
+    metres = expr(unreal.MaterialExpressionDivide)
+    connect(container, "", metres, "A")
+    metres.set_editor_property("const_b", 50.0)
     world = expr(unreal.MaterialExpressionWorldPosition)
-    local_pos = expr(unreal.MaterialExpressionTransformPosition)
-    local_pos.set_editor_property("transform_source_type", unreal.MaterialPositionTransformSource.TRANSFORMPOSSOURCE_WORLD)
-    local_pos.set_editor_property("transform_type", unreal.MaterialPositionTransformSource.TRANSFORMPOSSOURCE_LOCAL)
-    connect(world, "", local_pos, "")
-    shell = expr(unreal.MaterialExpressionScalarParameter)
-    shell.set_editor_property("parameter_name", "Shell")
-    shell.set_editor_property("default_value", 0.0)
-    shell.set_editor_property("use_custom_primitive_data", True)
-    shell.set_editor_property("primitive_data_index", 0)
+    camera = expr(unreal.MaterialExpressionCameraPositionWS)
+    centre = expr(unreal.MaterialExpressionObjectPositionWS)
+    ray = expr(unreal.MaterialExpressionSubtract)
+    connect(world, "", ray, "A")
+    connect(camera, "", ray, "B")
+    from_centre = expr(unreal.MaterialExpressionSubtract)
+    connect(camera, "", from_centre, "A")
+    connect(centre, "", from_centre, "B")
+    ray_local = to_local(ray)
+    cam_local = to_local(from_centre)
+    cam_m = expr(unreal.MaterialExpressionMultiply)
+    connect(cam_local, "", cam_m, "A")
+    connect(metres, "", cam_m, "B")
+    frag_len = expr(unreal.MaterialExpressionLength)
+    connect(ray_local, "", frag_len, "")
+    frag_m = expr(unreal.MaterialExpressionMultiply)
+    connect(frag_len, "", frag_m, "A")
+    connect(metres, "", frag_m, "B")
+    sun_local = to_local(expr(unreal.MaterialExpressionSkyAtmosphereLightDirection))
+    # The ray's cosine to the view axis turns scene depth (along that axis) into distance along the ray.
+    cam_vec = expr(unreal.MaterialExpressionCameraVectorWS)
+    fwd = expr(unreal.MaterialExpressionCustom)
+    fwd_in = unreal.CustomInput()
+    fwd_in.set_editor_property("input_name", "V")
+    fwd.set_editor_property("inputs", [fwd_in])
+    fwd.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT1)
+    fwd.set_editor_property("code", "return dot(-normalize(V), View.ViewForward);")
+    connect(cam_vec, "", fwd, "V")
+    depth = expr(unreal.MaterialExpressionSceneDepth)
     strength = expr(unreal.MaterialExpressionScalarParameter)
     strength.set_editor_property("parameter_name", "Strength")
-    # On-screen brightness (the eye-adaptation node below holds it there whatever the exposure, as for the stars).
-    strength.set_editor_property("default_value", 0.5)
-    sources = [("P", local_pos), ("Nw", expr(unreal.MaterialExpressionVertexNormalWS)),
-               ("L", expr(unreal.MaterialExpressionSkyAtmosphereLightDirection)), ("Time", expr(unreal.MaterialExpressionTime)),
-               ("Shell", shell), ("Strength", strength)]
+    # On-screen brightness per metre of sheet seen through (the eye-adaptation node below holds it there
+    # whatever the exposure, as for the stars).
+    strength.set_editor_property("default_value", 0.012)
+    sources = [("Ro", cam_m), ("Rd", ray_local), ("Frag", frag_m), ("Sun", sun_local), ("Container", container),
+               ("Planet", planet), ("Base", base), ("Top", top), ("Depth", depth), ("CamFwd", fwd),
+               ("Time", expr(unreal.MaterialExpressionTime)), ("Strength", strength)]
     custom = expr(unreal.MaterialExpressionCustom, -300, 0)
     inputs = []
     for input_name, _ in sources:
@@ -4115,7 +4204,7 @@ def build_bodies(materials):
         # absorbing layer deepens the zenith toward indigo.
         "atmosphere_height_m": 1400.0, "rayleigh_scattering": unreal.LinearColor(0.115, 0.455, 0.90, 1.0),
         "mie_scale": 0.00055, "absorption_scale": 2.2, "absorption": unreal.LinearColor(0.42, 1.0, 0.10, 1.0),
-        "rayleigh_scale": 0.0091, "mist_per_km": 0.2, "mist_height_m": 150.0, "tide_amplitude_m": 5.0, "tide_body": "hush", "tide_collection": world_parameters(), "aurora_material": make_aurora_material(), "cloud_base_m": 280.0, "cloud_thickness_m": 130.0, "cloud_material": materials["clouds"],
+        "rayleigh_scale": 0.0331, "mist_per_km": 0.2, "mist_height_m": 150.0, "tide_amplitude_m": 5.0, "tide_body": "hush", "tide_collection": world_parameters(), "aurora_material": make_aurora_material(), "cloud_base_m": 280.0, "cloud_thickness_m": 130.0, "cloud_material": materials["clouds"],
         "micro_relief": 1.0,
         "terrain": terrain, "terrain_material": materials["dawnhollow"], "terrain_mesh_scale": 1.0,
         # Ground dressing belongs to the next phase; the earlier forest does not fit this world.

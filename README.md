@@ -21,7 +21,8 @@ It installs for your user only, with no administrator prompt. The installer isn'
 may show "Windows protected your PC". Click **More info**, then **Run anyway**.
 
 **Requirements:** Windows 10/11 64-bit and a DirectX 12 graphics card. It's developed and tested on an
-RTX 3060.
+RTX 3060. On NVIDIA RTX cards you can switch the upscaler to DLSS in the settings menu for a big frame-rate
+boost.
 
 ## Controls
 
@@ -107,6 +108,8 @@ building it.
 
 - Textures and surfaces: [Poly Haven](https://polyhaven.com) (CC0).
 - Sound: recordings from the Sonniss GDC Game Audio Bundles, plus CC0 footsteps from OpenGameArt and Kenney.
+- Upscaling (optional): NVIDIA DLSS, shipped in the packaged game under NVIDIA's RTX SDK licence. It is not part of
+  the source; `unreal/Tools/fetch_dlss.ps1` downloads it from NVIDIA.
 - Built with [Claude Code](https://claude.com/claude-code).
 
 Inspired by Outer Wilds. This is a non-commercial fan project with its own worlds, art and code;

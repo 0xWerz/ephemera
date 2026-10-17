@@ -65,10 +65,13 @@ namespace
 	// tops keep their shape; shadows are left alone (lifted, the whole picture goes milky: tried).
 	constexpr float DayHighlightContrast = 0.78f;
 	constexpr float DayShadowContrast = 1.0f;
-	// The sky's share of the light, as the engine's capture of the sky itself measures it. (It was
-	// once lifted to 2.6 to keep shade readable under a thin sky; that also multiplied the sky's
-	// reflection in every stone and blade by 2.6, and took the difference between sun and shade away.)
-	constexpr float SkyLightScale = 1.2f;
+	// The sky's share of the light, as the engine's capture of the sky itself measures it. With the air at
+	// Earth's own optical depth (rayleigh_scale 0.0331, Tools/build_slice.py; it was a quarter of that, a
+	// thin navy sky) and this, shade on open ground is lit by the sky as in a photograph: darker than sun
+	// by a few stops, never black. (2026-10-17, A/B at 1.2 / 2.5 / 4: at 1.2 shade measured 0% of the sunlit
+	// value after the tone curve, a black wedge on every slope facing away from the sun; at 4 the land went
+	// flat and the sea glared.)
+	constexpr float SkyLightScale = 2.5f;
 	constexpr float AirDepthScale = 0.38f;
 	// Mist you can see into (see the Fog component): how far from the eye the air is drawn as
 	// cells of fog, its density at sea level and the height over which it thins, where no weather
@@ -124,8 +127,10 @@ AEphemeraSkyRig::AEphemeraSkyRig()
 	// sun each texel lies 50 to 140 m long on the ground: blotches. Three times the texels, and twice
 	// the steps through the cloud (the default 16 left bands that moved with the camera).
 	// (docs/research/night_cloudshadows_stability.md, section 2.)
-	Sun->CloudShadowMapResolutionScale = 3.f;
-	Sun->CloudShadowRaySampleCountScale = 2.f;
+	// (2026-10-17: 3x and 2x cost 7 ms of a 26 ms frame on the RTX 3060; 2x and 1.5x, with the cloud base now
+	// above the hills and a thinner deck, measured against them for the blotches and bands that started this.)
+	Sun->CloudShadowMapResolutionScale = 2.f;
+	Sun->CloudShadowRaySampleCountScale = 1.5f;
 	// Real cumulus shadows keep a little of the direct light (it is scattered on through the cloud).
 	Sun->CloudShadowStrength = 0.88f;
 	// Cloud shadows on the ground only: cast through the air as well they drew shafts and bands up the sky from
@@ -166,7 +171,7 @@ AEphemeraSkyRig::AEphemeraSkyRig()
 	Atmosphere->SetMobility(EComponentMobility::Movable);
 	Atmosphere->TransformMode = ESkyAtmosphereTransformMode::PlanetCenterAtComponentTransform;
 	// More ray-march steps: the air is a thin shell and its haze layer is only metres deep.
-	Atmosphere->TraceSampleCountScale = 4.f;
+	Atmosphere->TraceSampleCountScale = 2.f;
 
 	Clouds = CreateDefaultSubobject<UVolumetricCloudComponent>(TEXT("Clouds"));
 	Clouds->SetupAttachment(Root);
@@ -706,7 +711,8 @@ void AEphemeraSkyRig::UpdateSky()
 	// left in, that lights the land like an overcast afternoon: it was the night's real lamp, and
 	// the reason night was never dark. A fortieth of it is kept: enough for hollows and the lee of
 	// rocks to be darker than open ground, which the two night lights by themselves cannot do.
-	const float SkyNow = Tuned(TEXT("skylight"), SkyLightScale) * FMath::Lerp(1.f, Tuned(TEXT("nightsky"), 0.025f), Night);
+	// (0.012 of 2.5 by day: the same night sky light as 0.025 of the old 1.2, so night is as dark as it was.)
+	const float SkyNow = Tuned(TEXT("skylight"), SkyLightScale) * FMath::Lerp(1.f, Tuned(TEXT("nightsky"), 0.012f), Night);
 	if (FMath::Abs(SkyNow - SkyLight->Intensity) > 0.02f * FMath::Max(SkyLight->Intensity, 0.01f))
 	{
 		SkyLight->SetIntensity(SkyNow);

@@ -317,6 +317,8 @@ public:
 	 */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Atmosphere") TObjectPtr<UMaterialInterface> AuroraMaterial;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Atmosphere") float AuroraAltitudeM = 800.f;
+	/** How far the curtains reach above their foot (AuroraAltitudeM): green fading upward, red at the top. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Atmosphere") float AuroraHeightM = 2400.f;
 	/**
 	 * Tides. The sea stands this many metres higher under the tide-raising body and on the side
 	 * away from it, and half as much lower in the belt between (0 = no tides). The bulge follows

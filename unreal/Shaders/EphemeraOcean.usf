@@ -1,0 +1,144 @@
+// The sea's waves, computed on the GPU every frame (Tessendorf, "Simulating Ocean Water", 2001), one cascade
+// at a time: a square patch of sea OCEAN_N texels across, repeating every PatchM metres. Several cascades of
+// unrelated sizes are laid over one another (UEphemeraOceanSim), so no repeat is ever seen.
+//
+// SpectrumCS: each wave's amplitude now, from its amplitude at the start (H0, made once on the CPU) and its
+// speed (deep water: omega = sqrt(g k)); and the spectra of the seven fields the surface is built from.
+// FftCS: inverse Fourier transforms of those spectra, rows then columns, each row in group-shared memory.
+// AssembleCS: the moved surface (sideways move, height), its slope, how much it is squeezed (the Jacobian)
+// and the foam where it folds, into the textures the sea's materials read.
+//
+// Conventions (checked against direct sums of every wave in numpy): texel (x, y) is wavenumber index
+// (x, y) in FFT order (index n stands for n, or n - N past the middle); the height is the sum over all waves
+// of Re(A exp(i (k.x - omega t))). Two real fields share one complex transform (f + i g): each field's
+// spectrum is made Hermitian, H(k) = (A(k) e^(-i omega t) + conj(A(-k)) e^(i omega t)) / 2, so its transform
+// is real. The Nyquist row and column hold no waves (they cannot be made Hermitian).
+
+#include "/Engine/Public/Platform.ush"
+
+#define OCEAN_N 256
+#define OCEAN_LOG2 8
+static const float OCEAN_PI = 3.14159265358979;
+
+float2 CMul(float2 a, float2 b) { return float2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x); }
+float2 CConj(float2 a) { return float2(a.x, -a.y); }
+// i * a
+float2 CI(float2 a) { return float2(-a.y, a.x); }
+
+// ---------------------------------------------------------------------------------------- spectrum ---
+Texture2D<float4> H0;                 // A(k).re, A(k).im, A(-k).re, A(-k).im (metres)
+RWTexture2D<float4> SpecA;            // (dx + i dz), (h + i dxz)
+RWTexture2D<float4> SpecB;            // (hx + i hz), (dxx + i dzz)
+float TimeS;
+float PatchM;
+float Choppiness;
+float Gravity;
+
+[numthreads(8, 8, 1)]
+void SpectrumCS(uint3 Id : SV_DispatchThreadID)
+{
+	const int2 n = int2(Id.xy) - int2(Id.x >= OCEAN_N / 2 ? OCEAN_N : 0, Id.y >= OCEAN_N / 2 ? OCEAN_N : 0);
+	const float2 k = float2(n) * (2.0 * OCEAN_PI / PatchM);
+	const float kl = length(k);
+	const float4 a = H0[Id.xy];
+	const float omega = sqrt(Gravity * kl);
+	float s, c;
+	sincos(omega * TimeS, s, c);
+	// A e^(-i w t) + conj(A(-k)) e^(i w t), halved.
+	const float2 h = 0.5 * (CMul(a.xy, float2(c, -s)) + CMul(CConj(a.zw), float2(c, s)));
+	const float2 u = k / max(kl, 1e-9);
+	const float l = Choppiness;
+	// Sideways toward the crests: D = lambda Re(i k/|k| A e^(i theta)); its derivatives; the height's slope.
+	const float2 dx = CI(h) * (l * u.x);
+	const float2 dz = CI(h) * (l * u.y);
+	const float2 dxz = h * (-l * k.x * u.y);
+	const float2 hx = CI(h) * k.x;
+	const float2 hz = CI(h) * k.y;
+	const float2 dxx = h * (-l * k.x * u.x);
+	const float2 dzz = h * (-l * k.y * u.y);
+	// f + i g for each pair.
+	const float2 c0 = dx + CI(dz);
+	const float2 c1 = h + CI(dxz);
+	const float2 c2 = hx + CI(hz);
+	const float2 c3 = dxx + CI(dzz);
+	SpecA[Id.xy] = float4(c0, c1);
+	SpecB[Id.xy] = float4(c2, c3);
+}
+
+// -------------------------------------------------------------------------------------------- FFT ---
+// Stockham radix-2, inverse (x(n) = sum X(k) e^(+2 pi i k n / N)), N / 2 butterflies per stage, one row
+// (or column) per group. Each element is four complex numbers (two float4s), transformed together.
+uint Horizontal;
+groupshared float4 FftA[2][OCEAN_N];
+groupshared float4 FftB[2][OCEAN_N];
+
+[numthreads(OCEAN_N / 2, 1, 1)]
+void FftCS(uint3 Group : SV_GroupID, uint3 Thread : SV_GroupThreadID)
+{
+	const uint j = Thread.x;
+	const uint lane = Group.x;
+	const uint2 p0 = Horizontal ? uint2(j, lane) : uint2(lane, j);
+	const uint2 p1 = Horizontal ? uint2(j + OCEAN_N / 2, lane) : uint2(lane, j + OCEAN_N / 2);
+	FftA[0][j] = SpecA[p0];
+	FftB[0][j] = SpecB[p0];
+	FftA[0][j + OCEAN_N / 2] = SpecA[p1];
+	FftB[0][j + OCEAN_N / 2] = SpecB[p1];
+	GroupMemoryBarrierWithGroupSync();
+	uint src = 0;
+	[unroll] for (uint stage = 0; stage < OCEAN_LOG2; ++stage)
+	{
+		const uint ns = 1u << stage;
+		const uint r = j & (ns - 1);
+		float s, c;
+		sincos(OCEAN_PI * float(r) / float(ns), s, c);
+		const float2 w = float2(c, s);
+		const float4 a0 = FftA[src][j];
+		const float4 a1 = FftA[src][j + OCEAN_N / 2];
+		const float4 b0 = FftB[src][j];
+		const float4 b1 = FftB[src][j + OCEAN_N / 2];
+		const float4 a1w = float4(CMul(a1.xy, w), CMul(a1.zw, w));
+		const float4 b1w = float4(CMul(b1.xy, w), CMul(b1.zw, w));
+		const uint d = (j / ns) * ns * 2 + r;
+		FftA[1 - src][d] = a0 + a1w;
+		FftA[1 - src][d + ns] = a0 - a1w;
+		FftB[1 - src][d] = b0 + b1w;
+		FftB[1 - src][d + ns] = b0 - b1w;
+		src = 1 - src;
+		GroupMemoryBarrierWithGroupSync();
+	}
+	SpecA[p0] = FftA[src][j];
+	SpecB[p0] = FftB[src][j];
+	SpecA[p1] = FftA[src][j + OCEAN_N / 2];
+	SpecB[p1] = FftB[src][j + OCEAN_N / 2];
+}
+
+// --------------------------------------------------------------------------------------- assemble ---
+Texture2D<float4> FieldA;             // after both passes: (dx, dz, h, dxz)
+Texture2D<float4> FieldB;             // (hx, hz, dxx, dzz)
+RWTexture2D<float4> MoveOut;          // dx, dz, h, J - 1 (metres)
+RWTexture2D<float4> SlopeOut;         // slope x, slope z, slope x^2 + slope z^2, foam
+RWTexture2D<float4> FoamState;        // r: foam carried from frame to frame
+float DeltaS;
+float FoamStart;                      // the Jacobian below which water is breaking
+float FoamFull;                       // ... and fully white
+float FoamSeconds;                    // how long a whitecap lingers
+
+[numthreads(8, 8, 1)]
+void AssembleCS(uint3 Id : SV_DispatchThreadID)
+{
+	const float4 fa = FieldA[Id.xy];
+	const float4 fb = FieldB[Id.xy];
+	const float dx = fa.x, dz = fa.y, h = fa.z, xz = fa.w;
+	const float hx = fb.x, hz = fb.y, xx = fb.z, zz = fb.w;
+	const float jac = (1.0 + xx) * (1.0 + zz) - xz * xz;
+	// The slope of the moved surface (its two tangents crossed), not of the height alone: crests are
+	// steeper than the waves they were made from.
+	const float held = max(jac, 0.2);
+	const float sx = clamp(((1.0 + zz) * hx - hz * xz) / held, -4.0, 4.0);
+	const float sz = clamp(((1.0 + xx) * hz - hx * xz) / held, -4.0, 4.0);
+	const float source = saturate((FoamStart - jac) / max(FoamStart - FoamFull, 0.01));
+	const float foam = max(source, FoamState[Id.xy].r * exp(-DeltaS / max(FoamSeconds, 0.01)));
+	FoamState[Id.xy] = float4(foam, 0.0, 0.0, 0.0);
+	MoveOut[Id.xy] = float4(dx, dz, h, jac - 1.0);
+	SlopeOut[Id.xy] = float4(sx, sz, sx * sx + sz * sz, foam);
+}

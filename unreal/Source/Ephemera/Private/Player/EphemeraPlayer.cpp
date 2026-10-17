@@ -8,6 +8,7 @@
 #include "Frame/EphemeraGroundCover.h"
 #include "Frame/EphemeraHeightField.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/WorldSettings.h"
 #include "ContentStreaming.h"
 #include "Misc/App.h"
 #include "PipelineStateCache.h"
@@ -30,9 +31,11 @@
 #include "Frame/EphemeraBodyDefinition.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/WorldSettings.h"
 #include "InputActionValue.h"
 #include "Misc/CommandLine.h"
 #include "Player/EphemeraInputConfig.h"
+#include "UnrealClient.h"
 
 namespace
 {
@@ -270,6 +273,11 @@ AEphemeraPlayer::AEphemeraPlayer()
 void AEphemeraPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+	// No floor to fall out of, and no edge (see FellOutOfWorld): nothing else in the level may be culled for it either.
+	if (AWorldSettings* Settings = GetWorldSettings())
+	{
+		Settings->bEnableWorldBoundsChecks = false;
+	}
 	BaseMouseDegreesPerCount = MouseDegreesPerCount;
 	UEphemeraUserSettings::Get()->BringUpToDate();
 	UEphemeraUserSettings::Get()->ApplyRendering();
@@ -412,6 +420,8 @@ void AEphemeraPlayer::UpdateLoading()
 				}
 			}
 		}
+		FParse::Value(FCommandLine::Get(), TEXT("EphemeraRecord="), RecordDir);
+		FParse::Value(FCommandLine::Get(), TEXT("EphemeraRecordFrom="), RecordFrom);
 	}
 	if (Hud.IsValid())
 	{
@@ -1853,7 +1863,8 @@ void AEphemeraPlayer::UpdateSound(const float DeltaSeconds)
 void AEphemeraPlayer::RunDrive(const float DeltaSeconds)
 {
 	// A test cannot press keys, so a script holds them down: each step names the keys held (any of
-	// w a s d shift space ctrl fly, joined by +, or none) and for how long. Ten times a second the
+	// w a s d shift space ctrl fly lookl lookr looku lookd, joined by +, or none) and for how long. The
+	// look keys turn the view as a gamepad's stick held a third of the way would. Ten times a second the
 	// log says what the body is doing, which is how the feel is checked without hands: how long to
 	// reach a run, how high a jump goes, whether the jets lift.
 	const UEphemeraFrameSubsystem* Frames = GetWorld()->GetSubsystem<UEphemeraFrameSubsystem>();
@@ -1873,6 +1884,8 @@ void AEphemeraPlayer::RunDrive(const float DeltaSeconds)
 			(Held.Contains(TEXT("w")) ? 1.0 : 0.0) - (Held.Contains(TEXT("s")) ? 1.0 : 0.0)).GetClampedToMaxSize(1.0);
 		bBoost = Held.Contains(TEXT("shift"));
 		JetInput = Held.Contains(TEXT("ctrl")) ? -1.f : 0.f;
+		StickLook = FVector2D((Held.Contains(TEXT("lookr")) ? 0.32 : 0.0) - (Held.Contains(TEXT("lookl")) ? 0.32 : 0.0),
+			(Held.Contains(TEXT("looku")) ? 0.32 : 0.0) - (Held.Contains(TEXT("lookd")) ? 0.32 : 0.0));
 		if (Held.Contains(TEXT("fly")) != bFreeFlight)
 		{
 			SetFreeFlight(!bFreeFlight);
@@ -1885,6 +1898,11 @@ void AEphemeraPlayer::RunDrive(const float DeltaSeconds)
 		{
 			UE_LOG(LogTemp, Display, TEXT("Ephemera drive: done after %.2f s, highest %.2f m, %d steps heard"), DriveClock, DriveHighest, StepsHeard);
 			Drive.Reset();
+			if (!RecordDir.IsEmpty() && GEngine)
+			{
+				UE_LOG(LogTemp, Display, TEXT("Ephemera record: %d frames in %s"), RecordFrame, *RecordDir);
+				GEngine->DeferredCommands.Add(TEXT("quit"));
+			}
 			return;
 		}
 		DriveSaid = 0.f;
@@ -1896,6 +1914,10 @@ void AEphemeraPlayer::RunDrive(const float DeltaSeconds)
 		HeightM = (Local.Size() - FEphemeraTerrain::SurfacePointCm(*Body->Definition, Local.GetSafeNormal()).Size() - CapsuleHalfHeight) / 100.0;
 	}
 	DriveHighest = FMath::Max(DriveHighest, static_cast<float>(HeightM));
+	if (!RecordDir.IsEmpty() && DriveClock >= RecordFrom)
+	{
+		FScreenshotRequest::RequestScreenshot(FString::Printf(TEXT("%s/f_%05d.png"), *RecordDir, RecordFrame++), false, false);
+	}
 	DriveSaid -= DeltaSeconds;
 	if (DriveSaid <= 0.f)
 	{

@@ -42,6 +42,10 @@ public:
 	 */
 	UPROPERTY(Config) int32 RockGeometry = -1;
 	UPROPERTY(Config) bool bVSync = false;
+	/** NVIDIA DLSS as the upscaler instead of TSR (Native is then DLAA). Off unless the player turns it on. */
+	UPROPERTY(Config) bool bDLSS = false;
+	/** Whether DLSS can be offered: an NVIDIA card and the plugin loaded (Plugins/DLSS, Tools/fetch_dlss.ps1). */
+	static bool DLSSAvailable();
 	/** The game waits for the graphics card instead of queueing frames behind it (FEphemeraFramePacer). */
 	UPROPERTY(Config) bool bLowLatency = true;
 	/** Frames per second the game is held to; 0 = no limit. */

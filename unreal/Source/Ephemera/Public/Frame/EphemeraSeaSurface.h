@@ -2,16 +2,19 @@
 
 #include "Components/StaticMeshComponent.h"
 #include "CoreMinimal.h"
+#include "Frame/EphemeraBodyDefinition.h"
 #include "EphemeraSeaSurface.generated.h"
 
 class UEphemeraBodyDefinition;
+class UEphemeraOceanSim;
 class UMaterialInstanceDynamic;
 
 /**
  * The near sea. The sea sphere (the body's OceanMesh) is a smooth ball whose material only moves its
  * normals: nothing on it rises or falls. This draws the water near the camera as geometry instead, and
- * its material raises it into the baked waves (Tools/terrain/ocean_fft.py): a swell and a wind sea,
- * crests drawn together and sharp, foam where they crowd.
+ * its material raises it into the waves simulated on the GPU every frame (UEphemeraOceanSim): a swell and a
+ * wind sea, crests drawn together and sharp, foam where they crowd. The far sea's material reads the same
+ * simulation for its waves' slopes.
  *
  * The mesh (UEphemeraPlanetBuilder::BuildSeaGrid) is a set of flat square rings, each twice as coarse
  * as the one inside it, from half a metre at the centre to 16 m a kilometre out. The material lays it
@@ -78,6 +81,10 @@ private:
 	double SpacingAtM(const UEphemeraBodyDefinition& Definition, double Reach) const;
 
 	UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> NearSea;
+	/** The waves themselves; both sea materials read its textures. */
+	UPROPERTY() TObjectPtr<UEphemeraOceanSim> Ocean;
+	/** The definition's bands, with the simulation's strongest waves in each (the game's sums use these). */
+	UPROPERTY() TArray<FEphemeraSeaBand> Bands;
 	UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> FarSea;
 	/** The lattice's cube face (INDEX_NONE until the first placement). */
 	int32 Face = INDEX_NONE;

@@ -5,7 +5,7 @@ The game is written on the Mac and built, rendered and played on the PC (RTX 306
 target). Code and tools go Mac -> PC; the content the PC's editor builds comes back PC -> Mac when
 the Mac needs it.
 
-    winsync.py push [--content]     send what changed here since the last push: Source, Config, Tools,
+    winsync.py push [--content]     send what changed here since the last push: Source, Shaders, Config, Tools,
                                     Ephemera.uproject and the small source assets; with --content
                                     also Content (only after content was built on the Mac)
     winsync.py pull                 fetch the Content files that changed on the PC since the last pull
@@ -29,7 +29,7 @@ REMOTE = "F:\\Ephemera"
 ENGINE = "F:\\UE_5.8"
 PROJECT = pathlib.Path(__file__).resolve().parents[1]
 STATE = PROJECT.parent / ".scratch/winsync"
-CODE = ["Ephemera.uproject", "Source", "Config", "Tools", "SourceAssets/terrain", "SourceAssets/water", "SourceAssets/audio", "Content/Splash", "Build/Windows/Application.ico"]
+CODE = ["Ephemera.uproject", "Source", "Shaders", "Config", "Tools", "SourceAssets/terrain", "SourceAssets/water", "SourceAssets/audio", "Content/Splash", "Build/Windows/Application.ico"]
 SKIP = ("__pycache__", ".DS_Store", "node_modules", ".profile")
 SSH = ["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=10", HOST]
 

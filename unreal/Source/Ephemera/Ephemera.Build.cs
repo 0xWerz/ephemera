@@ -7,7 +7,7 @@ public class Ephemera : ModuleRules
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PublicDependencyModuleNames.AddRange(new[] {
             "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
-            "UMG", "Slate", "SlateCore", "Json", "JsonUtilities", "Niagara", "ProceduralMeshComponent", "DeveloperSettings", "RenderCore", "RHI"
+            "UMG", "Slate", "SlateCore", "Json", "JsonUtilities", "Niagara", "ProceduralMeshComponent", "DeveloperSettings", "RenderCore", "RHI", "EphemeraShaders"
         });
     }
 }
