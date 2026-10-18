@@ -67,22 +67,18 @@ All in-game, rendered in real time in Unreal Engine 5.8.
 
 <table>
 <tr><td><img src="media/gallery/surface/01_bay.jpg" width="100%"></td><td><img src="media/gallery/surface/02_bay_overcast.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/03_fjord_wall.jpg" width="100%"></td><td><img src="media/gallery/surface/04_green_hills.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/05_hollow_rim.jpg" width="100%"></td><td><img src="media/gallery/surface/06_moss_heath.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/07_rift.jpg" width="100%"></td><td><img src="media/gallery/surface/08_tables_ground.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/09_tables_overcast.jpg" width="100%"></td><td><img src="media/gallery/surface/10_tables_plain.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/11_tables_plain_low.jpg" width="100%"></td><td><img src="media/gallery/surface/12_tables_wide.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/13_hollow_dawn.jpg" width="100%"></td><td><img src="media/gallery/surface/14_hollow_morning.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/15_hollow_from_rim.jpg" width="100%"></td><td><img src="media/gallery/surface/16_hollow_aerial.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/03_fjord_wall.jpg" width="100%"></td><td><img src="media/gallery/surface/05_hollow_rim.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/06_moss_heath.jpg" width="100%"></td><td><img src="media/gallery/surface/07_rift.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/08_tables_ground.jpg" width="100%"></td><td><img src="media/gallery/surface/09_tables_overcast.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/10_tables_plain.jpg" width="100%"></td><td><img src="media/gallery/surface/11_tables_plain_low.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/12_tables_wide.jpg" width="100%"></td><td><img src="media/gallery/surface/16_hollow_aerial.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/17_table_cliffs.jpg" width="100%"></td><td><img src="media/gallery/surface/18_table_cliffs_wide.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/19_fjords_aerial.jpg" width="100%"></td><td><img src="media/gallery/surface/20_from_summit.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/21_ice_edge.jpg" width="100%"></td><td><img src="media/gallery/surface/22_rift_aerial.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/23_strand_aerial.jpg" width="100%"></td><td><img src="media/gallery/surface/24_moss_and_volcano.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/25_planet.jpg" width="100%"></td><td><img src="media/gallery/surface/26_hollow_top.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/27_meadow_day.jpg" width="100%"></td><td><img src="media/gallery/surface/28_sea.jpg" width="100%"></td></tr>
 <tr><td><img src="media/gallery/surface/29_meadow_night.jpg" width="100%"></td><td><img src="media/gallery/surface/30_lamp_at_night.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/31_dusk.jpg" width="100%"></td><td><img src="media/gallery/surface/32_green_hills_2k.jpg" width="100%"></td></tr>
-<tr><td><img src="media/gallery/surface/33_moss_heath_2k.jpg" width="100%"></td><td><img src="media/gallery/surface/34_night.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/35_basalt_valley.jpg" width="100%"></td><td><img src="media/gallery/surface/36_basalt_grassland.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/37_rock_outcrop.jpg" width="100%"></td><td><img src="media/gallery/surface/38_spawn_slope.jpg" width="100%"></td></tr>
+<tr><td><img src="media/gallery/surface/39_bay_clear.jpg" width="100%"></td></tr>
 </table>
 
 ## Source code

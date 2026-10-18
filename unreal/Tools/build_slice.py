@@ -587,13 +587,75 @@ FCells Cells;
 """
 
 PLANET_WEIGHTS = r"""
-float slope = VC3.r;
+// The terrain's own values, read here per pixel from its cube grid (Attr: EphemeraPlanetBuilder::
+// BuildTerrainAttributes; AttrRes: the grid's cells along a face) with a Catmull-Rom cubic, so they change
+// smoothly over the land and still pass through every value the grid holds. Read from the mesh's
+// vertices they changed in straight lines across each triangle, and everything they decide (which ground,
+// how much rock relief) drew every triangle as a flat facet with a crease along its edges (2026-10-18).
+// The grid is the planet builder's: six faces, each warped by tan() (DirectionOf), two cells of apron.
+struct FAttr
+{
+    float4 Read(Texture2DArray T, SamplerState S, float3 d, float slice, float res)
+    {
+        float3 a = abs(d);
+        float3 n, u, v;
+        float face;
+        if (a.x >= a.y && a.x >= a.z)
+        {
+            if (d.x > 0.0) { face = 0.0; n = float3(1, 0, 0); u = float3(0, 1, 0); v = float3(0, 0, 1); }
+            else           { face = 1.0; n = float3(-1, 0, 0); u = float3(0, 0, 1); v = float3(0, 1, 0); }
+        }
+        else if (a.y >= a.z)
+        {
+            if (d.y > 0.0) { face = 2.0; n = float3(0, 1, 0); u = float3(0, 0, 1); v = float3(1, 0, 0); }
+            else           { face = 3.0; n = float3(0, -1, 0); u = float3(1, 0, 0); v = float3(0, 0, 1); }
+        }
+        else
+        {
+            if (d.z > 0.0) { face = 4.0; n = float3(0, 0, 1); u = float3(1, 0, 0); v = float3(0, 1, 0); }
+            else           { face = 5.0; n = float3(0, 0, -1); u = float3(0, 1, 0); v = float3(1, 0, 0); }
+        }
+        float3 q = d / dot(d, n);
+        float2 t = atan(float2(dot(q, u), dot(q, v))) * (4.0 / 3.14159265);
+        float size = res + 5.0;
+        // Texel space: grid point i is texel i + 2, whose centre is at i + 2.5.
+        float2 c = (t * res + res) * 0.5 + 2.0;
+        // Catmull-Rom in nine bilinear reads (M. Pettineo's method): smooth, and through every grid value
+        // exactly, so a rocky spot is as rocky as its vertex said.
+        float2 p1 = floor(c) + 0.5;
+        float2 f = frac(c);
+        float2 w0 = f * (-0.5 + f * (1.0 - 0.5 * f));
+        float2 w1 = 1.0 + f * f * (-2.5 + 1.5 * f);
+        float2 w2 = f * (0.5 + f * (2.0 - 1.5 * f));
+        float2 w3 = f * f * (-0.5 + 0.5 * f);
+        float2 w12 = w1 + w2;
+        float2 t0 = (p1 - 1.0) / size;
+        float2 t12 = (p1 + w2 / w12) / size;
+        float2 t3 = (p1 + 2.0) / size;
+        float sl = face + slice;
+        float4 r = 0.0;
+        r += T.SampleLevel(S, float3(t0.x, t0.y, sl), 0.0) * w0.x * w0.y;
+        r += T.SampleLevel(S, float3(t12.x, t0.y, sl), 0.0) * w12.x * w0.y;
+        r += T.SampleLevel(S, float3(t3.x, t0.y, sl), 0.0) * w3.x * w0.y;
+        r += T.SampleLevel(S, float3(t0.x, t12.y, sl), 0.0) * w0.x * w12.y;
+        r += T.SampleLevel(S, float3(t12.x, t12.y, sl), 0.0) * w12.x * w12.y;
+        r += T.SampleLevel(S, float3(t3.x, t12.y, sl), 0.0) * w3.x * w12.y;
+        r += T.SampleLevel(S, float3(t0.x, t3.y, sl), 0.0) * w0.x * w3.y;
+        r += T.SampleLevel(S, float3(t12.x, t3.y, sl), 0.0) * w12.x * w3.y;
+        r += T.SampleLevel(S, float3(t3.x, t3.y, sl), 0.0) * w3.x * w3.y;
+        return saturate(r);
+    }
+};
+FAttr TerrainAttr;
+float3 attrDir = normalize(pb);
+float4 attrA = TerrainAttr.Read(Attr, View.MaterialTextureBilinearClampedSampler, attrDir, 0.0, AttrRes);
+float slope = attrA.r;
 // From the baked terrain: where water runs, fresh lava, glacier ice, and what covers the ground
 // (-1 bare sand and gravel .. 0 lichened lava .. 1 deep moss).
-float flow = VC3.g;
-float young = VC3.b;
-float ice = VCA;
-float cover = UVd.y;
+float flow = attrA.g;
+float young = attrA.b;
+float ice = attrA.a;
+float cover = TerrainAttr.Read(Attr, View.MaterialTextureBilinearClampedSampler, attrDir, 6.0, AttrRes).r * 2.0 - 1.0;
 float3 up = normalize(pb);
 float lat = abs(up.z);
 float driftA, driftB, driftC, driftD, driftE;
@@ -633,6 +695,7 @@ wMoss *= 1.0 - streamBed;
 
 # Sizes of the relief, in metres. RELIEF_MAX_M is the most the surface is ever moved.
 RELIEF_MAX_M = 7.0
+DISPLACE_FADE_PX = (110.0, 45.0)
 PLANET_RELIEF = r"""
 // Relief: what the terrain mesh, with a point every few metres, cannot hold. Metres the surface
 // stands out from the mesh along its normal; never inward, so nothing scattered on the mesh floats.
@@ -1006,6 +1069,179 @@ return saturate((shape + fine) / {RELIEF_MAX_M});
 """
 
 
+# The near ground (UEphemeraGroundSurfaceComponent): a grid of rings under the camera (the near sea's mesh,
+# UEphemeraPlanetBuilder::BuildSeaGrid) laid on the land and raised into its relief by the material, which
+# the terrain chunks could only shade. Its numbers reach the game through the body (dress_ground_grid).
+GROUND_GRID = {"rings": 6, "half_cells": 96, "spacing_m": 0.25}
+
+NEAR_GROUND_CODE = r"""
+// One vertex of the near ground's grid (UEphemeraGroundSurfaceComponent). Laid out exactly as the near sea's
+// (SEA_GRID_CODE): Flat, where it was built (cm); Ring, its ring and that ring's spacing (m); GroundFace, the
+// lattice's cube face and in w the planet's radius (m); GroundU, GroundV, that face's axes and in w the
+// camera's place along them (m of arc); GroundHole.w, how far the hole in the chunks reaches. Returns how far
+// to move the vertex (cm, planet space); Rest: where the land is under it before its relief; Up: the land's
+// normal there.
+struct FGroundGrid
+{
+    // The terrain's height (m) along a direction: Heights is EphemeraPlanetBuilder::BuildTerrainHeights (the
+    // attributes' grid, floats, two cells of apron), read point by point through a Catmull-Rom cubic, exactly
+    // as the game reads its height field (UEphemeraHeightField::HeightM). Hardware filtering would interpolate
+    // with 8-bit weights: on a steep cell, steps of centimetres, a staircase on every slope.
+    // Also the land's normal there, from the cubic's own slope (the same sixteen texels): Nrm.
+    float Height(Texture2DArray T, float3 d, float res, out float3 Nrm, float R)
+    {
+        float3 a = abs(d);
+        float3 n, u, v;
+        float face;
+        if (a.x >= a.y && a.x >= a.z)
+        {
+            if (d.x > 0.0) { face = 0.0; n = float3(1, 0, 0); u = float3(0, 1, 0); v = float3(0, 0, 1); }
+            else           { face = 1.0; n = float3(-1, 0, 0); u = float3(0, 0, 1); v = float3(0, 1, 0); }
+        }
+        else if (a.y >= a.z)
+        {
+            if (d.y > 0.0) { face = 2.0; n = float3(0, 1, 0); u = float3(0, 0, 1); v = float3(1, 0, 0); }
+            else           { face = 3.0; n = float3(0, -1, 0); u = float3(1, 0, 0); v = float3(0, 0, 1); }
+        }
+        else
+        {
+            if (d.z > 0.0) { face = 4.0; n = float3(0, 0, 1); u = float3(1, 0, 0); v = float3(0, 1, 0); }
+            else           { face = 5.0; n = float3(0, 0, -1); u = float3(0, 1, 0); v = float3(1, 0, 0); }
+        }
+        float3 q = d / dot(d, n);
+        float2 ang = atan(float2(dot(q, u), dot(q, v)));
+        float2 t = ang * (4.0 / 3.14159265);
+        float2 g = (t * res + res) * 0.5 + 2.0;
+        float2 i0 = floor(g);
+        float2 f = g - i0;
+        float4 wx = float4(f.x * (-0.5 + f.x * (1.0 - 0.5 * f.x)), 1.0 + f.x * f.x * (-2.5 + 1.5 * f.x),
+                           f.x * (0.5 + f.x * (2.0 - 1.5 * f.x)), f.x * f.x * (-0.5 + 0.5 * f.x));
+        float4 wy = float4(f.y * (-0.5 + f.y * (1.0 - 0.5 * f.y)), 1.0 + f.y * f.y * (-2.5 + 1.5 * f.y),
+                           f.y * (0.5 + f.y * (2.0 - 1.5 * f.y)), f.y * f.y * (-0.5 + 0.5 * f.y));
+        float4 dx = float4(-0.5 + f.x * (2.0 - 1.5 * f.x), f.x * (-5.0 + 4.5 * f.x), 0.5 + f.x * (4.0 - 4.5 * f.x), f.x * (-1.0 + 1.5 * f.x));
+        float4 dy = float4(-0.5 + f.y * (2.0 - 1.5 * f.y), f.y * (-5.0 + 4.5 * f.y), 0.5 + f.y * (4.0 - 4.5 * f.y), f.y * (-1.0 + 1.5 * f.y));
+        int2 o = int2(i0) - 1;
+        int s = int(face);
+        float h = 0.0, hx = 0.0, hy = 0.0;
+        [unroll] for (int b = 0; b < 4; ++b)
+        {
+            float4 row = float4(T.Load(int4(o.x, o.y + b, s, 0)).r, T.Load(int4(o.x + 1, o.y + b, s, 0)).r,
+                                T.Load(int4(o.x + 2, o.y + b, s, 0)).r, T.Load(int4(o.x + 3, o.y + b, s, 0)).r);
+            h += dot(row, wx) * wy[b];
+            hx += dot(row, dx) * wy[b];
+            hy += dot(row, wx) * dy[b];
+        }
+        // The surface S = d (R + h) as the grid coordinates move one cell: the direction turns (one cell is
+        // pi/2/res of angle across the face, through the tan() warp) and the height changes by hx, hy.
+        float3 qq = n + tan(ang.x) * u + tan(ang.y) * v;
+        float ql = length(qq);
+        float dA = 3.14159265 / (2.0 * res);
+        float3 dqx = u * dA / (cos(ang.x) * cos(ang.x));
+        float3 dqy = v * dA / (cos(ang.y) * cos(ang.y));
+        float3 ddx_ = (dqx - d * dot(d, dqx)) / ql;
+        float3 ddy_ = (dqy - d * dot(d, dqy)) / ql;
+        float3 sx = ddx_ * (R + h) + d * hx;
+        float3 sy = ddy_ * (R + h) + d * hy;
+        Nrm = normalize(cross(sx, sy));
+        Nrm = dot(Nrm, d) < 0.0 ? -Nrm : Nrm;
+        return h;
+    }
+};
+FGroundGrid Grid;
+float g_spacing = Ring.y;
+float2 g_cell = round(Flat.xy * 0.01 / g_spacing);
+float g_reach = max(abs(g_cell.x), abs(g_cell.y));
+float g_morph = saturate((g_reach - $MORPH_FROM) / ($MORPH_TO - $MORPH_FROM));
+g_cell -= (g_cell - 2.0 * floor(g_cell * 0.5)) * g_morph;
+float2 g_centre = floor(float2(GroundU.w, GroundV.w) / (2.0 * g_spacing)) * (2.0 * g_spacing);
+float2 g_arc = g_centre + g_cell * g_spacing;
+float g_R = GroundFace.w;
+float3 g_up = normalize(GroundFace.xyz + tan(g_arc.x / g_R) * GroundU.xyz + tan(g_arc.y / g_R) * GroundV.xyz);
+float3 g_n;
+float g_h = Grid.Height(Heights, g_up, AttrRes, g_n, g_R);
+float g_spacingNow = g_spacing * (1.0 + g_morph);
+// What the relief (DISPLACE_CODE) asks of a point: where it is, the land's normal and height there, and how
+// far it is from the camera (along the ground: the eye's height is left out).
+float3 P = g_up * (g_R + g_h) * 100.0;
+float3 N = g_n;
+float2 UVd = float2(g_h, 0.0);
+float2 g_off = g_arc - float2(GroundU.w, GroundV.w);
+float Dist = length(g_off) * 100.0;
+$RELIEF
+// The relief stands up only where the grid is fine enough to hold it (about a metre between points: the
+// blocks and ledges are two or three), dying away over the next ring; and the scans' own close-up relief
+// only on the finest rings. By the hole's edge the grid is the plain land, as the chunks are.
+float g_hole = max(GroundHole.w, 1.0);
+float g_near = 1.0 - smoothstep(0.45 * g_hole, 0.8 * g_hole, max(abs(g_off.x), abs(g_off.y)));
+float g_gain = (1.0 - smoothstep(1.0, 3.0, g_spacingNow)) * g_near;
+float g_fine = 1.0 - smoothstep(0.3, 0.6, g_spacingNow);
+// Where things grow, the ground stands up only by the part of its relief the game knows too (the micro relief,
+// FEphemeraTerrain::MicroReliefM: grass and stones are placed on it). The rest is read from the scans, which
+// the game cannot: raised as geometry it buried every plant and stone on the moss and the lava field. On rock
+// and ice, where nothing is placed, all of it stands up.
+float g_micro = (m1 * 0.9 + m2 * 0.45 + abs(m3 - 0.5) * 0.44) * open * Micro;
+float g_grows = saturate(wMoss + wField + wSand);
+float g_relief = NearRelief > 1.5 ? g_micro : g_micro + (shape - g_micro) * (1.0 - g_grows) + fine * g_fine * (1.0 - g_grows);
+Rest = P;
+Up = N;
+return P + N * (g_relief * g_gain * min(NearRelief, 1.0) * 100.0) - Flat;
+"""
+
+GROUND_HOLE_CODE = r"""
+// The chunks' hole (UEphemeraGroundSurfaceComponent): 0 where the near ground's grid is the land, within
+// GroundHole.w metres of arc of the camera along both axes of the grid's lattice face (as NEAR_GROUND_CODE
+// lays the grid out, so the hole is always inside it); 1 elsewhere, and everywhere while there is no grid.
+float3 up = normalize(P);
+float along = dot(up, GroundFace.xyz);
+float2 arc = GroundFace.w * float2(atan2(dot(up, GroundU.xyz), max(along, 0.0001)), atan2(dot(up, GroundV.xyz), max(along, 0.0001)));
+float reach = max(abs(arc.x - GroundU.w), abs(arc.y - GroundV.w));
+return (GroundHole.w > 0.0 && along > 0.0 && reach < GroundHole.w) ? 0.0 : 1.0;
+"""
+
+
+# The near ground's pixels: the ground's own, but its relief is geometry. The relief's light (PLANET_CODE) is its
+# slope across the screen, measured on the land before the relief moved it; on the near ground, across a steep
+# face of a block, that land folds up under a few pixels and the slope came out at random from one 2x2 block of
+# pixels to the next: a checkerboard over every rock face. Where the land folds so, the relief's own light is left
+# out (the land's normal alone; the face is still shadowed by the real geometry). (Its facets instead, from the
+# screen slope of the moved surface: a low-polygon look over every ledge.)
+NEAR_PIXEL_CODE = PLANET_CODE.replace("float3 Nb = normalize(N - grad);\n", """float3 dpx = ddx(P), dpy = ddy(P);
+float spread = abs(dot(cross(dpx, dpy), N));
+float folded = 1.0 - smoothstep(0.08, 0.35, abs(det) / max(spread, 1e-9));
+float3 Nb = normalize(N - grad * (1.0 - folded));
+// The scans are still projected along the way the face really looks (its facet), or a steep face takes the
+// slope's projection and its stone is smeared down it.
+float3 facet = normalize(cross(dpy, dpx));
+facet = dot(facet, N) < -0.2 ? -facet : facet;
+float3 Nw = normalize(lerp(Nb, facet, folded));
+""").replace("G.w = pow(abs(Nb), 6.0);", "G.w = pow(abs(Nw), 6.0);")
+assert NEAR_PIXEL_CODE != PLANET_CODE
+
+
+def near_ground_code():
+    """NEAR_GROUND_CODE with the relief (DISPLACE_CODE's, up to its last line) and the grid's numbers filled in."""
+    import string
+    tail = DISPLACE_CODE.rindex("return saturate(")
+    cells = GROUND_GRID["half_cells"]
+    # The joints and crevasses are notches a few tens of centimetres wide: sampled by vertices half a metre or
+    # a metre apart they came out as black spikes along every ledge. Here they are no narrower than the grid
+    # can carry (two of its spacings), measured in each pattern's own units.
+    relief = DISPLACE_CODE[:tail]
+    # And no edge of the relief is sharper than three of the grid's spacings, nor any scan read finer than two
+    # of its texels to a spacing: a ledge's edge or a joint that steps between two neighbouring vertices makes a
+    # row of long thin triangles, and their shadows were black sawteeth along every ledge.
+    for narrow, wide in (("smoothstep(0.0, 0.11, blk.x)", "smoothstep(0.0, max(0.11, 3.0 * g_spacingNow / across), blk.x)"),
+                         ("smoothstep(0.0, 0.12, cell.x)", "smoothstep(0.0, max(0.12, 3.0 * g_spacingNow / 15.0), cell.x)"),
+                         ("smoothstep(0.0, 0.07, bedF)", "smoothstep(0.0, max(0.07, 3.0 * g_spacingNow / BED_M), bedF)"),
+                         ("smoothstep(0.88, 1.0, bedF)", "smoothstep(min(0.88, 1.0 - 3.0 * g_spacingNow / BED_M), 1.0, bedF)"),
+                         ("clamp(lodBase - log2(M), 0.0, 10.0)", "clamp(max(lodBase - log2(M), log2(g_spacingNow * 2.0 * 4096.0 / (M))), 0.0, 10.0)")):
+        if narrow not in relief:
+            raise RuntimeError(f"near ground: the relief no longer has {narrow}")
+        relief = relief.replace(narrow, wide)
+    return string.Template(NEAR_GROUND_CODE).substitute(RELIEF=relief, MORPH_FROM=_hlsl(0.75 * cells),
+                                                        MORPH_TO=_hlsl(cells - 4.0))
+
+
 def world_parameters():
     """Numbers that every material of a world can read while the game runs (a material parameter collection).
 
@@ -1038,8 +1274,13 @@ def world_parameters():
 
 
 def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16, snow_line_m=420.0, colours=None, wetness=1.0,
-                         mid_tiling_m=64.0, far_tiling_m=420.0, far_relief=1.6, micro_relief=1.0):
-    """micro_relief: scale of the small relief (must match the body definition's micro_relief).
+                         mid_tiling_m=64.0, far_tiling_m=420.0, far_relief=1.6, micro_relief=1.0, attributes=None,
+                         variant=None, land=None):
+    """variant: None, the ground as the terrain chunks draw it; "far", the same with a hole cut where the near
+    ground lies (GROUND_HOLE_CODE); "near", the near ground's grid (NEAR_GROUND_CODE; land: the terrain's
+    heights from terrain_heights()).
+    micro_relief: scale of the small relief (must match the body definition's micro_relief).
+    attributes: (texture array, grid cells per face) from terrain_attributes(): the terrain's own values per pixel.
     layers: moss/field/sand/rock/snow -> {'d','n','arm','h'}, scanned close to. far_layers: the same five scanned
     from the air ({'d','n','h'}). colours: each layer's colour (linear albedo). Snow needs no height map.
 
@@ -1048,8 +1289,9 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
     """
     colours = colours or {}
     path = f"{ROOT}/Materials/{name}"
-    stamp = stamp_of("planet-v18", PLANET_CODE, layers, far_layers, tiling_m, rock_start, snow_line_m, colours, wetness,
-                     mid_tiling_m, far_tiling_m, far_relief, micro_relief, DISPLACE_CODE)
+    stamp = stamp_of("planet-v26", DISPLACE_FADE_PX, PLANET_CODE, layers, far_layers, tiling_m, rock_start, snow_line_m, colours, wetness,
+                     mid_tiling_m, far_tiling_m, far_relief, micro_relief, DISPLACE_CODE, attributes,
+                     *(() if not variant else ("ground-v10", variant, land, GROUND_GRID, NEAR_GROUND_CODE, GROUND_HOLE_CODE, NEAR_PIXEL_CODE)))
     kept = unchanged(path, stamp)
     if kept:
         return kept
@@ -1115,9 +1357,15 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
     relief_shade = scalar("ReliefShade", 1.0)
     relief_shade.set_editor_property("use_custom_primitive_data", True)
     relief_shade.set_editor_property("primitive_data_index", 0)
+    if not attributes:
+        raise RuntimeError(f"{name}: no terrain attributes (terrain_attributes())")
+    attr_node = expr(unreal.MaterialExpressionTextureObject, -1300, 900)
+    attr_node.set_editor_property("texture", attributes[0])
+    attr_node.set_editor_property("sampler_type", unreal.MaterialSamplerType.SAMPLERTYPE_LINEAR_COLOR)
     sources = [
         ("P", local_pos, ""), ("Pb", base_pos, ""), ("N", local_normal, ""), ("UVd", data_uv, ""), ("VC3", vertex, ""), ("VCA", vertex, "A"),
         ("Dist", distance, ""), *heights,
+        ("Attr", attr_node, ""), ("AttrRes", scalar("AttrRes", float(attributes[1])), ""),
         ("IceC", colour("IceColour", (0.50, 0.66, 0.74)), ""), ("WaterC", colour("WaterColour", (0.010, 0.030, 0.036)), ""),
         ("Tiling", scalar("Tiling", tiling_m), ""), ("RockStart", scalar("RockStart", rock_start), ""),
         ("Micro", scalar("MicroRelief", micro_relief), ""), ("ReliefShade", relief_shade, ""),
@@ -1137,6 +1385,79 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
         # white from orbit and showed none of the cap's tone).
         ("SnowC", colour("SnowColour", colours.get("snow", (0.66, 0.70, 0.76))), ""),
     ]
+    ground = {}
+    if variant:
+        # Where the near ground lies (UEphemeraGroundSurfaceComponent sets these on both its own material and
+        # the chunks'), as the near sea's grid is told.
+        for parameter, default in (("GroundFace", (1.0, 0.0, 0.0, 5000.0)), ("GroundU", (0.0, 1.0, 0.0, 0.0)),
+                                   ("GroundV", (0.0, 0.0, 1.0, 0.0)), ("GroundHole", (0.0, 0.0, 0.0, 0.0))):
+            node = colour(parameter, (0.0, 0.0, 0.0))
+            node.set_editor_property("default_value", unreal.LinearColor(*default))
+            ground[parameter] = node
+    if variant == "near":
+        if not land:
+            raise RuntimeError(f"{name}: the near ground needs the terrain's heights (terrain_heights())")
+        by_name = {input_name: (node, pin) for input_name, node, pin in sources}
+        height_node = expr(unreal.MaterialExpressionTextureObject, -1300, 1200)
+        height_node.set_editor_property("texture", land[0])
+        height_node.set_editor_property("sampler_type", unreal.MaterialSamplerType.SAMPLERTYPE_LINEAR_GRAYSCALE)
+        flat = expr(unreal.MaterialExpressionPreSkinnedPosition, -900, 900)
+        ring = expr(unreal.MaterialExpressionTextureCoordinate, -900, 1000)
+        ring.set_editor_property("coordinate_index", 1)
+        vertex_sources = [("Flat", flat, ""), ("Ring", ring, ""), ("Heights", height_node, ""), ("NearRelief", scalar("NearRelief", 1.0), ""),
+                          *[(k, *by_name[k]) for k in ("Tiling", "MidTiling", "RockStart", "SnowLine", "Micro", "Attr", "AttrRes")],
+                          *heights,
+                          *[(k, node, "RGBA") for k, node in ground.items()]]
+        place = expr(unreal.MaterialExpressionCustom, -300, 900)
+        place_inputs = []
+        for input_name, _, _ in vertex_sources:
+            entry = unreal.CustomInput()
+            entry.set_editor_property("input_name", input_name)
+            place_inputs.append(entry)
+        extra = []
+        for output_name in ("Rest", "Up"):
+            entry = unreal.CustomOutput()
+            entry.set_editor_property("output_name", output_name)
+            entry.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT3)
+            extra.append(entry)
+        place.set_editor_property("inputs", place_inputs)
+        place.set_editor_property("additional_outputs", extra)
+        place.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT3)
+        place.set_editor_property("code", near_ground_code())
+        for input_name, node, pin in vertex_sources:
+            if not connect(node, pin, place, input_name):
+                raise RuntimeError(f"{name}: could not connect {input_name} to the near ground's vertices")
+        resting = expr(unreal.MaterialExpressionVertexInterpolator, -100, 900)
+        connect(place, "Rest", resting, "VS")
+        facing = expr(unreal.MaterialExpressionVertexInterpolator, -100, 1000)
+        connect(place, "Up", facing, "VS")
+        # The pixels ask the land's questions of where it rests under them, as the chunks' pixels do of their mesh.
+        height_here = expr(unreal.MaterialExpressionCustom, -300, 1100)
+        entries = []
+        for input_name in ("Pb", "GroundFace"):
+            entry = unreal.CustomInput()
+            entry.set_editor_property("input_name", input_name)
+            entries.append(entry)
+        height_here.set_editor_property("inputs", entries)
+        height_here.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT2)
+        height_here.set_editor_property("code", "return float2(length(Pb) * 0.01 - GroundFace.w, 0.0);")
+        connect(resting, "", height_here, "Pb")
+        connect(ground["GroundFace"], "RGBA", height_here, "GroundFace")
+        # Its relief is geometry for a couple of hundred metres; past that only shading, as on the chunks
+        # (ReliefShade, set by the game as on them), so where the grid meets the chunks the light agrees.
+        shade = expr(unreal.MaterialExpressionCustom, -300, 1200)
+        entries = []
+        for input_name in ("Shade", "Dist"):
+            entry = unreal.CustomInput()
+            entry.set_editor_property("input_name", input_name)
+            entries.append(entry)
+        shade.set_editor_property("inputs", entries)
+        shade.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT1)
+        shade.set_editor_property("code", "return lerp(1.0, Shade, smoothstep(12000.0, 22000.0, Dist));")
+        connect(relief_shade, "", shade, "Shade")
+        connect(distance, "", shade, "Dist")
+        swap = {"Pb": (resting, ""), "N": (facing, ""), "UVd": (height_here, ""), "ReliefShade": (shade, "")}
+        sources = [(input_name, *swap.get(input_name, (node, pin))) for input_name, node, pin in sources]
     sampler_types = {"d": unreal.MaterialSamplerType.SAMPLERTYPE_COLOR, "n": unreal.MaterialSamplerType.SAMPLERTYPE_NORMAL,
                      "arm": unreal.MaterialSamplerType.SAMPLERTYPE_MASKS}
     suffix = {"d": "D", "n": "N", "arm": "A"}
@@ -1168,7 +1489,7 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
     custom.set_editor_property("inputs", inputs)
     custom.set_editor_property("additional_outputs", outputs)
     custom.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT3)
-    custom.set_editor_property("code", PLANET_CODE)
+    custom.set_editor_property("code", PLANET_CODE if variant != "near" else NEAR_PIXEL_CODE)
     for input_name, node, pin in sources:
         if not connect(node, pin, custom, input_name):
             raise RuntimeError(f"{name}: could not connect {input_name}")
@@ -1185,11 +1506,34 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
             mask.set_editor_property(c, c == channel)
         connect(custom, "ORM", mask, "")
         connect_property(mask, "", prop)
+    if variant == "near":
+        # The grid's vertices go where NEAR_GROUND_CODE puts them: on the land under the camera, raised by its relief.
+        place_world = expr(unreal.MaterialExpressionTransform, -100, 900)
+        place_world.set_editor_property("transform_source_type", unreal.MaterialVectorCoordTransformSource.TRANSFORMSOURCE_LOCAL)
+        place_world.set_editor_property("transform_type", unreal.MaterialVectorCoordTransform.TRANSFORM_WORLD)
+        connect(place, "", place_world, "")
+        connect_property(place_world, "", unreal.MaterialProperty.MP_WORLD_POSITION_OFFSET)
+        return finish_material(material, stamp, name)
+    if variant == "far":
+        material.set_editor_property("blend_mode", unreal.BlendMode.BLEND_MASKED)
+        hole = expr(unreal.MaterialExpressionCustom, -300, 1300)
+        hole_sources = [("P", local_pos, ""), *[(k, node, "RGBA") for k, node in ground.items()]]
+        hole_inputs = []
+        for input_name, _, _ in hole_sources:
+            entry = unreal.CustomInput()
+            entry.set_editor_property("input_name", input_name)
+            hole_inputs.append(entry)
+        hole.set_editor_property("inputs", hole_inputs)
+        hole.set_editor_property("output_type", unreal.CustomMaterialOutputType.CMOT_FLOAT1)
+        hole.set_editor_property("code", GROUND_HOLE_CODE)
+        for input_name, node, pin in hole_sources:
+            connect(node, pin, hole, input_name)
+        connect_property(hole, "", unreal.MaterialProperty.MP_OPACITY_MASK)
     # The relief itself: Nanite splits the mesh into pixel-sized triangles and moves each point
     # outward by this height (0..1 of RELIEF_MAX_M).
     by_name = {input_name: (node, pin) for input_name, node, pin in sources}
     shape = expr(unreal.MaterialExpressionCustom, -300, 700)
-    shape_sources = [("P", local_pos, ""), *[(k, *by_name[k]) for k in ("N", "UVd", "VC3", "VCA", "Dist", "Tiling", "MidTiling", "RockStart", "SnowLine", "Micro")],
+    shape_sources = [("P", local_pos, ""), *[(k, *by_name[k]) for k in ("N", "UVd", "VC3", "VCA", "Dist", "Tiling", "MidTiling", "RockStart", "SnowLine", "Micro", "Attr", "AttrRes")],
                      *heights]
     shape_inputs = []
     for input_name, _, _ in shape_sources:
@@ -1208,6 +1552,15 @@ def make_planet_material(name, layers, far_layers, tiling_m=3.2, rock_start=0.16
     scaling.set_editor_property("magnitude", RELIEF_MAX_M * 100.0)
     scaling.set_editor_property("center", 0.0)
     material.set_editor_property("displacement_scaling", scaling)
+    # Relief is split into pixel-sized triangles only where it can be seen: once the largest it can be
+    # (RELIEF_MAX_M) is fewer than DISPLACE_FADE_PX[0] pixels on screen it eases off, and below [1] the
+    # ground is drawn as its plain mesh (about 70 and 170 m away at 1440p). Splitting the whole land out to
+    # the horizon cost this game's graphics card several times the frame.
+    fade = unreal.DisplacementFadeRange()
+    fade.set_editor_property("start_size_pixels", DISPLACE_FADE_PX[0])
+    fade.set_editor_property("end_size_pixels", DISPLACE_FADE_PX[1])
+    material.set_editor_property("enable_displacement_fade", True)
+    material.set_editor_property("displacement_fade_range", fade)
     EDIT.set_base_material_usage(material, unreal.MaterialUsage.MATUSAGE_NANITE, True)
     return finish_material(material, stamp, name)
 
@@ -3404,7 +3757,7 @@ def grass_clumps(material):
         # name: (variants, blades, height cm, spread cm, blade width cm, droop)
         # (Blades a little wider than life: a blade thinner than a pixel flickers in and out, and
         # a sward of them reads as sparse wire.)
-        "turf": (3, 58, 15.0, 30.0, 0.75, 0.25),
+        "turf": (3, 90, 17.0, 32.0, 0.85, 0.25),
         "meadow": (3, 50, 36.0, 34.0, 0.90, 0.45),
         "tall": (2, 32, 64.0, 26.0, 1.00, 0.60),
     }
@@ -3951,7 +4304,7 @@ def dress_ground(body, surfaces):
     green = make_grass_material()
     grass = grass_clumps(green)
     heath = material_instance(green, "MI_Heath", {"DryBias": 0.25}, {"Root": (0.022, 0.015, 0.011), "Tip": (0.056, 0.030, 0.024), "DryTip": (0.070, 0.046, 0.030)})
-    rules += cover_rules(grass["turf"], 13.0, cover_min=0.05, max_slope_deg=42.0, scale_min=0.9, scale_max=1.7, cast_shadow=False)
+    rules += cover_rules(grass["turf"], 15.0, cover_min=0.05, max_slope_deg=42.0, scale_min=0.9, scale_max=1.7, cast_shadow=False)
     rules += cover_rules(grass["meadow"], 4.5, cover_min=0.1, max_slope_deg=40.0, scale_min=0.8, scale_max=1.6,
                          patch_frequency=420.0, patch_coverage=0.72, cast_shadow=False)
     # Sedge: long straw-coloured grass in drifts, bleached by the wind. Paler than the turf, but by
@@ -3974,6 +4327,37 @@ def dress_ground(body, surfaces):
     body.set_editor_property("ground_cover_radius_m", 110.0)
     body.set_editor_property("ground_cover_far_radius_m", 650.0)
     log(f"ground cover dawnhollow: {len(rules)} rules")
+
+
+BASALT = {
+    # name: (seed, style, radius cm, tallest cm, column spacing cm). Style 0 a massif, 1 a causeway.
+    "SM_Basalt_Massif_0": (11, 0, 650.0, 700.0, 72.0),
+    "SM_Basalt_Massif_1": (23, 0, 800.0, 1000.0, 78.0),
+    "SM_Basalt_Massif_2": (37, 0, 550.0, 500.0, 66.0),
+    "SM_Basalt_Causeway_0": (41, 1, 450.0, 250.0, 55.0),
+    "SM_Basalt_Causeway_1": (53, 1, 380.0, 190.0, 52.0),
+    "SM_Basalt_Causeway_2": (67, 1, 420.0, 300.0, 58.0),
+}
+
+
+def basalt_columns():
+    """Columnar basalt, made here (EphemeraPlanetBuilder.BuildBasaltColumns): {'massifs': [...], 'causeways': [...]}."""
+    folder = f"{ROOT}/Rocks/Basalt"
+    result = {"massifs": [], "causeways": []}
+    for name, values in BASALT.items():
+        path = f"{folder}/{name}"
+        stamp = stamp_of("basalt-v4", values)
+        mesh = ASSETS.load_asset(path) if ASSETS.does_asset_exist(path) else None
+        if not mesh or ASSETS.get_metadata_tag(mesh, "EphemeraStamp") != stamp:
+            seed, style, radius, height, spacing = values
+            mesh = unreal.EphemeraPlanetBuilder.build_basalt_columns(folder, name, seed, style, radius, height, spacing)
+            if not mesh:
+                raise RuntimeError(f"basalt {name} failed")
+            ASSETS.set_metadata_tag(mesh, "EphemeraStamp", stamp)
+            ASSETS.save_loaded_asset(mesh)
+            log(f"basalt {name}: built")
+        result["massifs" if values[1] == 0 else "causeways"].append(mesh)
+    return result
 
 
 def stand_rocks(body, surfaces):
@@ -4000,7 +4384,24 @@ def stand_rocks(body, surfaces):
         if setup and setup.get_editor_property("collision_trace_flag") != unreal.CollisionTraceFlag.CTF_USE_COMPLEX_AS_SIMPLE:
             setup.set_editor_property("collision_trace_flag", unreal.CollisionTraceFlag.CTF_USE_COMPLEX_AS_SIMPLE)
             ASSETS.save_loaded_asset(mesh)
+    # Columnar basalt: what a thick lava flow cracks into as it cools. Massifs of it stand on the shore and
+    # in the shallows (Reynisfjara), and causeways of short columns step down into the sea and break out of the land.
+    # Upright, not laid along the slope: the columns stand as the flow cooled, square to its top.
+    basalt = basalt_columns()
+    columns = material_instance(stone, "MI_Stone_Columns", {"MossAmount": 0.85, "MossEdge": 0.72, "Macro": 0.0, "Tiling": 1.6,
+                                                            "SeaRadiusM": float(body.get_editor_property("radius_m"))},
+                                {"RockColour": (0.024, 0.024, 0.027)})
+    upright = dict(material=columns, align_to_ground=0.0, sink_fraction=0.0, collision=True)
     rules = [
+        scatter_rule(basalt["massifs"], 0.9, min_altitude_m=-5.0, max_altitude_m=40.0, max_slope_deg=18.0,
+                     scale_min=0.8, scale_max=1.3, random_tilt_deg=3.0, sink_cm=415.0,
+                     patch_frequency=70.0, patch_coverage=0.45, plateau_clearance=0.0, **upright),
+        scatter_rule(basalt["causeways"], 2.2, min_altitude_m=-2.5, max_altitude_m=6.0, max_slope_deg=13.0,
+                     scale_min=0.85, scale_max=1.25, random_tilt_deg=3.0, sink_cm=160.0,
+                     patch_frequency=60.0, patch_coverage=0.5, plateau_clearance=0.0, **upright),
+        scatter_rule(basalt["causeways"], 0.35, min_altitude_m=6.0, max_altitude_m=200.0, max_slope_deg=12.0,
+                     scale_min=0.7, scale_max=1.1, random_tilt_deg=3.0, sink_cm=170.0,
+                     patch_frequency=40.0, patch_coverage=0.35, plateau_clearance=1.3, **upright),
         # Sea stacks: in the shallows and on the tide line, in groups, 12 to 45 m tall.
         scatter_rule(boulders, 1.7, material=bare, min_altitude_m=-6.0, max_altitude_m=1.5, max_slope_deg=40.0,
                      scale_min=5.0, scale_max=13.0, upright_min=1.5, upright_max=2.6, random_tilt_deg=7.0, sink_cm=0.0, sink_fraction=0.22,
@@ -4016,6 +4417,20 @@ def stand_rocks(body, surfaces):
     ]
     count = unreal.EphemeraPlanetBuilder.build_scatter(body, rules)
     log(f"standing rocks dawnhollow: {count} instances")
+    # Where the basalt nearest the spawn stands (for photographs): direction from the centre, and how far off.
+    spawn = unreal.Vector(0.92985, -0.17608, 0.32308)
+    spawn.normalize()
+    near = []
+    for batch in body.get_editor_property("scatter"):
+        mesh = batch.get_editor_property("mesh")
+        if mesh and "Basalt" in mesh.get_name():
+            for transform in batch.get_editor_property("instances"):
+                at = transform.translation
+                d = at.normal()
+                near.append((math.acos(max(-1.0, min(1.0, d.dot(spawn)))) * 5000.0, mesh.get_name(), d, at.length() / 100.0 - 5000.0))
+    near.sort(key=lambda entry: entry[0])
+    for metres, name, d, altitude in near[:12]:
+        log(f"basalt near spawn: {metres:.0f} m {name} dir {d.x:.5f},{d.y:.5f},{d.z:.5f} alt {altitude:.1f}")
 
 
 def dress_dawnhollow(body):
@@ -4211,6 +4626,7 @@ def build_bodies(materials):
         "scatter": [], "ground_cover": [],
     })
     dress_ground(dawnhollow, SURFACE_SETS)
+    dress_ground_grid(dawnhollow, materials["dawnhollow_near"], materials["dawnhollow_far"])
     ASSETS.save_loaded_asset(dawnhollow)
 
     hush = definition("DA_Hush")
@@ -4349,19 +4765,96 @@ def build_map(bodies):
     log("map saved")
 
 
+def terrain_attributes():
+    """Dawnhollow's own values (slope, flow, young, ice, cover) baked on its cube grid for the ground material
+    (EphemeraPlanetBuilder.build_terrain_attributes): (texture array, grid cells per face). Rebuilt when the
+    imported height field or the grid changes."""
+    body = definition("DA_Dawnhollow")
+    shape = body.get_editor_property("terrain")
+    field = shape.get_editor_property("height_field")
+    if not field:
+        raise RuntimeError("Dawnhollow has no imported height field yet: run the slice once without terrain attributes")
+    resolution = int(shape.get_editor_property("face_resolution"))
+    folder = f"{ROOT}/Planets/Dawnhollow"
+    name = "T_dawnhollow_Attr"
+    stamp = stamp_of("terrain-attr-v2", field.get_path_name(), ASSETS.get_metadata_tag(body, "EphemeraBakeStamp"), resolution)
+    texture = unchanged(f"{folder}/{name}", stamp)
+    if not texture:
+        texture = unreal.EphemeraPlanetBuilder.build_terrain_attributes(body, folder, name)
+        if not texture:
+            raise RuntimeError("the terrain attributes could not be built")
+        ASSETS.set_metadata_tag(texture, "EphemeraStamp", stamp)
+        ASSETS.save_loaded_asset(texture)
+        log(f"terrain attributes: rebuilt ({resolution} cells a face)")
+    return texture, resolution
+
+
+def terrain_heights():
+    """Dawnhollow's heights on its cube grid for the near ground (EphemeraPlanetBuilder.build_terrain_heights):
+    (texture array, grid cells per face). Rebuilt with the height field, as the attributes are."""
+    body = definition("DA_Dawnhollow")
+    shape = body.get_editor_property("terrain")
+    field = shape.get_editor_property("height_field")
+    if not field:
+        raise RuntimeError("Dawnhollow has no imported height field yet")
+    resolution = int(shape.get_editor_property("face_resolution"))
+    folder = f"{ROOT}/Planets/Dawnhollow"
+    name = "T_dawnhollow_Height"
+    # (v2: the game reads the field through a cubic since 2026-10-18; the apron is read that way too.)
+    stamp = stamp_of("terrain-height-v2", field.get_path_name(), ASSETS.get_metadata_tag(body, "EphemeraBakeStamp"), resolution)
+    texture = unchanged(f"{folder}/{name}", stamp)
+    if not texture:
+        texture = unreal.EphemeraPlanetBuilder.build_terrain_heights(body, folder, name)
+        if not texture:
+            raise RuntimeError("the terrain heights could not be built")
+        ASSETS.set_metadata_tag(texture, "EphemeraStamp", stamp)
+        ASSETS.save_loaded_asset(texture)
+        log(f"terrain heights: rebuilt ({resolution} cells a face)")
+    return texture, resolution
+
+
+def ground_grid_mesh():
+    """The near ground's grid: the near sea's kind of mesh, finer and wider (UEphemeraPlanetBuilder.build_sea_grid)."""
+    folder = f"{ROOT}/Planets"
+    name = "SM_GroundGrid"
+    stamp = stamp_of("ground-grid-v1", GROUND_GRID)
+    mesh = unchanged(f"{folder}/{name}", stamp)
+    if not mesh:
+        mesh = unreal.EphemeraPlanetBuilder.build_sea_grid(folder, name, GROUND_GRID["rings"], GROUND_GRID["half_cells"], GROUND_GRID["spacing_m"])
+        if not mesh:
+            raise RuntimeError("the ground grid could not be built")
+        ASSETS.set_metadata_tag(mesh, "EphemeraStamp", stamp)
+        ASSETS.save_loaded_asset(mesh)
+        log("ground grid: rebuilt")
+    return mesh
+
+
+def dress_ground_grid(body, near, far):
+    """Gives Dawnhollow its near ground (UEphemeraGroundSurfaceComponent): the grid, its material, and the
+    chunks' material with the hole."""
+    set_all(body, {"ground_grid_mesh": ground_grid_mesh(), "ground_grid_material": near, "terrain_far_material": far,
+                   "ground_grid_rings": GROUND_GRID["rings"], "ground_grid_half_cells": GROUND_GRID["half_cells"],
+                   "ground_grid_spacing_m": GROUND_GRID["spacing_m"]})
+
+
 def main():
     for folder in ("Surfaces", "Materials", "Bodies", "Planets", "Maps", "Input"):
         ASSETS.make_directory(f"{ROOT}/{folder}")
     surfaces = {name: import_surface(name, relative) for name, relative in SURFACES.items()}
     global SURFACE_SETS
     SURFACE_SETS = surfaces
+    # Dawnhollow's ground, three ways: as the terrain chunks draw it, the same with the near ground's hole,
+    # and the near ground itself (UEphemeraGroundSurfaceComponent).
+    dawn_ground = ({"moss": surfaces["moss"], "field": surfaces["field"], "sand": surfaces["sand"], "rock": surfaces["basalt"],
+                    "snow": surfaces["snow"]},
+                   {"moss": surfaces["moss_far"], "field": surfaces["field_far"], "sand": surfaces["sand_far"], "rock": surfaces["basalt_far"],
+                    "snow": surfaces["snow_far"]})
+    dawn_options = dict(rock_start=0.34, snow_line_m=400.0, attributes=terrain_attributes())
     materials = {
-        "dawnhollow": make_planet_material("M_Planet_Dawnhollow", {
-            "moss": surfaces["moss"], "field": surfaces["field"], "sand": surfaces["sand"], "rock": surfaces["basalt"],
-            "snow": surfaces["snow"]},
-            {"moss": surfaces["moss_far"], "field": surfaces["field_far"], "sand": surfaces["sand_far"], "rock": surfaces["basalt_far"],
-             "snow": surfaces["snow_far"]},
-            rock_start=0.34, snow_line_m=400.0),
+        "dawnhollow": make_planet_material("M_Planet_Dawnhollow", *dawn_ground, **dawn_options),
+        "dawnhollow_far": make_planet_material("M_Planet_Dawnhollow_Far", *dawn_ground, variant="far", **dawn_options),
+        "dawnhollow_near": make_planet_material("M_Ground_Dawnhollow_Near", *dawn_ground, variant="near", land=terrain_heights(),
+                                                **dawn_options),
         # Hush: pale dusty highlands and dark level maria, bare rock on the steep crater walls.
         # A little darker than the Moon's own two albedos (0.12 and 0.07): the camera in space is
         # set for Dawnhollow's dark lava, and at that setting true lunar grey burns out.

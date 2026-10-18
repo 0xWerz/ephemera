@@ -37,7 +37,12 @@ public:
 
 	bool IsUsable() const { return Resolution > 0 && Heights.Num() == 6 * (Resolution + 1) * (Resolution + 1); }
 
-	/** Height above the datum along a direction, metres (bilinear between grid points). */
+	/**
+	 * Height above the datum along a direction, metres: a Catmull-Rom cubic through the grid points, so the
+	 * ground is smooth between them and still passes through every height the grid holds. (Bilinear, every
+	 * cell was a crease-edged facet: on the near ground's fine grid, drawn from the same cubic on the GPU
+	 * (NEAR_GROUND_CODE in Tools/build_slice.py), the land showed its 8 m lattice. Change one and change the other.)
+	 */
 	double HeightM(const FVector& UnitDirection) const;
 	/** One of the maps along a direction, 0..1. */
 	double Sample(const TArray<uint8>& Map, const FVector& UnitDirection) const;
@@ -51,4 +56,6 @@ private:
 		double Weight[4];
 	};
 	FCorner Locate(const FVector& UnitDirection) const;
+	/** Where a direction lies on the grid: its face, the grid point below and left of it, and how far past that. */
+	void Spot(const FVector& UnitDirection, int32& Face, int32& I, int32& J, double& Fu, double& Fv) const;
 };

@@ -345,6 +345,20 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sea") int32 SeaGridRings = 6;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sea") int32 SeaGridHalfCells = 64;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sea") float SeaGridSpacingM = 0.5f;
+	/**
+	 * The near ground: a grid of rings kept under the camera, laid on the land by its material
+	 * (GroundGridMaterial) from the terrain's heights (a cubic through the height field's grid, as the game
+	 * reads it) and raised into the relief the terrain's own material would otherwise only shade
+	 * (UEphemeraGroundSurfaceComponent). Where it lies, the terrain chunks are drawn with TerrainFarMaterial,
+	 * the same ground with a hole cut where the grid is. Without these, or with -EphemeraNoGroundGrid, the
+	 * land is the chunks alone, as it was.
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") TObjectPtr<UStaticMesh> GroundGridMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") TObjectPtr<UMaterialInterface> GroundGridMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") TObjectPtr<UMaterialInterface> TerrainFarMaterial;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") int32 GroundGridRings = 6;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") int32 GroundGridHalfCells = 96;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Terrain") float GroundGridSpacingM = 0.25f;
 	/** The waves, as the material draws them (the swell first, then the wind sea). */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sea") TArray<FEphemeraSeaBand> SeaBands;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sea") TArray<FEphemeraSeaChart> SeaCharts;
@@ -420,6 +434,9 @@ struct EPHEMERA_API FEphemeraTerrain
 	 * nothing may be lifted to meet a relief that is only shading.
 	 */
 	static bool ReliefIsGeometry();
+	/** True where a world's relief stands up as geometry where things are placed: drawn by tessellation
+	 * (ReliefIsGeometry) or by its near ground's grid (UEphemeraGroundSurfaceComponent::Wanted). */
+	static bool ReliefStandsUp(const UEphemeraBodyDefinition& Definition);
 	/** The same, looked up along a direction; 0 for a world without micro relief or while it is only shading. */
 	static double MicroReliefM(const UEphemeraBodyDefinition& Definition, const FVector& UnitDirection);
 };

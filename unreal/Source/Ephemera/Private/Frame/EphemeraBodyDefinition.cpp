@@ -1,4 +1,5 @@
 #include "Frame/EphemeraBodyDefinition.h"
+#include "Frame/EphemeraGroundSurface.h"
 
 #include "HAL/IConsoleManager.h"
 
@@ -387,9 +388,14 @@ bool FEphemeraTerrain::ReliefIsGeometry()
 	return Tessellation && Tessellation->GetInt() != 0;
 }
 
+bool FEphemeraTerrain::ReliefStandsUp(const UEphemeraBodyDefinition& Definition)
+{
+	return ReliefIsGeometry() || (UEphemeraGroundSurfaceComponent::Wanted(&Definition) && !Definition.TerrainChunks.IsEmpty());
+}
+
 double FEphemeraTerrain::MicroReliefM(const UEphemeraBodyDefinition& Definition, const FVector& UnitDirection)
 {
-	if (Definition.MicroRelief <= 0.f || !ReliefIsGeometry())
+	if (Definition.MicroRelief <= 0.f || !ReliefStandsUp(Definition))
 	{
 		return 0.0;
 	}

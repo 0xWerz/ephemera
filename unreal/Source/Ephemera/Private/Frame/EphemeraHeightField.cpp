@@ -10,10 +10,9 @@ namespace
 	};
 }
 
-UEphemeraHeightField::FCorner UEphemeraHeightField::Locate(const FVector& D) const
+void UEphemeraHeightField::Spot(const FVector& D, int32& Face, int32& I, int32& J, double& Fu, double& Fv) const
 {
 	const double Ax = FMath::Abs(D.X), Ay = FMath::Abs(D.Y), Az = FMath::Abs(D.Z);
-	int32 Face;
 	if (Ax >= Ay && Ax >= Az)
 	{
 		Face = D.X > 0.0 ? 0 : 1;
@@ -32,8 +31,17 @@ UEphemeraHeightField::FCorner UEphemeraHeightField::Locate(const FVector& D) con
 	const double V = FMath::Atan(FVector::DotProduct(D, FaceAxes[Face][2]) / Along) / (UE_DOUBLE_PI / 4.0);
 	const double Gu = FMath::Clamp((U + 1.0) * 0.5 * Resolution, 0.0, Resolution - 1e-9);
 	const double Gv = FMath::Clamp((V + 1.0) * 0.5 * Resolution, 0.0, Resolution - 1e-9);
-	const int32 I = static_cast<int32>(Gu), J = static_cast<int32>(Gv);
-	const double Fu = Gu - I, Fv = Gv - J;
+	I = static_cast<int32>(Gu);
+	J = static_cast<int32>(Gv);
+	Fu = Gu - I;
+	Fv = Gv - J;
+}
+
+UEphemeraHeightField::FCorner UEphemeraHeightField::Locate(const FVector& D) const
+{
+	int32 Face, I, J;
+	double Fu, Fv;
+	Spot(D, Face, I, J, Fu, Fv);
 	const int32 Row = Resolution + 1;
 	const int32 Base = (Face * Row + J) * Row + I;
 	FCorner Corner;
@@ -50,11 +58,32 @@ UEphemeraHeightField::FCorner UEphemeraHeightField::Locate(const FVector& D) con
 
 double UEphemeraHeightField::HeightM(const FVector& UnitDirection) const
 {
-	const FCorner C = Locate(UnitDirection);
-	double Level = 0.0;
-	for (int32 K = 0; K < 4; ++K)
+	int32 Face, I, J;
+	double Fu, Fv;
+	Spot(UnitDirection, Face, I, J, Fu, Fv);
+	auto Weights = [](const double F, double W[4])
 	{
-		Level += Heights[C.Index[K]] * C.Weight[K];
+		W[0] = F * (-0.5 + F * (1.0 - 0.5 * F));
+		W[1] = 1.0 + F * F * (-2.5 + 1.5 * F);
+		W[2] = F * (0.5 + F * (2.0 - 1.5 * F));
+		W[3] = F * F * (-0.5 + 0.5 * F);
+	};
+	double Wu[4], Wv[4];
+	Weights(Fu, Wu);
+	Weights(Fv, Wv);
+	const int32 Row = Resolution + 1;
+	const int32 First = Face * Row * Row;
+	double Level = 0.0;
+	// (At a face's edge the points past it are taken as the edge's own: the GPU's grid reads its
+	// neighbouring face there, and the two part by a few centimetres within one cell of the edge.)
+	for (int32 B = 0; B < 4; ++B)
+	{
+		const int32 Y = FMath::Clamp(J - 1 + B, 0, Resolution);
+		for (int32 A = 0; A < 4; ++A)
+		{
+			const int32 X = FMath::Clamp(I - 1 + A, 0, Resolution);
+			Level += Heights[First + Y * Row + X] * (Wu[A] * Wv[B]);
+		}
 	}
 	return LowM + (HighM - LowM) * Level / 65535.0;
 }

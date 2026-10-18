@@ -3,6 +3,7 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Async/ParallelFor.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/Texture2DArray.h"
 #include "Engine/TextureCube.h"
 #include "Frame/EphemeraBodyDefinition.h"
 #include "Frame/EphemeraHeightField.h"
@@ -1040,4 +1041,663 @@ bool UEphemeraPlanetBuilder::BuildStreams(UEphemeraBodyDefinition* Definition, c
 	Definition->StreamMesh = Mesh;
 	Definition->MarkPackageDirty();
 	return true;
+}
+
+UTexture2DArray* UEphemeraPlanetBuilder::BuildTerrainAttributes(UEphemeraBodyDefinition* Definition, const FString& PackageFolder, const FString& Name)
+{
+	if (!Definition || Definition->RadiusM <= 0.0)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Ephemera planet builder: no definition for the terrain attributes."));
+		return nullptr;
+	}
+	const UEphemeraBodyDefinition& D = *Definition;
+	const int32 Resolution = FMath::Clamp(D.Terrain.FaceResolution, 8, 4096);
+	// Two grid cells past every face edge, evaluated where they lie on the sphere (the grid simply continues
+	// past an edge): a cubic filter reads two texels either side, and finds the neighbouring face's values there.
+	constexpr int32 Apron = 2;
+	const int32 Size = Resolution + 1 + 2 * Apron;
+	TArray<uint8> Bytes;
+	Bytes.SetNumZeroed(Size * Size * 12 * 4);
+	auto Byte = [](const float Value) { return static_cast<uint8>(FMath::Clamp(FMath::RoundToInt(Value * 255.f), 0, 255)); };
+	ParallelFor(6 * Size, [&](const int32 Line)
+	{
+		const int32 F = Line / Size, J = Line % Size;
+		for (int32 I = 0; I < Size; ++I)
+		{
+			const FSurfaceVertex V = Evaluate(D, DirectionOf(CubeKey(Faces[F], I - Apron, J - Apron, Resolution), Resolution), 0.0, 1.0);
+			// Encoded exactly as the engine encodes a mesh's vertex colours (sRGB in RGB, alpha linear), so the
+			// material reads the very numbers it read from the vertices, and every threshold tuned on them holds.
+			const FColor Encoded = FLinearColor(V.Color.X, V.Color.Y, V.Color.Z, V.Color.W).ToFColor(true);
+			uint8* A = &Bytes[((F * Size + J) * Size + I) * 4];          // BGRA
+			A[0] = Encoded.B;
+			A[1] = Encoded.G;
+			A[2] = Encoded.R;
+			A[3] = Encoded.A;
+			uint8* C = &Bytes[(((6 + F) * Size + J) * Size + I) * 4];
+			C[2] = Byte(0.5f * (V.UV.Y + 1.f));
+		}
+	});
+	const FString PackageName = PackageFolder / Name;
+	UPackage* Package = CreatePackage(*PackageName);
+	Package->FullyLoad();
+	UTexture2DArray* Texture = FindObject<UTexture2DArray>(Package, *Name);
+	if (!Texture)
+	{
+		Texture = NewObject<UTexture2DArray>(Package, *Name, RF_Public | RF_Standalone);
+		FAssetRegistryModule::AssetCreated(Texture);
+	}
+	Texture->Modify();
+	Texture->Source.Init(Size, Size, 12, 1, TSF_BGRA8, Bytes.GetData());
+	Texture->SRGB = false;
+	// Uncompressed, no mips: these are data, read at their own texels by a cubic filter.
+	Texture->CompressionSettings = TC_VectorDisplacementmap;
+	Texture->MipGenSettings = TMGS_NoMipmaps;
+	Texture->Filter = TF_Bilinear;
+	Texture->AddressX = TA_Clamp;
+	Texture->AddressY = TA_Clamp;
+	Texture->NeverStream = true;
+	Texture->PostEditChange();
+	Package->MarkPackageDirty();
+	FSavePackageArgs SaveArgs;
+	SaveArgs.TopLevelFlags = RF_Public | RF_Standalone;
+	const FString Filename = FPackageName::LongPackageNameToFilename(PackageName, FPackageName::GetAssetPackageExtension());
+	if (!UPackage::SavePackage(Package, Texture, *Filename, SaveArgs))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Ephemera planet builder: could not save %s"), *Filename);
+		return nullptr;
+	}
+	UE_LOG(LogTemp, Display, TEXT("Ephemera planet builder: terrain attributes %s, %d x %d x 12"), *PackageName, Size, Size);
+	return Texture;
+}
+
+UTexture2DArray* UEphemeraPlanetBuilder::BuildTerrainHeights(UEphemeraBodyDefinition* Definition, const FString& PackageFolder, const FString& Name)
+{
+	if (!Definition || Definition->RadiusM <= 0.0)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Ephemera planet builder: no definition for the terrain heights."));
+		return nullptr;
+	}
+	const UEphemeraBodyDefinition& D = *Definition;
+	const int32 Resolution = FMath::Clamp(D.Terrain.FaceResolution, 8, 4096);
+	constexpr int32 Apron = 2;
+	const int32 Size = Resolution + 1 + 2 * Apron;
+	TArray<float> Heights;
+	Heights.SetNumZeroed(Size * Size * 6);
+	ParallelFor(6 * Size, [&](const int32 Line)
+	{
+		const int32 F = Line / Size, J = Line % Size;
+		for (int32 I = 0; I < Size; ++I)
+		{
+			const FVector Direction = DirectionOf(CubeKey(Faces[F], I - Apron, J - Apron, Resolution), Resolution);
+			Heights[(F * Size + J) * Size + I] = static_cast<float>(FEphemeraTerrain::HeightM(D.Terrain, D.RadiusM, Direction));
+		}
+	});
+	const FString PackageName = PackageFolder / Name;
+	UPackage* Package = CreatePackage(*PackageName);
+	Package->FullyLoad();
+	UTexture2DArray* Texture = FindObject<UTexture2DArray>(Package, *Name);
+	if (!Texture)
+	{
+		Texture = NewObject<UTexture2DArray>(Package, *Name, RF_Public | RF_Standalone);
+		FAssetRegistryModule::AssetCreated(Texture);
+	}
+	Texture->Modify();
+	Texture->Source.Init(Size, Size, 6, 1, TSF_R32F, reinterpret_cast<const uint8*>(Heights.GetData()));
+	Texture->SRGB = false;
+	Texture->CompressionSettings = TC_SingleFloat;
+	Texture->MipGenSettings = TMGS_NoMipmaps;
+	Texture->Filter = TF_Nearest;
+	Texture->AddressX = TA_Clamp;
+	Texture->AddressY = TA_Clamp;
+	Texture->NeverStream = true;
+	Texture->PostEditChange();
+	Package->MarkPackageDirty();
+	FSavePackageArgs SaveArgs;
+	SaveArgs.TopLevelFlags = RF_Public | RF_Standalone;
+	const FString Filename = FPackageName::LongPackageNameToFilename(PackageName, FPackageName::GetAssetPackageExtension());
+	if (!UPackage::SavePackage(Package, Texture, *Filename, SaveArgs))
+	{
+		UE_LOG(LogTemp, Error, TEXT("Ephemera planet builder: could not save %s"), *Filename);
+		return nullptr;
+	}
+	UE_LOG(LogTemp, Display, TEXT("Ephemera planet builder: terrain heights %s, %d x %d x 6"), *PackageName, Size, Size);
+	return Texture;
+}
+
+namespace
+{
+	/** Fractal noise for the surface of stone, about -0.5..0.5. */
+	float StoneNoise(const FVector3f& P, const int32 Octaves)
+	{
+		float Sum = 0.f;
+		float Amplitude = 0.5f;
+		FVector Q(P);
+		for (int32 Octave = 0; Octave < Octaves; ++Octave)
+		{
+			Sum += Amplitude * FMath::PerlinNoise3D(Q + FVector(Octave * 17.3, Octave * 5.1, Octave * 11.7));
+			Q *= 2.03;
+			Amplitude *= 0.5f;
+		}
+		return Sum;
+	}
+
+	/** What is left of a convex polygon on the side of a line where Dot(X, Normal) <= Limit. */
+	TArray<FVector2f> ClipToHalfPlane(const TArray<FVector2f>& Polygon, const FVector2f& Normal, const float Limit)
+	{
+		TArray<FVector2f> Kept;
+		const int32 Count = Polygon.Num();
+		for (int32 K = 0; K < Count; ++K)
+		{
+			const FVector2f A = Polygon[K];
+			const FVector2f B = Polygon[(K + 1) % Count];
+			const float Da = FVector2f::DotProduct(A, Normal) - Limit;
+			const float Db = FVector2f::DotProduct(B, Normal) - Limit;
+			if (Da <= 0.f)
+			{
+				Kept.Add(A);
+			}
+			if ((Da <= 0.f) != (Db <= 0.f))
+			{
+				Kept.Add(A + (B - A) * (Da / (Da - Db)));
+			}
+		}
+		return Kept;
+	}
+
+	/** Adds a triangle wound so its front faces along Outward (Unreal's front is clockwise). */
+	void AddFacing(FBuiltMesh& Mesh, const int32 A, const int32 B, const int32 C, const FVector3f& Outward)
+	{
+		const FVector3f PA = Mesh.Vertices[A].Position, PB = Mesh.Vertices[B].Position, PC = Mesh.Vertices[C].Position;
+		if (FVector3f::DotProduct(FVector3f::CrossProduct(PC - PA, PB - PA), Outward) >= 0.f)
+		{
+			Mesh.Triangles.Add(FIntVector(A, B, C));
+		}
+		else
+		{
+			Mesh.Triangles.Add(FIntVector(A, C, B));
+		}
+	}
+}
+
+UStaticMesh* UEphemeraPlanetBuilder::BuildBasaltColumns(const FString& PackageFolder, const FString& Name, const int32 Seed, const int32 Style,
+	const float RadiusCm, const float HeightCm, const float ColumnCm)
+{
+	FRandomStream Random(Seed);
+	auto Draw = [&Random](const float Low, const float High) { return static_cast<float>(Random.FRandRange(Low, High)); };
+	auto Chance = [&Random]() { return static_cast<float>(Random.FRand()); };
+	const float Spacing = FMath::Max(ColumnCm, 15.f);
+	const float Unit = Spacing / 55.f;                                // detail scales with the columns
+	const float Around = FMath::Clamp(Spacing * 0.05f, 2.f, 4.5f);    // the mesh's own spacing round a column
+	const float Up = Around * 1.2f;                                   // and up it
+	// Massifs stand on uneven ground and run deeper into it.
+	const float BottomCm = Style == 0 ? -400.f : -150.f;
+	constexpr float GroundCm = -20.f;
+	const float JointCm = FMath::Max(Spacing * 0.04f, 1.5f);          // the open crack between two columns
+	const FVector3f Offset(Draw(-500.f, 500.f), Draw(-500.f, 500.f), Draw(-500.f, 500.f));
+
+	// Where the columns stand: a hexagonal lattice, shaken. The joints of a cooling flow are nearly
+	// regular but never quite; most columns come out six-sided, some five or seven.
+	TArray<FVector2f> Seeds;
+	const int32 Span = FMath::CeilToInt32(RadiusCm / Spacing) + 3;
+	for (int32 Row = -Span; Row <= Span; ++Row)
+	{
+		for (int32 Col = -Span; Col <= Span; ++Col)
+		{
+			FVector2f P((Col + 0.5f * (Row & 1)) * Spacing, Row * Spacing * 0.8660254f);
+			P += FVector2f(Draw(-0.21f, 0.21f), Draw(-0.21f, 0.21f)) * Spacing;
+			if (P.Size() < RadiusCm + 2.5f * Spacing)
+			{
+				Seeds.Add(P);
+			}
+		}
+	}
+	// The cluster's outline is ragged, not a disc; one side of it (Toward) is its face.
+	const float Lean = Draw(0.f, UE_TWO_PI);
+	const FVector2f Toward(FMath::Cos(Lean), FMath::Sin(Lean));
+	auto Reach = [&](const FVector2f& P)
+	{
+		const FVector2f D = P.GetSafeNormal();
+		return RadiusCm * (0.8f + 0.55f * StoneNoise(FVector3f(D.X * 1.2f, D.Y * 1.2f, 0.f) + Offset * 0.01f, 3));
+	};
+
+	// First every column's cell and height, so each can see its neighbours.
+	struct FColumn { TArray<FVector2f> Cell; FVector2f Centre; float Inradius; float Height; int32 Seed; };
+	TArray<FColumn> Columns;
+	TArray<int32> ColumnOfSeed;
+	ColumnOfSeed.Init(INDEX_NONE, Seeds.Num());
+	for (int32 Index = 0; Index < Seeds.Num(); ++Index)
+	{
+		const FVector2f Centre = Seeds[Index];
+		const float Out = Centre.Size() / FMath::Max(Reach(Centre), 1.f);
+		if (Out > 1.f)
+		{
+			continue;
+		}
+		// Its cell: everything nearer this seed than any other, less half a joint each side.
+		const float Box = Spacing * 1.6f;
+		TArray<FVector2f> Cell = {{-Box, -Box}, {Box, -Box}, {Box, Box}, {-Box, Box}};
+		for (int32 Other = 0; Other < Seeds.Num() && Cell.Num() >= 3; ++Other)
+		{
+			const FVector2f Between = Seeds[Other] - Centre;
+			const float Apart = Between.Size();
+			if (Other == Index || Apart > Spacing * 2.4f)
+			{
+				continue;
+			}
+			Cell = ClipToHalfPlane(Cell, Between / Apart, Apart * 0.5f - JointCm * 0.5f);
+		}
+		if (Cell.Num() < 3)
+		{
+			continue;
+		}
+		float Inradius = TNumericLimits<float>::Max();
+		for (int32 K = 0; K < Cell.Num(); ++K)
+		{
+			const FVector2f A = Cell[K], B = Cell[(K + 1) % Cell.Num()];
+			const FVector2f Along = (B - A).GetSafeNormal();
+			Inradius = FMath::Min(Inradius, FMath::Abs(A.X * Along.Y - A.Y * Along.X));
+		}
+		if (Inradius < Spacing * 0.15f)
+		{
+			continue;
+		}
+		for (FVector2f& P : Cell)
+		{
+			P += Centre;
+		}
+
+		// How tall. A massif stands full height over most of its top, which tilts and swells a little,
+		// and breaks down at its edges in organ pipes, steepest on its face. A causeway climbs in
+		// irregular steps toward one side. Neighbours differ, and here and there one has broken off.
+		const float Side = FVector2f::DotProduct(Centre, Toward) / RadiusCm;
+		const float Swell = StoneNoise(FVector3f(Centre.X, Centre.Y, 0.f) / (Spacing * 4.f) + Offset, 2);
+		float Height;
+		if (Style == 0)
+		{
+			const float Shoulder = 1.f - FMath::SmoothStep(0.55f - 0.25f * FMath::Max(-Side, 0.f), 1.0f, Out);
+			Height = HeightCm * (0.18f + 0.82f * Shoulder) * (0.9f + 0.1f * Side + Swell * 0.35f) * Draw(0.93f, 1.04f);
+			if (Chance() < 0.07f)
+			{
+				Height *= Draw(0.55f, 0.85f);
+			}
+		}
+		else
+		{
+			const float Ramp = FMath::Clamp(0.45f + 0.6f * Side + Swell * 0.9f, 0.f, 1.f);
+			Height = HeightCm * (0.14f + 0.86f * Ramp * Ramp) * (1.f - 0.4f * Out * Out) * Draw(0.85f, 1.1f);
+			if (Chance() < 0.18f)
+			{
+				Height *= Draw(0.5f, 0.82f);
+			}
+		}
+		ColumnOfSeed[Index] = Columns.Num();
+		Columns.Add({MoveTemp(Cell), Centre, Inradius, FMath::Max(Height, 22.f), Index});
+	}
+
+	FBuiltMesh Stone;
+	FBuiltMesh Blocks;
+	// One prism of stone. Cell: its outline (anticlockwise), Height: its top, Hidden: how far down its
+	// sides can be seen, Bottom: where it ends below. With bCapped it is closed at the bottom too (a
+	// broken-off piece). Place: where it goes in the mesh.
+	auto AddPrism = [&](const TArray<FVector2f>& Cell, const float Inradius, const float Height, const float Hidden, const float Bottom,
+		const bool bCapped, const FTransform3f& Place)
+	{
+		const int32 Sides = Cell.Num();
+		// Round its corners (worn, a few cm) and walk its outline: positions and outward normals.
+		TArray<float> Cuts, Turns;
+		for (int32 K = 0; K < Sides; ++K)
+		{
+			const FVector2f Prev = Cell[(K + Sides - 1) % Sides], Corner = Cell[K], Next = Cell[(K + 1) % Sides];
+			const float Turn = FMath::Acos(FMath::Clamp(FVector2f::DotProduct((Corner - Prev).GetSafeNormal(), (Next - Corner).GetSafeNormal()), -1.f, 1.f));
+			Turns.Add(Turn);
+			Cuts.Add(FMath::Min(Draw(2.f, 8.f) * Unit * FMath::Tan(Turn * 0.5f), 0.4f * FMath::Min((Corner - Prev).Size(), (Next - Corner).Size())));
+		}
+		TArray<FVector2f> Ring;
+		TArray<FVector2f> RingN;
+		for (int32 K = 0; K < Sides; ++K)
+		{
+			const FVector2f Prev = Cell[(K + Sides - 1) % Sides], Corner = Cell[K], Next = Cell[(K + 1) % Sides];
+			const FVector2f In = (Corner - Prev).GetSafeNormal(), OutDir = (Next - Corner).GetSafeNormal();
+			const float Radius = Cuts[K] / FMath::Max(FMath::Tan(Turns[K] * 0.5f), 1e-3f);
+			const FVector2f NIn(In.Y, -In.X);             // outward normal of the edge coming in (the outline runs anticlockwise)
+			const FVector2f Hub = Corner - In * Cuts[K] - NIn * Radius;
+			constexpr int32 Arc = 4;
+			for (int32 A = 0; A < Arc; ++A)
+			{
+				const float Angle = Turns[K] * A / Arc;
+				const FVector2f N = NIn * FMath::Cos(Angle) + In * FMath::Sin(Angle);
+				Ring.Add(Hub + N * Radius);
+				RingN.Add(N);
+			}
+			// The straight run to where the next corner's arc begins.
+			const FVector2f Start = Corner + OutDir * Cuts[K];
+			const float Run = FMath::Max((Next - Corner).Size() - Cuts[K] - Cuts[(K + 1) % Sides], 0.f);
+			const int32 Steps = FMath::Max(1, FMath::CeilToInt32(Run / Around));
+			const FVector2f EdgeN(OutDir.Y, -OutDir.X);
+			for (int32 S = 0; S < Steps; ++S)
+			{
+				Ring.Add(Start + OutDir * (Run * S / Steps));
+				RingN.Add(EdgeN);
+			}
+		}
+		FVector2f Mid(0.f, 0.f);
+		for (const FVector2f& P : Cell)
+		{
+			Mid += P;
+		}
+		Mid /= Sides;
+
+		// Its top: tilted a little, dished or domed, its edge worn round. (A broken end is rougher.)
+		const FVector2f Tilt = FVector2f(Draw(-1.f, 1.f), Draw(-1.f, 1.f)) * (bCapped ? 0.18f : Style == 0 ? 0.08f : 0.06f);
+		const float Dish = Draw(-0.06f, 0.04f) * Inradius;
+		const float Bevel = FMath::Min(Draw(3.f, 10.f) * Unit, Inradius * 0.3f);
+		const FVector2f FootTilt = FVector2f(Draw(-1.f, 1.f), Draw(-1.f, 1.f)) * 0.18f;
+		auto TopAt = [&](const FVector2f& P) { return Height + FVector2f::DotProduct(Tilt, P - Mid); };
+		auto FootAt = [&](const FVector2f& P) { return bCapped ? Bottom + FVector2f::DotProduct(FootTilt, P - Mid) : Bottom; };
+		// The cross joints that part a column into drums: tilted a little, a metre or two apart, most
+		// of them closed tight, a few weathered open.
+		struct FJoint { float Z; FVector2f Tilt; float Depth; float Bulge; };
+		TArray<FJoint> Joints;
+		for (float Z = Bottom + Draw(30.f, 120.f); Z < Height - Bevel * 2.f; Z += Draw(1.3f, 3.6f) * Spacing)
+		{
+			const bool bOpen = Chance() < 0.25f;
+			Joints.Add({Z, FVector2f(Draw(-0.12f, 0.12f), Draw(-0.12f, 0.12f)), (bOpen ? Draw(2.f, 3.5f) : Draw(0.5f, 1.2f)) * Unit, Draw(-0.45f, 0.45f) * Unit});
+		}
+		// Chips knocked off its corners and its ends.
+		struct FChip { FVector3f At; float Radius; };
+		TArray<FChip> Chips;
+		const int32 ChipCount = Random.RandRange(3, 9);
+		for (int32 C = 0; C < ChipCount; ++C)
+		{
+			const int32 K = Random.RandRange(0, Sides - 1);
+			const float Pick = Chance();
+			const float Z = Pick < 0.5f ? Height : bCapped && Pick < 0.75f ? Bottom : Draw(FMath::Max(Hidden, Bottom), Height);
+			Chips.Add({FVector3f(Cell[K].X, Cell[K].Y, Z), Draw(5.f, 18.f) * Unit});
+		}
+
+		// A lathe over the outline: (in across the foot and round its edge, for a broken piece,) up the
+		// side, round the worn top edge, in across the top. The side below Hidden (in the ground, or
+		// behind the neighbours) is carried by a few levels only.
+		enum class EPart : uint8 { FootCap, FootBevel, Side, TopBevel, TopCap };
+		struct FLevel { EPart Part; float T; };
+		TArray<FLevel> Profile;
+		const int32 CapLevels = FMath::Max(2, FMath::CeilToInt32(Inradius / (Around * 1.3f)));
+		constexpr int32 BevelLevels = 5;
+		if (bCapped)
+		{
+			for (int32 L = 1; L < CapLevels; ++L)
+			{
+				Profile.Add({EPart::FootCap, 1.f - static_cast<float>(L) / CapLevels});
+			}
+			for (int32 L = 0; L < BevelLevels; ++L)
+			{
+				Profile.Add({EPart::FootBevel, static_cast<float>(L) / BevelLevels});
+			}
+		}
+		const float From = FMath::Max(Hidden, Bottom);
+		const int32 Coarse = bCapped || From <= Bottom + 1.f ? 0 : 3;
+		const int32 Fine = FMath::Max(2, FMath::CeilToInt32((Height - Bevel - From) / Up));
+		for (int32 L = 0; L < Coarse; ++L)
+		{
+			Profile.Add({EPart::Side, -1.f + static_cast<float>(L) / Coarse});      // -1..0: Bottom up to From
+		}
+		for (int32 L = 0; L <= Fine; ++L)
+		{
+			Profile.Add({EPart::Side, static_cast<float>(L) / Fine});               // 0..1: From up to the top's bevel
+		}
+		for (int32 L = 1; L <= BevelLevels; ++L)
+		{
+			Profile.Add({EPart::TopBevel, static_cast<float>(L) / BevelLevels});
+		}
+		for (int32 L = 1; L < CapLevels; ++L)
+		{
+			Profile.Add({EPart::TopCap, static_cast<float>(L) / CapLevels});
+		}
+		const int32 M = Ring.Num();
+		const int32 Levels = Profile.Num();
+		TArray<FVector3f> Base;
+		TArray<FVector3f> BaseN;
+		TArray<float> SideWeight;
+		Base.Reserve(Levels * M);
+		for (const FLevel& Level : Profile)
+		{
+			for (int32 I = 0; I < M; ++I)
+			{
+				const FVector2f P = Ring[I], N = RingN[I];
+				const float Top = TopAt(P);
+				const float Foot = FootAt(P) + (bCapped ? Bevel : 0.f);
+				FVector3f At, Normal;
+				float SideW = 1.f;
+				switch (Level.Part)
+				{
+				case EPart::FootCap:
+				case EPart::TopCap:
+				{
+					const FVector2f Q = Mid + (P - N * Bevel - Mid) * (1.f - Level.T);
+					const bool bTop = Level.Part == EPart::TopCap;
+					At = FVector3f(Q.X, Q.Y, bTop ? TopAt(Q) + Dish * (1.f - FMath::Square(1.f - Level.T)) : FootAt(Q));
+					Normal = FVector3f(0.f, 0.f, bTop ? 1.f : -1.f);
+					SideW = 0.f;
+					break;
+				}
+				case EPart::FootBevel:
+				case EPart::TopBevel:
+				{
+					const bool bTop = Level.Part == EPart::TopBevel;
+					const float Angle = UE_HALF_PI * (bTop ? Level.T : 1.f - Level.T);
+					const float Inset = Bevel * (1.f - FMath::Cos(Angle));
+					const float Z = bTop ? Top - Bevel + Bevel * FMath::Sin(Angle) : Foot - Bevel * FMath::Sin(Angle);
+					At = FVector3f(P.X - N.X * Inset, P.Y - N.Y * Inset, Z);
+					Normal = FVector3f(N.X * FMath::Cos(Angle), N.Y * FMath::Cos(Angle), bTop ? FMath::Sin(Angle) : -FMath::Sin(Angle));
+					SideW = FMath::Cos(Angle);
+					break;
+				}
+				default:
+				{
+					const float Z = Level.T < 0.f ? From + (From - Bottom) * Level.T : FMath::Lerp(bCapped ? Foot : From, Top - Bevel, Level.T);
+					At = FVector3f(P.X, P.Y, Z);
+					Normal = FVector3f(N.X, N.Y, 0.f);
+					break;
+				}
+				}
+				Base.Add(At);
+				BaseN.Add(Normal);
+				SideWeight.Add(SideW);
+			}
+		}
+		const FVector3f TopApex(Mid.X, Mid.Y, TopAt(Mid) + Dish);
+		const FVector3f FootApex(Mid.X, Mid.Y, FootAt(Mid));
+
+		// Displace the lathe into stone.
+		auto Displace = [&](const FVector3f& At, const float SideW)
+		{
+			// The grain of the rock, and the slow waviness of a face.
+			float D = StoneNoise(At / (9.f * Unit) + Offset, 3) * 0.9f * Unit + StoneNoise(At / (30.f * Unit) + Offset, 3) * 2.2f * Unit;
+			if (SideW > 0.f)
+			{
+				// Faint banding across each face (the "chisel marks" every column carries).
+				D += SideW * 0.3f * Unit * FMath::Sin(At.Z * (UE_TWO_PI / (6.f * Unit)) + 4.f * StoneNoise(At / 30.f + Offset, 2));
+				// The joints: a crack with weathered shoulders; each drum stands a little proud or shy of the next.
+				float Drum = 0.f;
+				for (const FJoint& Joint : Joints)
+				{
+					const float Dz = At.Z - (Joint.Z + FVector2f::DotProduct(Joint.Tilt, FVector2f(At.X, At.Y) - Mid)) - StoneNoise(At / 18.f + Offset, 2) * 3.f * Unit;
+					D -= SideW * Joint.Depth * (FMath::Exp(-FMath::Square(Dz / (1.6f * Unit))) + 0.4f * FMath::Exp(-FMath::Square(Dz / (5.f * Unit))));
+					if (Dz > 0.f)
+					{
+						Drum = Joint.Bulge;
+					}
+				}
+				D += SideW * Drum;
+			}
+			for (const FChip& Chip : Chips)
+			{
+				D -= FMath::Max(Chip.Radius - FVector3f::Dist(At, Chip.At), 0.f) * 0.8f;
+			}
+			// Below the ground no one sees it.
+			return !bCapped && At.Z < GroundCm ? D * 0.3f : D;
+		};
+		TArray<FVector3f> Local;
+		Local.SetNumUninitialized(Base.Num() + 2);
+		for (int32 V = 0; V < Base.Num(); ++V)
+		{
+			Local[V] = Base[V] + BaseN[V] * Displace(Base[V], SideWeight[V]);
+		}
+		const int32 TopIndex = Base.Num();
+		const int32 FootIndex = Base.Num() + 1;
+		Local[TopIndex] = TopApex + FVector3f(0.f, 0.f, Displace(TopApex, 0.f));
+		Local[FootIndex] = FootApex - FVector3f(0.f, 0.f, Displace(FootApex, 0.f));
+
+		// Normals from the displaced surface itself, so every crack and chip is lit.
+		auto Index = [M](const int32 I, const int32 J) { return J * M + ((I % M) + M) % M; };
+		TArray<FVector3f> Normals;
+		Normals.SetNumUninitialized(Local.Num());
+		for (int32 J = 0; J < Levels; ++J)
+		{
+			for (int32 I = 0; I < M; ++I)
+			{
+				const FVector3f Across = Local[Index(I + 1, J)] - Local[Index(I - 1, J)];
+				const FVector3f Below = J > 0 ? Local[Index(I, J - 1)] : bCapped ? Local[FootIndex] : Local[Index(I, J)];
+				const FVector3f Above = J + 1 < Levels ? Local[Index(I, J + 1)] : Local[TopIndex];
+				FVector3f N = FVector3f::CrossProduct(Across, Above - Below).GetSafeNormal();
+				if (FVector3f::DotProduct(N, BaseN[Index(I, J)]) < 0.f)
+				{
+					N = -N;
+				}
+				Normals[Index(I, J)] = N.IsNearlyZero() ? BaseN[Index(I, J)] : N;
+			}
+		}
+		Normals[TopIndex] = FVector3f(0.f, 0.f, 1.f);
+		Normals[FootIndex] = FVector3f(0.f, 0.f, -1.f);
+
+		const int32 First = Stone.Vertices.Num();
+		for (int32 V = 0; V < Local.Num(); ++V)
+		{
+			FSurfaceVertex Vertex;
+			Vertex.Position = Place.TransformPosition(Local[V]);
+			Vertex.Normal = Place.TransformVectorNoScale(Normals[V]);
+			Vertex.Color = FVector4f(1.f, 1.f, 1.f, 1.f);
+			Vertex.UV = FVector2f(Vertex.Position.X * 0.01f, Vertex.Position.Z * 0.01f);
+			Stone.Vertices.Add(Vertex);
+		}
+		auto Facing = [&](const int32 A, const int32 B, const int32 C, const FVector3f& Out)
+		{
+			AddFacing(Stone, First + A, First + B, First + C, Place.TransformVectorNoScale(Out));
+		};
+		for (int32 J = 0; J + 1 < Levels; ++J)
+		{
+			for (int32 I = 0; I < M; ++I)
+			{
+				const FVector3f Outward = BaseN[Index(I, J)] + BaseN[Index(I, J + 1)];
+				Facing(Index(I, J), Index(I + 1, J), Index(I + 1, J + 1), Outward);
+				Facing(Index(I, J), Index(I + 1, J + 1), Index(I, J + 1), Outward);
+			}
+		}
+		for (int32 I = 0; I < M; ++I)
+		{
+			Facing(Index(I, Levels - 1), Index(I + 1, Levels - 1), TopIndex, FVector3f(0.f, 0.f, 1.f));
+			if (bCapped)
+			{
+				Facing(Index(I, 0), Index(I + 1, 0), FootIndex, FVector3f(0.f, 0.f, -1.f));
+			}
+		}
+
+		// Its collision: the plain prism.
+		const int32 BlockFirst = Blocks.Vertices.Num();
+		for (int32 K = 0; K < Sides; ++K)
+		{
+			for (const float Z : {FootAt(Cell[K]), TopAt(Cell[K])})
+			{
+				FSurfaceVertex Vertex;
+				Vertex.Position = Place.TransformPosition(FVector3f(Cell[K].X, Cell[K].Y, Z));
+				Vertex.Normal = FVector3f(0.f, 0.f, 1.f);
+				Vertex.Color = FVector4f(1.f, 1.f, 1.f, 1.f);
+				Vertex.UV = FVector2f(0.f, 0.f);
+				Blocks.Vertices.Add(Vertex);
+			}
+		}
+		for (int32 K = 0; K < Sides; ++K)
+		{
+			const int32 A = BlockFirst + K * 2, B = BlockFirst + ((K + 1) % Sides) * 2;
+			const FVector2f Along = (Cell[(K + 1) % Sides] - Cell[K]).GetSafeNormal();
+			const FVector3f Outward = Place.TransformVectorNoScale(FVector3f(Along.Y, -Along.X, 0.f));
+			AddFacing(Blocks, A, B, B + 1, Outward);
+			AddFacing(Blocks, A, B + 1, A + 1, Outward);
+			if (K >= 2)
+			{
+				AddFacing(Blocks, BlockFirst + 1, BlockFirst + (K - 1) * 2 + 1, BlockFirst + K * 2 + 1, Place.TransformVectorNoScale(FVector3f(0.f, 0.f, 1.f)));
+				if (bCapped)
+				{
+					AddFacing(Blocks, BlockFirst, BlockFirst + (K - 1) * 2, BlockFirst + K * 2, Place.TransformVectorNoScale(FVector3f(0.f, 0.f, -1.f)));
+				}
+			}
+		}
+	};
+
+	for (const FColumn& Column : Columns)
+	{
+		// How far down its sides can be seen: to the lowest neighbour's top, or to the ground at the edge.
+		float Hidden = TNumericLimits<float>::Max();
+		for (int32 Other = 0; Other < Seeds.Num(); ++Other)
+		{
+			if (Other == Column.Seed || FVector2f::Distance(Seeds[Other], Column.Centre) > Spacing * 1.4f)
+			{
+				continue;
+			}
+			const int32 Neighbour = ColumnOfSeed[Other];
+			Hidden = FMath::Min(Hidden, Neighbour == INDEX_NONE ? GroundCm : Columns[Neighbour].Height - 25.f * Unit);
+		}
+		Hidden = FMath::Clamp(Hidden, GroundCm, Column.Height - 30.f * Unit);
+		AddPrism(Column.Cell, Column.Inradius, Column.Height, Hidden, BottomCm, false, FTransform3f::Identity);
+
+		// What has broken off the outermost columns lies at the foot: drums of the same prism, on their
+		// sides, half bedded in the ground, most lying along the cluster's edge.
+		if (Hidden <= GroundCm && Chance() < (Style == 0 ? 0.45f : 0.2f))
+		{
+			const int32 Pieces = Chance() < 0.3f ? 2 : 1;
+			for (int32 Piece = 0; Piece < Pieces; ++Piece)
+			{
+				TArray<FVector2f> Cell = Column.Cell;
+				for (FVector2f& P : Cell)
+				{
+					P -= Column.Centre;
+				}
+				const float Length = FMath::Min(Draw(0.7f, 2.4f) * Spacing, Column.Height * 0.8f + Spacing * 0.5f);
+				const FVector2f Outward = Column.Centre.GetSafeNormal();
+				const FVector2f Along(-Outward.Y, Outward.X);
+				const float Yaw = FMath::Atan2(Along.Y, Along.X) + Draw(-0.6f, 0.6f);
+				const FVector2f Lie = Column.Centre + Outward * (Column.Inradius + Draw(0.9f, 2.6f) * Spacing) + Along * Draw(-1.f, 1.f) * Spacing;
+				// Local z (the prism's axis) laid along the ground, turned to Yaw, rolled any way about its axis.
+				const FQuat4f Turn = FQuat4f(FVector3f::UpVector, Yaw) * FQuat4f(FVector3f(0.f, 1.f, 0.f), UE_HALF_PI)
+					* FQuat4f(FVector3f::UpVector, Draw(0.f, UE_TWO_PI));
+				const FVector3f Centre = FVector3f(Lie.X, Lie.Y, Column.Inradius * Draw(0.35f, 0.7f) + GroundCm * 0.5f);
+				const FTransform3f Place(Turn, Centre - Turn.RotateVector(FVector3f(0.f, 0.f, Length * 0.5f)));
+				AddPrism(Cell, Column.Inradius, Length, 0.f, 0.f, true, Place);
+			}
+		}
+	}
+	if (Columns.IsEmpty())
+	{
+		UE_LOG(LogTemp, Error, TEXT("Ephemera planet builder: %s has no columns"), *Name);
+		return nullptr;
+	}
+
+	UStaticMesh* Collision = PrepareStaticMesh(PackageFolder, Name + TEXT("_Collision"), ToMeshDescription(Blocks), false, false);
+	if (!Collision)
+	{
+		return nullptr;
+	}
+	Collision->bGenerateMeshDistanceField = false;
+	if (!BuildAndSave({Collision}))
+	{
+		return nullptr;
+	}
+	UStaticMesh* Mesh = PrepareStaticMesh(PackageFolder, Name, ToMeshDescription(Stone), true, true);
+	if (!Mesh)
+	{
+		return nullptr;
+	}
+	Mesh->ComplexCollisionMesh = Collision;
+	UE_LOG(LogTemp, Display, TEXT("Ephemera planet builder: basalt %s, %d columns, %d triangles"), *Name, Columns.Num(), Stone.Triangles.Num());
+	return BuildAndSave({Mesh}) ? Mesh : nullptr;
 }

@@ -78,7 +78,13 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Ephemera")
 	TObjectPtr<class UEphemeraSeaSurfaceComponent> SeaSurface;
 
+	/** The near ground: the land under the camera as fine geometry (empty on a world without a ground grid). */
+	UPROPERTY(VisibleAnywhere, Category = "Ephemera")
+	TObjectPtr<class UEphemeraGroundSurfaceComponent> GroundSurface;
+
 	UPROPERTY() TObjectPtr<class UMaterialInstanceDynamic> OceanInstance;
+	/** The terrain chunks' material while there is a near ground (told where to leave its hole). */
+	UPROPERTY() TObjectPtr<class UMaterialInstanceDynamic> TerrainInstance;
 	/** Direction to the tide-raising body in this body's own space (zero until first set). */
 	FVector TideDirection = FVector::ZeroVector;
 };

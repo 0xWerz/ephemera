@@ -158,7 +158,7 @@ void UEphemeraGroundCoverComponent::GrowCell(const FIntVector& Address, FCell& C
 		}
 	}
 	const FVector CellDir = GroundDir[Lattice / 2][Lattice / 2];
-	const bool bLift = D.MicroRelief > 0.f && FEphemeraTerrain::ReliefIsGeometry();
+	const bool bLift = D.MicroRelief > 0.f && FEphemeraTerrain::ReliefStandsUp(D);
 	// One answer per cell is enough for these slow fields.
 	const double CellMoisture = FEphemeraTerrain::Moisture(D.Terrain, CellDir);
 	const double CellCover = FEphemeraTerrain::Cover(D.Terrain, CellDir);

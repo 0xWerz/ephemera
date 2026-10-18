@@ -5,6 +5,7 @@
 #include "EphemeraPlanetBuilder.generated.h"
 
 class UTextureCube;
+class UTexture2DArray;
 
 class UEphemeraBodyDefinition;
 class UStaticMesh;
@@ -90,6 +91,24 @@ public:
 	 * however coarsely the sea's own mesh is being drawn. 2048 texels per face is under 4 m per
 	 * texel on a 5 km world.
 	 */
+	/**
+	 * The terrain's own values (slope, running water, fresh lava, ice, and what covers the ground) on its
+	 * cube grid, one texel per grid point, two cells past each face's edge, as a 12-slice texture array:
+	 * slices 0-5 hold slope R, flow G, young B, ice A per face; 6-11 cover in R (0..1 for -1..1). The ground
+	 * material reads them per pixel with smooth filtering instead of from the mesh's vertices (whose values
+	 * change in straight lines across each triangle and drew every triangle as a facet). Saved as Name.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Ephemera")
+	static UTexture2DArray* BuildTerrainAttributes(UEphemeraBodyDefinition* Definition, const FString& PackageFolder, const FString& Name);
+
+	/**
+	 * The terrain's heights for the GPU, on the same grid and with the same apron as the attributes: six
+	 * slices (one per face) of 32-bit floats, metres above the datum, exact (no compression, no filtering:
+	 * the near ground's material reads them point by point through a cubic, as the game does on the CPU).
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Ephemera")
+	static UTexture2DArray* BuildTerrainHeights(UEphemeraBodyDefinition* Definition, const FString& PackageFolder, const FString& Name);
+
 	UFUNCTION(BlueprintCallable, Category = "Ephemera")
 	static UTextureCube* BuildDepthMap(UEphemeraBodyDefinition* Definition, const FString& PackageFolder, int32 FaceSize = 2048);
 
@@ -156,6 +175,22 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Ephemera")
 	static UStaticMesh* BuildSeaGrid(const FString& PackageFolder, const FString& Name, int32 Rings, int32 HalfCells, float SpacingM);
+
+	/**
+	 * Builds a cluster of basalt columns: the prisms a thick lava flow cracks into as it cools, five-,
+	 * six- and seven-sided, standing side by side (Reynisfjara, the Giant's Causeway). Real geometry
+	 * a few centimetres fine, enough to carry what makes stone read as stone: edges worn round, the
+	 * cross joints that split each column into drums, chipped corners, the grain of the rock.
+	 * Style 0: a massif, full height over most of its top and breaking down at its edges in organ
+	 * pipes. Style 1: a causeway, short columns whose tops climb in irregular steps toward one side.
+	 * RadiusCm: the cluster's reach; HeightCm: its tallest column; ColumnCm: how far apart the columns
+	 * stand. The mesh's origin is on the ground at the cluster's middle; the columns run on below it
+	 * (4 m for a massif, 1.5 m for a causeway) to stand on uneven ground. Collision is
+	 * a plain prism per column (Name_Collision). Saved as a Nanite mesh named Name; returns it.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Ephemera")
+	static UStaticMesh* BuildBasaltColumns(const FString& PackageFolder, const FString& Name, int32 Seed, int32 Style,
+		float RadiusCm, float HeightCm, float ColumnCm);
 
 	UFUNCTION(BlueprintCallable, Category = "Ephemera")
 	static int32 BuildScatter(UEphemeraBodyDefinition* Definition, const TArray<FEphemeraScatterRule>& Rules);

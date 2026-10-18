@@ -10,6 +10,7 @@
 #include "Frame/EphemeraFrameSubsystem.h"
 #include "Frame/EphemeraGroundCover.h"
 #include "Frame/EphemeraGroundPatch.h"
+#include "Frame/EphemeraGroundSurface.h"
 #include "Frame/EphemeraSeaSurface.h"
 #include "Engine/CollisionProfile.h"
 #include "SimulationMath.h"
@@ -46,6 +47,8 @@ AEphemeraBody::AEphemeraBody()
 	// At the body's own origin and orientation: its material works in the planet's own space.
 	SeaSurface = CreateDefaultSubobject<UEphemeraSeaSurfaceComponent>(TEXT("SeaSurface"));
 	SeaSurface->SetupAttachment(Root);
+	GroundSurface = CreateDefaultSubobject<UEphemeraGroundSurfaceComponent>(TEXT("GroundSurface"));
+	GroundSurface->SetupAttachment(Root);
 }
 
 void AEphemeraBody::OnConstruction(const FTransform& Transform)
@@ -64,6 +67,7 @@ void AEphemeraBody::Rebuild()
 	if (!Definition)
 	{
 		SeaSurface->Configure(nullptr, nullptr);
+		GroundSurface->Configure(nullptr, nullptr);
 		return;
 	}
 	if (Definition->TerrainMesh)
@@ -156,6 +160,11 @@ void AEphemeraBody::Rebuild()
 			Glow->SetCanEverAffectNavigation(false);
 		}
 	}
+	// With a near ground (UEphemeraGroundSurfaceComponent), the chunks are the far land: the same ground with a
+	// hole cut where the grid lies, which their material instance is told every frame.
+	const bool bGroundGrid = UEphemeraGroundSurfaceComponent::Wanted(Definition) && !Definition->TerrainChunks.IsEmpty();
+	TerrainInstance = bGroundGrid ? UMaterialInstanceDynamic::Create(Definition->TerrainFarMaterial, this) : nullptr;
+	GroundSurface->Configure(bGroundGrid ? Definition.Get() : nullptr, TerrainInstance);
 	for (UStaticMesh* Chunk : Definition->TerrainChunks)
 	{
 		if (!Chunk)
@@ -164,7 +173,11 @@ void AEphemeraBody::Rebuild()
 		}
 		UStaticMeshComponent* Piece = AddGenerated<UStaticMeshComponent>(this, Root, TEXT("TerrainChunk"));
 		Piece->SetStaticMesh(Chunk);
-		if (Definition->TerrainMaterial)
+		if (TerrainInstance)
+		{
+			Piece->SetMaterial(0, TerrainInstance);
+		}
+		else if (Definition->TerrainMaterial)
 		{
 			Piece->SetMaterial(0, Definition->TerrainMaterial);
 		}
